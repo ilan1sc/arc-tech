@@ -58,7 +58,7 @@ def judge(target_kind: str, target_id: str, artifact: dict | str, evidence: str 
             f"EVIDENCE EXCERPTS:\n{evidence[:20000] or '(none supplied)'}\n\n"
             f"DETERMINISTIC CHECK RESULTS:\n" + ("\n".join(checks) or "(none)"))
     try:
-        out = llm.chat_json(SYSTEM, user, _JudgeOut, model=llm.JUDGE_MODEL, temperature=0.0, tag=f"judge:{target_id}")
+        out = llm.chat_json(SYSTEM, user, _JudgeOut, role="judge", temperature=0.0, tag=f"judge:{target_id}")
         verdict, findings = out.verdict, out.findings
     except llm.LLMUnavailable as e:
         verdict, findings = "REVISE", [JudgeFinding(severity="medium", claim="(judge)", problem=f"LLM judge unavailable: {e}")]
@@ -66,4 +66,4 @@ def judge(target_kind: str, target_id: str, artifact: dict | str, evidence: str 
         verdict = "BLOCK"
         findings = [JudgeFinding(severity="critical", claim="deterministic check", problem=m) for m in deterministic_failures] + findings
     return ValidationReport(target_kind=target_kind, target_id=target_id, verdict=verdict, findings=findings,
-                            deterministic_checks=checks, rubric=RUBRICS[target_kind], model=llm.JUDGE_MODEL)
+                            deterministic_checks=checks, rubric=RUBRICS[target_kind], model=llm.model_for("judge"))

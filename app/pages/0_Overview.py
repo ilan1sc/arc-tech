@@ -18,9 +18,10 @@ Three independent engines with shared JSON contracts, running locally on the DGX
 An independent LLM judge validates passports, rankings and architectures (PASS / REVISE / BLOCK).
 """)
 
-d = e2.get_architecture("ARCH-SWISSLINK")
+aid = ui.current_arch_id()
+d = e2.get_architecture(aid) if aid else None
 c1, c2, c3, c4 = st.columns(4)
-c1.metric("Architecture versions", len(e2.list_versions("ARCH-SWISSLINK")))
+c1.metric("Architecture versions", len(e2.list_versions(aid)) if aid else 0)
 c2.metric("Components", len(d.components) if d else 0)
 c3.metric("Passports", len(store.list_ids("passport")))
 c4.metric("Iterations", len(e3.list_iterations()))

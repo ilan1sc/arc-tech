@@ -23,7 +23,8 @@ class _Extraction(BaseModel):
 
 EXTRACT_SYSTEM = """You are a senior systems engineer extracting requirements from a Software Requirements Specification.
 Rules:
-- Reuse the SRS requirement IDs exactly (e.g. SL-FT-01). Keep the requirement text faithful.
+- Reuse the SRS requirement IDs exactly (e.g. SL-FT-01). If the SRS has no IDs, assign REQ-001, REQ-002, ... in document order.
+- Keep the requirement text faithful.
 - kind: functional | nonfunctional | interface | constraint. priority: 'shall' -> mandatory, 'should' -> desirable, 'may' -> optional.
 - status = explicit for numbered SRS statements. You may add a FEW inferred requirements (ids INF-01, INF-02, ...) only when clearly implied; mark status=inferred.
 - source_passage: short quote from the SRS.
@@ -32,7 +33,7 @@ Rules:
 
 
 def extract_requirements(srs_text: str) -> tuple[list[Requirement], list[OpenQuestion]]:
-    out = llm.chat_json(EXTRACT_SYSTEM, f"SRS:\n{srs_text}", _Extraction, tag="e2:extract")
+    out = llm.chat_json(EXTRACT_SYSTEM, f"SRS:\n{srs_text}", _Extraction, tag="e2:extract", role="engine2")
     reqs = {r.id: r for r in out.requirements}
     # Deterministic safety net: every numbered SRS statement must be present.
     for rid, text in parse_ids(srs_text).items():
@@ -63,7 +64,7 @@ Rules:
 
 def build_capability_tree(requirements: list[Requirement]) -> list[Capability]:
     lines = "\n".join(f"{r.id} [{r.priority}/{r.kind}] {r.text}" for r in requirements)
-    out = llm.chat_json(CAP_SYSTEM, f"REQUIREMENTS:\n{lines}", _CapTree, tag="e2:captree")
+    out = llm.chat_json(CAP_SYSTEM, f"REQUIREMENTS:\n{lines}", _CapTree, tag="e2:captree", role="engine2")
     ids = {c.id for c in out.capabilities}
     for c in out.capabilities:          # repair dangling parents deterministically
         if c.parent_id and c.parent_id not in ids:

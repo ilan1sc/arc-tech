@@ -44,7 +44,7 @@ def search_terms(spec: ComponentSearchSpec) -> list[str]:
     caps = ", ".join(spec.capability_names.values())
     try:
         q = llm.chat_json(TERMS_SYSTEM, f"Component: {spec.name}\nCapabilities: {caps}", _Terms,
-                          tag=f"e1:terms:{spec.component_id}").queries
+                          tag=f"e1:terms:{spec.component_id}", role="engine1").queries
     except llm.LLMUnavailable:
         q = []
     return list(dict.fromkeys([t.lower().strip() for t in q + spec.search_terms if t.strip()]))[:4]

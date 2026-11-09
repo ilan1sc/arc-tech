@@ -7,14 +7,16 @@ from engine3_optimize import orchestrator as e3
 from engine3_optimize.evaluate import overlay as make_overlay
 
 ui.page("4 · Build/Buy/Reuse optimizer & chat (Engine 3)", "⚙️")
+ui.model_selector("engine3", "engine2", "engine1")
 a = ui.assumptions_editor()
+aid = ui.current_arch_id()
 
-idx = e3.list_iterations()
+idx = [i for i in e3.list_iterations() if any(k.startswith(f"{aid}@") for k in i["proposals"])]
 c1, c2 = st.columns([3, 1])
 explore = c2.checkbox("Let Engine 1 explore missing components (slow, live)", value=False)
 if c2.button("Start new evaluation", type="primary" if not idx else "secondary"):
     with st.status("Engine 3 orchestrating Engine 2 + Engine 1…", expanded=True) as s:
-        it = e3.start(ui.SRS_PATH.read_text(), a, progress=lambda m: s.write(m), explore=explore)
+        it = e3.start(ui.SRS_PATH.read_text(), a, progress=lambda m: s.write(m), explore=explore, architecture_id=aid)
         s.update(label=f"Iteration {it.iteration_id} ready", state="complete")
     st.session_state.it = it.iteration_id
     st.rerun()
@@ -111,5 +113,5 @@ with st.expander("Interface & shared-work effort (counted once)"):
 arch_id, ver = ev.architecture_id, ev.architecture_version
 d = e2.get_architecture(arch_id, ver)
 mode = st.radio("Diagram overlay", ["hours", "money", "none"], horizontal=True)
-ui.mermaid(mermaid.render(d, make_overlay(ev, a), mode, a.currency), height=700, key="opt")
+ui.mermaid(mermaid.render(d, make_overlay(ev, a), mode, a.currency), height=600, key="opt")
 

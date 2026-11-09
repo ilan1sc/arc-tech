@@ -25,6 +25,23 @@ NUM_CTX = int(os.getenv("ARC_NUM_CTX", "32768"))
 
 T = TypeVar("T", bound=BaseModel)
 
+# Model per role; the UI's model selectors write here (single-presenter demo: process-wide setting).
+MODELS: dict[str, str] = {"engine1": MODEL, "engine2": MODEL, "engine3": MODEL, "judge": JUDGE_MODEL}
+ROLE_LABELS = {"engine1": "Engine 1 · Exploration", "engine2": "Engine 2 · Architecture",
+               "engine3": "Engine 3 · Optimizer", "judge": "Independent judge"}
+
+
+def model_for(role: str | None) -> str:
+    return MODELS.get(role or "", MODEL)
+
+
+def available_models() -> list[str]:
+    try:
+        tags = httpx.get(f"{OLLAMA_URL}/api/tags", timeout=5).json()
+        return sorted(m["name"] for m in tags.get("models", []) if "embed" not in m["name"] and ":cloud" not in m["name"])
+    except Exception:  # noqa: BLE001
+        return sorted(set(MODELS.values()))
+
 
 class LLMUnavailable(RuntimeError):
     pass
@@ -46,9 +63,9 @@ def _cache_path(kind: str, key: str) -> Path:
 
 def chat_json(system: str, user: str, schema: type[T], *, model: str | None = None,
               temperature: float = 0.2, retries: int = 2, use_cache: bool = True,
-              tag: str = "") -> T:
-    """Ask the model for JSON that validates against `schema` (Pydantic)."""
-    model = model or MODEL
+              tag: str = "", role: str | None = None) -> T:
+    """Ask the model for JSON that validates against `schema` (Pydantic). `role` picks the per-engine model."""
+    model = model or model_for(role)
     json_schema = schema.model_json_schema()
     key = _key(model, system, user, json_schema, temperature)
     path = _cache_path("chat", key)

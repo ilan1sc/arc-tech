@@ -50,7 +50,7 @@ def _context(requirements: list[Requirement], capabilities: list[Capability], co
 
 def synthesize(requirements, capabilities, constraints, questions) -> ArchDraft:
     return llm.chat_json(SYNTH_SYSTEM, _context(requirements, capabilities, constraints, questions), ArchDraft,
-                         tag="e2:synth", temperature=0.2)
+                         tag="e2:synth", temperature=0.2, role="engine2")
 
 
 REVISE_SYSTEM = SYNTH_SYSTEM + """
@@ -68,4 +68,4 @@ def revise(design: ArchitectureDesign, feedback: ArchitectureFeedback, extra_con
     user = (_context(design.requirements, design.capabilities, design.constraints + extra_constraints, design.open_questions)
             + f"\n\nCURRENT ARCHITECTURE JSON:\n{current.model_dump_json()}"
             + f"\n\nCHANGE REQUEST (from PRD 3):\n{json.dumps(feedback.model_dump(), indent=1)}")
-    return llm.chat_json(REVISE_SYSTEM, user, ArchDraft, tag=f"e2:revise:{feedback.feedback_id}", temperature=0.1)
+    return llm.chat_json(REVISE_SYSTEM, user, ArchDraft, tag=f"e2:revise:{feedback.feedback_id}", temperature=0.1, role="engine2")

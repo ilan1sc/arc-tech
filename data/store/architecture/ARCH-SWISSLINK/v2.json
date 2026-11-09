@@ -3,6 +3,8 @@
   "version": 2,
   "parent_id": "ARCH-SWISSLINK@v1",
   "title": "Tactical Situational Awareness System (TSAS) Logical Architecture - Offline Revision",
+  "source_name": "swisslink_srs.md",
+  "generated_with": "qwen3.6:35b-a3b-q8_0",
   "requirements_revision": "2daa61693a23",
   "requirements": [
     {

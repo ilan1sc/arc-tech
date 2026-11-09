@@ -3,6 +3,7 @@ import ui  # noqa: F401  (sets sys.path)
 import streamlit as st
 
 st.set_page_config(page_title="arc-tech · The problem", page_icon="🛰️", layout="wide", initial_sidebar_state="collapsed")
+ui.version_footer()
 
 st.markdown("""
 <style>

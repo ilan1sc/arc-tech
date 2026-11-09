@@ -9,15 +9,21 @@ from engine3_optimize import orchestrator as e3
 from engine3_optimize.evaluate import overlay as make_overlay
 
 ui.page("2 · Architecture (Engine 2)", "🏗️")
+ui.model_selector("engine2", "judge")
 a = ui.assumptions_editor()
-d0 = e2.get_architecture("ARCH-SWISSLINK")
+aid = ui.current_arch_id()
+d0 = e2.get_architecture(aid) if aid else None
 if d0 is None:
-    st.warning("Generate the architecture on page 1 first.")
+    st.warning("Create an architecture on page 1 first.")
     st.stop()
 vers = e2.list_versions(d0.architecture_id)
-c1, c2, c3 = st.columns([1, 2, 2])
-v = c1.selectbox("Version", vers, index=len(vers) - 1)
+labels = {v: ui.version_label(e2.get_architecture(d0.architecture_id, v)) for v in vers}
+c1, c2, c3 = st.columns([2, 1.4, 2])
+v = c1.selectbox("Architecture version", vers, index=len(vers) - 1, format_func=lambda v: labels[v],
+                 help="v1 is generated from the SRS. v2, v3… are revisions requested by the optimizer (e.g. offline-only). "
+                      "All versions are kept.")
 d = e2.get_architecture(d0.architecture_id, v)
+texts = {r.id: r.text for r in d.requirements}
 mode = c2.radio("Overlay (from Engine 3)", ["none", "hours", "money"], horizontal=True,
                 help="Same graph and ids; Engine 3 overlays effort hours or money without changing the architecture.")
 
@@ -51,7 +57,7 @@ if ov is not None:
 
 left, right = st.columns([3, 1.3])
 with left:
-    ui.mermaid(src, height=780, key="arch")
+    ui.mermaid(src, height=640, key="arch")
 with right:
     if sel != "—":
         c = next(c for c in d.components if c.id == sel)
@@ -59,7 +65,7 @@ with right:
         st.caption(f"`{c.id}` · {c.kind} · {c.subsystem} · trust zone: {c.trust_zone}")
         st.write(c.purpose)
         st.markdown("**Required capabilities:** " + ", ".join(f"`{x}`" for x in c.required_capabilities))
-        st.markdown("**Requirements:** " + ", ".join(c.requirement_ids))
+        st.markdown("**Requirements:** " + ui.req_tips(c.requirement_ids, texts), unsafe_allow_html=True)
         for label, items in [("Responsibilities", c.responsibilities), ("Inputs", c.inputs), ("Outputs", c.outputs),
                              ("Data owned", c.data_owned), ("Depends on", c.dependencies),
                              ("Runtime / deployment", c.runtime_assumptions + c.deployment_assumptions),
@@ -77,10 +83,11 @@ with right:
                         unsafe_allow_html=True)
             st.markdown(f"Hours: {ui.fmt(n.hours)}  \nMoney: {ui.fmt(n.money, money=True, currency=a.currency)}")
     else:
-        st.subheader("Design rationale")
-        st.write(d.design_rationale)
+        st.info("Pick a component above to see its details here. The design rationale is in the tabs below.")
 
-t1, t2, t3, t4, t5 = st.tabs(["Validation findings", "Interfaces", "Assumptions & risks", "Change log / diff", "JSON"])
+t0, t1, t2, t3, t4, t5 = st.tabs(["Design rationale", "Validation findings", "Interfaces", "Assumptions & risks", "Change log / diff", "JSON"])
+with t0:
+    st.write(d.design_rationale)
 with t1:
     sev_order = {"critical": 0, "high": 1, "medium": 2, "low": 3, "info": 4}
     df = pd.DataFrame([f.model_dump() for f in sorted(d.validation_findings, key=lambda f: sev_order[f.severity])])

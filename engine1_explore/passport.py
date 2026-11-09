@@ -65,7 +65,7 @@ def draft_passport(bundle: RepoBundle, spec: ComponentSearchSpec) -> SoftwareCap
     user = (f"COMPONENT: {spec.component_id} {spec.name}\nPURPOSE: {spec.purpose}\nREQUESTED CAPABILITIES:\n{req}\n"
             f"REQUIRED INTERFACES:\n" + "\n".join(f"- {i}" for i in spec.interfaces_required[:8]) +
             f"\n\nREPOSITORY: {bundle.name} {bundle.web_url} @ {bundle.sha}\n\nEXCERPTS:\n{bundle.evidence_text()}")
-    d = llm.chat_json(SYSTEM, user, _PassportDraft, tag=f"e1:passport:{bundle.project_id}:{spec.component_id}")
+    d = llm.chat_json(SYSTEM, user, _PassportDraft, tag=f"e1:passport:{bundle.project_id}:{spec.component_id}", role="engine1")
     return finalize(bundle, d)
 
 

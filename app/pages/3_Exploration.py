@@ -7,7 +7,9 @@ from engine1_explore.rank import DEFAULT_WEIGHTS, rank_component
 from engine2_architect import api as e2
 
 ui.page("3 · Software exploration & passports (Engine 1)", "🔎")
-d = e2.get_architecture("ARCH-SWISSLINK")
+ui.model_selector("engine1", "judge")
+aid = ui.current_arch_id()
+d = e2.get_architecture(aid) if aid else None
 if d is None:
     st.warning("Generate the architecture on page 1 first.")
     st.stop()

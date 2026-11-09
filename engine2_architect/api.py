@@ -7,9 +7,10 @@ revise_architecture({architecture_id, feedback, changed_requirements?}) -> Archi
 from __future__ import annotations
 
 import hashlib
-from typing import Optional
+import re
+from typing import Callable, Optional
 
-from shared import store
+from shared import llm, store
 from shared.schemas import (ArchitectureDesign, ArchitectureFeedback, ChangeLogEntry, ComponentSearchSpec)
 
 from . import mermaid
@@ -30,20 +31,76 @@ def _assemble(draft: ArchDraft, base: dict) -> ArchitectureDesign:
     return d
 
 
+def architecture_id_for(source_name: str) -> str:
+    stem = re.sub(r"[^A-Za-z0-9]+", "-", source_name.rsplit(".", 1)[0]).strip("-").upper()[:24] or "SRS"
+    return "ARCH-SWISSLINK" if stem.startswith("SWISSLINK") else f"ARCH-{stem}"
+
+
+def _replay(d: ArchitectureDesign, model: str, progress: Callable[[str], None]) -> None:
+    """Same SRS + model already processed: show the same five steps with the stored results (no LLM calls)."""
+    progress(f"♻️ Same SRS and model as {d.architecture_id} — replaying the stored run (no new LLM calls)")
+    progress(f"📄 Step 1/5 · Extracting requirements and open questions ({model})")
+    progress(f"   → {len(d.requirements)} requirements, {len(d.open_questions)} open questions "
+             f"({sum(r.priority == 'mandatory' for r in d.requirements)} mandatory)")
+    progress("🌳 Step 2/5 · Building the capability tree (domain → capability → operation)")
+    progress(f"   → {sum(c.level == 'domain' for c in d.capabilities)} domains, {len(d.capabilities)} capabilities")
+    progress("🏗️ Step 3/5 · Synthesizing ONE logical architecture (components, interfaces, data, trust zones)")
+    progress(f"   → {len(d.components)} components, {len(d.interfaces)} interfaces, {len(d.data_stores)} data stores")
+    progress("🔎 Step 4/5 · Deterministic validation (allocation, graph integrity, data ownership, security)")
+    repairs = [c.summary for c in d.change_log if c.summary.startswith("Self-check")]
+    progress("🛠️ Step 5/5 · Self-check repair passes" if repairs else "✅ Step 5/5 · No repair needed")
+    for r in repairs:
+        progress(f"   → {r}")
+    progress(f"✅ {d.key} ready: {len(d.components)} components, {len(d.interfaces)} interfaces, "
+             f"{sum(c.status == 'gap' for c in d.coverage)} gaps")
+
+
+def list_architectures() -> list[ArchitectureDesign]:
+    """Latest version of every architecture (one per SRS / generation), newest first."""
+    out = [get_architecture(a) for a in store.list_ids(KIND)]
+    return sorted([d for d in out if d], key=lambda d: d.created_at, reverse=True)
+
+
 def generate_architecture(srs_text: str, constraints: Optional[list[str]] = None,
-                          glossary: Optional[str] = None, architecture_id: str = "ARCH-SWISSLINK") -> ArchitectureDesign:
+                          glossary: Optional[str] = None, architecture_id: Optional[str] = None,
+                          source_name: str = "swisslink_srs.md",
+                          progress: Callable[[str], None] = lambda m: None) -> ArchitectureDesign:
+    """AR-01..AR-07. `progress` receives human-readable step messages for the UI."""
     srs = srs_text + (f"\n\nGLOSSARY:\n{glossary}" if glossary else "")
+    rev = hashlib.sha256(srs.encode()).hexdigest()[:12]
+    model = llm.model_for("engine2")
+    base_id = architecture_id or architecture_id_for(source_name)
+    # same SRS + same model + same constraints -> reuse (deterministic); otherwise a new architecture id, never overwrite
+    arch_id, n = base_id, 1
+    while (ex := get_architecture(arch_id, 1)) is not None:
+        if ex.requirements_revision == rev and ex.generated_with in ("", model) and ex.constraints == (constraints or []):
+            _replay(ex, model, progress)
+            return get_architecture(arch_id)
+        n += 1
+        arch_id = f"{base_id}-{n}"
+    progress(f"📄 Step 1/5 · Extracting requirements and open questions ({model})")
     requirements, questions = extract_requirements(srs)
+    progress(f"   → {len(requirements)} requirements, {len(questions)} open questions "
+             f"({sum(r.priority == 'mandatory' for r in requirements)} mandatory)")
+    progress("🌳 Step 2/5 · Building the capability tree (domain → capability → operation)")
     capabilities = build_capability_tree(requirements)
+    progress(f"   → {sum(c.level == 'domain' for c in capabilities)} domains, {len(capabilities)} capabilities")
+    progress("🏗️ Step 3/5 · Synthesizing ONE logical architecture (components, interfaces, data, trust zones)")
     draft = synthesize(requirements, capabilities, constraints or [], questions)
-    base = dict(architecture_id=architecture_id, version=1,
-                requirements_revision=hashlib.sha256(srs.encode()).hexdigest()[:12],
-                requirements=requirements, open_questions=questions, capabilities=capabilities,
+    progress(f"   → {len(draft.components)} components, {len(draft.interfaces)} interfaces, {len(draft.data_stores)} data stores")
+    base = dict(architecture_id=arch_id, version=1, requirements_revision=rev, source_name=source_name,
+                generated_with=model, requirements=requirements, open_questions=questions, capabilities=capabilities,
                 constraints=constraints or [],
-                change_log=[ChangeLogEntry(version=1, summary="Initial architecture generated from SRS")])
+                change_log=[ChangeLogEntry(version=1, summary=f"Initial architecture generated from {source_name}")])
+    progress("🔎 Step 4/5 · Deterministic validation (allocation, graph integrity, data ownership, security)")
     d = _assemble(draft, base)
-    d = self_check(d, base)
-    store.save(KIND, architecture_id, d, version=1)
+    gaps, isolated = _structural_issues(d)
+    progress(f"   → {len(gaps)} unallocated mandatory requirements, {len(isolated)} isolated components")
+    progress("🛠️ Step 5/5 · Self-check repair passes" if (gaps or isolated) else "✅ Step 5/5 · No repair needed")
+    d = self_check(d, base, progress=progress)
+    store.save(KIND, arch_id, d, version=1)
+    progress(f"✅ {d.key} ready: {len(d.components)} components, {len(d.interfaces)} interfaces, "
+             f"{sum(c.status == 'gap' for c in d.coverage)} gaps")
     return d
 
 
@@ -54,7 +111,8 @@ def _structural_issues(d: ArchitectureDesign) -> tuple[list[str], list[str]]:
     return gaps, isolated
 
 
-def self_check(d: ArchitectureDesign, base: dict, max_passes: int = 2) -> ArchitectureDesign:
+def self_check(d: ArchitectureDesign, base: dict, max_passes: int = 2,
+               progress: Callable[[str], None] = lambda m: None) -> ArchitectureDesign:
     """AR-03/AR-06: bounded repair passes before first publication (unallocated requirements, isolated components)."""
     texts = {r.id: r.text for r in d.requirements}
     names = {c.id: c.name for c in d.components}
@@ -72,6 +130,7 @@ def self_check(d: ArchitectureDesign, base: dict, max_passes: int = 2) -> Archit
                         "configuration distribution out, device status/commands via the messaging backbone), with payload, "
                         "mode, protocol candidates, error handling and security: "
                         + "; ".join(f"{c} ({names.get(c, c)})" for c in isolated))
+        progress(f"   → repair pass {n + 1}: allocating {gaps or 'none'}; connecting {isolated or 'none'}")
         fb = ArchitectureFeedback(feedback_id=f"FB-SELFCHECK-{n + 1}", requested_change=" ".join(asks),
                                   observations=["Engine 2 deterministic validation before first publication"], priority="high")
         d2 = _assemble(revise(d, fb, []), base)
@@ -145,6 +204,7 @@ def revise_architecture(architecture_id: str, feedback: ArchitectureFeedback,
     draft = revise(old, feedback, extra)
     new_version = max(list_versions(architecture_id) or [old.version]) + 1
     base = dict(architecture_id=architecture_id, version=new_version, parent_id=old.key,
+                source_name=old.source_name, generated_with=llm.model_for("engine2"),
                 requirements_revision=old.requirements_revision, requirements=old.requirements,
                 open_questions=old.open_questions, capabilities=old.capabilities,
                 constraints=list(dict.fromkeys(old.constraints + extra)), change_log=list(old.change_log))

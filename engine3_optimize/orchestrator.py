@@ -73,7 +73,7 @@ Never invent numbers."""
 def parse_intent(text: str, design: ArchitectureDesign) -> Intent:
     comps = "\n".join(f"{c.id}: {c.name}" for c in design.components)
     try:
-        return llm.chat_json(INTENT_SYSTEM, f"COMPONENTS:\n{comps}\n\nINSTRUCTION: {text}", Intent, tag="e3:intent")
+        return llm.chat_json(INTENT_SYSTEM, f"COMPONENTS:\n{comps}\n\nINSTRUCTION: {text}", Intent, tag="e3:intent", role="engine3")
     except llm.LLMUnavailable:
         t = text.lower()
         off = "offline" in t
@@ -90,13 +90,13 @@ def new_iteration_id() -> str:
 
 
 def start(srs_text: str, a: EffortAssumptions, progress: Progress = lambda m: None,
-          explore: bool = True) -> Iteration:
-    design = e2.get_architecture("ARCH-SWISSLINK")
+          explore: bool = True, architecture_id: str = "ARCH-SWISSLINK", version: int | None = None) -> Iteration:
+    design = e2.get_architecture(architecture_id, version)
     if design is None:
         progress("Engine 2 generating architecture from SRS")
-        design = e2.generate_architecture(srs_text)
+        design = e2.generate_architecture(srs_text, progress=progress)
     evals = evaluate_all(design, a, [], progress=progress, explore_missing=explore)
-    it = Iteration(iteration_id=new_iteration_id(), user_instruction="Initial evaluation of SwissLink SRS",
+    it = Iteration(iteration_id=new_iteration_id(), user_instruction=f"Initial evaluation of {design.source_name or design.architecture_id}",
                    proposals=[design.key], evaluations=evals,
                    explanation="Three Build/Buy/Reuse strategies evaluated on the Engine 2 architecture.",
                    changes=[f"{design.key}: {len(design.components)} components, {len(design.interfaces)} interfaces"])

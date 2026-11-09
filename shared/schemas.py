@@ -265,6 +265,8 @@ class ArchitectureDesign(BaseModel):
     version: int = 1
     parent_id: Optional[str] = None
     title: str = ""
+    source_name: str = ""          # SRS file name
+    generated_with: str = ""       # model used by Engine 2
     requirements_revision: str = ""
     requirements: list[Requirement] = []
     open_questions: list[OpenQuestion] = []
