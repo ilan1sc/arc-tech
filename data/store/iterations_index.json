@@ -1,11 +1,29 @@
 [
   {
-    "iteration_id": "IT-03310C",
+    "iteration_id": "IT-D132C0",
     "parent": null,
     "instruction": "Initial evaluation of SwissLink SRS",
     "proposals": [
       "ARCH-SWISSLINK@v1"
     ],
-    "timestamp": "2026-11-09T12:00:20+00:00"
+    "timestamp": "2026-11-09T13:14:13+00:00"
+  },
+  {
+    "iteration_id": "IT-C8B495",
+    "parent": "IT-D132C0",
+    "instruction": "Too expensive; maximize reuse",
+    "proposals": [
+      "ARCH-SWISSLINK@v1"
+    ],
+    "timestamp": "2026-11-09T13:14:13+00:00"
+  },
+  {
+    "iteration_id": "IT-C17C77",
+    "parent": "IT-C8B495",
+    "instruction": "Offline only",
+    "proposals": [
+      "ARCH-SWISSLINK@v2"
+    ],
+    "timestamp": "2026-11-09T13:21:51+00:00"
   }
 ]

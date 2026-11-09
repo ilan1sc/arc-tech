@@ -63,7 +63,12 @@ def option_for(inp: Inputs, comp, decision: str, ranking: Optional[CandidateRank
         p = inp.passports[ranking.candidate_id]
         est = p.adaptation_effort_hours.estimate
         lo, hi = a.reuse_estimate_spread
-        adapt = R(low=est * lo, base=est, high=est * hi)
+        fl = a.reuse_adaptation_floor
+        floor = R(low=build.low * fl.low, base=build.base * fl.base, high=build.high * fl.high)
+        adapt = R(low=max(est * lo, floor.low), base=max(est, floor.base), high=max(est * hi, floor.high))
+        if est < floor.base:
+            assumptions.append(f"Passport estimate {est:.0f} h is below the reuse floor; floor applied "
+                               f"({fl.low:.0%}/{fl.base:.0%}/{fl.high:.0%} of BUILD baseline)")
         miss_share = len(ranking.missing_capabilities) / max(1, len(comp.required_capabilities))
         ext = build.scale(miss_share * a.reuse_missing_capability_build_factor)
         core = a.reuse_onboarding_hours + adapt + ext

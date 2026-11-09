@@ -1,0 +1,167 @@
+{
+  "passport_id": "PP-GH-organicmaps_organicmaps",
+  "software_name": "organicmaps/organicmaps",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/organicmaps/organicmaps",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "App Interface & Reporting",
+      "coverage": "partial",
+      "notes": "Provides native mobile UI for map visualization and navigation. However, it lacks the specific 'Team Leader' reporting features (diary submission, alert acknowledgement) required by the component. It is a consumer-grade mapping app, not a tactical team coordination tool.",
+      "capability_id": "CAP.MOBILE.APP",
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@81b92d1c",
+        "api:project@81b92d1c"
+      ]
+    },
+    {
+      "name": "Offline Map Support",
+      "coverage": "full",
+      "notes": "Core feature of the application. Explicitly designed for offline use with OpenStreetMap data.",
+      "capability_id": "CAP.MAP.OFFLINE",
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@81b92d1c"
+      ]
+    },
+    {
+      "name": "Push Notifications",
+      "coverage": "none",
+      "notes": "The README explicitly states 'No push notifications' as a privacy feature. The app is designed to be offline-first and does not include FCM/APNS integration for incoming alerts.",
+      "capability_id": "CAP.MOBILE.NOTIFY",
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@81b92d1c"
+      ]
+    },
+    {
+      "name": "Turn-by-Turn Navigation",
+      "coverage": "full",
+      "notes": "Supports walking, cycling, and car navigation with voice guidance.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@81b92d1c"
+      ]
+    },
+    {
+      "name": "Map Search & Routing",
+      "coverage": "full",
+      "notes": "Fast offline search and routing capabilities are core features.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@81b92d1c"
+      ]
+    },
+    {
+      "name": "Track Management",
+      "coverage": "full",
+      "notes": "Supports import/export of KML, KMZ, GPX, GeoJSON formats.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@81b92d1c"
+      ]
+    }
+  ],
+  "interfaces": [],
+  "dependencies": [
+    "OpenStreetMap data",
+    "Android SDK",
+    "iOS SDK",
+    "C++23 Standard Library"
+  ],
+  "license": "Apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires mobile OS (Android or iOS)",
+    "Requires significant storage for map tiles",
+    "No internet connection required for core functionality"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 120.0,
+    "confidence": "low",
+    "assumptions": [
+      "Assumes ability to fork the C++ core and rewrite Android/iOS UI layers completely.",
+      "Assumes 'No push notifications' constraint can be overridden by integrating FCM/APNS, which contradicts the project's privacy philosophy.",
+      "Assumes custom backend integration for diary/alert submission is built externally as this app has no networking stack for user data.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Organic Maps is an offline maps app with no push notifications or tracking.",
+      "source_ref": "README.md@81b92d1c",
+      "verified": false
+    },
+    {
+      "claim": "Project uses C++ and supports Android/iOS platforms.",
+      "source_ref": "api:project@81b92d1c",
+      "verified": false
+    },
+    {
+      "claim": "Build system is CMake with Android Gradle integration.",
+      "source_ref": "CMakeLists.txt@81b92d1c",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The capability 'Turn-by-Turn Navigation' has a null capability_id and relies solely on README marketing text ('declared' status). The rubric requires 'verified' status for full coverage claims, which necessitates code or test evidence. No source files implementing navigation logic are cited. | [high] Similar to navigation, this critical capability is marked 'full' based only on README claims. The rubric mandates code/test evidence for 'verified' status. The provided evidence does not include source files for the routing algorithm or search index. | [medium] The claim that the app supports import/export of KML, KMZ, GPX, GeoJSON is based on README text. While likely true, it lacks code-level verification (e.g., references to `src/io/` or corresponding tests) required for a 'verified' status under the rubric. | [medium] The core value proposition is claimed via README. While the `CMakeLists.txt` shows C++23 and Android/iOS support, it does not explicitly prove offline map rendering capabilities without code references. | [low] The passport claims Apache-2.0, but the `api:project@81b92d1c` metadata explicitly states `license_api=None`. While a LICENSE file exists in the tree, the API metadata discrepancy suggests potential inconsistency or that the license might be composite (e.g., including 3rd party libs with different licenses)."
+  },
+  "revision": "81b92d1c24553833a1d856a12f47220a88b5f278",
+  "description": "Organic Maps is a privacy-focused, offline-capable mobile mapping application for Android and iOS. It provides detailed map visualization, turn-by-turn navigation, search, and track management using OpenStreetMap data. It explicitly excludes cloud connectivity features such as push notifications, user accounts, or telemetry.",
+  "interfaces_detail": [],
+  "deployment_constraints": [
+    "Requires mobile OS (Android or iOS)",
+    "Requires significant storage for map tiles",
+    "No internet connection required for core functionality"
+  ],
+  "runtime": [
+    "Android (Java/Kotlin)",
+    "iOS (Objective-C/Swift)",
+    "Native C++ Core"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No Push Notification support (FCM/APNS) - explicitly excluded by design.",
+    "No WebSocket support for real-time alert relay.",
+    "No HTTPS POST API for diary entry or position report submission.",
+    "No 'Team Leader' specific UI or workflow.",
+    "No user authentication or account management."
+  ],
+  "risks": [
+    "License: Apache 2.0 is permissive, but the app's privacy-first design may conflict with defense requirements for data reporting.",
+    "Maintenance: Forking a consumer app to add enterprise features may lead to divergence and high maintenance costs.",
+    "Security: The app explicitly avoids network connectivity; adding it introduces attack surface not originally designed for."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assumes ability to fork the C++ core and rewrite Android/iOS UI layers completely.",
+      "Assumes 'No push notifications' constraint can be overridden by integrating FCM/APNS, which contradicts the project's privacy philosophy.",
+      "Assumes custom backend integration for diary/alert submission is built externally as this app has no networking stack for user data."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T13:00:34+00:00",
+  "stars": 15916,
+  "last_activity": "2026-11-09T12:45:43Z"
+}

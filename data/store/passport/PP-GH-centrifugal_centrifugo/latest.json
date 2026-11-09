@@ -121,7 +121,7 @@
   ],
   "validation": {
     "status": "pending",
-    "judge_notes": "REVISE: [critical] The capability is marked 'verified' but the provided code evidence (`internal/pubsub/config.go`) only implements Redis and NATS backends. There is no source code evidence for a PostgreSQL PubSub backend in the excerpts. The README mentions PostgreSQL, but 'verified' status requires code/test evidence per the rubric. | [high] The evidence explicitly marks this claim as `verified: false`. The passport asserts 'v6' based solely on the module path string, which does not guarantee the semantic version of the release. Without a tag or changelog entry confirming v6, this is an unverified assumption. | [medium] The README explicitly states WebTransport is '(experimental)'. Marking this as 'full' coverage with high confidence (0.95) overstates the maturity of this specific transport compared to stable ones like WebSocket/gRPC. | [medium] The passport lists the license as 'apache-2.0' but does not provide an evidence item with `verified: true` for this claim. While the LICENSE file excerpt exists, it was not cited in the `evidence` array to support a specific claim verification. | [low] The interfaces are listed as 'declared' with empty `schema_ref`. While acceptable for a high-level passport, the lack of schema references makes it difficult to verify the interface definitions without external knowledge."
+    "judge_notes": "REVISE: [medium] LLM judge unavailable: ARC_OFFLINE=1 and no cached response for _JudgeOut judge:PP-GH-centrifugal_centrifugo"
   },
   "revision": "4b6d86e23452a6fa1bd424ffe4526862efae85b8",
   "description": "Centrifugo is a scalable, language-agnostic real-time messaging server providing Pub/Sub capabilities over WebSocket, HTTP-streaming, SSE, gRPC, and WebTransport. It acts as a user-facing PUB/SUB server where backends publish via HTTP/gRPC APIs and clients subscribe via SDKs or direct protocol connections. It supports scalability via Redis, PostgreSQL, or NATS backends.",
@@ -173,7 +173,7 @@
     ]
   },
   "is_custom_development": false,
-  "analysis_timestamp": "2026-11-09T11:57:16+00:00",
+  "analysis_timestamp": "2026-11-09T13:13:45+00:00",
   "stars": 10957,
   "last_activity": "2026-11-08T19:35:42Z"
 }

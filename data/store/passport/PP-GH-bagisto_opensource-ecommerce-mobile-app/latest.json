@@ -1,0 +1,167 @@
+{
+  "passport_id": "PP-GH-bagisto_opensource-ecommerce-mobile-app",
+  "software_name": "bagisto/opensource-ecommerce-mobile-app",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/bagisto/opensource-ecommerce-mobile-app",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Time Synchronization",
+      "coverage": "none",
+      "notes": "No evidence of time synchronization capabilities for device management. The app uses standard Flutter/Dart time handling for UI and API requests but lacks NTP/chrony integration or device registry logic.",
+      "capability_id": "CAP.DEVICE.SYNC",
+      "evidence_status": "unknown",
+      "confidence": 0.95,
+      "evidence_refs": []
+    },
+    {
+      "name": "Mobile eCommerce Client",
+      "coverage": "full",
+      "notes": "The repository is explicitly an open-source mobile eCommerce app for Bagisto, supporting product browsing, cart management, and checkout.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.98,
+      "evidence_refs": [
+        "README.md@18a2c27c",
+        "api:project@18a2c27c"
+      ]
+    },
+    {
+      "name": "GraphQL API Integration",
+      "coverage": "full",
+      "notes": "Uses GraphQL Flutter package to communicate with Bagisto backend via GraphQL endpoints.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "lib/core/graphql/graphql_client.dart@18a2c27c"
+      ]
+    },
+    {
+      "name": "Cross-Platform Mobile Runtime",
+      "coverage": "full",
+      "notes": "Supports Android, iOS, Linux, macOS, Windows, and Web via Flutter framework.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "tree@18a2c27c"
+      ]
+    },
+    {
+      "name": "Push Notifications",
+      "coverage": "partial",
+      "notes": "README mentions 'Push Notification' as a feature, but no implementation code was visible in the sampled excerpts.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@18a2c27c"
+      ]
+    }
+  ],
+  "interfaces": [
+    "Bagisto GraphQL API (GraphQL/HTTPS)",
+    "Flutter Driver Extension (TCP)"
+  ],
+  "dependencies": [
+    "flutter",
+    "graphql_flutter",
+    "http",
+    "shared_preferences"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires Android API level 22+ or iOS 15.5+",
+    "Requires a running Bagisto backend with GraphQL API module enabled"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "Assumes significant refactoring is needed to repurpose a consumer-facing eCommerce app into a device management service.",
+      "Assumes GraphQL client can be replaced or extended with MQTT/HTTP APIs for device status publication.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Repository is an open-source mobile eCommerce app for Bagisto",
+      "source_ref": "README.md@18a2c27c",
+      "verified": false
+    },
+    {
+      "claim": "Uses GraphQL Flutter for API communication",
+      "source_ref": "lib/core/graphql/graphql_client.dart@18a2c27c",
+      "verified": true
+    },
+    {
+      "claim": "Supports Android and iOS platforms",
+      "source_ref": "tree@18a2c27c",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The passport claims 'full' coverage for all six platforms. The evidence (`tree`) confirms directories for `android`, `ios`, `linux`, `macos`, `web`, and `windows`. However, the capability status is marked as 'declared' rather than 'verified'. Per the rubric, platform support should be verified by build artifacts or explicit configuration files (e.g., `pubspec.yaml` targets), not just directory presence. Furthermore, the README only explicitly lists Android and iOS in the 'Minimum Versions' section, leaving Linux/macOS/Windows/Web support unverified in the primary documentation. | [medium] The passport correctly identifies that Push Notification implementation code is missing from sampled excerpts. However, it marks the status as 'declared' based solely on README marketing text ('Dark Mode and Push Notification'). The rubric states: 'verified requires code/test evidence, not just README marketing text.' Since no code was found, the capability should be marked as 'none' or 'unknown' with a note that implementation is unverified, rather than claiming partial coverage based on documentation alone. | [medium] The passport cites `lib/core/graphql/graphql_client.dart` as evidence. The excerpt shows a custom HTTP client wrapper (`TimeoutHttpClient`, `LoggingHttpClient`) and imports `graphql_flutter`. However, the excerpt cuts off before showing actual GraphQL query/mutation execution logic or schema definition usage. While the dependency is present, 'verified' full coverage implies functional implementation of the integration. The evidence provided only proves the *presence* of the library and a wrapper, not necessarily the successful integration with the Bagisto backend schema. | [low] The passport claims license 'mit'. The evidence `LICENSE@18a2c27c` confirms the text of the MIT License. However, the copyright holder is listed as 'Webkul Software Private Limited', not the repository owner 'bagisto' (which might be an organization or individual). While this doesn't invalidate the license type, it's a minor discrepancy in attribution that should be noted for legal review."
+  },
+  "revision": "18a2c27c6d25a2e98a1bc84b69328e72d6a5bded",
+  "description": "This repository is an open-source Flutter mobile application for Bagisto eCommerce. It provides a client-side interface for browsing products, managing carts, and placing orders via GraphQL API calls to a Bagisto backend. It does not function as a device management service, nor does it contain logic for time synchronization or health monitoring of IoT devices.",
+  "interfaces_detail": [
+    {
+      "name": "Bagisto GraphQL API",
+      "protocol": "GraphQL/HTTPS",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "Flutter Driver Extension",
+      "protocol": "TCP",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires Android API level 22+ or iOS 15.5+",
+    "Requires a running Bagisto backend with GraphQL API module enabled"
+  ],
+  "runtime": [
+    "Flutter SDK",
+    "Dart VM (JIT/AOT)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No device registry functionality",
+    "No time synchronization (NTP/Chrony) implementation",
+    "No health monitoring logic for devices",
+    "No MQTT client implementation",
+    "No support for SW-Watches or SAM devices"
+  ],
+  "risks": [
+    "License: MIT License is permissive, but repurposing may require significant legal review if commercial redistribution occurs.",
+    "Maintenance: The app depends on Bagisto backend; changes in Bagisto API could break the mobile client.",
+    "Security: Hardcoded endpoints and keys in api_constants.dart need secure management in production."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assumes significant refactoring is needed to repurpose a consumer-facing eCommerce app into a device management service.",
+      "Assumes GraphQL client can be replaced or extended with MQTT/HTTP APIs for device status publication."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:54:33+00:00",
+  "stars": 16085,
+  "last_activity": "2026-10-19T13:57:09Z"
+}

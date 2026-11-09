@@ -105,7 +105,8 @@ def start(srs_text: str, a: EffortAssumptions, progress: Progress = lambda m: No
     return it
 
 
-def refine(parent: Iteration, instruction: str, a: EffortAssumptions, progress: Progress = lambda m: None) -> Iteration:
+def refine(parent: Iteration, instruction: str, a: EffortAssumptions, progress: Progress = lambda m: None,
+           explore: bool = False) -> Iteration:
     key = parent.proposals[-1]
     arch_id, ver = key.split("@v")
     design = e2.get_architecture(arch_id, int(ver))
@@ -114,20 +115,53 @@ def refine(parent: Iteration, instruction: str, a: EffortAssumptions, progress: 
     constraints = list(dict.fromkeys(parent.constraints + intent.constraints))
     changes, critique = [], []
     if intent.needs_architecture_revision and intent.revision_request:
-        fb = ArchitectureFeedback(feedback_id="FB-" + uuid.uuid4().hex[:6].upper(), component_ids=intent.affected_components,
+        import hashlib
+        fid = "FB-" + hashlib.sha256(f"{design.key}|{intent.revision_request}|{intent.constraints}".encode()).hexdigest()[:6].upper()
+        fb = ArchitectureFeedback(feedback_id=fid, component_ids=intent.affected_components,
                                   observations=[f"User instruction: {instruction}"] + [f"Constraint: {c}" for c in intent.constraints],
                                   changed_constraints=intent.constraints, requested_change=intent.revision_request, priority="high")
-        progress(f"Engine 2 revising {design.key}: {fb.requested_change}")
-        new = e2.revise_architecture(arch_id, fb, from_version=design.version)
+        existing = [e2.get_architecture(arch_id, v) for v in e2.list_versions(arch_id)]
+        new = next((x for x in existing if x.parent_id == design.key and any(c.feedback_id == fid for c in x.change_log)), None)
+        if new is not None:
+            progress(f"Reusing existing revision {new.key} for the same request (deterministic, no duplicate version)")
+        else:
+            progress(f"Engine 2 revising {design.key}: {fb.requested_change}")
+            new = e2.revise_architecture(arch_id, fb, from_version=design.version)
         d = e2.diff(design, new)
         changes += [f"Architecture {design.key} -> {new.key}", f"added: {d['added']}", f"removed: {d['removed']}",
                     f"modified: {[m['id'] for m in d['modified']]}", f"coverage gaps {d['gaps_before']} -> {d['gaps_after']}"]
         design = new
     strategies = list(STRATEGIES)
-    evals = evaluate_all(design, a, constraints, strategies, progress=progress, explore_missing=True)
+    evals = evaluate_all(design, a, constraints, strategies, progress=progress, explore_missing=explore)
     pref = intent.preferred_strategy if intent.preferred_strategy != "none" else "balanced"
     evals.sort(key=lambda e: 0 if e.strategy == pref else 1)
-    # deterministic comparison vs parent's equivalent strategy
+    # deterministic comparison: parent's lead option -> new lead option (what the user is steering)
+    if parent.evaluations and evals:
+        pl, nl = parent.evaluations[0], evals[0]
+        def f(r):
+            return f"{r.base:,.0f}" if r.known else "unknown"
+        dh = (nl.total_hours.base - pl.total_hours.base) if nl.total_hours.known and pl.total_hours.known else None
+        critique.append(f"Lead option {pl.label} -> {nl.label}: hours {f(pl.total_hours)} -> {f(nl.total_hours)}"
+                        + (f" ({dh:+,.0f} h, {dh / pl.total_hours.base:+.0%})" if dh is not None else "")
+                        + f"; labor {f(a.labor(pl.total_hours))} -> {f(a.labor(nl.total_hours))} {a.currency}"
+                        + f"; reuse share {pl.score_breakdown['reuse_share']:.0%} -> {nl.score_breakdown['reuse_share']:.0%}"
+                        + f"; unknown estimates {len(pl.unknown_estimates)} -> {len(nl.unknown_estimates)}"
+                        + f"; hard-gate violations {len(pl.hard_gate_violations)} -> {len(nl.hard_gate_violations)}")
+        before = {o.component_id: o for o in pl.component_options}
+        for o in nl.component_options:
+            b = before.get(o.component_id)
+            if b is None:
+                changes.append(f"{o.component_id}: new component -> {o.decision} ({o.candidate_name})")
+            elif (b.decision, b.candidate_id) != (o.decision, o.candidate_id):
+                changes.append(f"{o.component_id}: {b.decision} ({b.candidate_name}) -> {o.decision} ({o.candidate_name}); "
+                               f"hours {f(b.effort.hours)} -> {f(o.effort.hours)}"
+                               + ("; adds unknown price" if any(not c.known for c in o.nonlabor_costs) else "")
+                               + (f"; builds missing: {', '.join(o.gaps)}" if o.gaps else ""))
+        if nl.unknown_estimates and len(nl.unknown_estimates) > len(pl.unknown_estimates):
+            critique.append("Worse: more unknown purchase prices — total money cannot be stated until vendor quotes arrive.")
+        risks_new = set(nl.risks) - set(pl.risks)
+        if risks_new:
+            critique.append("New risks from reused software: " + "; ".join(sorted(risks_new))[:400])
     prev = {e.strategy: e for e in parent.evaluations}
     for e in evals:
         p = prev.get(e.strategy)

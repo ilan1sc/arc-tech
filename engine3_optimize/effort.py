@@ -30,6 +30,10 @@ class EffortAssumptions(BaseModel):
     reuse_onboarding_hours: R = R(low=24, base=40, high=80)
     reuse_estimate_spread: tuple[float, float] = (0.6, 2.0)   # passport adaptation estimate -> low/high multipliers
     reuse_missing_capability_build_factor: float = 0.8       # fraction of BUILD hours per missing capability share
+    # Floor for adapting reused software, as a fraction of the BUILD baseline for that component kind.
+    # LLM passport estimates are indicative and tend to be optimistic; the floor covers deployment hardening,
+    # domain-model mapping, security review of third-party code and long-term ownership onboarding.
+    reuse_adaptation_floor: R = R(low=0.15, base=0.25, high=0.40)
     buy_integration_fraction: R = R(low=0.15, base=0.30, high=0.50)  # of BUILD hours
     buy_maintenance_fraction_per_year: float = 0.20          # of acquisition, when price is known
     interface_hours_by_mode: dict[str, R] = {

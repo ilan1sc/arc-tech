@@ -1,0 +1,1 @@
+{"path": "repos/collectiveidea/audited/contents/lib/audited-rspec.rb?ref=dbf8432604ec97734bcfb3dc6df61f4faa0d1b84", "data": "# frozen_string_literal: true\n\nrequire \"audited/rspec_matchers\"\nmodule RSpec::Matchers\n  include Audited::RspecMatchers\nend\n"}

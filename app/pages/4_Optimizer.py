@@ -92,7 +92,7 @@ st.caption('Try: "Too expensive; maximize reuse" · "Offline only" · "Reduce co
 msg = st.chat_input("Instruction for the optimizer…")
 if msg:
     with st.status(f"Refining: {msg}", expanded=True) as s:
-        new = e3.refine(it, msg, a, progress=lambda m: s.write(m))
+        new = e3.refine(it, msg, a, progress=lambda m: s.write(m), explore=explore)
         s.update(label=f"New iteration {new.iteration_id}", state="complete")
     st.session_state.it = new.iteration_id
     st.rerun()

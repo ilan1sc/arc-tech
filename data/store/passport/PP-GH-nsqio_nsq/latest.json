@@ -135,7 +135,7 @@
   ],
   "validation": {
     "status": "pending",
-    "judge_notes": "REVISE: [high] The evidence reference 'tree' only proves the existence of the nsqlookupd directory in the repository structure. It does not verify that the component implements service discovery or routing logic. A directory listing is insufficient to claim functional coverage for a complex capability. | [high] Similar to Service Discovery, referencing only the directory tree ('nsqadmin/') does not verify the existence or functionality of a web interface. It proves code exists, but not that it constitutes a functional UI capability. | [medium] The capability is marked 'verified' in the rubric sense (requires code/test), but the evidence provided is marketing text (README) and metadata (API). There is no source code or test file cited to verify the actual implementation of pub/sub logic. | [medium] The passport claims HTTPS support for these interfaces. The evidence [Dockerfile@85cf10c0] exposes ports but does not show configuration or code enabling TLS/SSL termination. The README mentions SSL Root CA certs but doesn't prove the server enforces HTTPS by default or supports it natively without external proxies. | [low] The go.mod file specifies 'go 1.25.0'. As of the current date (implied by analysis timestamp 2026-11-09), this version may be future-dated or a typo if stable releases lag. While not strictly an error, it raises a risk flag for compatibility."
+    "judge_notes": "REVISE: [medium] LLM judge unavailable: ARC_OFFLINE=1 and no cached response for _JudgeOut judge:PP-GH-nsqio_nsq"
   },
   "revision": "85cf10c09c6c3c86160d6f0eb156f62d0efc1648",
   "description": "NSQ is a realtime distributed messaging platform designed for high throughput and low latency. It provides a decentralized topology for publish/subscribe messaging with reliable delivery guarantees. The system consists of nsqd (daemon), nsqlookupd (discovery/routing), and nsqadmin (web UI). It supports multiple client libraries and binary protocols over TCP.",
@@ -194,7 +194,7 @@
     ]
   },
   "is_custom_development": false,
-  "analysis_timestamp": "2026-11-09T11:56:20+00:00",
+  "analysis_timestamp": "2026-11-09T13:13:45+00:00",
   "stars": 25776,
   "last_activity": "2026-08-11T18:19:49Z"
 }

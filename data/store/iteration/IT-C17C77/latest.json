@@ -1,0 +1,6035 @@
+{
+  "iteration_id": "IT-C17C77",
+  "parent_iteration_id": "IT-C8B495",
+  "user_instruction": "Offline only",
+  "constraints": [
+    "offline-only: no internet or cloud dependency at runtime"
+  ],
+  "objectives": [],
+  "proposals": [
+    "ARCH-SWISSLINK@v2"
+  ],
+  "evaluations": [
+    {
+      "architecture_id": "ARCH-SWISSLINK",
+      "architecture_version": 2,
+      "label": "C · Build-heavy (ARCH-SWISSLINK@v2)",
+      "strategy": "build_heavy",
+      "component_options": [
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-EDGE-GW",
+          "candidate_id": "PP-CUSTOM-C-EDGE-GW",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.COMMS.DEGRADED",
+            "CAP.SEC.ENCRYPT"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 300.0,
+            "base": 500.0,
+            "high": 900.0
+          },
+          "effort": {
+            "target_id": "C-EDGE-GW",
+            "target_kind": "component",
+            "hours": {
+              "low": 444.0,
+              "base": 740.0,
+              "high": 1332.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 300.0,
+                "base": 500.0,
+                "high": 900.0
+              },
+              "configuration": {
+                "low": 15.0,
+                "base": 25.0,
+                "high": 45.0
+              },
+              "testing": {
+                "low": 75.0,
+                "base": 125.0,
+                "high": 225.0
+              },
+              "security": {
+                "low": 30.0,
+                "base": 50.0,
+                "high": 90.0
+              },
+              "deployment": {
+                "low": 24.0,
+                "base": 40.0,
+                "high": 72.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'gateway' baseline 300/500/900 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'gateway' baseline 300/500/900 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MESSAGING",
+          "candidate_id": "PP-CUSTOM-C-MESSAGING",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.COMMS.MESSAGING"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-MESSAGING",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-FUSION",
+          "candidate_id": "PP-CUSTOM-C-FUSION",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.FUSION.NORMALIZE",
+            "CAP.FUSION.FUSE"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-FUSION",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MAP-SVC",
+          "candidate_id": "PP-CUSTOM-C-MAP-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.MAP.LAYERS",
+            "CAP.TRACK.GEOFENCE",
+            "CAP.ROUTE.COMPUTE",
+            "CAP.TRACK.HISTORY",
+            "CAP.TRACK.POSITION.STALE"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-MAP-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-VIDEO-PIPE",
+          "candidate_id": "PP-CUSTOM-C-VIDEO-PIPE",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.VIDEO.INGEST",
+            "CAP.VIDEO.ANALYTICS",
+            "CAP.VIDEO.TRACKING",
+            "CAP.PLATFORM.GPU"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 600.0,
+            "base": 1100.0,
+            "high": 2000.0
+          },
+          "effort": {
+            "target_id": "C-VIDEO-PIPE",
+            "target_kind": "component",
+            "hours": {
+              "low": 888.0,
+              "base": 1628.0,
+              "high": 2960.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 600.0,
+                "base": 1100.0,
+                "high": 2000.0
+              },
+              "configuration": {
+                "low": 30.0,
+                "base": 55.0,
+                "high": 100.0
+              },
+              "testing": {
+                "low": 150.0,
+                "base": 275.0,
+                "high": 500.0
+              },
+              "security": {
+                "low": 60.0,
+                "base": 110.0,
+                "high": 200.0
+              },
+              "deployment": {
+                "low": 48.0,
+                "base": 88.0,
+                "high": 160.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'pipeline' baseline 600/1100/2000 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'pipeline' baseline 600/1100/2000 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-ALERT-SVC",
+          "candidate_id": "PP-CUSTOM-C-ALERT-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.ALERT.EMERGENCY",
+            "CAP.ALERT.ACKNOWLEDGE",
+            "CAP.ALERT.DEVICE_STATUS"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-ALERT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DEVICE-MGMT",
+          "candidate_id": "PP-CUSTOM-C-DEVICE-MGMT",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.DEVICE.SYNC"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-DEVICE-MGMT",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DIARY-SVC",
+          "candidate_id": "PP-CUSTOM-C-DIARY-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.DIARY.RECORD",
+            "CAP.DIARY.SEARCH"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-DIARY-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUDIT-SVC",
+          "candidate_id": "PP-CUSTOM-C-AUDIT-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.SEC.AUDIT"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-AUDIT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MOBILE-APP",
+          "candidate_id": "PP-CUSTOM-C-MOBILE-APP",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.MOBILE.APP",
+            "CAP.MAP.OFFLINE",
+            "CAP.MOBILE.NOTIFY"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 600.0,
+            "base": 1000.0,
+            "high": 1800.0
+          },
+          "effort": {
+            "target_id": "C-MOBILE-APP",
+            "target_kind": "component",
+            "hours": {
+              "low": 888.0,
+              "base": 1480.0,
+              "high": 2664.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 600.0,
+                "base": 1000.0,
+                "high": 1800.0
+              },
+              "configuration": {
+                "low": 30.0,
+                "base": 50.0,
+                "high": 90.0
+              },
+              "testing": {
+                "low": 150.0,
+                "base": 250.0,
+                "high": 450.0
+              },
+              "security": {
+                "low": 60.0,
+                "base": 100.0,
+                "high": 180.0
+              },
+              "deployment": {
+                "low": 48.0,
+                "base": 80.0,
+                "high": 144.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'client_app' baseline 600/1000/1800 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'client_app' baseline 600/1000/1800 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-COMMAND-UI",
+          "candidate_id": "PP-CUSTOM-C-COMMAND-UI",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.MAP.LAYERS"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 500.0,
+            "base": 900.0,
+            "high": 1500.0
+          },
+          "effort": {
+            "target_id": "C-COMMAND-UI",
+            "target_kind": "component",
+            "hours": {
+              "low": 740.0,
+              "base": 1332.0,
+              "high": 2220.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 500.0,
+                "base": 900.0,
+                "high": 1500.0
+              },
+              "configuration": {
+                "low": 25.0,
+                "base": 45.0,
+                "high": 75.0
+              },
+              "testing": {
+                "low": 125.0,
+                "base": 225.0,
+                "high": 375.0
+              },
+              "security": {
+                "low": 50.0,
+                "base": 90.0,
+                "high": 150.0
+              },
+              "deployment": {
+                "low": 40.0,
+                "base": 72.0,
+                "high": 120.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'ui' baseline 500/900/1500 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'ui' baseline 500/900/1500 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-CONFIG-SVC",
+          "candidate_id": "PP-CUSTOM-C-CONFIG-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-CONFIG-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUTH-SVC",
+          "candidate_id": "PP-CUSTOM-C-AUTH-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-AUTH-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        }
+      ],
+      "interface_efforts": [
+        {
+          "target_id": "IF-01",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-02",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-03",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-04",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-05",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "stream interface baseline 120 h"
+          ]
+        },
+        {
+          "target_id": "IF-06",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-07",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-08",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-09",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-10",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-11",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-12",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-13",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-14",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-15",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-16",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-17",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-18",
+          "target_kind": "interface",
+          "hours": {
+            "low": 44.4,
+            "base": 88.8,
+            "high": 177.6
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 30.0,
+              "base": 60.0,
+              "high": 120.0
+            },
+            "configuration": {
+              "low": 1.5,
+              "base": 3.0,
+              "high": 6.0
+            },
+            "testing": {
+              "low": 7.5,
+              "base": 15.0,
+              "high": 30.0
+            },
+            "security": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "deployment": {
+              "low": 2.4,
+              "base": 4.8,
+              "high": 9.6
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h"
+          ]
+        },
+        {
+          "target_id": "IF-19",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-20",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "SHARED-Platform, CI",
+          "target_kind": "shared",
+          "hours": {
+            "low": 160.0,
+            "base": 240.0,
+            "high": 400.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Platform, CI/CD and containerization"
+          ]
+        },
+        {
+          "target_id": "SHARED-Security har",
+          "target_kind": "shared",
+          "hours": {
+            "low": 200.0,
+            "base": 320.0,
+            "high": 600.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Security hardening and accreditation preparation"
+          ]
+        },
+        {
+          "target_id": "SHARED-System integ",
+          "target_kind": "shared",
+          "hours": {
+            "low": 240.0,
+            "base": 400.0,
+            "high": 700.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "System integration and end-to-end testing"
+          ]
+        }
+      ],
+      "mandatory_coverage": 1.0,
+      "integration_effort_range": {
+        "low": 1036.0,
+        "base": 2072.0,
+        "high": 4144.0
+      },
+      "development_effort_range": {
+        "low": 8288.0,
+        "base": 14504.0,
+        "high": 25160.0
+      },
+      "verification_effort_range": {
+        "low": 1960.0,
+        "base": 3430.0,
+        "high": 5950.0
+      },
+      "total_hours": {
+        "low": 11412.6,
+        "base": 20166.4,
+        "high": 35654.6
+      },
+      "hourly_rate": 120.0,
+      "labor_cost_range": {
+        "low": 1369512.0,
+        "base": 2419968.0,
+        "high": 4278552.0
+      },
+      "acquisition_cost_range": {
+        "low": 0.0,
+        "base": 0.0,
+        "high": 0.0
+      },
+      "lifecycle_cost_range": {
+        "low": 1369512.0,
+        "base": 2419968.0,
+        "high": 4278552.0
+      },
+      "unknown_estimates": [],
+      "risks": [],
+      "unresolved_gaps": [],
+      "hard_gate_violations": [],
+      "feasible": true,
+      "pareto": true,
+      "score_breakdown": {
+        "total_hours_base": 20166.4,
+        "reuse_share": 0.0,
+        "mandatory_coverage": 1.0,
+        "risk_count": 0.0,
+        "shared_hours_base": 960.0,
+        "risk_reserve_fraction": 0.15
+      }
+    },
+    {
+      "architecture_id": "ARCH-SWISSLINK",
+      "architecture_version": 2,
+      "label": "A · Balanced (ARCH-SWISSLINK@v2)",
+      "strategy": "balanced",
+      "component_options": [
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-EDGE-GW",
+          "candidate_id": "PP-GH-ThingsGateway_ThingsGateway",
+          "candidate_name": "ThingsGateway/ThingsGateway",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.COMMS.DEGRADED",
+            "CAP.SEC.ENCRYPT"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 69.0,
+            "base": 165.0,
+            "high": 440.0
+          },
+          "effort": {
+            "target_id": "C-EDGE-GW",
+            "target_kind": "component",
+            "hours": {
+              "low": 102.12,
+              "base": 244.2,
+              "high": 651.2
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 69.0,
+                "base": 165.0,
+                "high": 440.0
+              },
+              "configuration": {
+                "low": 3.45,
+                "base": 8.25,
+                "high": 22.0
+              },
+              "testing": {
+                "low": 17.25,
+                "base": 41.25,
+                "high": 110.0
+              },
+              "security": {
+                "low": 6.9,
+                "base": 16.5,
+                "high": 44.0
+              },
+              "deployment": {
+                "low": 5.5200000000000005,
+                "base": 13.200000000000001,
+                "high": 35.2
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 24 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 24 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@b9c92a5c",
+            "README.md@b9c92a5c",
+            "src/ThingsGateway.Gateway.Application/Model/AlarmVariable.cs@b9c92a5c",
+            "README.md@b9c92a5c"
+          ],
+          "assumptions": [
+            "Passport estimate 24 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 24 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/2 required capabilities covered; license apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MESSAGING",
+          "candidate_id": "PP-GH-nsqio_nsq",
+          "candidate_name": "nsqio/nsq",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.COMMS.MESSAGING"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-MESSAGING",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 20 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 20 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@85cf10c0",
+            "README.md@85cf10c0",
+            "README.md@85cf10c0",
+            "nsqd/backend_queue.go@85cf10c0",
+            "nsqd/in_flight_pqueue.go@85cf10c0",
+            "Dockerfile@85cf10c0"
+          ],
+          "assumptions": [
+            "Passport estimate 20 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 20 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-FUSION",
+          "candidate_id": "PP-GH-locusrobotics_fuse",
+          "candidate_name": "locusrobotics/fuse",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.FUSION.NORMALIZE",
+            "CAP.FUSION.FUSE"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-FUSION",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: BSD",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "BSD",
+          "evidence_refs": [
+            "api:project@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "fuse_core/CMakeLists.txt@8e3f0a1f"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/2 required capabilities covered; license BSD (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MAP-SVC",
+          "candidate_id": "PP-CUSTOM-C-MAP-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.MAP.LAYERS",
+            "CAP.TRACK.GEOFENCE",
+            "CAP.ROUTE.COMPUTE",
+            "CAP.TRACK.HISTORY",
+            "CAP.TRACK.POSITION.STALE"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-MAP-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-VIDEO-PIPE",
+          "candidate_id": "PP-CUSTOM-C-VIDEO-PIPE",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.VIDEO.INGEST",
+            "CAP.VIDEO.ANALYTICS",
+            "CAP.VIDEO.TRACKING",
+            "CAP.PLATFORM.GPU"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 600.0,
+            "base": 1100.0,
+            "high": 2000.0
+          },
+          "effort": {
+            "target_id": "C-VIDEO-PIPE",
+            "target_kind": "component",
+            "hours": {
+              "low": 888.0,
+              "base": 1628.0,
+              "high": 2960.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 600.0,
+                "base": 1100.0,
+                "high": 2000.0
+              },
+              "configuration": {
+                "low": 30.0,
+                "base": 55.0,
+                "high": 100.0
+              },
+              "testing": {
+                "low": 150.0,
+                "base": 275.0,
+                "high": 500.0
+              },
+              "security": {
+                "low": 60.0,
+                "base": 110.0,
+                "high": 200.0
+              },
+              "deployment": {
+                "low": 48.0,
+                "base": 88.0,
+                "high": 160.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'pipeline' baseline 600/1100/2000 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'pipeline' baseline 600/1100/2000 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-ALERT-SVC",
+          "candidate_id": "PP-GH-TwiN_gatus",
+          "candidate_name": "TwiN/gatus",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.ALERT.EMERGENCY",
+            "CAP.ALERT.DEVICE_STATUS"
+          ],
+          "gaps": [
+            "CAP.ALERT.ACKNOWLEDGE"
+          ],
+          "interface_fit": 0.667,
+          "adaptation_effort_range": {
+            "low": 190.66666666666669,
+            "base": 401.66666666666663,
+            "high": 880.0
+          },
+          "effort": {
+            "target_id": "C-ALERT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 282.18666666666667,
+              "base": 594.4666666666666,
+              "high": 1302.4
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 190.66666666666669,
+                "base": 401.66666666666663,
+                "high": 880.0
+              },
+              "configuration": {
+                "low": 9.533333333333335,
+                "base": 20.083333333333332,
+                "high": 44.0
+              },
+              "testing": {
+                "low": 47.66666666666667,
+                "base": 100.41666666666666,
+                "high": 220.0
+              },
+              "security": {
+                "low": 19.06666666666667,
+                "base": 40.166666666666664,
+                "high": 88.0
+              },
+              "deployment": {
+                "low": 15.253333333333336,
+                "base": 32.13333333333333,
+                "high": 70.4
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (33%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@4b84fa2d",
+            "alerting/config.go@4b84fa2d",
+            "alerting/provider/incidentio/incidentio.go@4b84fa2d",
+            "Dockerfile@4b84fa2d"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (33%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/3 required capabilities covered; missing Alert Acknowledgement; license apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DEVICE-MGMT",
+          "candidate_id": "PP-CUSTOM-C-DEVICE-MGMT",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.DEVICE.SYNC"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-DEVICE-MGMT",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DIARY-SVC",
+          "candidate_id": "PP-GH-xerj-org_xerj",
+          "candidate_name": "xerj-org/xerj",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.DIARY.SEARCH"
+          ],
+          "gaps": [
+            "CAP.DIARY.RECORD"
+          ],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 244.0,
+            "base": 495.0,
+            "high": 1040.0
+          },
+          "effort": {
+            "target_id": "C-DIARY-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 361.11999999999995,
+              "base": 732.6,
+              "high": 1539.2
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 244.0,
+                "base": 495.0,
+                "high": 1040.0
+              },
+              "configuration": {
+                "low": 12.200000000000001,
+                "base": 24.75,
+                "high": 52.0
+              },
+              "testing": {
+                "low": 61.0,
+                "base": 123.75,
+                "high": 260.0
+              },
+              "security": {
+                "low": 24.400000000000002,
+                "base": 49.5,
+                "high": 104.0
+              },
+              "deployment": {
+                "low": 19.52,
+                "base": 39.6,
+                "high": 83.2
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (50%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/Dockerfile@50e4ffde",
+            "README.md@50e4ffde",
+            "dsh/package.json@50e4ffde"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (50%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/2 required capabilities covered; missing Diary Entry Recording; license apache-2.0 (permissive); maturity developing"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUDIT-SVC",
+          "candidate_id": "PP-GH-collectiveidea_audited",
+          "candidate_name": "collectiveidea/audited",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.SEC.AUDIT"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-AUDIT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 8 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 8 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@dbf84326",
+            "lib/audited/audit.rb@dbf84326",
+            "README.md@dbf84326",
+            "LICENSE@dbf84326"
+          ],
+          "assumptions": [
+            "Passport estimate 8 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 8 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable; unknown: interface_fit"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MOBILE-APP",
+          "candidate_id": "PP-CUSTOM-C-MOBILE-APP",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.MOBILE.APP",
+            "CAP.MAP.OFFLINE",
+            "CAP.MOBILE.NOTIFY"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 600.0,
+            "base": 1000.0,
+            "high": 1800.0
+          },
+          "effort": {
+            "target_id": "C-MOBILE-APP",
+            "target_kind": "component",
+            "hours": {
+              "low": 888.0,
+              "base": 1480.0,
+              "high": 2664.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 600.0,
+                "base": 1000.0,
+                "high": 1800.0
+              },
+              "configuration": {
+                "low": 30.0,
+                "base": 50.0,
+                "high": 90.0
+              },
+              "testing": {
+                "low": 150.0,
+                "base": 250.0,
+                "high": 450.0
+              },
+              "security": {
+                "low": 60.0,
+                "base": 100.0,
+                "high": 180.0
+              },
+              "deployment": {
+                "low": 48.0,
+                "base": 80.0,
+                "high": 144.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'client_app' baseline 600/1000/1800 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'client_app' baseline 600/1000/1800 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-COMMAND-UI",
+          "candidate_id": "PP-GH-maptiler_tileserver-gl",
+          "candidate_name": "maptiler/tileserver-gl",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.MAP.LAYERS"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 99.0,
+            "base": 265.0,
+            "high": 680.0
+          },
+          "effort": {
+            "target_id": "C-COMMAND-UI",
+            "target_kind": "component",
+            "hours": {
+              "low": 146.51999999999998,
+              "base": 392.2,
+              "high": 1006.4
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 99.0,
+                "base": 265.0,
+                "high": 680.0
+              },
+              "configuration": {
+                "low": 4.95,
+                "base": 13.25,
+                "high": 34.0
+              },
+              "testing": {
+                "low": 24.75,
+                "base": 66.25,
+                "high": 170.0
+              },
+              "security": {
+                "low": 9.9,
+                "base": 26.5,
+                "high": 68.0
+              },
+              "deployment": {
+                "low": 7.92,
+                "base": 21.2,
+                "high": 54.4
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 4 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 4 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: Apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "Apache-2.0",
+          "evidence_refs": [
+            "README.md@19a8df21",
+            "package.json@19a8df21",
+            "src/mbtiles_wrapper.js@19a8df21",
+            "src/healthcheck.js@19a8df21",
+            "test/data_decorator.js@19a8df21"
+          ],
+          "assumptions": [
+            "Passport estimate 4 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 4 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license Apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-CONFIG-SVC",
+          "candidate_id": "PP-GH-oauth2-proxy_oauth2-proxy",
+          "candidate_name": "oauth2-proxy/oauth2-proxy",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-CONFIG-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@39ec0e19",
+            "pkg/authentication/basic/htpasswd.go@39ec0e19",
+            "oauthproxy.go@39ec0e19",
+            "oauthproxy.go@39ec0e19"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUTH-SVC",
+          "candidate_id": "PP-CUSTOM-C-AUTH-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-AUTH-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        }
+      ],
+      "interface_efforts": [
+        {
+          "target_id": "IF-01",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-02",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-03",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-04",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-05",
+          "target_kind": "interface",
+          "hours": {
+            "low": 133.2,
+            "base": 266.4,
+            "high": 532.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 90.0,
+              "base": 180.0,
+              "high": 360.0
+            },
+            "configuration": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "testing": {
+              "low": 22.5,
+              "base": 45.0,
+              "high": 90.0
+            },
+            "security": {
+              "low": 9.0,
+              "base": 18.0,
+              "high": 36.0
+            },
+            "deployment": {
+              "low": 7.2,
+              "base": 14.4,
+              "high": 28.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "stream interface baseline 120 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-06",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-07",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-08",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-09",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-10",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-11",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-12",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-13",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-14",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-15",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-16",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-17",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-18",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-19",
+          "target_kind": "interface",
+          "hours": {
+            "low": 59.2,
+            "base": 118.4,
+            "high": 236.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 40.0,
+              "base": 80.0,
+              "high": 160.0
+            },
+            "configuration": {
+              "low": 2.0,
+              "base": 4.0,
+              "high": 8.0
+            },
+            "testing": {
+              "low": 10.0,
+              "base": 20.0,
+              "high": 40.0
+            },
+            "security": {
+              "low": 4.0,
+              "base": 8.0,
+              "high": 16.0
+            },
+            "deployment": {
+              "low": 3.2,
+              "base": 6.4,
+              "high": 12.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h"
+          ]
+        },
+        {
+          "target_id": "IF-20",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "SHARED-Platform, CI",
+          "target_kind": "shared",
+          "hours": {
+            "low": 160.0,
+            "base": 240.0,
+            "high": 400.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Platform, CI/CD and containerization"
+          ]
+        },
+        {
+          "target_id": "SHARED-Security har",
+          "target_kind": "shared",
+          "hours": {
+            "low": 200.0,
+            "base": 320.0,
+            "high": 600.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Security hardening and accreditation preparation"
+          ]
+        },
+        {
+          "target_id": "SHARED-System integ",
+          "target_kind": "shared",
+          "hours": {
+            "low": 240.0,
+            "base": 400.0,
+            "high": 700.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "System integration and end-to-end testing"
+          ]
+        }
+      ],
+      "mandatory_coverage": 1.0,
+      "integration_effort_range": {
+        "low": 1524.3999999999996,
+        "base": 3048.7999999999993,
+        "high": 6097.5999999999985
+      },
+      "development_effort_range": {
+        "low": 4941.2266666666665,
+        "base": 9452.266666666666,
+        "high": 18766.4
+      },
+      "verification_effort_range": {
+        "low": 1168.5333333333333,
+        "base": 2235.333333333333,
+        "high": 4438.0
+      },
+      "total_hours": {
+        "low": 8125.470666666666,
+        "base": 15480.226666666666,
+        "high": 30548.6
+      },
+      "hourly_rate": 120.0,
+      "labor_cost_range": {
+        "low": 975056.48,
+        "base": 1857627.2,
+        "high": 3665832.0
+      },
+      "acquisition_cost_range": {
+        "low": 0.0,
+        "base": 0.0,
+        "high": 0.0
+      },
+      "lifecycle_cost_range": {
+        "low": 975056.48,
+        "base": 1857627.2,
+        "high": 3665832.0
+      },
+      "unknown_estimates": [],
+      "risks": [
+        "BSD 2-Clause License is permissive but requires attribution",
+        "Database schema changes required (`audits` table).",
+        "Go 1.25.0 requirement may be future-dated or typo (current stable is ~1.21)",
+        "License: Apache 2.0 is permissive, but ensure compliance with all dependencies.",
+        "License: Apache 2.0, but PRO plugins are commercial; ensure required features are in the open-source core.",
+        "License: Apache-2.0 is permissive but requires attribution",
+        "License: BSD License (compatible).",
+        "MIT License is permissive but lacks patent protection",
+        "Maintenance: Gatus is actively maintained, but adapting it to a specific defense architecture may require ongoing maintenance of custom patches.",
+        "Maintenance: Last activity 2026-08-19 (future date in metadata, likely a typo or very recent; stars=885 indicates community interest but active maintenance status needs verification).",
+        "Maintenance: Project activity shows recent commits (2026), but reliance on specific .NET versions (8/10) may require updates.",
+        "Maturity: Release candidate (rc.102) indicates ongoing development; API stability not guaranteed",
+        "Native dependencies may complicate deployment in restricted environments",
+        "Volunteer-driven project may have variable response times for security issues",
+        "YAML serialization of `audited_changes` can be a security risk if untrusted data is stored or deserialized without proper sanitization."
+      ],
+      "unresolved_gaps": [
+        "C-ALERT-SVC: build extension for CAP.ALERT.ACKNOWLEDGE",
+        "C-DIARY-SVC: build extension for CAP.DIARY.RECORD"
+      ],
+      "hard_gate_violations": [],
+      "feasible": true,
+      "pareto": true,
+      "score_breakdown": {
+        "total_hours_base": 15480.226666666666,
+        "reuse_share": 0.62,
+        "mandatory_coverage": 1.0,
+        "risk_count": 15.0,
+        "shared_hours_base": 960.0,
+        "risk_reserve_fraction": 0.15
+      }
+    },
+    {
+      "architecture_id": "ARCH-SWISSLINK",
+      "architecture_version": 2,
+      "label": "B · Max reuse (ARCH-SWISSLINK@v2)",
+      "strategy": "max_reuse",
+      "component_options": [
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-EDGE-GW",
+          "candidate_id": "PP-GH-ThingsGateway_ThingsGateway",
+          "candidate_name": "ThingsGateway/ThingsGateway",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.COMMS.DEGRADED",
+            "CAP.SEC.ENCRYPT"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 69.0,
+            "base": 165.0,
+            "high": 440.0
+          },
+          "effort": {
+            "target_id": "C-EDGE-GW",
+            "target_kind": "component",
+            "hours": {
+              "low": 102.12,
+              "base": 244.2,
+              "high": 651.2
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 69.0,
+                "base": 165.0,
+                "high": 440.0
+              },
+              "configuration": {
+                "low": 3.45,
+                "base": 8.25,
+                "high": 22.0
+              },
+              "testing": {
+                "low": 17.25,
+                "base": 41.25,
+                "high": 110.0
+              },
+              "security": {
+                "low": 6.9,
+                "base": 16.5,
+                "high": 44.0
+              },
+              "deployment": {
+                "low": 5.5200000000000005,
+                "base": 13.200000000000001,
+                "high": 35.2
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 24 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 24 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@b9c92a5c",
+            "README.md@b9c92a5c",
+            "src/ThingsGateway.Gateway.Application/Model/AlarmVariable.cs@b9c92a5c",
+            "README.md@b9c92a5c"
+          ],
+          "assumptions": [
+            "Passport estimate 24 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 24 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/2 required capabilities covered; license apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MESSAGING",
+          "candidate_id": "PP-GH-nsqio_nsq",
+          "candidate_name": "nsqio/nsq",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.COMMS.MESSAGING"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-MESSAGING",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 20 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 20 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@85cf10c0",
+            "README.md@85cf10c0",
+            "README.md@85cf10c0",
+            "nsqd/backend_queue.go@85cf10c0",
+            "nsqd/in_flight_pqueue.go@85cf10c0",
+            "Dockerfile@85cf10c0"
+          ],
+          "assumptions": [
+            "Passport estimate 20 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 20 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-FUSION",
+          "candidate_id": "PP-GH-locusrobotics_fuse",
+          "candidate_name": "locusrobotics/fuse",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.FUSION.NORMALIZE",
+            "CAP.FUSION.FUSE"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-FUSION",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: BSD",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "BSD",
+          "evidence_refs": [
+            "api:project@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "README.md@8e3f0a1f",
+            "fuse_core/CMakeLists.txt@8e3f0a1f"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/2 required capabilities covered; license BSD (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MAP-SVC",
+          "candidate_id": "PP-GH-antvis_L7",
+          "candidate_name": "antvis/L7",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.MAP.LAYERS"
+          ],
+          "gaps": [
+            "CAP.TRACK.GEOFENCE",
+            "CAP.ROUTE.COMPUTE",
+            "CAP.TRACK.HISTORY",
+            "CAP.TRACK.POSITION.STALE"
+          ],
+          "interface_fit": 0.667,
+          "adaptation_effort_range": {
+            "low": 340.00000000000006,
+            "base": 663.0000000000001,
+            "high": 1328.0
+          },
+          "effort": {
+            "target_id": "C-MAP-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 503.20000000000005,
+              "base": 981.24,
+              "high": 1965.44
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 340.00000000000006,
+                "base": 663.0000000000001,
+                "high": 1328.0
+              },
+              "configuration": {
+                "low": 17.000000000000004,
+                "base": 33.150000000000006,
+                "high": 66.4
+              },
+              "testing": {
+                "low": 85.00000000000001,
+                "base": 165.75000000000003,
+                "high": 332.0
+              },
+              "security": {
+                "low": 34.00000000000001,
+                "base": 66.30000000000001,
+                "high": 132.8
+              },
+              "deployment": {
+                "low": 27.200000000000006,
+                "base": 53.04000000000001,
+                "high": 106.24000000000001
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (80%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@53643937",
+            "packages/layers/src/heatmap/index.ts@53643937",
+            "packages/layers/src/plugins/DataMappingPlugin.ts@53643937",
+            "README.md@53643937"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (80%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/5 required capabilities covered; missing Geofencing, Route Computation, Position History & Playback, Stale Position Handling; license mit (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-VIDEO-PIPE",
+          "candidate_id": "COTS-VIDEO-SDK",
+          "candidate_name": "Commercial video analytics SDK (placeholder)",
+          "decision": "BUY",
+          "coverage": [
+            "CAP.VIDEO.INGEST",
+            "CAP.VIDEO.ANALYTICS",
+            "CAP.VIDEO.TRACKING",
+            "CAP.PLATFORM.GPU"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 90.0,
+            "base": 330.0,
+            "high": 1000.0
+          },
+          "effort": {
+            "target_id": "C-VIDEO-PIPE",
+            "target_kind": "component",
+            "hours": {
+              "low": 133.2,
+              "base": 488.4,
+              "high": 1480.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 90.0,
+                "base": 330.0,
+                "high": 1000.0
+              },
+              "configuration": {
+                "low": 4.5,
+                "base": 16.5,
+                "high": 50.0
+              },
+              "testing": {
+                "low": 22.5,
+                "base": 82.5,
+                "high": 250.0
+              },
+              "security": {
+                "low": 9.0,
+                "base": 33.0,
+                "high": 100.0
+              },
+              "deployment": {
+                "low": 7.2,
+                "base": 26.400000000000002,
+                "high": 80.0
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUY: configuration/integration 15%-50% of BUILD baseline; pricing unknown"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "Acquisition: Commercial video analytics SDK (placeholder)",
+              "one_time": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": false,
+              "note": "Vendor quote required — PRICE UNKNOWN"
+            }
+          ],
+          "offline_capable": true,
+          "license": "commercial",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUY: configuration/integration 15%-50% of BUILD baseline; pricing unknown"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-ALERT-SVC",
+          "candidate_id": "PP-GH-TwiN_gatus",
+          "candidate_name": "TwiN/gatus",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.ALERT.EMERGENCY",
+            "CAP.ALERT.DEVICE_STATUS"
+          ],
+          "gaps": [
+            "CAP.ALERT.ACKNOWLEDGE"
+          ],
+          "interface_fit": 0.667,
+          "adaptation_effort_range": {
+            "low": 190.66666666666669,
+            "base": 401.66666666666663,
+            "high": 880.0
+          },
+          "effort": {
+            "target_id": "C-ALERT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 282.18666666666667,
+              "base": 594.4666666666666,
+              "high": 1302.4
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 190.66666666666669,
+                "base": 401.66666666666663,
+                "high": 880.0
+              },
+              "configuration": {
+                "low": 9.533333333333335,
+                "base": 20.083333333333332,
+                "high": 44.0
+              },
+              "testing": {
+                "low": 47.66666666666667,
+                "base": 100.41666666666666,
+                "high": 220.0
+              },
+              "security": {
+                "low": 19.06666666666667,
+                "base": 40.166666666666664,
+                "high": 88.0
+              },
+              "deployment": {
+                "low": 15.253333333333336,
+                "base": 32.13333333333333,
+                "high": 70.4
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (33%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@4b84fa2d",
+            "alerting/config.go@4b84fa2d",
+            "alerting/provider/incidentio/incidentio.go@4b84fa2d",
+            "Dockerfile@4b84fa2d"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (33%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "2/3 required capabilities covered; missing Alert Acknowledgement; license apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DEVICE-MGMT",
+          "candidate_id": "PP-CUSTOM-C-DEVICE-MGMT",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.DEVICE.SYNC"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-DEVICE-MGMT",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-DIARY-SVC",
+          "candidate_id": "PP-GH-xerj-org_xerj",
+          "candidate_name": "xerj-org/xerj",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.DIARY.SEARCH"
+          ],
+          "gaps": [
+            "CAP.DIARY.RECORD"
+          ],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 244.0,
+            "base": 495.0,
+            "high": 1040.0
+          },
+          "effort": {
+            "target_id": "C-DIARY-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 361.11999999999995,
+              "base": 732.6,
+              "high": 1539.2
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 244.0,
+                "base": 495.0,
+                "high": 1040.0
+              },
+              "configuration": {
+                "low": 12.200000000000001,
+                "base": 24.75,
+                "high": 52.0
+              },
+              "testing": {
+                "low": 61.0,
+                "base": 123.75,
+                "high": 260.0
+              },
+              "security": {
+                "low": 24.400000000000002,
+                "base": 49.5,
+                "high": 104.0
+              },
+              "deployment": {
+                "low": 19.52,
+                "base": 39.6,
+                "high": 83.2
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (50%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "apache-2.0",
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/Dockerfile@50e4ffde",
+            "README.md@50e4ffde",
+            "dsh/package.json@50e4ffde"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (50%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/2 required capabilities covered; missing Diary Entry Recording; license apache-2.0 (permissive); maturity developing"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUDIT-SVC",
+          "candidate_id": "PP-GH-collectiveidea_audited",
+          "candidate_name": "collectiveidea/audited",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.SEC.AUDIT"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-AUDIT-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 8 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 8 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@dbf84326",
+            "lib/audited/audit.rb@dbf84326",
+            "README.md@dbf84326",
+            "LICENSE@dbf84326"
+          ],
+          "assumptions": [
+            "Passport estimate 8 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 8 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable; unknown: interface_fit"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-MOBILE-APP",
+          "candidate_id": "PP-GH-caronc_apprise",
+          "candidate_name": "caronc/apprise",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.MOBILE.NOTIFY"
+          ],
+          "gaps": [
+            "CAP.MOBILE.APP",
+            "CAP.MAP.OFFLINE"
+          ],
+          "interface_fit": 0.667,
+          "adaptation_effort_range": {
+            "low": 434.0,
+            "base": 823.3333333333334,
+            "high": 1760.0
+          },
+          "effort": {
+            "target_id": "C-MOBILE-APP",
+            "target_kind": "component",
+            "hours": {
+              "low": 642.32,
+              "base": 1218.5333333333333,
+              "high": 2604.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 434.0,
+                "base": 823.3333333333334,
+                "high": 1760.0
+              },
+              "configuration": {
+                "low": 21.700000000000003,
+                "base": 41.16666666666667,
+                "high": 88.0
+              },
+              "testing": {
+                "low": 108.5,
+                "base": 205.83333333333334,
+                "high": 440.0
+              },
+              "security": {
+                "low": 43.400000000000006,
+                "base": 82.33333333333334,
+                "high": 176.0
+              },
+              "deployment": {
+                "low": 34.72,
+                "base": 65.86666666666667,
+                "high": 140.8
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+              "Missing capabilities (67%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: bsd-2-clause",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "bsd-2-clause",
+          "evidence_refs": [
+            "README.md@dcbd3858",
+            "apprise/plugins/octopush.py@dcbd3858",
+            "apprise/plugins/pushbullet.py@dcbd3858"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (low confidence), spread x0.6-x2.0",
+            "Missing capabilities (67%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/3 required capabilities covered; missing App Interface & Reporting, Offline Map Support; license bsd-2-clause (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-COMMAND-UI",
+          "candidate_id": "PP-GH-maptiler_tileserver-gl",
+          "candidate_name": "maptiler/tileserver-gl",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.MAP.LAYERS"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 99.0,
+            "base": 265.0,
+            "high": 680.0
+          },
+          "effort": {
+            "target_id": "C-COMMAND-UI",
+            "target_kind": "component",
+            "hours": {
+              "low": 146.51999999999998,
+              "base": 392.2,
+              "high": 1006.4
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 99.0,
+                "base": 265.0,
+                "high": 680.0
+              },
+              "configuration": {
+                "low": 4.95,
+                "base": 13.25,
+                "high": 34.0
+              },
+              "testing": {
+                "low": 24.75,
+                "base": 66.25,
+                "high": 170.0
+              },
+              "security": {
+                "low": 9.9,
+                "base": 26.5,
+                "high": 68.0
+              },
+              "deployment": {
+                "low": 7.92,
+                "base": 21.2,
+                "high": 54.4
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 4 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 4 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: Apache-2.0",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "Apache-2.0",
+          "evidence_refs": [
+            "README.md@19a8df21",
+            "package.json@19a8df21",
+            "src/mbtiles_wrapper.js@19a8df21",
+            "src/healthcheck.js@19a8df21",
+            "test/data_decorator.js@19a8df21"
+          ],
+          "assumptions": [
+            "Passport estimate 4 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 4 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license Apache-2.0 (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-CONFIG-SVC",
+          "candidate_id": "PP-GH-oauth2-proxy_oauth2-proxy",
+          "candidate_name": "oauth2-proxy/oauth2-proxy",
+          "decision": "REUSE",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": 1.0,
+          "adaptation_effort_range": {
+            "low": 84.0,
+            "base": 215.0,
+            "high": 560.0
+          },
+          "effort": {
+            "target_id": "C-CONFIG-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 124.32000000000001,
+              "base": 318.2,
+              "high": 828.8
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 84.0,
+                "base": 215.0,
+                "high": 560.0
+              },
+              "configuration": {
+                "low": 4.2,
+                "base": 10.75,
+                "high": 28.0
+              },
+              "testing": {
+                "low": 21.0,
+                "base": 53.75,
+                "high": 140.0
+              },
+              "security": {
+                "low": 8.4,
+                "base": 21.5,
+                "high": 56.0
+              },
+              "deployment": {
+                "low": 6.72,
+                "base": 17.2,
+                "high": 44.800000000000004
+              }
+            },
+            "confidence": "low",
+            "source": "Engine 3 parametric model + Engine 1 passport",
+            "assumptions": [
+              "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+              "Adaptation from passport estimate 40 h (medium confidence), spread x0.6-x2.0",
+              "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+              "Onboarding/learning curve included"
+            ]
+          },
+          "nonlabor_costs": [
+            {
+              "label": "License: mit",
+              "one_time": {
+                "low": 0.0,
+                "base": 0.0,
+                "high": 0.0
+              },
+              "recurring_per_year": {
+                "low": null,
+                "base": null,
+                "high": null
+              },
+              "known": true,
+              "note": "no license fee (open source)"
+            }
+          ],
+          "offline_capable": true,
+          "license": "mit",
+          "evidence_refs": [
+            "README.md@39ec0e19",
+            "pkg/authentication/basic/htpasswd.go@39ec0e19",
+            "oauthproxy.go@39ec0e19",
+            "oauthproxy.go@39ec0e19"
+          ],
+          "assumptions": [
+            "Passport estimate 40 h is below the reuse floor; floor applied (15%/25%/40% of BUILD baseline)",
+            "Adaptation from passport estimate 40 h (medium confidence), spread x0.6-x2.0",
+            "Missing capabilities (0%) built as extensions at 80% of BUILD hours",
+            "Onboarding/learning curve included"
+          ],
+          "rationale": "1/1 required capabilities covered; license mit (permissive); maturity stable"
+        },
+        {
+          "architecture_id": "ARCH-SWISSLINK",
+          "component_id": "C-AUTH-SVC",
+          "candidate_id": "PP-CUSTOM-C-AUTH-SVC",
+          "candidate_name": "Custom development",
+          "decision": "BUILD",
+          "coverage": [
+            "CAP.SEC.AUTH"
+          ],
+          "gaps": [],
+          "interface_fit": null,
+          "adaptation_effort_range": {
+            "low": 400.0,
+            "base": 700.0,
+            "high": 1200.0
+          },
+          "effort": {
+            "target_id": "C-AUTH-SVC",
+            "target_kind": "component",
+            "hours": {
+              "low": 592.0,
+              "base": 1036.0,
+              "high": 1776.0
+            },
+            "breakdown": {
+              "build/adaptation": {
+                "low": 400.0,
+                "base": 700.0,
+                "high": 1200.0
+              },
+              "configuration": {
+                "low": 20.0,
+                "base": 35.0,
+                "high": 60.0
+              },
+              "testing": {
+                "low": 100.0,
+                "base": 175.0,
+                "high": 300.0
+              },
+              "security": {
+                "low": 40.0,
+                "base": 70.0,
+                "high": 120.0
+              },
+              "deployment": {
+                "low": 32.0,
+                "base": 56.0,
+                "high": 96.0
+              }
+            },
+            "confidence": "medium",
+            "source": "Engine 3 parametric model",
+            "assumptions": [
+              "BUILD hours from editable 'service' baseline 400/700/1200 h"
+            ]
+          },
+          "nonlabor_costs": [],
+          "offline_capable": true,
+          "license": "in-house",
+          "evidence_refs": [],
+          "assumptions": [
+            "BUILD hours from editable 'service' baseline 400/700/1200 h"
+          ],
+          "rationale": ""
+        }
+      ],
+      "interface_efforts": [
+        {
+          "target_id": "IF-01",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-02",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-03",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-04",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-05",
+          "target_kind": "interface",
+          "hours": {
+            "low": 133.2,
+            "base": 266.4,
+            "high": 532.8
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 90.0,
+              "base": 180.0,
+              "high": 360.0
+            },
+            "configuration": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "testing": {
+              "low": 22.5,
+              "base": 45.0,
+              "high": 90.0
+            },
+            "security": {
+              "low": 9.0,
+              "base": 18.0,
+              "high": 36.0
+            },
+            "deployment": {
+              "low": 7.2,
+              "base": 14.4,
+              "high": 28.8
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "stream interface baseline 120 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-06",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-07",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-08",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-09",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-10",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-11",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-12",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-13",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-14",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-15",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-16",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-17",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-18",
+          "target_kind": "interface",
+          "hours": {
+            "low": 66.6,
+            "base": 133.2,
+            "high": 266.4
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 45.0,
+              "base": 90.0,
+              "high": 180.0
+            },
+            "configuration": {
+              "low": 2.25,
+              "base": 4.5,
+              "high": 9.0
+            },
+            "testing": {
+              "low": 11.25,
+              "base": 22.5,
+              "high": 45.0
+            },
+            "security": {
+              "low": 4.5,
+              "base": 9.0,
+              "high": 18.0
+            },
+            "deployment": {
+              "low": 3.6,
+              "base": 7.2,
+              "high": 14.4
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "async interface baseline 60 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-19",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "IF-20",
+          "target_kind": "interface",
+          "hours": {
+            "low": 88.8,
+            "base": 177.6,
+            "high": 355.2
+          },
+          "breakdown": {
+            "build/adaptation": {
+              "low": 60.0,
+              "base": 120.0,
+              "high": 240.0
+            },
+            "configuration": {
+              "low": 3.0,
+              "base": 6.0,
+              "high": 12.0
+            },
+            "testing": {
+              "low": 15.0,
+              "base": 30.0,
+              "high": 60.0
+            },
+            "security": {
+              "low": 6.0,
+              "base": 12.0,
+              "high": 24.0
+            },
+            "deployment": {
+              "low": 4.8,
+              "base": 9.6,
+              "high": 19.2
+            }
+          },
+          "confidence": "low",
+          "source": "Engine 3 parametric model",
+          "assumptions": [
+            "sync interface baseline 80 h",
+            "x1.5 data-model conversion (third-party endpoint)"
+          ]
+        },
+        {
+          "target_id": "SHARED-Platform, CI",
+          "target_kind": "shared",
+          "hours": {
+            "low": 160.0,
+            "base": 240.0,
+            "high": 400.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Platform, CI/CD and containerization"
+          ]
+        },
+        {
+          "target_id": "SHARED-Security har",
+          "target_kind": "shared",
+          "hours": {
+            "low": 200.0,
+            "base": 320.0,
+            "high": 600.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "Security hardening and accreditation preparation"
+          ]
+        },
+        {
+          "target_id": "SHARED-System integ",
+          "target_kind": "shared",
+          "hours": {
+            "low": 240.0,
+            "base": 400.0,
+            "high": 700.0
+          },
+          "breakdown": {},
+          "confidence": "low",
+          "source": "Engine 3 shared work (counted once)",
+          "assumptions": [
+            "System integration and end-to-end testing"
+          ]
+        }
+      ],
+      "mandatory_coverage": 1.0,
+      "integration_effort_range": {
+        "low": 1553.9999999999995,
+        "base": 3107.999999999999,
+        "high": 6215.999999999998
+      },
+      "development_effort_range": {
+        "low": 3851.946666666667,
+        "base": 7996.439999999999,
+        "high": 17416.64
+      },
+      "verification_effort_range": {
+        "low": 910.9333333333333,
+        "base": 1891.0500000000002,
+        "high": 4118.8
+      },
+      "total_hours": {
+        "low": 6906.8386666666665,
+        "base": 13874.105999999998,
+        "high": 29132.536
+      },
+      "hourly_rate": 120.0,
+      "labor_cost_range": {
+        "low": 828820.64,
+        "base": 1664892.7199999997,
+        "high": 3495904.32
+      },
+      "acquisition_cost_range": {
+        "low": null,
+        "base": null,
+        "high": null
+      },
+      "lifecycle_cost_range": {
+        "low": null,
+        "base": null,
+        "high": null
+      },
+      "unknown_estimates": [
+        "C-VIDEO-PIPE: Acquisition: Commercial video analytics SDK (placeholder) (Vendor quote required — PRICE UNKNOWN)"
+      ],
+      "risks": [
+        "BSD 2-Clause License is permissive but requires attribution",
+        "Database schema changes required (`audits` table).",
+        "Geofencing and route computation require significant custom implementation.",
+        "Go 1.25.0 requirement may be future-dated or typo (current stable is ~1.21)",
+        "L7 is a frontend visualization library, not a backend service; using it as a 'Map Visualization Service' backend is architecturally incorrect.",
+        "License: Apache 2.0 is permissive, but ensure compliance with all dependencies.",
+        "License: Apache 2.0, but PRO plugins are commercial; ensure required features are in the open-source core.",
+        "License: Apache-2.0 is permissive but requires attribution",
+        "License: BSD License (compatible).",
+        "License: BSD-2-Clause is permissive but requires attribution.",
+        "MIT License is permissive but lacks patent protection",
+        "Maintenance: Gatus is actively maintained, but adapting it to a specific defense architecture may require ongoing maintenance of custom patches.",
+        "Maintenance: High activity, but dependency on many external notification services which may change APIs.",
+        "Maintenance: Last activity 2026-08-19 (future date in metadata, likely a typo or very recent; stars=885 indicates community interest but active maintenance status needs verification).",
+        "Maintenance: Project activity shows recent commits (2026), but reliance on specific .NET versions (8/10) may require updates.",
+        "Maturity: Release candidate (rc.102) indicates ongoing development; API stability not guaranteed",
+        "Native dependencies may complicate deployment in restricted environments",
+        "Volunteer-driven project may have variable response times for security issues",
+        "YAML serialization of `audited_changes` can be a security risk if untrusted data is stored or deserialized without proper sanitization."
+      ],
+      "unresolved_gaps": [
+        "C-MAP-SVC: build extension for CAP.TRACK.GEOFENCE, CAP.ROUTE.COMPUTE, CAP.TRACK.HISTORY, CAP.TRACK.POSITION.STALE",
+        "C-ALERT-SVC: build extension for CAP.ALERT.ACKNOWLEDGE",
+        "C-DIARY-SVC: build extension for CAP.DIARY.RECORD",
+        "C-MOBILE-APP: build extension for CAP.MOBILE.APP, CAP.MAP.OFFLINE"
+      ],
+      "hard_gate_violations": [],
+      "feasible": true,
+      "pareto": true,
+      "score_breakdown": {
+        "total_hours_base": 13874.105999999998,
+        "reuse_share": 0.85,
+        "mandatory_coverage": 1.0,
+        "risk_count": 20.0,
+        "shared_hours_base": 960.0,
+        "risk_reserve_fraction": 0.15
+      }
+    }
+  ],
+  "critique": [
+    "Lead option B · Max reuse (ARCH-SWISSLINK@v1) -> C · Build-heavy (ARCH-SWISSLINK@v2): hours 12,274 -> 20,166 (+7,892 h, +64%); labor 1,472,907 -> 2,419,968 USD; reuse share 92% -> 0%; unknown estimates 1 -> 0; hard-gate violations 0 -> 0",
+    "C · Build-heavy (ARCH-SWISSLINK@v2): hours 18,703 -> 20,166 (+1,464); reuse share 0% -> 0%; gate violations 0 -> 0; unknowns 0 -> 0",
+    "A · Balanced (ARCH-SWISSLINK@v2): hours 13,948 -> 15,480 (+1,532); reuse share 67% -> 62%; gate violations 0 -> 0; unknowns 0 -> 0",
+    "B · Max reuse (ARCH-SWISSLINK@v2): hours 12,274 -> 13,874 (+1,600); reuse share 92% -> 85%; gate violations 0 -> 0; unknowns 1 -> 1"
+  ],
+  "changes": [
+    "Architecture ARCH-SWISSLINK@v1 -> ARCH-SWISSLINK@v2",
+    "added: ['C-AUTH-SVC', 'DS-AUTH-CREDENTIALS', 'IF-19', 'IF-20']",
+    "removed: ['X-PUSH-NOTIFY-SVC']",
+    "modified: ['C-ALERT-SVC', 'C-COMMAND-UI', 'C-CONFIG-SVC', 'C-DEVICE-MGMT', 'C-MESSAGING', 'C-MOBILE-APP', 'IF-12']",
+    "coverage gaps 0 -> 0",
+    "C-EDGE-GW: REUSE (ThingsGateway/ThingsGateway) -> BUILD (Custom development); hours 244 -> 740",
+    "C-MESSAGING: REUSE (nsqio/nsq) -> BUILD (Custom development); hours 318 -> 1,036",
+    "C-FUSION: REUSE (locusrobotics/fuse) -> BUILD (Custom development); hours 318 -> 1,036",
+    "C-MAP-SVC: REUSE (antvis/L7) -> BUILD (Custom development); hours 981 -> 1,036",
+    "C-VIDEO-PIPE: BUY (Commercial video analytics SDK (placeholder)) -> BUILD (Custom development); hours 488 -> 1,628",
+    "C-ALERT-SVC: REUSE (TwiN/gatus) -> BUILD (Custom development); hours 594 -> 1,036",
+    "C-DIARY-SVC: REUSE (xerj-org/xerj) -> BUILD (Custom development); hours 733 -> 1,036",
+    "C-AUDIT-SVC: REUSE (collectiveidea/audited) -> BUILD (Custom development); hours 318 -> 1,036",
+    "C-MOBILE-APP: REUSE (caronc/apprise) -> BUILD (Custom development); hours 1,219 -> 1,480",
+    "C-COMMAND-UI: REUSE (maptiler/tileserver-gl) -> BUILD (Custom development); hours 392 -> 1,332",
+    "C-CONFIG-SVC: REUSE (oauth2-proxy/oauth2-proxy) -> BUILD (Custom development); hours 318 -> 1,036",
+    "C-AUTH-SVC: new component -> BUILD (Custom development)"
+  ],
+  "explanation": "The instruction 'Offline only' is a hard constraint that fundamentally changes the deployment architecture. It requires removing dependencies on external networks, which affects components like Mobile App (cellular), Command UI (potential cloud sync), and Config Service (remote policy updates). This necessitates an architectural revision to ensure all services can operate autonomously within a local network or isolated environment.",
+  "timestamp": "2026-11-09T13:21:51+00:00"
+}

@@ -1,0 +1,1889 @@
+{
+  "component_id": "C-MOBILE-APP",
+  "queries": [
+    "offline maps",
+    "push notifications",
+    "reporting dashboard",
+    "app interface & reporting"
+  ],
+  "discovered": [
+    {
+      "provider": "github",
+      "id": "gh:organicmaps/organicmaps",
+      "full_name": "organicmaps/organicmaps",
+      "name": "organicmaps",
+      "name_with_namespace": "organicmaps/organicmaps",
+      "description": "🍃 Organic Maps is a free Android & iOS offline maps app for more than 12M travelers, tourists, hikers, and cyclists. It uses crowd-sourced OpenStreetMap data and is developed with love by the community. No ads, no tracking, no data collection, no crapware. Please donate to support the development!",
+      "web_url": "https://github.com/organicmaps/organicmaps",
+      "star_count": 15916,
+      "last_activity_at": "2026-11-09T12:45:43Z",
+      "default_branch": "master",
+      "topics": [
+        "android",
+        "app",
+        "cpp",
+        "cyclists",
+        "hacktoberfest",
+        "hikers",
+        "ios",
+        "java",
+        "maps",
+        "mobile",
+        "mobile-app",
+        "navigation",
+        "objective-c",
+        "offline",
+        "offline-maps",
+        "openstreetmap",
+        "privacy",
+        "routing",
+        "tourists",
+        "travelers"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "offline maps",
+      "relevance": 0.633,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:caronc/apprise",
+      "full_name": "caronc/apprise",
+      "name": "apprise",
+      "name_with_namespace": "caronc/apprise",
+      "description": "Apprise - Push Notifications that work with just about every platform!",
+      "web_url": "https://github.com/caronc/apprise",
+      "star_count": 17735,
+      "last_activity_at": "2026-11-09T01:45:06Z",
+      "default_branch": "master",
+      "topics": [
+        "alerts",
+        "apprise",
+        "framework",
+        "notification-api",
+        "notification-hub",
+        "notification-service",
+        "notifications",
+        "notifier",
+        "notify",
+        "push-notifications",
+        "python"
+      ],
+      "archived": false,
+      "license_key": "bsd-2-clause",
+      "matched_query": "push notifications",
+      "relevance": 0.62,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:kylecorry31/Trail-Sense",
+      "full_name": "kylecorry31/Trail-Sense",
+      "name": "Trail-Sense",
+      "name_with_namespace": "kylecorry31/Trail-Sense",
+      "description": "An offline multi-tool Android app for hiking, backpacking, camping, wilderness survival, foraging, and hunting.",
+      "web_url": "https://github.com/kylecorry31/Trail-Sense",
+      "star_count": 3020,
+      "last_activity_at": "2026-11-08T15:25:16Z",
+      "default_branch": "main",
+      "topics": [
+        "altimeter",
+        "android",
+        "astronomy",
+        "backpacking",
+        "barometer",
+        "camping",
+        "compass",
+        "gps",
+        "hiking",
+        "kotlin",
+        "map",
+        "maps",
+        "navigation",
+        "offline",
+        "privacy",
+        "sensors",
+        "survival",
+        "weather",
+        "weather-forecasting",
+        "wilderness"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "offline maps",
+      "relevance": 0.658,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:binwiederhier/ntfy",
+      "full_name": "binwiederhier/ntfy",
+      "name": "ntfy",
+      "name_with_namespace": "binwiederhier/ntfy",
+      "description": "Send push notifications to your phone or desktop using PUT/POST",
+      "web_url": "https://github.com/binwiederhier/ntfy",
+      "star_count": 35404,
+      "last_activity_at": "2026-11-09T01:50:46Z",
+      "default_branch": "main",
+      "topics": [
+        "curl",
+        "notifications",
+        "ntfy",
+        "ntfysh",
+        "pubsub",
+        "push-notifications",
+        "rest-api"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "push notifications",
+      "relevance": 0.582,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:Finb/Bark",
+      "full_name": "Finb/Bark",
+      "name": "Bark",
+      "name_with_namespace": "Finb/Bark",
+      "description": "Bark is an iOS App which allows you to push custom notifications to your iPhone",
+      "web_url": "https://github.com/Finb/Bark",
+      "star_count": 9502,
+      "last_activity_at": "2026-11-06T08:22:36Z",
+      "default_branch": "master",
+      "topics": [
+        "ios",
+        "ios-app",
+        "ios-swift",
+        "mvvm",
+        "mvvm-architecture",
+        "push-notifications",
+        "rxcocoa",
+        "rxdatasources",
+        "rxswift"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "push notifications",
+      "relevance": 0.617,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:mapsme/omim",
+      "full_name": "mapsme/omim",
+      "name": "omim",
+      "name_with_namespace": "mapsme/omim",
+      "description": "🗺️ MAPS.ME — Offline OpenStreetMap maps for iOS and Android",
+      "web_url": "https://github.com/mapsme/omim",
+      "star_count": 4602,
+      "last_activity_at": "2022-10-05T00:36:11Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "offline maps",
+      "relevance": 0.617,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:noodlewerk/NWPusher",
+      "full_name": "noodlewerk/NWPusher",
+      "name": "NWPusher",
+      "name_with_namespace": "noodlewerk/NWPusher",
+      "description": "OS X and iOS application and framework to play with the Apple Push Notification service (APNs)",
+      "web_url": "https://github.com/noodlewerk/NWPusher",
+      "star_count": 6294,
+      "last_activity_at": "2021-03-30T07:00:58Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "bsd-2-clause",
+      "matched_query": "push notifications",
+      "relevance": 0.598,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:metabase/metabase",
+      "full_name": "metabase/metabase",
+      "name": "metabase",
+      "name_with_namespace": "metabase/metabase",
+      "description": "The easy-to-use open source Business Intelligence and Embedded Analytics tool that lets everyone work with data :bar_chart:",
+      "web_url": "https://github.com/metabase/metabase",
+      "star_count": 50248,
+      "last_activity_at": "2026-11-09T12:55:24Z",
+      "default_branch": "master",
+      "topics": [
+        "analytics",
+        "bi",
+        "business-intelligence",
+        "businessintelligence",
+        "clojure",
+        "dashboard",
+        "data",
+        "data-analysis",
+        "data-visualization",
+        "database",
+        "metabase",
+        "mysql",
+        "postgres",
+        "postgresql",
+        "reporting",
+        "slack",
+        "sql-editor",
+        "visualization"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.53,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:briefercloud/briefer",
+      "full_name": "briefercloud/briefer",
+      "name": "briefer",
+      "name_with_namespace": "briefercloud/briefer",
+      "description": "Dashboards and notebooks in a single place. Create powerful and flexible dashboards using code, or build beautiful Notion-like notebooks and share them with your team.",
+      "web_url": "https://github.com/briefercloud/briefer",
+      "star_count": 4325,
+      "last_activity_at": "2025-08-07T13:20:05Z",
+      "default_branch": "main",
+      "topics": [
+        "analytics",
+        "bi",
+        "bigquery",
+        "briefer",
+        "business-intelligence",
+        "businessintelligence",
+        "dashboard",
+        "data-analysis",
+        "data-visualization",
+        "jupyter",
+        "notebook",
+        "postgres",
+        "postgresql",
+        "reporting",
+        "visualization"
+      ],
+      "archived": false,
+      "license_key": "agpl-3.0",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.599,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:Crosstalk-Solutions/project-nomad",
+      "full_name": "Crosstalk-Solutions/project-nomad",
+      "name": "project-nomad",
+      "name_with_namespace": "Crosstalk-Solutions/project-nomad",
+      "description": "Project NOMAD is an offline-first knowledge and education server. Wikipedia, thousands of books, courses, maps, and optional local AI, all running on hardware you own with no internet required.",
+      "web_url": "https://github.com/Crosstalk-Solutions/project-nomad",
+      "star_count": 42934,
+      "last_activity_at": "2026-11-09T04:03:59Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "offline maps",
+      "relevance": 0.529,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:chartbrew/chartbrew",
+      "full_name": "chartbrew/chartbrew",
+      "name": "chartbrew",
+      "name_with_namespace": "chartbrew/chartbrew",
+      "description": "Open-source reporting platform to build and share live dashboards from APIs, SQL and NoSQL databases, with powerful AI assistant, scheduling, and embeddable charts 📈📊",
+      "web_url": "https://github.com/chartbrew/chartbrew",
+      "star_count": 4091,
+      "last_activity_at": "2026-11-05T04:15:49Z",
+      "default_branch": "master",
+      "topics": [
+        "analytics",
+        "api",
+        "chartjs",
+        "charts",
+        "dashboard",
+        "data-visualization",
+        "firebase",
+        "firebase-firestore",
+        "firestore",
+        "mongo",
+        "mongodb",
+        "mysql",
+        "nodejs",
+        "postgresql",
+        "react",
+        "reactjs",
+        "realtime-database",
+        "redux"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.599,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:KnuffApp/Knuff",
+      "full_name": "KnuffApp/Knuff",
+      "name": "Knuff",
+      "name_with_namespace": "KnuffApp/Knuff",
+      "description": "The debug application for Apple Push Notification Service (APNs).",
+      "web_url": "https://github.com/KnuffApp/Knuff",
+      "star_count": 5211,
+      "last_activity_at": "2022-09-04T18:39:25Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "push notifications",
+      "relevance": 0.566,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:tinyworldmap/tiny-world-map",
+      "full_name": "tinyworldmap/tiny-world-map",
+      "name": "tiny-world-map",
+      "name_with_namespace": "tinyworldmap/tiny-world-map",
+      "description": "tinyworldmap is a tiny world map for offline-first and low-bandwidth web apps",
+      "web_url": "https://github.com/tinyworldmap/tiny-world-map",
+      "star_count": 1452,
+      "last_activity_at": "2024-05-09T19:43:09Z",
+      "default_branch": "gh-pages",
+      "topics": [],
+      "archived": false,
+      "license_key": "odbl-1.0",
+      "matched_query": "offline maps",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:node-apn/node-apn",
+      "full_name": "node-apn/node-apn",
+      "name": "node-apn",
+      "name_with_namespace": "node-apn/node-apn",
+      "description": ":calling: Apple Push Notification module for Node.js",
+      "web_url": "https://github.com/node-apn/node-apn",
+      "star_count": 4395,
+      "last_activity_at": "2025-10-14T18:43:18Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "push notifications",
+      "relevance": 0.56,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:chart-kit/react-native-chart-kit",
+      "full_name": "chart-kit/react-native-chart-kit",
+      "name": "react-native-chart-kit",
+      "name_with_namespace": "chart-kit/react-native-chart-kit",
+      "description": "Beautiful charts for React Native. Line, area, bar, pie, donut, progress, and contribution heatmaps for dashboards, reports, and data-rich mobile apps.",
+      "web_url": "https://github.com/chart-kit/react-native-chart-kit",
+      "star_count": 3115,
+      "last_activity_at": "2026-09-06T20:00:28Z",
+      "default_branch": "main",
+      "topics": [
+        "android",
+        "chart",
+        "charting",
+        "charts",
+        "data-visualization",
+        "graph",
+        "graphs",
+        "ios",
+        "line-charts",
+        "mobile",
+        "mobile-charts",
+        "react",
+        "react-native",
+        "react-native-svg",
+        "typescript"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.57,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:FASTSHIFT/X-TRACK",
+      "full_name": "FASTSHIFT/X-TRACK",
+      "name": "X-TRACK",
+      "name_with_namespace": "FASTSHIFT/X-TRACK",
+      "description": "A GPS bicycle speedometer that supports offline maps and track recording ",
+      "web_url": "https://github.com/FASTSHIFT/X-TRACK",
+      "star_count": 6321,
+      "last_activity_at": "2025-11-08T03:54:31Z",
+      "default_branch": "main",
+      "topics": [
+        "bicycle",
+        "gps",
+        "gps-tracking",
+        "gpx",
+        "lvgl",
+        "mcu",
+        "mvp",
+        "offline-maps",
+        "speedometer"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "offline maps",
+      "relevance": 0.538,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:observablehq/framework",
+      "full_name": "observablehq/framework",
+      "name": "framework",
+      "name_with_namespace": "observablehq/framework",
+      "description": "A static site generator for data apps, dashboards, reports, and more. Observable Framework combines JavaScript on the front-end for interactive graphics with any language on the back-end for data analysis.",
+      "web_url": "https://github.com/observablehq/framework",
+      "star_count": 3676,
+      "last_activity_at": "2026-05-15T21:33:09Z",
+      "default_branch": "main",
+      "topics": [
+        "d3",
+        "dashboard",
+        "framework",
+        "markdown",
+        "static-site-generator",
+        "visualization"
+      ],
+      "archived": false,
+      "license_key": "isc",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.549,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:appleboy/gorush",
+      "full_name": "appleboy/gorush",
+      "name": "gorush",
+      "name_with_namespace": "appleboy/gorush",
+      "description": "A push notification server written in Go (Golang).",
+      "web_url": "https://github.com/appleboy/gorush",
+      "star_count": 8797,
+      "last_activity_at": "2026-07-25T05:24:01Z",
+      "default_branch": "master",
+      "topics": [
+        "android",
+        "apns",
+        "gcm",
+        "golang",
+        "gorush-server",
+        "ios",
+        "ios-alert-payload",
+        "ios-notification",
+        "notification-server"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "push notifications",
+      "relevance": 0.514,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:needim/noty",
+      "full_name": "needim/noty",
+      "name": "noty",
+      "name_with_namespace": "needim/noty",
+      "description": "⛔️ DEPRECATED - Dependency-free notification library that makes it easy to create alert - success - error - warning - information - confirmation messages as an alternative the standard alert dialog.",
+      "web_url": "https://github.com/needim/noty",
+      "star_count": 6619,
+      "last_activity_at": "2024-04-04T08:34:31Z",
+      "default_branch": "master",
+      "topics": [
+        "archived",
+        "depracated",
+        "javascript",
+        "library",
+        "notifications",
+        "obsolete",
+        "push"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "push notifications",
+      "relevance": 0.519,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:hishizuka/pizero_bikecomputer",
+      "full_name": "hishizuka/pizero_bikecomputer",
+      "name": "pizero_bikecomputer",
+      "name_with_namespace": "hishizuka/pizero_bikecomputer",
+      "description": "An open-source bike computer with GPS and ANT+ capabilities, based on the Raspberry Pi Zero (W, WH, 2 W) or the Compute Module Zero (CM0). It also includes offline maps and navigation.",
+      "web_url": "https://github.com/hishizuka/pizero_bikecomputer",
+      "star_count": 1292,
+      "last_activity_at": "2026-11-05T14:38:29Z",
+      "default_branch": "master",
+      "topics": [
+        "antplus",
+        "bicycle",
+        "bicycle-computer",
+        "bike",
+        "cycling",
+        "fit",
+        "gps",
+        "gps-tracking",
+        "maps",
+        "offline-maps",
+        "openstreetmap",
+        "power-meter",
+        "pyqt5",
+        "pyqt6",
+        "pyside6",
+        "python",
+        "raspberry-pi",
+        "raspberry-pi-zero",
+        "sensor",
+        "tcx"
+      ],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "offline maps",
+      "relevance": 0.551,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:basharovV/musicat",
+      "full_name": "basharovV/musicat",
+      "name": "musicat",
+      "name_with_namespace": "basharovV/musicat",
+      "description": "A sleek desktop music player and tagger for offline music 🪕. With gapless playback, smart playlists, and a map view! Built with Svelte and Tauri",
+      "web_url": "https://github.com/basharovV/musicat",
+      "star_count": 956,
+      "last_activity_at": "2026-08-08T14:43:01Z",
+      "default_branch": "main",
+      "topics": [
+        "audio",
+        "audio-player",
+        "jsvectormap",
+        "macos-app",
+        "mp3",
+        "music",
+        "music-library",
+        "music-player",
+        "player",
+        "rust",
+        "rust-audio",
+        "svelte",
+        "sveltejs",
+        "tauri",
+        "tauri-app",
+        "tauri-apps",
+        "windows-app"
+      ],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "offline maps",
+      "relevance": 0.546,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:StructuredLabs/preswald",
+      "full_name": "StructuredLabs/preswald",
+      "name": "preswald",
+      "name_with_namespace": "StructuredLabs/preswald",
+      "description": "Preswald is a WASM packager for Python-based interactive data apps: bundle full complex data workflows, particularly visualizations, into single files, runnable completely in-browser, using Pyodide, DuckDB, Pandas, and Plotly, Matplotlib, etc. Build dashboards, reports, and notebooks that run offline, load fast, and share like a document.",
+      "web_url": "https://github.com/StructuredLabs/preswald",
+      "star_count": 4267,
+      "last_activity_at": "2026-06-11T23:01:11Z",
+      "default_branch": "main",
+      "topics": [
+        "ai",
+        "analytics",
+        "analytics-engineering",
+        "copilot",
+        "data",
+        "data-applications",
+        "data-infrastructure",
+        "data-pipelines",
+        "data-sdk",
+        "data-visualization",
+        "gpt",
+        "llm",
+        "open-source",
+        "python",
+        "schema-management",
+        "vscode"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.494,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:TuiQiao/CBoard",
+      "full_name": "TuiQiao/CBoard",
+      "name": "CBoard",
+      "name_with_namespace": "TuiQiao/CBoard",
+      "description": "An easy to use, self-service open BI reporting and BI dashboard platform.",
+      "web_url": "https://github.com/TuiQiao/CBoard",
+      "star_count": 3100,
+      "last_activity_at": "2026-10-17T07:14:50Z",
+      "default_branch": "branch-0.4.2",
+      "topics": [
+        "big-data",
+        "business-intelligence",
+        "cboard",
+        "dashboard",
+        "data-visualization",
+        "metabase",
+        "olap",
+        "superset"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.5,
+      "selected": false
+    },
+    {
+      "id": 15911066,
+      "name": "Fox Plan",
+      "name_with_namespace": "Projects by Skofgar / Fox Plan",
+      "description": "Convention App (PWA Webapp) - Keep track of event schedules, maps, FAQs on your phone, it even works offline! \r\nIt's being used by conventions like [Further Confusion](https://furtherconfusion.org), [Furlandia](https://furlandia.org) and [OffKai Expo](http://offkaiexpo.com)",
+      "web_url": "https://gitlab.com/sinklairstudios/fox-plan",
+      "star_count": 4,
+      "last_activity_at": "2026-05-19T02:34:58.212Z",
+      "default_branch": "main",
+      "topics": [
+        "angular",
+        "pwa"
+      ],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.635,
+      "selected": false
+    },
+    {
+      "id": 38948972,
+      "name": "Push Receiver",
+      "name_with_namespace": "omprussia / Examples / Push Receiver",
+      "description": "The application allows you to receive and process push notifications",
+      "web_url": "https://gitlab.com/omprussia/examples/PushReceiver",
+      "star_count": 2,
+      "last_activity_at": "2025-11-14T04:55:33.969Z",
+      "default_branch": "example",
+      "topics": [
+        "AuroraOS",
+        "C++",
+        "Qt",
+        "Qt Quick",
+        "example",
+        "push",
+        "qml"
+      ],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.639,
+      "selected": false
+    },
+    {
+      "id": 81347937,
+      "name": "Kitchen Board",
+      "name_with_namespace": "g33kphr33k / Kitchen Board",
+      "description": "Kitchen Board is a self-hosted, family-focused web app combining a shared shopping list and shared calendar. Designed to feel like a paper wall calendar with a shopping list pinned to it. Features real-time sync via WebSockets, recurring calendar events, .ics feed export, push notifications, multiple themes, and a PWA-ready interface. Built with FastAPI, SQLite, Alpine.js, and deployed via Docker with a Caddy reverse proxy.",
+      "web_url": "https://gitlab.com/g33kphr33k/kitchen-board",
+      "star_count": 25,
+      "last_activity_at": "2026-11-06T00:39:18.322Z",
+      "default_branch": "main",
+      "topics": [
+        "AlpineJS",
+        "docker",
+        "fastapi",
+        "jinja2",
+        "pwa",
+        "python",
+        "self-hosted",
+        "sqlite",
+        "websockets"
+      ],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.57,
+      "selected": false
+    },
+    {
+      "id": 8839830,
+      "name": "Notifications API - PHP",
+      "name_with_namespace": "RizkySly API / Notifications API - PHP",
+      "description": "Plan, set and send push notifications to registered devices.",
+      "web_url": "https://gitlab.com/rizkysly-api/notifications-api",
+      "star_count": 2,
+      "last_activity_at": "2024-05-10T15:55:49.577Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.615,
+      "selected": false
+    },
+    {
+      "id": 87061122,
+      "name": "Notification System",
+      "name_with_namespace": "SHIVA SAINI / Notification System",
+      "description": "Notification System is an admin-managed platform that automatically sends WhatsApp, Email, and Web Push notifications based on user actions such as login, logout, and inactivity. \r\n\r\nAdmins can create, toggle, and test channel-specific templates for each trigger and review delivery logs, all built on Python FastAPI, React, and SQLite with WhatsApp Cloud API, Resend, and OneSignal integrations.",
+      "web_url": "https://gitlab.com/shivasaini338/notification-system",
+      "star_count": 0,
+      "last_activity_at": "2026-09-30T07:01:31.797Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.645,
+      "selected": false
+    },
+    {
+      "id": 86785433,
+      "name": "notifications-api",
+      "name_with_namespace": "QuickApps / notifications-api",
+      "description": "API used to deliver notifications by push channel or email. SMS not implemented as yet",
+      "web_url": "https://gitlab.com/QuickApps/notifications-api",
+      "star_count": 0,
+      "last_activity_at": "2026-11-03T02:17:35.994Z",
+      "default_branch": "develop",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.645,
+      "selected": false
+    },
+    {
+      "id": 47158158,
+      "name": "Gtisma-Mobile-App",
+      "name_with_namespace": "God'swill Olebu / Gtisma-Mobile-App",
+      "description": "Built with the flutter framwork, GTISMA-mobile app has been built to ease crime reporting and investigation on the fly. It faciltates crime reports gathering, validation and evaluation. It also serves as an interface between security personnnel and the general public. Thus, effectively enhancing policing and crime detection.The web platform for managing crime reports is located at https://www.geotiscm.org while the mobile app is hosted at https://play.google.com/store/apps/details?id=org.security.gtisma",
+      "web_url": "https://gitlab.com/golebu2023/Gtisma-Mobile-App",
+      "star_count": 0,
+      "last_activity_at": "2023-06-26T05:59:11.570Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "app interface & reporting",
+      "relevance": 0.64,
+      "selected": false
+    },
+    {
+      "id": 88052678,
+      "name": "collie",
+      "name_with_namespace": "Evandro Camargo / collie",
+      "description": "PWA to manage 🐑 herdr on the go. Tailnet accessible, push notifications, quick actions and more.",
+      "web_url": "https://gitlab.com/nmindz/collie",
+      "star_count": 0,
+      "last_activity_at": "2026-10-24T21:26:16.808Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.638,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:pretzelai/pretzelai",
+      "full_name": "pretzelai/pretzelai",
+      "name": "pretzelai",
+      "name_with_namespace": "pretzelai/pretzelai",
+      "description": "The modern replacement for Jupyter Notebooks",
+      "web_url": "https://github.com/pretzelai/pretzelai",
+      "star_count": 2189,
+      "last_activity_at": "2024-12-01T10:36:53Z",
+      "default_branch": "main",
+      "topics": [
+        "analytics",
+        "artificial-intelligence",
+        "business-intelligence",
+        "businessintelligence",
+        "dashboard",
+        "data",
+        "data-analysis",
+        "data-analytics",
+        "data-science",
+        "data-visualization",
+        "duckdb",
+        "notebooks",
+        "open-source",
+        "prql",
+        "reporting",
+        "sql",
+        "sql-editor",
+        "sql-editor-online",
+        "visualization",
+        "wasm"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.4,
+      "selected": false
+    },
+    {
+      "id": 80922359,
+      "name": "Final_project_CE",
+      "name_with_namespace": "KEWACO / Final_project_CE",
+      "description": "MamaCare+ is an Android mobile application built with Kotlin Multiplatform that supports pregnant women throughout every stage of their pregnancy journey by combining weekly pregnancy tracking, an AI-powered companion chat, symptom triage, and automated antenatal care scheduling into a single accessible platform. \r\n\r\nThe app calculates gestational age from the user's Last Menstrual Period using Naegele's Rule and delivers personalized weekly updates including baby size comparisons, expected physical changes, and tailored nutrition advice, while a real conversational AI companion powered by Google Gemini 2.5 Flash provides bilingual support in English and Kinyarwanda, classifies any mentioned symptoms as low, medium, or high risk, and triggers emergency call and hospital navigation actions when needed. \r\n\r\nA dedicated symptom checker maps selected symptoms to a three-level risk meter, a WHO-aligned antenatal care schedule is automatically generated from the user's LMP with visit completion tracking and note-saving per appointment, and all user data is stored locally in SQLite ensuring the app works fully offline — with the core mission of reducing maternal health risks by ensuring no appointment is missed, no warning sign is ignored, and no mother feels alone in her journey.",
+      "web_url": "https://gitlab.com/kcbig/mama-care-by-group-ce",
+      "star_count": 0,
+      "last_activity_at": "2026-05-13T17:58:02.542Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.62,
+      "selected": false
+    },
+    {
+      "id": 8984160,
+      "name": "PushFish-Py",
+      "name_with_namespace": "PushFish / PushFish-Py",
+      "description": "A Python API for PushFish. Send notifications to your phone from Python scripts!",
+      "web_url": "https://gitlab.com/PushFish/PushFish-Py",
+      "star_count": 4,
+      "last_activity_at": "2018-11-08T19:44:19.723Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.569,
+      "selected": false
+    },
+    {
+      "id": 86894789,
+      "name": "yatba",
+      "name_with_namespace": "John Doe / yatba",
+      "description": "An Android-focused, Material 3 TorBox client built with Flutter, featuring a unified library (torrents, web downloads, usenet), multi-selection batch actions, background downloads that survive app close, airlock support, native push notifications, dynamic Material You theming, and in-app video playback with Stremio/Torrentio integration.",
+      "web_url": "https://gitlab.com/forgiving/yatba",
+      "star_count": 4,
+      "last_activity_at": "2026-10-31T10:21:36.649Z",
+      "default_branch": "main",
+      "topics": [
+        "Material UI",
+        "android",
+        "client",
+        "kotlin",
+        "torbox"
+      ],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.568,
+      "selected": false
+    },
+    {
+      "id": 48977236,
+      "name": "Push notifications",
+      "name_with_namespace": "Faiz Mohammed / Push notifications",
+      "description": null,
+      "web_url": "https://gitlab.com/FaizxMohammed/push-notifications",
+      "star_count": 1,
+      "last_activity_at": "2023-09-12T11:43:20.145Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.594,
+      "selected": false
+    },
+    {
+      "id": 87419898,
+      "name": "MQTTPushClient_Android",
+      "name_with_namespace": "Rahmad Al Habib Khasary / MQTTPushClient_Android",
+      "description": "The MQTT Push Client app allows receiving push notifications from MQTT environments ",
+      "web_url": "https://gitlab.com/abe_wartech/mqttpushclient_android",
+      "star_count": 0,
+      "last_activity_at": "2026-10-09T07:26:35.735Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.61,
+      "selected": false
+    },
+    {
+      "id": 15049512,
+      "name": "Famedly Push Gateway",
+      "name_with_namespace": "Famedly / Product / Backend Components / services / Famedly Push Gateway",
+      "description": "Dead simple push gateway for matrix push notifications to Firebase Cloud Messaging",
+      "web_url": "https://gitlab.com/famedly/company/backend/services/famedly-push-gateway",
+      "star_count": 4,
+      "last_activity_at": "2021-03-01T05:50:08.081Z",
+      "default_branch": "master",
+      "topics": [
+        "Famedly",
+        "gateway",
+        "matrix",
+        "push"
+      ],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.56,
+      "selected": false
+    },
+    {
+      "id": 12512518,
+      "name": "WebMap",
+      "name_with_namespace": "Sandipan Roy / WebMap",
+      "description": "Nmap Web Dashboard and Reporting",
+      "web_url": "https://gitlab.com/bytehackr/WebMap",
+      "star_count": 1,
+      "last_activity_at": "2019-05-25T03:17:00.140Z",
+      "default_branch": "v2.1/master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.577,
+      "selected": false
+    },
+    {
+      "id": 88369543,
+      "name": "bicipro",
+      "name_with_namespace": "Javiera Navarrete / bicipro",
+      "description": "Ciclocomputador para Android con mapas sin conexión de Chile (Santiago), sensores Bluetooth y rutas. · Android cycling computer with offline Chile maps, BLE sensors and rides. Desarrollado por Javiera Navarrete.",
+      "web_url": "https://gitlab.com/navarretenoir/bicipro",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T14:27:52.720Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.591,
+      "selected": false
+    },
+    {
+      "id": 84447367,
+      "name": "client-reporting-showcase",
+      "name_with_namespace": "Andriy Artyukhov / client-reporting-showcase",
+      "description": "Automated client reporting — data pipeline, auto-generated weekly/monthly reports, live dashboard (demo)",
+      "web_url": "https://gitlab.com/artyukhov/client-reporting-showcase",
+      "star_count": 0,
+      "last_activity_at": "2026-07-22T16:03:00.522Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.59,
+      "selected": false
+    },
+    {
+      "id": 57949483,
+      "name": "Mfw Map",
+      "name_with_namespace": "omprussia / Libraries / Mfw Map",
+      "description": "The MfwMap plugin allows users to display maps based on data, either online\r\nor offline. User can draw a variety of objects on the map, interact with them,\r\nand style them according to their preferences.",
+      "web_url": "https://gitlab.com/omprussia/libraries/mfw-map",
+      "star_count": 1,
+      "last_activity_at": "2025-08-25T16:29:03.678Z",
+      "default_branch": "master",
+      "topics": [
+        "AuroraOS",
+        "maps"
+      ],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.566,
+      "selected": false
+    },
+    {
+      "id": 86819113,
+      "name": "pushnotifications-sdk-android",
+      "name_with_namespace": "gocommotion-public / pushnotifications-sdk-android",
+      "description": null,
+      "web_url": "https://gitlab.com/gocommotion-oss/pushnotifications-sdk-android",
+      "star_count": 0,
+      "last_activity_at": "2026-10-14T13:50:13.273Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.585,
+      "selected": false
+    },
+    {
+      "id": 88053001,
+      "name": "ablend-website",
+      "name_with_namespace": "Milan Brankovic / ablend-website",
+      "description": "**Ablend – Real-time road alerts**\r\n\r\n**By drivers. For drivers.**\r\n\r\nStay informed about what's happening on the road with Ablend, a community-powered app that connects drivers through real-time road alerts and reports.\r\n\r\nWhether you're commuting to work, exploring a new city, or heading out on a longer journey, Ablend helps you stay aware of road conditions other drivers share.\r\n\r\n**REAL-TIME ROAD ALERTS**\r\n\r\nExplore reports shared by drivers in your area, including:\r\n\r\n- Speed cameras and mobile speed checks\r\n- Police presence and roadside checks\r\n- Traffic congestion and roadblocks\r\n- Roadworks and unexpected road hazards\r\n\r\n**REPORT IN SECONDS**\r\n\r\nSpotted something on the road? Help other drivers by submitting a report in just a few taps.\r\n\r\nUse quick report categories or voice reporting to share important information with the community.\r\n\r\n**EXPLORE ANY LOCATION**\r\n\r\nMove around the map or search for another city to discover community reports beyond your current location.\r\n\r\n**POWERED BY THE COMMUNITY**\r\n\r\nEvery report helps keep other drivers informed. Confirm existing reports, share updates, and contribute to a more connected driving community.\r\n\r\n**SIMPLE. FAST. COMMUNITY-DRIVEN.**\r\n\r\nAblend makes sharing and discovering road information easy, with an intuitive map, quick reporting tools, and a clean interface.\r\n\r\n**Ablend. By drivers. For drivers.**\r\n\r\nDrive responsibly. Always follow local traffic laws. Community reports may not always be accurate or up to date, and availability of certain features may depend on local regulations.",
+      "web_url": "https://gitlab.com/millanbrankovic/ablend-website",
+      "star_count": 0,
+      "last_activity_at": "2026-11-01T21:39:07.510Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "app interface & reporting",
+      "relevance": 0.578,
+      "selected": false
+    },
+    {
+      "id": 88341308,
+      "name": "web-dashboard",
+      "name_with_namespace": "Jessica Panda / web-dashboard",
+      "description": "React analytics dashboard — real-time metrics and reporting",
+      "web_url": "https://gitlab.com/jessicapand/web-dashboard",
+      "star_count": 0,
+      "last_activity_at": "2026-11-05T09:12:10.766Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.576,
+      "selected": false
+    },
+    {
+      "id": 86819096,
+      "name": "pushnotifications-sdk-ios",
+      "name_with_namespace": "gocommotion-public / pushnotifications-sdk-ios",
+      "description": null,
+      "web_url": "https://gitlab.com/gocommotion-oss/pushnotifications-sdk-ios",
+      "star_count": 0,
+      "last_activity_at": "2026-10-15T10:32:49.311Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.573,
+      "selected": false
+    },
+    {
+      "id": 41541663,
+      "name": "CICD_BlueGreen_Codepipeline_ECS",
+      "name_with_namespace": "Andrii Shykhov / CICD_BlueGreen_Codepipeline_ECS",
+      "description": "Dockerized simple Nginx app, Gitlab CI pipeline push changes into CodeCommit repo, complete CI/CD is realised by AWS CodePipeline service: code source stored in CodeCommit, build realised by CodeDeploy and use ECR and S3 services, deployment is realised by CodeDeploy service and uses ECS service. SNS service is used for sending email notifications about CodePipeline status.",
+      "web_url": "https://gitlab.com/Andr1500/cicd_bluegreen_codepipeline_ecs",
+      "star_count": 2,
+      "last_activity_at": "2026-09-30T09:36:21.536Z",
+      "default_branch": "main",
+      "topics": [
+        "aws-ec2",
+        "codebuild",
+        "codecommit",
+        "codedeploy",
+        "codepipeline",
+        "ecs",
+        "s3",
+        "sns"
+      ],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.539,
+      "selected": false
+    },
+    {
+      "id": 81204458,
+      "name": "TerraRoam",
+      "name_with_namespace": "Roxanne Ardary / TerraRoam",
+      "description": "TerraRoam is an open-source, AI-powered travel intelligence platform built for safe and intelligent exploration across roads, trails, and remote destinations. It combines vehicle-aware navigation, camping and activity discovery, verified reviews, offline-first maps, and a real-time AI co-pilot into one unified system. Designed under the AGPL-3.0+ license, TerraRoam is modular, self-hostable, and built to continuously evolve through community and AI-assisted development.  https://roxanneardary.com/terraroam/",
+      "web_url": "https://gitlab.com/Roxanne_Ardary/terraroam",
+      "star_count": 0,
+      "last_activity_at": "2026-08-11T09:42:24.709Z",
+      "default_branch": "main",
+      "topics": [
+        "AI",
+        "SBL",
+        "SDD",
+        "agplv3",
+        "ai-assistant",
+        "automotive",
+        "legal",
+        "map",
+        "mapping-tools",
+        "navigation",
+        "open source",
+        "open-source",
+        "roxanneardary",
+        "self-hosted",
+        "spec-driven-development",
+        "specification",
+        "specification-branding-license"
+      ],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.57,
+      "selected": false
+    },
+    {
+      "id": 87793924,
+      "name": "South Korean Political News Analytics",
+      "name_with_namespace": "Katarina / South Korean Political News Analytics",
+      "description": "• Developed and deployed an interactive media analytics dashboard analyzing 150 English-language political news articles across six major South Korean publications.\r\n• Applied TF-IDF vectorization and K-Means clustering to identify recurring themes and examine differences in political news coverage across publications.\r\n• Designed a Snowflake cloud analytics layer using relational tables and SQL reporting views to support publication-level comparisons, topic distributions, and NLP cluster analysis.\r\n• Integrated Snowflake with Streamlit using RSA key-pair authentication and role-based, read-only access, enabling secure retrieval of cloud-hosted analytics.\r\n• Deployed the application through GitLab and Render, delivering an accessible, interactive portfolio project with publication filters, visualizations, and downloadable analytical results.",
+      "web_url": "https://gitlab.com/katarina.hds/south-korean-political-news-analytics",
+      "star_count": 0,
+      "last_activity_at": "2026-10-27T23:25:10.033Z",
+      "default_branch": "main",
+      "topics": [
+        "Render",
+        "pandas",
+        "pandas-python",
+        "plotly",
+        "python",
+        "scikit-learn",
+        "sql",
+        "streamlit"
+      ],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.568,
+      "selected": false
+    },
+    {
+      "id": 84776702,
+      "name": "control-room",
+      "name_with_namespace": "GitLab.com / Public Sector / exhibits / Foundry / control-room",
+      "description": "Reporting: live GitLab Query Language (GLQL) views over the whole group.  It consumes data from the four projects above and presents it as GLQL-powered dashboards.",
+      "web_url": "https://gitlab.com/gitlab-com/public-sector/exhibits/foundry/control-room",
+      "star_count": 0,
+      "last_activity_at": "2026-11-03T07:29:53.287Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.568,
+      "selected": false
+    },
+    {
+      "id": 84266007,
+      "name": "Outgoing-Call-Reports",
+      "name_with_namespace": "Amirreza Shayesteh Far / Outgoing-Call-Reports",
+      "description": "Adds a private outgoing call reporting system to WordPress with dashboard submission, custom post type, call status tracking, custom columns, and role-based access control.",
+      "web_url": "https://gitlab.com/amirrezasr/Outgoing-Call-Reports",
+      "star_count": 0,
+      "last_activity_at": "2026-07-09T08:22:49.404Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.568,
+      "selected": false
+    },
+    {
+      "id": 86067076,
+      "name": "lomiri-push-service",
+      "name_with_namespace": "Prachi Bhat / lomiri-push-service",
+      "description": "Protocol, client, and development code for Ubuntu Touch push notifications",
+      "web_url": "https://gitlab.com/bhatprachi0910/lomiri-push-service",
+      "star_count": 0,
+      "last_activity_at": "2026-09-03T17:08:07.473Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "push notifications",
+      "relevance": 0.55,
+      "selected": false
+    },
+    {
+      "id": 84829223,
+      "name": "vrchat-social-graph",
+      "name_with_namespace": "Nyarc / vrchat-social-graph",
+      "description": "Maps everyone you've met in VRChat from your local VRCX history. Single-exe Windows app, fully offline.",
+      "web_url": "https://gitlab.com/Myarcer/vrchat-social-graph",
+      "star_count": 0,
+      "last_activity_at": "2026-09-09T21:17:11.946Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.549,
+      "selected": false
+    },
+    {
+      "id": 87476937,
+      "name": "auto-background-remover",
+      "name_with_namespace": "Asadullah Hil Galib / auto-background-remover",
+      "description": "Android Background Remover is a blazing-fast, offline AI image background removal library for Android. Perfect for e-commerce, social, and photo editing apps. Remove backgrounds from Bitmaps with high accuracy, real-time speed, and zero server or API dependencies.",
+      "web_url": "https://gitlab.com/coderboygalif/auto-background-remover",
+      "star_count": 0,
+      "last_activity_at": "2026-10-26T03:39:58.296Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.54,
+      "selected": false
+    },
+    {
+      "id": 85380501,
+      "name": "Offline Maps",
+      "name_with_namespace": "Kingsland Academy Open Source / Offline Maps",
+      "description": null,
+      "web_url": "https://gitlab.com/kingsland-academy-foss/offline-maps",
+      "star_count": 0,
+      "last_activity_at": "2026-08-13T11:08:50.941Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.539,
+      "selected": false
+    },
+    {
+      "id": 86766946,
+      "name": "GCP_Reporting_Dashboard",
+      "name_with_namespace": "Gregory Urena / GCP_Reporting_Dashboard",
+      "description": null,
+      "web_url": "https://gitlab.com/gurena/gcp_reporting_dashboard",
+      "star_count": 0,
+      "last_activity_at": "2026-09-22T17:46:07.235Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.519,
+      "selected": false
+    },
+    {
+      "id": 88415895,
+      "name": "MapsOffline",
+      "name_with_namespace": "RecoveryAdvancedFree / MapsOffline",
+      "description": "הפרויקט עבר ל-GitHub: כל הגרסאות החדשות יוצאות מעכשיו רק ב-https://github.com/yossi8765/MapsOffline (MapsOffline moved to GitHub)",
+      "web_url": "https://gitlab.com/RecoveryAdvancedFree/MapsOffline",
+      "star_count": 0,
+      "last_activity_at": "2026-11-09T08:34:45.110Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "offline maps",
+      "relevance": 0.514,
+      "selected": false
+    },
+    {
+      "id": 84224841,
+      "name": "Customer Quote Rating ELT Pipeline",
+      "name_with_namespace": "Shaheer Khan / Customer Quote Rating ELT Pipeline",
+      "description": "An end-to-end ELT and analytics engineering project built with PySpark, PostgreSQL, dbt, and Apache Airflow to process customer quote rating data using the Medallion Architecture (Bronze, Silver, and Gold layers). The pipeline extracts raw data, performs scalable transformations and standardization in PySpark and dbt, orchestrates workflows with Airflow, and produces clean, analytics-ready datasets for reporting, dashboards, and business intelligence",
+      "web_url": "https://gitlab.com/shaheerkhan6075/xpssa",
+      "star_count": 0,
+      "last_activity_at": "2026-07-23T12:37:20.416Z",
+      "default_branch": "main",
+      "topics": [
+        "Apache Spark",
+        "apache airflow",
+        "databricks",
+        "dataset",
+        "dbt",
+        "docker",
+        "pyspark",
+        "python",
+        "snowflake"
+      ],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.505,
+      "selected": false
+    },
+    {
+      "id": 35323091,
+      "name": "rollbar-sample",
+      "name_with_namespace": "Кафка / rollbar-sample",
+      "description": "simple directory tree application to demonstrate the Rollbar real-time error reporting interface",
+      "web_url": "https://gitlab.com/kafkaa/rollbar-sample",
+      "star_count": 0,
+      "last_activity_at": "2022-04-13T14:57:42.784Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "app interface & reporting",
+      "relevance": 0.505,
+      "selected": false
+    },
+    {
+      "id": 88144132,
+      "name": "EchoAnalytics",
+      "name_with_namespace": "Roxanne Ardary / EchoAnalytics",
+      "description": "EchoAnalytics is an open-source, self-hosted web analytics platform designed to turn website traffic into actionable insights. It provides comprehensive webmaster metrics, real-time monitoring, customizable dashboards, reporting, and AI-powered analysis while prioritizing privacy, data ownership, and transparency. Built with a modular architecture and optional plugin support, EchoAnalytics gives website owners control over their analytics without relying on proprietary third-party services.  https://roxanneardary.com/echoanalytics/",
+      "web_url": "https://gitlab.com/Roxanne_Ardary/echoanalytics",
+      "star_count": 0,
+      "last_activity_at": "2026-10-27T08:55:56.877Z",
+      "default_branch": "main",
+      "topics": [
+        "AGPL3",
+        "AI",
+        "SBL",
+        "SDD",
+        "ai-analysis",
+        "analytics",
+        "open-source",
+        "open-source-licenses",
+        "roxanneardary",
+        "spec-driven-development",
+        "specification",
+        "specification-branding-license",
+        "web-analytics",
+        "website-traffic"
+      ],
+      "provider": "gitlab",
+      "matched_query": "reporting dashboard",
+      "relevance": 0.479,
+      "selected": false
+    }
+  ],
+  "passports": [
+    {
+      "passport_id": "PP-GH-organicmaps_organicmaps",
+      "software_name": "organicmaps/organicmaps",
+      "version": "unknown",
+      "source": {
+        "repository_url": "https://github.com/organicmaps/organicmaps",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "App Interface & Reporting",
+          "coverage": "partial",
+          "notes": "Provides native mobile UI for map visualization and navigation. However, it lacks the specific 'Team Leader' reporting features (diary submission, alert acknowledgement) required by the component. It is a consumer-grade mapping app, not a tactical team coordination tool.",
+          "capability_id": "CAP.MOBILE.APP",
+          "evidence_status": "declared",
+          "confidence": 0.8,
+          "evidence_refs": [
+            "README.md@81b92d1c",
+            "api:project@81b92d1c"
+          ]
+        },
+        {
+          "name": "Offline Map Support",
+          "coverage": "full",
+          "notes": "Core feature of the application. Explicitly designed for offline use with OpenStreetMap data.",
+          "capability_id": "CAP.MAP.OFFLINE",
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@81b92d1c"
+          ]
+        },
+        {
+          "name": "Push Notifications",
+          "coverage": "none",
+          "notes": "The README explicitly states 'No push notifications' as a privacy feature. The app is designed to be offline-first and does not include FCM/APNS integration for incoming alerts.",
+          "capability_id": "CAP.MOBILE.NOTIFY",
+          "evidence_status": "declared",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "README.md@81b92d1c"
+          ]
+        },
+        {
+          "name": "Turn-by-Turn Navigation",
+          "coverage": "full",
+          "notes": "Supports walking, cycling, and car navigation with voice guidance.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "README.md@81b92d1c"
+          ]
+        },
+        {
+          "name": "Map Search & Routing",
+          "coverage": "full",
+          "notes": "Fast offline search and routing capabilities are core features.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "README.md@81b92d1c"
+          ]
+        },
+        {
+          "name": "Track Management",
+          "coverage": "full",
+          "notes": "Supports import/export of KML, KMZ, GPX, GeoJSON formats.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.8,
+          "evidence_refs": [
+            "README.md@81b92d1c"
+          ]
+        }
+      ],
+      "interfaces": [],
+      "dependencies": [
+        "OpenStreetMap data",
+        "Android SDK",
+        "iOS SDK",
+        "C++23 Standard Library"
+      ],
+      "license": "Apache-2.0",
+      "maturity": "stable",
+      "constraints": [
+        "Requires mobile OS (Android or iOS)",
+        "Requires significant storage for map tiles",
+        "No internet connection required for core functionality"
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 120.0,
+        "confidence": "low",
+        "assumptions": [
+          "Assumes ability to fork the C++ core and rewrite Android/iOS UI layers completely.",
+          "Assumes 'No push notifications' constraint can be overridden by integrating FCM/APNS, which contradicts the project's privacy philosophy.",
+          "Assumes custom backend integration for diary/alert submission is built externally as this app has no networking stack for user data.",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "Organic Maps is an offline maps app with no push notifications or tracking.",
+          "source_ref": "README.md@81b92d1c",
+          "verified": false
+        },
+        {
+          "claim": "Project uses C++ and supports Android/iOS platforms.",
+          "source_ref": "api:project@81b92d1c",
+          "verified": false
+        },
+        {
+          "claim": "Build system is CMake with Android Gradle integration.",
+          "source_ref": "CMakeLists.txt@81b92d1c",
+          "verified": false
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [high] The capability 'Turn-by-Turn Navigation' has a null capability_id and relies solely on README marketing text ('declared' status). The rubric requires 'verified' status for full coverage claims, which necessitates code or test evidence. No source files implementing navigation logic are cited. | [high] Similar to navigation, this critical capability is marked 'full' based only on README claims. The rubric mandates code/test evidence for 'verified' status. The provided evidence does not include source files for the routing algorithm or search index. | [medium] The claim that the app supports import/export of KML, KMZ, GPX, GeoJSON is based on README text. While likely true, it lacks code-level verification (e.g., references to `src/io/` or corresponding tests) required for a 'verified' status under the rubric. | [medium] The core value proposition is claimed via README. While the `CMakeLists.txt` shows C++23 and Android/iOS support, it does not explicitly prove offline map rendering capabilities without code references. | [low] The passport claims Apache-2.0, but the `api:project@81b92d1c` metadata explicitly states `license_api=None`. While a LICENSE file exists in the tree, the API metadata discrepancy suggests potential inconsistency or that the license might be composite (e.g., including 3rd party libs with different licenses)."
+      },
+      "revision": "81b92d1c24553833a1d856a12f47220a88b5f278",
+      "description": "Organic Maps is a privacy-focused, offline-capable mobile mapping application for Android and iOS. It provides detailed map visualization, turn-by-turn navigation, search, and track management using OpenStreetMap data. It explicitly excludes cloud connectivity features such as push notifications, user accounts, or telemetry.",
+      "interfaces_detail": [],
+      "deployment_constraints": [
+        "Requires mobile OS (Android or iOS)",
+        "Requires significant storage for map tiles",
+        "No internet connection required for core functionality"
+      ],
+      "runtime": [
+        "Android (Java/Kotlin)",
+        "iOS (Objective-C/Swift)",
+        "Native C++ Core"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No Push Notification support (FCM/APNS) - explicitly excluded by design.",
+        "No WebSocket support for real-time alert relay.",
+        "No HTTPS POST API for diary entry or position report submission.",
+        "No 'Team Leader' specific UI or workflow.",
+        "No user authentication or account management."
+      ],
+      "risks": [
+        "License: Apache 2.0 is permissive, but the app's privacy-first design may conflict with defense requirements for data reporting.",
+        "Maintenance: Forking a consumer app to add enterprise features may lead to divergence and high maintenance costs.",
+        "Security: The app explicitly avoids network connectivity; adding it introduces attack surface not originally designed for."
+      ],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee (open source)",
+        "adaptation_assumptions": [
+          "Assumes ability to fork the C++ core and rewrite Android/iOS UI layers completely.",
+          "Assumes 'No push notifications' constraint can be overridden by integrating FCM/APNS, which contradicts the project's privacy philosophy.",
+          "Assumes custom backend integration for diary/alert submission is built externally as this app has no networking stack for user data."
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T13:00:34+00:00",
+      "stars": 15916,
+      "last_activity": "2026-11-09T12:45:43Z"
+    },
+    {
+      "passport_id": "PP-GH-caronc_apprise",
+      "software_name": "caronc/apprise",
+      "version": "unknown",
+      "source": {
+        "repository_url": "https://github.com/caronc/apprise",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "App Interface & Reporting",
+          "coverage": "none",
+          "notes": "This is a backend notification library/CLI, not a mobile app interface or reporting tool.",
+          "capability_id": "CAP.MOBILE.APP",
+          "evidence_status": "unknown",
+          "confidence": 0.9,
+          "evidence_refs": []
+        },
+        {
+          "name": "Push Notifications",
+          "coverage": "partial",
+          "notes": "Provides the capability to send push notifications to many services (FCM/APNS via plugins like Pushbullet, etc.), but does not implement the FCM/APNS client itself directly in this repo; it relies on external APIs/plugins. It acts as a relay.",
+          "capability_id": "CAP.MOBILE.NOTIFY",
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "api:project@dcbd3858",
+            "README.md@dcbd3858"
+          ]
+        },
+        {
+          "name": "Offline Map Support",
+          "coverage": "none",
+          "notes": "No map or location functionality present.",
+          "capability_id": "CAP.MAP.OFFLINE",
+          "evidence_status": "unknown",
+          "confidence": 0.95,
+          "evidence_refs": []
+        },
+        {
+          "name": "Notification Relay API",
+          "coverage": "partial",
+          "notes": "README mentions 'Apprise API' as a way to relay notifications, but no source code for the API server was included in the excerpts.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.8,
+          "evidence_refs": [
+            "README.md@dcbd3858"
+          ]
+        },
+        {
+          "name": "CLI Notification Tool",
+          "coverage": "full",
+          "notes": "CLI tool 'apprise' is explicitly documented and supported.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "README.md@dcbd3858"
+          ]
+        },
+        {
+          "name": "Multi-Service Notification Support",
+          "coverage": "full",
+          "notes": "Supports many services via plugins (Octopush, Pushbullet, etc.).",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@dcbd3858",
+            "apprise/plugins/octopush.py@dcbd3858",
+            "apprise/plugins/pushbullet.py@dcbd3858"
+          ]
+        },
+        {
+          "name": "Attachment Handling",
+          "coverage": "partial",
+          "notes": "README mentions handling images and attachments.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.7,
+          "evidence_refs": [
+            "README.md@dcbd3858"
+          ]
+        }
+      ],
+      "interfaces": [
+        "Python Library API (python)",
+        "CLI Interface (cli)"
+      ],
+      "dependencies": [
+        "requests",
+        "urllib3",
+        "requests-oauthlib",
+        "click>=5.0",
+        "markdown",
+        "PyYAML",
+        "certifi"
+      ],
+      "license": "bsd-2-clause",
+      "maturity": "stable",
+      "constraints": [
+        "Requires Python runtime (3.9+)"
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 40.0,
+        "confidence": "low",
+        "assumptions": [
+          "Integration requires building a custom mobile app frontend that uses Apprise as a backend notification service.",
+          "Position and diary data must be handled by the mobile app or a separate service; Apprise only handles the final notification dispatch.",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "Apprise is a push notification library supporting many platforms.",
+          "source_ref": "README.md@dcbd3858",
+          "verified": false
+        },
+        {
+          "claim": "Supports Octopush SMS notifications.",
+          "source_ref": "apprise/plugins/octopush.py@dcbd3858",
+          "verified": true
+        },
+        {
+          "claim": "Supports Pushbullet notifications.",
+          "source_ref": "apprise/plugins/pushbullet.py@dcbd3858",
+          "verified": true
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [high] The artifact claims 'full' coverage for multi-service support, but the notes explicitly state it relies on external APIs/plugins and does not implement FCM/APNS clients directly. Furthermore, the evidence only verifies two specific plugins (Octopush, Pushbullet). Claiming 'full' coverage implies comprehensive implementation of all services, which is contradicted by the 'partial' nature of the relay mechanism and the limited evidence provided for a library supporting 'almost every platform'. | [medium] The claim of 'full' coverage for the CLI tool is based solely on README documentation ('declared'). The rubric requires 'verified' status to be supported by code/test evidence. While the CLI likely exists, the passport does not cite source files (e.g., `apprise/cli.py`) or tests as evidence for this specific capability, relying only on marketing text. | [medium] The claim that attachments are handled is marked as 'declared' based on README text. However, the rubric states that capabilities marked with evidence_status 'verified' or 'declared' must be supported by an excerpt. While the README mentions it, there is no source code or test evidence provided to verify this functionality actually exists in the codebase, making the 'partial' claim weak without technical proof. | [low] The artifact notes that it acts as a relay and does not implement FCM/APNS directly. However, the capability ID `CAP.MOBILE.NOTIFY` might imply direct mobile OS integration. The distinction between 'relay' and 'direct notification' is critical for defense architectures. The current 'partial' label is vague; it should clarify that it supports *sending* to mobile services but does not handle *mobile-side* reception or OS-level push registration."
+      },
+      "revision": "dcbd38584f8a9855f2343d369fd1f664ab06b3a7",
+      "description": "Apprise is a Python library and CLI tool for sending push notifications to a wide variety of services (Telegram, Discord, Slack, SNS, etc.). It does not provide mobile app interfaces, offline map support, or position reporting. It serves as a notification relay/destination.",
+      "interfaces_detail": [
+        {
+          "name": "Python Library API",
+          "protocol": "python",
+          "direction": "out",
+          "schema_ref": "",
+          "evidence_status": "verified"
+        },
+        {
+          "name": "CLI Interface",
+          "protocol": "cli",
+          "direction": "bidirectional",
+          "schema_ref": "",
+          "evidence_status": "declared"
+        }
+      ],
+      "deployment_constraints": [
+        "Requires Python runtime (3.9+)"
+      ],
+      "runtime": [
+        "Python >=3.9"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No map visualization",
+        "No position reporting logic",
+        "No diary entry management",
+        "No offline capabilities",
+        "No direct FCM/APNS client implementation (relies on plugins/services)"
+      ],
+      "risks": [
+        "License: BSD-2-Clause is permissive but requires attribution.",
+        "Maintenance: High activity, but dependency on many external notification services which may change APIs."
+      ],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee (open source)",
+        "adaptation_assumptions": [
+          "Integration requires building a custom mobile app frontend that uses Apprise as a backend notification service.",
+          "Position and diary data must be handled by the mobile app or a separate service; Apprise only handles the final notification dispatch."
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T13:04:52+00:00",
+      "stars": 17735,
+      "last_activity": "2026-11-09T01:45:06Z"
+    },
+    {
+      "passport_id": "PP-CUSTOM-C-MOBILE-APP",
+      "software_name": "Custom development: Cellular Team Leader App",
+      "version": "n/a",
+      "source": {
+        "repository_url": "",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "App Interface & Reporting",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.MOBILE.APP",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        },
+        {
+          "name": "Push Notifications",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.MOBILE.NOTIFY",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        },
+        {
+          "name": "Offline Map Support",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.MAP.OFFLINE",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        }
+      ],
+      "interfaces": [
+        "As specified by Engine 2"
+      ],
+      "dependencies": [],
+      "license": "proprietary (in-house)",
+      "maturity": "unknown",
+      "constraints": [],
+      "adaptation_effort_hours": {
+        "estimate": 0.0,
+        "confidence": "low",
+        "assumptions": [
+          "Build effort estimated by Engine 3, not here"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [],
+      "validation": {
+        "status": "passed",
+        "judge_notes": "Synthetic BUILD baseline; no external claims"
+      },
+      "revision": null,
+      "description": "Represents in-house development when no reusable candidate covers the component.",
+      "interfaces_detail": [],
+      "deployment_constraints": [],
+      "runtime": [],
+      "tests_present": null,
+      "known_gaps": [],
+      "risks": [],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee",
+        "adaptation_assumptions": []
+      },
+      "is_custom_development": true,
+      "analysis_timestamp": "2026-11-09T13:08:44+00:00",
+      "stars": null,
+      "last_activity": null
+    }
+  ],
+  "rankings": [
+    {
+      "component_id": "C-MOBILE-APP",
+      "candidate_id": "PP-GH-caronc_apprise",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 0.167,
+        "interface_fit": 0.667,
+        "adaptation_effort": 0.733,
+        "maturity": 1.0,
+        "documentation": 1.0,
+        "operational_fit": 0.9
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": 60.8,
+      "rank": 1,
+      "covered_capabilities": [
+        "CAP.MOBILE.NOTIFY"
+      ],
+      "missing_capabilities": [
+        "CAP.MOBILE.APP",
+        "CAP.MAP.OFFLINE"
+      ],
+      "required_modifications": [
+        "Implement/extend: App Interface & Reporting",
+        "Implement/extend: Offline Map Support"
+      ],
+      "explanation": "1/3 required capabilities covered; missing App Interface & Reporting, Offline Map Support; license bsd-2-clause (permissive); maturity stable",
+      "confidence": "medium"
+    },
+    {
+      "component_id": "C-MOBILE-APP",
+      "candidate_id": "PP-CUSTOM-C-MOBILE-APP",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 1.0,
+        "interface_fit": 1.0,
+        "adaptation_effort": null,
+        "maturity": null,
+        "documentation": null,
+        "operational_fit": 1.0
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": null,
+      "rank": null,
+      "covered_capabilities": [
+        "CAP.MOBILE.APP",
+        "CAP.MOBILE.NOTIFY",
+        "CAP.MAP.OFFLINE"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "BUILD baseline (custom development to specification). Not scored; Engine 3 estimates its effort.",
+      "confidence": "low"
+    },
+    {
+      "component_id": "C-MOBILE-APP",
+      "candidate_id": "PP-GH-organicmaps_organicmaps",
+      "eligible": false,
+      "exclusion_reasons": [
+        "Requires online/cloud service but component must run on-premises/offline"
+      ],
+      "dimension_scores": {
+        "functional_coverage": 0.5,
+        "interface_fit": null,
+        "adaptation_effort": 0.2,
+        "maturity": 1.0,
+        "documentation": 0.8,
+        "operational_fit": 0.3
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": null,
+      "rank": null,
+      "covered_capabilities": [
+        "CAP.MOBILE.APP",
+        "CAP.MAP.OFFLINE"
+      ],
+      "missing_capabilities": [
+        "CAP.MOBILE.NOTIFY"
+      ],
+      "required_modifications": [
+        "Implement/extend: Push Notifications"
+      ],
+      "explanation": "2/3 required capabilities covered; missing Push Notifications; license Apache-2.0 (permissive); maturity stable; unknown: interface_fit",
+      "confidence": "medium"
+    }
+  ],
+  "errors": []
+}

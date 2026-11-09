@@ -1,0 +1,1 @@
+{"model": "qwen3.6:35b-a3b-q8_0", "tag": "e1:terms:C-DIARY-SVC", "schema": "_Terms", "seconds": 1.2, "content": "{\n  \"queries\": [\n    \"diary service\",\n    \"entry recording\",\n    \"search index\"\n  ]\n}"}

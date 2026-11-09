@@ -1,0 +1,1 @@
+{"model": "qwen3.6:35b-a3b-q8_0", "tag": "e1:terms:C-COMMAND-UI", "schema": "_Terms", "seconds": 1.2, "content": "{\n  \"queries\": [\n    \"map layer\",\n    \"leaflet plugin\",\n    \"openlayers\"\n  ]\n}"}

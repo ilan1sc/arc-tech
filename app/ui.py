@@ -73,5 +73,8 @@ def assumptions_editor():
         a.hourly_rate = st.number_input("Loaded hourly rate", 10.0, 1000.0, float(a.hourly_rate), 5.0,
                                         help="Changing the rate recomputes money; hours stay the same.")
         a.risk_reserve_fraction = st.slider("Risk reserve", 0.0, 0.5, float(a.risk_reserve_fraction), 0.05)
+        a.reuse_adaptation_floor.base = st.slider("Reuse adaptation floor (% of BUILD)", 0.05, 0.6,
+                                                   float(a.reuse_adaptation_floor.base), 0.05,
+                                                   help="Minimum effort to adopt third-party software, relative to building it.")
         st.caption("All hour baselines are illustrative, editable assumptions — not measured costs.")
     return a

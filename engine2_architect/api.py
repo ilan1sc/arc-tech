@@ -42,19 +42,43 @@ def generate_architecture(srs_text: str, constraints: Optional[list[str]] = None
                 constraints=constraints or [],
                 change_log=[ChangeLogEntry(version=1, summary="Initial architecture generated from SRS")])
     d = _assemble(draft, base)
+    d = self_check(d, base)
+    store.save(KIND, architecture_id, d, version=1)
+    return d
+
+
+def _structural_issues(d: ArchitectureDesign) -> tuple[list[str], list[str]]:
     gaps = [c.requirement_id for c in d.coverage if c.status == "gap"
             and next(r for r in d.requirements if r.id == c.requirement_id).priority == "mandatory"]
-    if gaps:   # AR-03 completeness: one bounded repair pass before publishing v1
-        texts = {r.id: r.text for r in d.requirements}
-        fb = ArchitectureFeedback(feedback_id="FB-SELFCHECK", requested_change=(
-            "Allocate these unallocated mandatory requirements to existing or new components (add requirement_ids and "
-            "capabilities; add a component if responsibility is missing): " + "; ".join(f"{g}: {texts[g]}" for g in gaps)),
-            observations=["Engine 2 deterministic validation found unallocated mandatory requirements"], priority="high")
-        draft = revise(d, fb, [])
-        d = _assemble(draft, base)
-        d.change_log.append(ChangeLogEntry(version=1, summary=f"Self-check repair pass allocated: {', '.join(gaps)}",
-                                           reason="AR-06 validation before first publication"))
-    store.save(KIND, architecture_id, d, version=1)
+    isolated = [f.refs[0] for f in d.validation_findings if f.rule == "isolated-component" and f.refs]
+    return gaps, isolated
+
+
+def self_check(d: ArchitectureDesign, base: dict, max_passes: int = 2) -> ArchitectureDesign:
+    """AR-03/AR-06: bounded repair passes before first publication (unallocated requirements, isolated components)."""
+    texts = {r.id: r.text for r in d.requirements}
+    names = {c.id: c.name for c in d.components}
+    for n in range(max_passes):
+        gaps, isolated = _structural_issues(d)
+        if not gaps and not isolated:
+            break
+        asks = []
+        if gaps:
+            asks.append("Allocate these unallocated mandatory requirements to existing or new components (add requirement_ids "
+                        "and capabilities; add a component if responsibility is missing): "
+                        + "; ".join(f"{g}: {texts[g]}" for g in gaps))
+        if isolated:
+            asks.append("These components have no interfaces. Add the directed interfaces they need (e.g. audit events in, "
+                        "configuration distribution out, device status/commands via the messaging backbone), with payload, "
+                        "mode, protocol candidates, error handling and security: "
+                        + "; ".join(f"{c} ({names.get(c, c)})" for c in isolated))
+        fb = ArchitectureFeedback(feedback_id=f"FB-SELFCHECK-{n + 1}", requested_change=" ".join(asks),
+                                  observations=["Engine 2 deterministic validation before first publication"], priority="high")
+        d2 = _assemble(revise(d, fb, []), base)
+        d2.change_log = list(d.change_log) + [ChangeLogEntry(
+            version=1, summary=f"Self-check pass {n + 1}: allocated {gaps or 'none'}; connected {isolated or 'none'}",
+            reason="AR-06 validation before first publication")]
+        d = d2
     return d
 
 
@@ -125,6 +149,10 @@ def revise_architecture(architecture_id: str, feedback: ArchitectureFeedback,
                 open_questions=old.open_questions, capabilities=old.capabilities,
                 constraints=list(dict.fromkeys(old.constraints + extra)), change_log=list(old.change_log))
     new = _assemble(draft, base)
+    new = self_check(new, base, max_passes=1)   # revisions must not silently drop requirement allocation
+    for ch in new.change_log:
+        if ch.summary.startswith("Self-check"):
+            ch.version = new_version
     dd = diff(old, new)
     new.change_log.append(ChangeLogEntry(
         version=new_version, summary=feedback.requested_change, reason="; ".join(feedback.observations)[:500],

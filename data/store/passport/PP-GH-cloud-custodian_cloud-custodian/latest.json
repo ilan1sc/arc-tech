@@ -1,0 +1,161 @@
+{
+  "passport_id": "PP-GH-cloud-custodian_cloud-custodian",
+  "software_name": "cloud-custodian/cloud-custodian",
+  "version": "0.9.53",
+  "source": {
+    "repository_url": "https://github.com/cloud-custodian/cloud-custodian",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Authentication & Authorization",
+      "coverage": "none",
+      "notes": "Cloud Custodian consumes cloud provider credentials (AWS IAM Roles, Azure Service Principals, GCP Service Accounts) to execute policies against cloud resources. It does not provide its own user authentication, identity management, or authorization service for end-users accessing the tool itself. It relies entirely on the underlying cloud provider's IAM.",
+      "capability_id": "CAP.SEC.AUTH",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Policy Definition & Management",
+      "coverage": "full",
+      "notes": "Core capability. Supports YAML-based policy definitions with filters and actions for various cloud resources.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@c734fdb2",
+        "c7n/policy.py@c734fdb2"
+      ]
+    },
+    {
+      "name": "Cloud Resource Governance & Compliance",
+      "coverage": "full",
+      "notes": "Enforces security policies (encryption, access requirements), tag policies, and cost management via garbage collection.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@c734fdb2"
+      ]
+    },
+    {
+      "name": "Multi-Cloud Support",
+      "coverage": "full",
+      "notes": "Explicitly supports AWS, Azure, GCP, Kubernetes, OpenStack, OCI, and Tencent Cloud via modular providers.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@c734fdb2",
+        "pyproject.toml@c734fdb2"
+      ]
+    },
+    {
+      "name": "Serverless Event-Driven Execution",
+      "coverage": "partial",
+      "notes": "Supports running policies via serverless functions (AWS Lambda, Azure Functions) triggered by cloud events (CloudWatch Events, EventGrid, Pub/Sub).",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.85,
+      "evidence_refs": [
+        "README.md@c734fdb2"
+      ]
+    }
+  ],
+  "interfaces": [],
+  "dependencies": [
+    "boto3",
+    "cryptography",
+    "jsonschema",
+    "pyyaml",
+    "python-dateutil",
+    "tabulate",
+    "urllib3"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires valid cloud provider credentials (IAM roles, service accounts) to function",
+    "Docker image available based on Ubuntu 24.04",
+    "Can run as cron job or serverless function"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "The target component requires a custom configuration service with user/role management, which is not present in Custodian.",
+      "MQTT distribution interface must be built from scratch as Custodian uses cloud-native event buses or CLI/API.",
+      "Geofence definitions are not natively supported; would require custom resource types and filters.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Cloud Custodian is a rules engine for managing public cloud accounts and resources using YAML policies.",
+      "source_ref": "README.md@c734fdb2",
+      "verified": false
+    },
+    {
+      "claim": "Version 0.9.53 defined in pyproject.toml.",
+      "source_ref": "pyproject.toml@c734fdb2",
+      "verified": false
+    },
+    {
+      "claim": "Supports AWS, Azure, GCP, Kubernetes, OpenStack, OCI, Tencent Cloud.",
+      "source_ref": "README.md@c734fdb2",
+      "verified": false
+    },
+    {
+      "claim": "Policy loading and validation logic exists in c7n/policy.py.",
+      "source_ref": "c7n/policy.py@c734fdb2",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The rubric requires that capabilities marked with evidence_status 'declared' must still be supported by an excerpt. The provided evidence_refs for this capability only include README.md, which is marketing/documentation text. There is no code or test evidence (e.g., in c7n/actions/ or tests/) to verify the actual enforcement logic for encryption, access requirements, or garbage collection. 'Declared' status without corresponding source/test evidence violates the audit rule. | [high] Similar to the above, this capability is marked 'declared' but relies solely on README.md and pyproject.toml. While pyproject.toml lists dependencies, it does not prove the implementation of functional support for all listed providers (AWS, Azure, GCP, Kubernetes, OpenStack, OCI, Tencent Cloud). The rubric requires code/test evidence for verification; relying on a manifest file for 'full coverage' of complex multi-cloud logic is insufficient and overstated. | [medium] The capability is marked 'declared' with only README.md as evidence. The README states it 'automatically provisions serverless functions', but there is no code evidence (e.g., in c7n/actions/ or specific provider modules) provided to verify this provisioning logic exists and works as described. This is an unsupported claim of functionality. | [medium] The evidence section explicitly lists the claim 'Version 0.9.53 defined in pyproject.toml' with 'verified: false'. However, the artifact itself asserts this version without providing a separate 'verified' status for it in the capabilities or a distinct verified evidence entry. While pyproject.toml is present, the explicit 'false' verification in the evidence list suggests the reviewer could not confirm it matches the specific commit hash c734fdb2 or that the file content was actually inspected. This creates ambiguity. | [low] The constraint and deployment_constraints mention Ubuntu 24.04. The Dockerfile excerpt confirms `FROM ubuntu:24.04 AS build-env`. However, the final image stage is not fully visible in the excerpt (it cuts off after openstack). While likely true, the evidence is incomplete to verify the *final* runtime image base if multi-stage builds change the base OS."
+  },
+  "revision": "c734fdb2891874e084414001dcaf23e97c063135",
+  "description": "Cloud Custodian (c7n) is an open-source rules engine for managing public cloud accounts and resources. It allows users to define policies in YAML to query, filter, and take actions on resources across AWS, Azure, GCP, Kubernetes, and other providers. It focuses on security compliance, cost optimization, and governance through automated policy enforcement (e.g., tagging, encryption, resource termination).",
+  "interfaces_detail": [],
+  "deployment_constraints": [
+    "Requires valid cloud provider credentials (IAM roles, service accounts) to function",
+    "Docker image available based on Ubuntu 24.04",
+    "Can run as cron job or serverless function"
+  ],
+  "runtime": [
+    "Python >=3.10.2, <4.0.0"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No native user authentication/authorization system",
+    "No native role-based access control (RBAC) for tool users",
+    "No MQTT support for configuration distribution",
+    "No built-in geofence definition management",
+    "No local database or persistent state store for policies (relies on cloud storage/filesystem)"
+  ],
+  "risks": [
+    "License: Apache 2.0 is permissive but requires attribution.",
+    "Maintenance: Large project with many dependencies; updates may require significant testing.",
+    "Security: Relies on cloud provider IAM; misconfiguration of policies can lead to unintended resource actions."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The target component requires a custom configuration service with user/role management, which is not present in Custodian.",
+      "MQTT distribution interface must be built from scratch as Custodian uses cloud-native event buses or CLI/API.",
+      "Geofence definitions are not natively supported; would require custom resource types and filters."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T13:11:31+00:00",
+  "stars": 6109,
+  "last_activity": "2026-11-06T18:07:16Z"
+}

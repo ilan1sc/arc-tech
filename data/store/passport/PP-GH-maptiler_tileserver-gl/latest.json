@@ -1,0 +1,192 @@
+{
+  "passport_id": "PP-GH-maptiler_tileserver-gl",
+  "software_name": "maptiler/tileserver-gl",
+  "version": "5.7.0",
+  "source": {
+    "repository_url": "https://github.com/maptiler/tileserver-gl",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "partial",
+      "notes": "The server manages multiple map styles/layers defined in configuration files (config.json) or passed via CLI. It serves vector tiles and rasterized tiles for these layers. However, it does not provide a dynamic API to add/remove/modify layers at runtime; the layer configuration is static based on the startup config.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "verified",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@19a8df21",
+        "src/main.js@19a8df21"
+      ]
+    },
+    {
+      "name": "Tile Serving",
+      "coverage": "full",
+      "notes": "Core functionality is serving vector and raster tiles via HTTP endpoints.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@19a8df21",
+        "src/main.js@19a8df21"
+      ]
+    },
+    {
+      "name": "Configuration Management",
+      "coverage": "full",
+      "notes": "Supports configuration via config.json file or programmatic object passed to the server instance.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@19a8df21",
+        "test/data_decorator.js@19a8df21"
+      ]
+    },
+    {
+      "name": "Data Source Abstraction",
+      "coverage": "full",
+      "notes": "Supports MBTiles and PMTiles data sources via specific adapters.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "src/mbtiles_wrapper.js@19a8df21",
+        "src/main.js@19a8df21"
+      ]
+    },
+    {
+      "name": "Health Monitoring",
+      "coverage": "full",
+      "notes": "Provides a /health endpoint for liveness checks.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "src/healthcheck.js@19a8df21"
+      ]
+    }
+  ],
+  "interfaces": [
+    "Tile HTTP Endpoints (HTTP)",
+    "WMTS Endpoint (HTTP)",
+    "TileJSON API (HTTP)"
+  ],
+  "dependencies": [
+    "Node.js >= 20",
+    "MapLibre GL Native (for server-side rasterization)",
+    "MBTiles library (@mapbox/mbtiles)",
+    "PMTiles adapter"
+  ],
+  "license": "Apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires native dependencies (libglfw3, libcairo2, etc.) for server-side rasterization unless using the 'light' variant",
+    "Docker container available for simplified deployment",
+    "Needs sufficient memory/CPU for tile rendering"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 4.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The UI component will consume tiles via standard HTTP endpoints (TileJSON, vector/raster tiles).",
+      "No WebSocket support is evident in the server; communication will be REST/HTTP only.",
+      "Layer management is static; dynamic layer switching requires pre-configured styles.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Server serves vector and raster tiles using MapLibre GL Native",
+      "source_ref": "README.md@19a8df21",
+      "verified": false
+    },
+    {
+      "claim": "Version 5.7.0 defined in package.json",
+      "source_ref": "package.json@19a8df21",
+      "verified": false
+    },
+    {
+      "claim": "Supports MBTiles data source via wrapper",
+      "source_ref": "src/mbtiles_wrapper.js@19a8df21",
+      "verified": true
+    },
+    {
+      "claim": "Provides /health endpoint for health checks",
+      "source_ref": "src/healthcheck.js@19a8df21",
+      "verified": true
+    },
+    {
+      "claim": "Configuration can be passed programmatically or via config file",
+      "source_ref": "test/data_decorator.js@19a8df21",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The artifact claims the license is Apache-2.0, but the provided LICENSE.md excerpt explicitly states 'BSD 2-Clause License'. This is a direct contradiction of evidence. | [high] The artifact lists 'Tile Serving' as fully covered and verified, but the Evidence section explicitly marks the claim 'Server serves vector and raster tiles...' as 'verified: false'. Furthermore, the README only describes serving via HTTP endpoints (TileJSON/Vector/Raster) but does not provide code evidence for a generic 'Tile Serving' capability that might imply broader formats or protocols not listed. | [high] The rubric states: 'License, interfaces, performance claims not present in the evidence must be unknown.' The artifact lists WMTS as an interface. While the README mentions 'GIS via WMTS', the Evidence section does not contain a verified claim for WMTS implementation, and the interface status is only 'declared'. This is acceptable per rubric ('unknown' if not present), but the artifact should explicitly mark it as 'unknown' or 'declared' consistently. However, the bigger issue is that the artifact lists it as an interface without code evidence in the provided excerpts. | [medium] The evidence ref for this capability is 'test/data_decorator.js'. This is a test file, not production source code. The rubric states: ''verified' requires code/test evidence'. While tests are allowed, the claim of 'Configuration Management' being fully covered by a test file that only tests a 'dataDecorator' feature is an overstatement. It does not prove general configuration management (e.g., CLI args, env vars) is verified. | [medium] The artifact claims full coverage for MBTiles and PMTiles. Evidence refs include src/mbtiles_wrapper.js (verified in evidence list) and src/main.js. However, there is no specific evidence excerpt provided for the PMTiles adapter implementation (src/pmtiles_adapter.js is referenced in main.js but not included in the evidence excerpts or verified claims). The claim 'Supports MBTiles and PMTiles' is only partially supported by the provided evidence."
+  },
+  "revision": "19a8df2117a1a10182ead9225f917834916e0835",
+  "description": "TileServer GL is a map tile server that serves vector and raster tiles using MapLibre GL Native for server-side rendering. It supports various input formats including MBTiles, PMTiles, and remote URLs, and exposes tiles via standard HTTP endpoints compatible with clients like Leaflet, OpenLayers, and MapLibre GL JS.",
+  "interfaces_detail": [
+    {
+      "name": "Tile HTTP Endpoints",
+      "protocol": "HTTP",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "WMTS Endpoint",
+      "protocol": "HTTP",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "TileJSON API",
+      "protocol": "HTTP",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires native dependencies (libglfw3, libcairo2, etc.) for server-side rasterization unless using the 'light' variant",
+    "Docker container available for simplified deployment",
+    "Needs sufficient memory/CPU for tile rendering"
+  ],
+  "runtime": [
+    "Node.js",
+    "Linux (Ubuntu 24.04 recommended for Docker)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No WebSocket interface for real-time map updates or data requests (only HTTP/REST)",
+    "No Diary Search capability",
+    "No dynamic runtime layer modification API (layers must be defined in config)"
+  ],
+  "risks": [
+    "BSD 2-Clause License is permissive but requires attribution",
+    "Native dependencies may complicate deployment in restricted environments",
+    "Host header poisoning vulnerability if not configured with --public_url or allowed-hosts"
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The UI component will consume tiles via standard HTTP endpoints (TileJSON, vector/raster tiles).",
+      "No WebSocket support is evident in the server; communication will be REST/HTTP only.",
+      "Layer management is static; dynamic layer switching requires pre-configured styles."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T13:09:34+00:00",
+  "stars": 2919,
+  "last_activity": "2026-11-01T03:17:25Z"
+}

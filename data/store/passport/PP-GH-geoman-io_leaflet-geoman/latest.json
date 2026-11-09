@@ -1,0 +1,179 @@
+{
+  "passport_id": "PP-GH-geoman-io_leaflet-geoman",
+  "software_name": "geoman-io/leaflet-geoman",
+  "version": "2.20.6",
+  "source": {
+    "repository_url": "https://github.com/geoman-io/leaflet-geoman",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "partial",
+      "notes": "Provides robust client-side management of geometry layers (draw, edit, drag, cut, rotate, split, scale). Supports LayerGroups and GeoJSON. Does not natively handle server-side layer persistence or remote tile fetching.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@83fd4539",
+        "src/js/L.PM.Map.ts@83fd4539"
+      ]
+    },
+    {
+      "name": "Geofence Visualization",
+      "coverage": "full",
+      "notes": "Core capability to draw and display polygons, circles, and rectangles which serve as geofences.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@83fd4539"
+      ]
+    },
+    {
+      "name": "Geometry Editing",
+      "coverage": "full",
+      "notes": "Allows interactive editing of vertices, rotation, scaling, and splitting of drawn shapes.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "src/js/L.PM.Map.ts@83fd4539"
+      ]
+    },
+    {
+      "name": "Geospatial Calculation",
+      "coverage": "partial",
+      "notes": "Depends on Turf.js modules (boolean-contains, line-intersect) for spatial analysis like containment and intersection checks.",
+      "capability_id": null,
+      "evidence_status": "inferred",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "package.json@83fd4539"
+      ]
+    },
+    {
+      "name": "UI Toolbar Integration",
+      "coverage": "full",
+      "notes": "Includes a built-in toolbar for accessing drawing and editing tools.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "src/js/L.PM.Map.ts@83fd4539"
+      ]
+    }
+  ],
+  "interfaces": [
+    "Leaflet Map API Extension (JavaScript Library)",
+    "LayerGroup Management (JavaScript Library)"
+  ],
+  "dependencies": [
+    "Leaflet (Map Rendering)",
+    "@turf/boolean-contains",
+    "@turf/kinks",
+    "@turf/line-intersect",
+    "@turf/line-split",
+    "lodash",
+    "polyclip-ts"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires Leaflet.js map instance to function",
+    "Runs in web browser environment",
+    "No server-side execution capability"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 16.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The C-COMMAND-UI already uses Leaflet for map rendering",
+      "Geofences are stored as GeoJSON or similar geometry objects in the application state",
+      "Integration involves instantiating the Geoman plugin on an existing Leaflet map object",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Plugin supports drawing and editing of geometry layers including polygons, polylines, circles, and markers.",
+      "source_ref": "README.md@83fd4539",
+      "verified": false
+    },
+    {
+      "claim": "Provides LayerGroup management capabilities for organizing multiple geometry layers.",
+      "source_ref": "src/js/L.PM.Map.ts@83fd4539",
+      "verified": true
+    },
+    {
+      "claim": "Uses Turf.js for spatial calculations like intersection and containment.",
+      "source_ref": "package.json@83fd4539",
+      "verified": false
+    },
+    {
+      "claim": "Version 2.20.6 is the current release.",
+      "source_ref": "package.json@83fd4539",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The capability is marked 'declared' but supported only by README marketing text. The rubric requires 'verified' status for full coverage claims to be supported by code/test evidence. No source or test excerpt demonstrates the specific implementation of geofence visualization logic. | [high] The passport claims dependency on Turf.js modules for spatial analysis but marks status as 'inferred'. The rubric states that capabilities with inferred status must still be supported by an excerpt. While package.json lists dependencies, there is no code or test evidence showing these modules are actually invoked for the claimed functionality (containment/intersection checks). | [medium] The passport claims the toolbar is 'verified' via source code (src/js/L.PM.Map.ts), but the provided excerpt only shows TypeScript type definitions and interfaces. It does not show implementation code or tests that confirm the toolbar functionality exists and works as described. | [medium] The passport claims LayerGroup management is 'verified' via source code. While the excerpt from L.PM.Map.ts shows type definitions and the Edit/L.PM.Edit.LayerGroup.ts file shows interfaces, there is no test evidence provided in the excerpts that confirms these capabilities are implemented and tested (e.g., cypress tests for layergroup editing exist but are not cited as evidence for this specific capability). | [low] The evidence section marks this claim as verified=false, yet the passport asserts this version without providing a verified source reference in the capability or interface sections. While package.json confirms the version, the inconsistency between the evidence section's verification status and the passport's assertions creates ambiguity."
+  },
+  "revision": "83fd45395a1064174f67339ed96fbee5583b29a1",
+  "description": "Leaflet-Geoman is a JavaScript library (Leaflet plugin) providing drawing and editing capabilities for geometry layers on interactive maps. It enables operators to create, modify, and manage vector overlays such as polygons, polylines, circles, and markers directly within a Leaflet map instance.",
+  "interfaces_detail": [
+    {
+      "name": "Leaflet Map API Extension",
+      "protocol": "JavaScript Library",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "LayerGroup Management",
+      "protocol": "JavaScript Library",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires Leaflet.js map instance to function",
+    "Runs in web browser environment",
+    "No server-side execution capability"
+  ],
+  "runtime": [
+    "Browser (Client-side JavaScript)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No built-in REST API client for fetching remote map layers or geofence data",
+    "No WebSocket support for real-time layer synchronization",
+    "No diary/log search functionality",
+    "No server-side persistence of drawn geometries"
+  ],
+  "risks": [
+    "Client-side only: cannot enforce security policies on the geometry data itself without backend validation",
+    "Dependency on Leaflet version compatibility",
+    "MIT License is permissive but requires attribution"
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The C-COMMAND-UI already uses Leaflet for map rendering",
+      "Geofences are stored as GeoJSON or similar geometry objects in the application state",
+      "Integration involves instantiating the Geoman plugin on an existing Leaflet map object"
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T13:10:27+00:00",
+  "stars": 2439,
+  "last_activity": "2026-11-04T21:44:30Z"
+}

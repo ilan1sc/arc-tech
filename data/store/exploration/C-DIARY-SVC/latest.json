@@ -1,0 +1,1715 @@
+{
+  "component_id": "C-DIARY-SVC",
+  "queries": [
+    "diary service",
+    "entry recording",
+    "search index",
+    "diary entry recording"
+  ],
+  "discovered": [
+    {
+      "provider": "github",
+      "id": "gh:xerj-org/xerj",
+      "full_name": "xerj-org/xerj",
+      "name": "xerj",
+      "name_with_namespace": "xerj-org/xerj",
+      "description": "AI search engine and MCP server for bots and agents. One Rust binary indexes code, docs, logs, JSONL/CSV and PDFs for BM25 full-text, vector and hybrid search, code search without grep, agent memory and RAG. Elasticsearch-compatible API; Corpus Hub serves hundreds of reference memory corpora.",
+      "web_url": "https://github.com/xerj-org/xerj",
+      "star_count": 18644,
+      "last_activity_at": "2026-11-09T12:27:10Z",
+      "default_branch": "main",
+      "topics": [
+        "agent-memory",
+        "ai-agents",
+        "bm25",
+        "claude-code",
+        "cli",
+        "code-search",
+        "cursor",
+        "database",
+        "elasticsearch",
+        "full-text-search",
+        "hybrid-search",
+        "jsonl",
+        "local-first",
+        "mcp",
+        "mcp-server",
+        "model-context-protocol",
+        "rag",
+        "rust",
+        "search-engine",
+        "vector-search"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "search index",
+      "relevance": 0.567,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:manticoresoftware/manticoresearch",
+      "full_name": "manticoresoftware/manticoresearch",
+      "name": "manticoresearch",
+      "name_with_namespace": "manticoresoftware/manticoresearch",
+      "description": "Open-source search database for full-text, vector, and hybrid search with real-time indexing and SQL.",
+      "web_url": "https://github.com/manticoresoftware/manticoresearch",
+      "star_count": 12079,
+      "last_activity_at": "2026-11-09T09:39:28Z",
+      "default_branch": "main",
+      "topics": [
+        "api",
+        "bm25",
+        "cpp",
+        "database",
+        "full-text-search",
+        "hacktoberfest",
+        "json",
+        "mysql",
+        "search",
+        "search-api",
+        "search-engine",
+        "search-server",
+        "sphinxsearch",
+        "sql",
+        "stream-filtering"
+      ],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "search index",
+      "relevance": 0.572,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:asciimoo/hister",
+      "full_name": "asciimoo/hister",
+      "name": "hister",
+      "name_with_namespace": "asciimoo/hister",
+      "description": "Your own search engine",
+      "web_url": "https://github.com/asciimoo/hister",
+      "star_count": 6269,
+      "last_activity_at": "2026-11-09T12:55:21Z",
+      "default_branch": "master",
+      "topics": [
+        "browser-history",
+        "history",
+        "index",
+        "mcp",
+        "personal-search",
+        "personal-search-engine",
+        "privacy",
+        "search",
+        "search-engine",
+        "semantic-search",
+        "web"
+      ],
+      "archived": false,
+      "license_key": "agpl-3.0",
+      "matched_query": "search index",
+      "relevance": 0.579,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:entireio/cli",
+      "full_name": "entireio/cli",
+      "name": "cli",
+      "name_with_namespace": "entireio/cli",
+      "description": "📜 Entire CLI hooks into your Git workflow to capture AI agent sessions as you work. Sessions are indexed alongside commits, creating a searchable record of how code was written in your repo.",
+      "web_url": "https://github.com/entireio/cli",
+      "star_count": 5322,
+      "last_activity_at": "2026-11-09T11:56:11Z",
+      "default_branch": "main",
+      "topics": [
+        "agents",
+        "ai",
+        "claude",
+        "developer",
+        "developer-platform",
+        "gemini"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "search index",
+      "relevance": 0.577,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:valeriansaliou/sonic",
+      "full_name": "valeriansaliou/sonic",
+      "name": "sonic",
+      "name_with_namespace": "valeriansaliou/sonic",
+      "description": "🦔 Fast, lightweight & schema-less search backend. An alternative to Elasticsearch that runs on a few MBs of RAM.",
+      "web_url": "https://github.com/valeriansaliou/sonic",
+      "star_count": 21376,
+      "last_activity_at": "2026-11-08T17:50:14Z",
+      "default_branch": "master",
+      "topics": [
+        "backend",
+        "database",
+        "graph",
+        "index",
+        "infrastructure",
+        "rust",
+        "search",
+        "search-engine",
+        "search-server",
+        "server"
+      ],
+      "archived": false,
+      "license_key": "mpl-2.0",
+      "matched_query": "search index",
+      "relevance": 0.532,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:MAX1T1A/Diary-Service",
+      "full_name": "MAX1T1A/Diary-Service",
+      "name": "Diary-Service",
+      "name_with_namespace": "MAX1T1A/Diary-Service",
+      "description": "",
+      "web_url": "https://github.com/MAX1T1A/Diary-Service",
+      "star_count": 5,
+      "last_activity_at": "2023-11-12T11:13:47Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary service",
+      "relevance": 0.777,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:microsoft/SPTAG",
+      "full_name": "microsoft/SPTAG",
+      "name": "SPTAG",
+      "name_with_namespace": "microsoft/SPTAG",
+      "description": "A distributed approximate nearest neighborhood search (ANN) library which provides a high quality vector index build, search and distributed online serving toolkits for large scale vector search scenario.",
+      "web_url": "https://github.com/microsoft/SPTAG",
+      "star_count": 5022,
+      "last_activity_at": "2026-11-09T10:57:41Z",
+      "default_branch": "main",
+      "topics": [
+        "approximate-nearest-neighbor-search",
+        "distributed-serving",
+        "fresh-update",
+        "neighborhood-graph",
+        "space-partition-tree",
+        "vector-search"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "search index",
+      "relevance": 0.574,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:vcaesar/riot",
+      "full_name": "vcaesar/riot",
+      "name": "riot",
+      "name_with_namespace": "vcaesar/riot",
+      "description": "Go Open Source, Distributed, Simple and fastest efficient text/vector Search Engine",
+      "web_url": "https://github.com/vcaesar/riot",
+      "star_count": 6064,
+      "last_activity_at": "2026-11-05T21:23:31Z",
+      "default_branch": "main",
+      "topics": [
+        "go",
+        "golang",
+        "index",
+        "indexer",
+        "riot",
+        "search",
+        "search-engine",
+        "vector-search"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "search index",
+      "relevance": 0.555,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:RediSearch/RediSearch",
+      "full_name": "RediSearch/RediSearch",
+      "name": "RediSearch",
+      "name_with_namespace": "RediSearch/RediSearch",
+      "description": "A query and indexing engine for Redis, providing secondary indexing, full-text search, vector similarity search and aggregations.",
+      "web_url": "https://github.com/RediSearch/RediSearch",
+      "star_count": 6245,
+      "last_activity_at": "2026-11-09T12:53:53Z",
+      "default_branch": "master",
+      "topics": [
+        "fulltext",
+        "geospatial",
+        "gis",
+        "inverted-index",
+        "redis",
+        "redis-module",
+        "search",
+        "search-engine",
+        "vector-database"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "search index",
+      "relevance": 0.549,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:dodokyo/gpt-diary-service",
+      "full_name": "dodokyo/gpt-diary-service",
+      "name": "gpt-diary-service",
+      "name_with_namespace": "dodokyo/gpt-diary-service",
+      "description": "gpt-diary-service",
+      "web_url": "https://github.com/dodokyo/gpt-diary-service",
+      "star_count": 3,
+      "last_activity_at": "2023-09-16T14:48:46Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary service",
+      "relevance": 0.752,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:alisonthemonster/Presently",
+      "full_name": "alisonthemonster/Presently",
+      "name": "Presently",
+      "name_with_namespace": "alisonthemonster/Presently",
+      "description": "Android app for recording gratitude journal entries -- over 1 million installs, contribute today!",
+      "web_url": "https://github.com/alisonthemonster/Presently",
+      "star_count": 421,
+      "last_activity_at": "2026-11-07T03:06:00Z",
+      "default_branch": "develop",
+      "topics": [
+        "android",
+        "architecture-components",
+        "circleci",
+        "dropbox-sdk",
+        "firebase",
+        "firebase-test-lab",
+        "hilt",
+        "instrumented-tests",
+        "jacoco",
+        "kotlin",
+        "mobile",
+        "room",
+        "room-persistence-library"
+      ],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "entry recording",
+      "relevance": 0.588,
+      "selected": false
+    },
+    {
+      "id": 77375689,
+      "name": "Diary-service-app",
+      "name_with_namespace": "Vinay Bijalwan / Diary-service-app",
+      "description": null,
+      "web_url": "https://gitlab.com/vinaybijalwan/Diary-service-app",
+      "star_count": 0,
+      "last_activity_at": "2025-12-29T10:34:20.660Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.762,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:EricPhm/Diary",
+      "full_name": "EricPhm/Diary",
+      "name": "Diary",
+      "name_with_namespace": "EricPhm/Diary",
+      "description": "Created a personal diary application using Python and MongoDB to provide a platform for recording daily entries. Implemented functionalities to record date, time, and content for each entry, ensuring comprehensive documentation.",
+      "web_url": "https://github.com/EricPhm/Diary",
+      "star_count": 0,
+      "last_activity_at": "2024-04-17T00:18:08Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.741,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:romeq/mydiary",
+      "full_name": "romeq/mydiary",
+      "name": "mydiary",
+      "name_with_namespace": "romeq/mydiary",
+      "description": "Online diary service!",
+      "web_url": "https://github.com/romeq/mydiary",
+      "star_count": 5,
+      "last_activity_at": "2026-01-22T14:35:30Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary service",
+      "relevance": 0.683,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:tomdickman/voice-diary",
+      "full_name": "tomdickman/voice-diary",
+      "name": "voice-diary",
+      "name_with_namespace": "tomdickman/voice-diary",
+      "description": "A CLI application for recording voice diary entries and transcribing to markdown files.",
+      "web_url": "https://github.com/tomdickman/voice-diary",
+      "star_count": 0,
+      "last_activity_at": "2026-04-23T05:04:03Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.736,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:zwubishet/My_day_diary_app",
+      "full_name": "zwubishet/My_day_diary_app",
+      "name": "My_day_diary_app",
+      "name_with_namespace": "zwubishet/My_day_diary_app",
+      "description": "My Day Diary is a simple app for recording daily thoughts and experiences. Users can easily add, edit, and view diary entries, attach images, and organize them by date. It features Google sign-in for secure authentication, offering a private and seamless journaling experience.",
+      "web_url": "https://github.com/zwubishet/My_day_diary_app",
+      "star_count": 2,
+      "last_activity_at": "2025-05-11T20:38:30Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.7,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:pketh/metome",
+      "full_name": "pketh/metome",
+      "name": "metome",
+      "name_with_namespace": "pketh/metome",
+      "description": "Your personal diary service",
+      "web_url": "https://github.com/pketh/metome",
+      "star_count": 2,
+      "last_activity_at": "2014-02-12T00:23:32Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "diary service",
+      "relevance": 0.697,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:bczarnecki/video-diary-app",
+      "full_name": "bczarnecki/video-diary-app",
+      "name": "video-diary-app",
+      "name_with_namespace": "bczarnecki/video-diary-app",
+      "description": "A video diary application for recording and organizing personal journal entries with videos.",
+      "web_url": "https://github.com/bczarnecki/video-diary-app",
+      "star_count": 0,
+      "last_activity_at": "2025-03-24T03:48:12Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.716,
+      "selected": false
+    },
+    {
+      "id": 29734038,
+      "name": "Antora Lunr Extension",
+      "name_with_namespace": "Antora / Antora Lunr Extension",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/antora/antora-lunr-extension",
+      "star_count": 42,
+      "last_activity_at": "2026-10-21T03:26:14.619Z",
+      "default_branch": "main",
+      "topics": [
+        "Lunr",
+        "antora",
+        "extension",
+        "offline",
+        "search"
+      ],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.596,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:HetPatel4065/My-Personal-Diary-using-MERN-Stack",
+      "full_name": "HetPatel4065/My-Personal-Diary-using-MERN-Stack",
+      "name": "My-Personal-Diary-using-MERN-Stack",
+      "name_with_namespace": "HetPatel4065/My-Personal-Diary-using-MERN-Stack",
+      "description": "The Online Personal Diary is a secure MERN stack app for recording, editing, and managing daily thoughts. It features JWT authentication, bcrypt password protection, date-based entries, full CRUD operations, and a responsive design for any device",
+      "web_url": "https://github.com/HetPatel4065/My-Personal-Diary-using-MERN-Stack",
+      "star_count": 3,
+      "last_activity_at": "2025-08-08T18:18:25Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.665,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:kaycee-okoye/pill_diary",
+      "full_name": "kaycee-okoye/pill_diary",
+      "name": "pill_diary",
+      "name_with_namespace": "kaycee-okoye/pill_diary",
+      "description": "Pill Diary is an open-source Android app designed for effortless medication management. Developed in Kotlin and XML, it features Medication Tracking for recording dosage and schedule, and a Journal Entries system for daily health notes. The app prioritizes accessibility with offline storage using an SQLite database.",
+      "web_url": "https://github.com/kaycee-okoye/pill_diary",
+      "star_count": 2,
+      "last_activity_at": "2023-11-20T20:06:08Z",
+      "default_branch": "master",
+      "topics": [
+        "android",
+        "healthcare",
+        "kotlin",
+        "mobile-app",
+        "native-apps",
+        "sql",
+        "sqlite",
+        "xml"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "diary entry recording",
+      "relevance": 0.666,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:Deshan555/diaryAPI",
+      "full_name": "Deshan555/diaryAPI",
+      "name": "diaryAPI",
+      "name_with_namespace": "Deshan555/diaryAPI",
+      "description": "🚀 This API allows you to manage your daybook entries, recording your thoughts, moods, and experiences. Keep track of your journey with ease! 🌟",
+      "web_url": "https://github.com/Deshan555/diaryAPI",
+      "star_count": 2,
+      "last_activity_at": "2024-08-25T06:52:42Z",
+      "default_branch": "master",
+      "topics": [
+        "diary-application",
+        "diary-entries",
+        "docker",
+        "ghdesktop",
+        "github",
+        "javascript",
+        "jetbrains",
+        "jpa-hibernate",
+        "learn",
+        "popsql",
+        "rest-api",
+        "scrimba",
+        "spring-boot"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "diary entry recording",
+      "relevance": 0.662,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:theill/diary",
+      "full_name": "theill/diary",
+      "name": "diary",
+      "name_with_namespace": "theill/diary",
+      "description": "An OhLife clone because that great service is shutting down and I wanted to try out the Go programming language",
+      "web_url": "https://github.com/theill/diary",
+      "star_count": 5,
+      "last_activity_at": "2015-12-21T09:07:01Z",
+      "default_branch": "master",
+      "topics": [
+        "diary-app",
+        "diary-application",
+        "diary-entries",
+        "journal",
+        "ohlife"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "diary service",
+      "relevance": 0.636,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:dustspeck/nfc-entry",
+      "full_name": "dustspeck/nfc-entry",
+      "name": "nfc-entry",
+      "name_with_namespace": "dustspeck/nfc-entry",
+      "description": "NFC based attendance recording app for offline events.",
+      "web_url": "https://github.com/dustspeck/nfc-entry",
+      "star_count": 18,
+      "last_activity_at": "2022-05-21T19:31:08Z",
+      "default_branch": "main",
+      "topics": [
+        "event-management",
+        "nfc",
+        "nfc-reader",
+        "registration"
+      ],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "entry recording",
+      "relevance": 0.598,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:koeppern/add_diary_entry_from_recording",
+      "full_name": "koeppern/add_diary_entry_from_recording",
+      "name": "add_diary_entry_from_recording",
+      "name_with_namespace": "koeppern/add_diary_entry_from_recording",
+      "description": "Add recognized text in audio recording to diary md file",
+      "web_url": "https://github.com/koeppern/add_diary_entry_from_recording",
+      "star_count": 0,
+      "last_activity_at": "2024-01-09T15:42:24Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary entry recording",
+      "relevance": 0.683,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:JavierRibaldelRio/accounting-journal-ledger",
+      "full_name": "JavierRibaldelRio/accounting-journal-ledger",
+      "name": "accounting-journal-ledger",
+      "name_with_namespace": "JavierRibaldelRio/accounting-journal-ledger",
+      "description": "A lightweight Obsidian plugin for recording simple accounting journal entries during class, based on the Spanish libro diario and libro mayor (general ledger). Follows the double-entry bookkeeping system. Designed for educational use — not intended as a full-featured accounting solution.",
+      "web_url": "https://github.com/JavierRibaldelRio/accounting-journal-ledger",
+      "star_count": 8,
+      "last_activity_at": "2025-09-07T14:28:36Z",
+      "default_branch": "master",
+      "topics": [
+        "accounting",
+        "educational-tool",
+        "obsidian-plugin"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "entry recording",
+      "relevance": 0.599,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:kidist-amde/Space-Time-Cube-visualization",
+      "full_name": "kidist-amde/Space-Time-Cube-visualization",
+      "name": "Space-Time-Cube-visualization",
+      "name_with_namespace": "kidist-amde/Space-Time-Cube-visualization",
+      "description": "Studies on Human Behavior - Geovisualization of Spatio-temporal data is a very promising topic, especially for social sciences. It is possible to use a space-time cube to reveal activity, travel patterns of different genders, ethnic  subgroups, non-employees, etc. and all the information can be related to urban planning, transportation,location-based services, and many other fields dealing with individual geo-data.In this work, I used the GPS data that describe the movements of 3 subjects and Time diary data , data collected from the 3 subjects through ilog-mobile application.. ",
+      "web_url": "https://github.com/kidist-amde/Space-Time-Cube-visualization",
+      "star_count": 11,
+      "last_activity_at": "2022-01-04T20:06:55Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "diary service",
+      "relevance": 0.579,
+      "selected": false
+    },
+    {
+      "id": 17726912,
+      "name": "OER Search Index ETL",
+      "name_with_namespace": "OER Search Index / OER Search Index ETL",
+      "description": "Extract, transform, and load metadata for the OER Search Index",
+      "web_url": "https://gitlab.com/oersi/oersi-etl",
+      "star_count": 4,
+      "last_activity_at": "2026-11-09T09:02:24.220Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.602,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:santosake/Appointment-Scheduler-App",
+      "full_name": "santosake/Appointment-Scheduler-App",
+      "name": "Appointment-Scheduler-App",
+      "name_with_namespace": "santosake/Appointment-Scheduler-App",
+      "description": "This application uses C# and MySQL.  The objective of this project was to create an appointment scheduling program for a ficticious international company to help manage their various consultants, customers, and coordinate schedules in a time zone/region sensitive manner. The Database ERD is already set and the program must adopt it.  Program Features:  Login form with error control and automatically changes all English text to Spanish if users machine's region is set to a Spanish speaking region. Customer screen to add, edit, and delete customer records. Appointment screen to add, edit, and delete appointments with associated customer. Calendar with a month or weekly view. Automatically adjusted appointment times based on user time zone. 15 minute prior appointment alerts based on user's login time. Generate three kinds of reports; number of appointment types by month, schedule for each consultant, and number of appointments by city. Track user activity recording timestamps for logins in the UserActivityRecords.txt file. Various exceptions controls for all data entry fields.",
+      "web_url": "https://github.com/santosake/Appointment-Scheduler-App",
+      "star_count": 9,
+      "last_activity_at": "2019-03-08T21:50:50Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "entry recording",
+      "relevance": 0.581,
+      "selected": false
+    },
+    {
+      "id": 23367822,
+      "name": "Fuzzy App Search for GNOME",
+      "name_with_namespace": "charlotte! / Fuzzy App Search for GNOME",
+      "description": "Fuzzy application search results for Gnome Search using preindexed n-gram matching",
+      "web_url": "https://gitlab.com/czarlie/gnome-fuzzy-app-search",
+      "star_count": 26,
+      "last_activity_at": "2026-10-21T13:21:29.114Z",
+      "default_branch": "master",
+      "topics": [
+        "GNOME Extensions",
+        "fuzzy matching"
+      ],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.549,
+      "selected": false
+    },
+    {
+      "id": 8621857,
+      "name": "Auctus",
+      "name_with_namespace": "VIDA-NYU / auctus / Auctus",
+      "description": "Dataset search engine, discovering data from a variety of sources, profiling it, and allowing advanced queries on the index",
+      "web_url": "https://gitlab.com/ViDA-NYU/auctus/auctus",
+      "star_count": 12,
+      "last_activity_at": "2025-12-10T02:11:42.231Z",
+      "default_branch": "master",
+      "topics": [
+        "crawling",
+        "data-profiling",
+        "dataset",
+        "dataset-search",
+        "index",
+        "search",
+        "search-engine"
+      ],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.562,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:abusufyanvu/6S191_MIT_DeepLearning",
+      "full_name": "abusufyanvu/6S191_MIT_DeepLearning",
+      "name": "6S191_MIT_DeepLearning",
+      "name_with_namespace": "abusufyanvu/6S191_MIT_DeepLearning",
+      "description": "MIT Introduction to Deep Learning (6.S191) Instructors: Alexander Amini and Ava Soleimany Course Information Summary Prerequisites Schedule Lectures Labs, Final Projects, Grading, and Prizes Software labs Gather.Town lab + Office Hour sessions Final project Paper Review Project Proposal Presentation Project Proposal Grading Rubric Past Project Proposal Ideas Awards + Categories Important Links and Emails Course Information Summary MIT's introductory course on deep learning methods with applications to computer vision, natural language processing, biology, and more! Students will gain foundational knowledge of deep learning algorithms and get practical experience in building neural networks in TensorFlow. Course concludes with a project proposal competition with feedback from staff and a panel of industry sponsors.  Prerequisites  We expect basic knowledge of calculus (e.g., taking derivatives), linear algebra (e.g., matrix multiplication), and probability (e.g., Bayes theorem) -- we'll try to explain everything else along the way! Experience in Python is helpful but not necessary. This class is taught during MIT's IAP term by current MIT PhD researchers. Listeners are welcome! Schedule Monday Jan 18, 2021 Lecture: Introduction to Deep Learning and NNs Lab: Lab 1A Tensorflow and building NNs from scratch Tuesday Jan 19, 2021 Lecture: Deep Sequence Modelling Lab: Lab 1B Music Generation using RNNs Wednesday Jan 20, 2021 Lecture: Deep Computer Vision Lab: Lab 2A Image classification and detection Thursday Jan 21, 2021 Lecture: Deep Generative Modelling Lab: Lab 2B Debiasing facial recognition systems Friday Jan 22, 2021 Lecture: Deep Reinforcement Learning Lab: Lab 3 pixel-to-control planning Monday Jan 25, 2021 Lecture: Limitations and New Frontiers Lab: Lab 3 continued Tuesday Jan 26, 2021 Lecture (part 1): Evidential Deep Learning Lecture (part 2): Bias and Fairness Lab: Work on final assignments Lab competition entries due at 11:59pm ET on Canvas! Lab 1, Lab 2, and Lab 3 Wednesday Jan 27, 2021 Lecture (part 1): Nigel Duffy, Ernst & Young Lecture (part 2): Kate Saenko, Boston University and MIT-IBM Watson AI Lab Lab: Work on final assignments Assignments due: Sign up for Final Project Competition Thursday Jan 28, 2021 Lecture (part 1): Sanja Fidler, U. Toronto, Vector Institute, and NVIDIA Lecture (part 2): Katherine Chou, Google Lab: Work on final assignments Assignments due: 1 page paper review (if applicable) Friday Jan 29, 2021 Lecture: Student project pitch competition Lab: Awards ceremony and prize giveaway Assignments due: Project proposals (if applicable) Lectures Lectures will be held starting at 1:00pm ET from Jan 18 - Jan 29 2021, Monday through Friday, virtually through Zoom. Current MIT students, faculty, postdocs, researchers, staff, etc. will be able to access the lectures during this two week period, synchronously or asynchronously, via the MIT Canvas course webpage (MIT internal only). Lecture recordings will be uploaded to the Canvas as soon as possible; students are not required to attend any lectures synchronously. Please see the Canvas for details on Zoom links.  The public edition of the course will only be made available after completion of the MIT course. Labs, Final Projects, Grading, and Prizes Course will be graded during MIT IAP for 6 units under P/D/F grading. Receiving a passing grade requires completion of each software lab project (through honor code, with submission required to enter lab competitions), a final project proposal/presentation or written review of a deep learning paper (submission required), and attendance/lecture viewing (through honor code). Submission of a written report or presentation of a project proposal will ensure a passing grade.  MIT students will be eligible for prizes and awards as part of the class competitions. There will be two parts to the competitions: (1) software labs and (2) final projects. More information is provided below. Winners will be announced on the last day of class, with thousands of dollars of prizes being given away!  Software labs There are three TensorFlow software lab exercises for the course, designed as iPython notebooks hosted in Google Colab. Software labs can be found on GitHub: https://github.com/aamini/introtodeeplearning. These are self-paced exercises and are designed to help you gain practical experience implementing neural networks in TensorFlow.  For registered MIT students, submission of lab materials is not necessary to get credit for the course or to pass the course.  At the end of each software lab there will be task-associated materials to submit (along with instructions) for entry into the competitions, open to MIT students and affiliates during the IAP offering. This includes MIT students/affiliates who are taking the class as listeners -- you are eligible!  These instructions are provided at the end of each of the labs. Completing these tasks and submitting your materials to Canvas will enter you into a per-lab competition. MIT students and affiliates will be eligible for prizes during the IAP offering; at the end of the course, prize-winners will be awarded with their prizes.  All competition submissions are due on January 26 at 11:59pm ET to Canvas.  For the software lab competitions, submissions will be judged on the basis of the following criteria: Strength and quality of final results (lab dependent) Soundness of implementation and approach Thoroughness and quality of provided descriptions and figures Gather.Town lab + Office Hour sessions After each day’s lecture, there will be open Office Hours in the class GatherTown, up until 3pm ET. An MIT email is required to log in and join the GatherTown. During these sessions, there will not be a walk through or dictation of the labs; the labs are designed to be self-paced and to be worked on on your own time.  The GatherTown sessions will be hosted by course staff and are held so you can: Ask questions on course lectures, labs, logistics, project, or anything else; Work on the labs in the presence of classmates/TAs/instructors; Meet classmates to find groups for the final project; Group work time for the final project; Bring the class community together. Final project To satisfy the final project requirement for this course, students will have two options: (1) write a 1 page paper review (single-spaced) on a recent deep learning paper of your choice or (2) participate and present in the project proposal pitch competition. The 1 page paper review option is straightforward, we propose some papers within this document to help you get started, and you can satisfy a passing grade with this option -- you will not be eligible for the grand prizes. On the other hand, participation in the project proposal pitch competition will equivalently satisfy your course requirements but additionally make you eligible for the grand prizes. See the section below for more details and requirements for each of these options. Paper Review Students may satisfy the final project requirement by reading and reviewing a recent deep learning paper of their choosing. In the written review, students should provide both: 1) a description of the problem, technical approach, and results of the paper; 2) critical analysis and exposition of the limitations of the work and opportunities for future work. Reviews should be submitted on Canvas by Thursday Jan 28, 2021, 11:59:59pm Eastern Time (ET).  Just a few paper options to consider...  https://papers.nips.cc/paper/2017/file/3f5ee243547dee91fbd053c1c4a845aa-Paper.pdf https://papers.nips.cc/paper/2018/file/69386f6bb1dfed68692a24c8686939b9-Paper.pdf https://papers.nips.cc/paper/2020/file/1457c0d6bfcb4967418bfb8ac142f64a-Paper.pdf https://science.sciencemag.org/content/362/6419/1140 https://papers.nips.cc/paper/2018/file/0e64a7b00c83e3d22ce6b3acf2c582b6-Paper.pdf https://arxiv.org/pdf/1906.11829.pdf https://www.nature.com/articles/s42256-020-00237-3 https://pubmed.ncbi.nlm.nih.gov/32084340/ Project Proposal Presentation Keyword: proposal  This is a 2 week course so we do not require results or working implementations! However, to win the top prizes, nice, clear results and implementations will demonstrate feasibility of your proposal which is something we look for!  Logistics -- please read!  You must sign up to present before 11:59:59pm Eastern Time (ET) on Wednesday Jan 27, 2021 Slides must be in a Google Slide before 11:59:59pm Eastern Time (ET) on Thursday Jan 28, 2021 Project groups can be between 1 and 5 people Listeners welcome To be eligible for a prize you must have at least 1 registered MIT student in your group Each participant will only be allowed to be in one group and present one project pitch Synchronous attendance on 1/29/21 is required to make the project pitch! 3 min presentation on your idea (we will be very strict with the time limits) Prizes! (see below)  Sign up to Present here: by 11:59pm ET on Wednesday Jan 27  Once you sign up, make your slide in the following Google Slides; submit by midnight on Thursday Jan 28. Please specify the project group # on your slides!!!  Things to Consider This doesn’t have to be a new deep learning method.  It can just be an interesting application that you apply some existing deep learning method to. What problem are you solving?  Are there use cases/applications?   Why do you think deep learning methods might be suited to this task?  How have people done it before? Is it a new task? If so, what are similar tasks that people have worked on?  In what aspects have they succeeded or failed?   What is your method of solving this problem? What type of model + architecture would you use?  Why?  What is the data for this task? Do you need to make a dataset or is there one publicly available? What are the characteristics of the data?  Is it sparse, messy, imbalanced?  How would you deal with that? Project Proposal Grading Rubric Project proposals will be evaluated by a panel of judges on the basis of the following three criteria: 1) novelty and impact; 2) technical soundness, feasibility, and organization, including quality of any presented results; 3) clarity and presentation. Each judge will award a score from 1 (lowest) to 5 (highest) for each of the criteria; the average score from each judge across these criteria will then be averaged with that of the other judges to provide the final score. The proposals with the highest final scores will be selected for prizes.   Here are the guidelines for the criteria:  Novelty and impact: encompasses the potential impact of the project idea, its novelty with respect to existing approaches. Why does the proposed work matter? What problem(s) does it solve? Why are these problems important? Technical soundness, feasibility, and organization: encompasses all technical aspects of the proposal. Do the proposed methodology and architecture make sense? Is the architecture the best suited for the proposed problem? Is deep learning the best approach for the problem? How realistic is it to implement the idea? Was there any implementation of the method? If results and data are presented, we will evaluate the strength of the results/data. Clarity and presentation: encompasses the delivery and quality of the presentation itself. Is the talk well organized? Are the slides aesthetically compelling? Is there a clear, well-delivered narrative? Are the problem and proposed method clearly presented?   Past Project Proposal Ideas Recipe Generation with RNNs Can we compress videos with CNN + RNN? Music Generation with RNNs Style Transfer Applied to X GAN’s on a new modality Summarizing text/news articles Combining news articles about similar events  Code or spec generation Multimodal speech → handwriting Generate handwriting based on keywords (i.e. cursive, slanted, neat) Predicting stock market trends Show language learners articles or videos at their level  Transfer of writing style Chemical Synthesis with Recurrent Neural networks Transfer learning to learn something in a domain for which it’s hard or risky to gather data or do training RNNs to model some type of time series data Computer vision to coach sports players Computer vision system for safety brakes or warnings  Use IBM Watson API to get the sentiment of your Facebook newsfeed Deep learning webcam to give wifi-access to friends or improve video chat in some way Domain-specific chatbot to help you perform a specific task Detect whether a signature is fraudulent Awards + Categories Final Project Awards: 1x NVIDIA RTX 3080 4x Google Home Max 3x Display Monitors  Software Lab Awards: Bose headphones (Lab 1) Display monitor (Lab 2) Bebop drone (Lab 3) Important Links and Emails Course website: http://introtodeeplearning.com Course staff: introtodeeplearning-staff@mit.edu Piazza forum (MIT only): https://piazza.com/mit/spring2021/6s191 Canvas (MIT only): https://canvas.mit.edu/courses/8291 Software lab repository: https://github.com/aamini/introtodeeplearning Lab/office hour sessions (MIT only): https://gather.town/app/56toTnlBrsKCyFgj/MITDeepLearning",
+      "web_url": "https://github.com/abusufyanvu/6S191_MIT_DeepLearning",
+      "star_count": 273,
+      "last_activity_at": "2022-01-16T11:22:48Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "entry recording",
+      "relevance": 0.467,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:aipulsedaily/f1-round2",
+      "full_name": "aipulsedaily/f1-round2",
+      "name": "f1-round2",
+      "name_with_namespace": "aipulsedaily/f1-round2",
+      "description": "A 124-second 4K film of an F1 car in one unbroken take, where every model, material and sound is generated by code — no downloaded assets, no HDRIs, no photo textures, nothing AI-generated. Ships its own engineering log: ~1,300 entries recording what was measured and what turned out to be wrong.",
+      "web_url": "https://github.com/aipulsedaily/f1-round2",
+      "star_count": 17,
+      "last_activity_at": "2026-08-18T15:16:01Z",
+      "default_branch": "master",
+      "topics": [
+        "3d-graphics",
+        "animation",
+        "audio-synthesis",
+        "blender",
+        "blender-python",
+        "bpy",
+        "computer-graphics",
+        "cycles",
+        "engineering-log",
+        "formula1",
+        "gpu-rendering",
+        "procedural-generation",
+        "procedural-modeling",
+        "render-farm",
+        "rendering",
+        "reproducible-research"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "entry recording",
+      "relevance": 0.548,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:jrubin01/physionet2017",
+      "full_name": "jrubin01/physionet2017",
+      "name": "physionet2017",
+      "name_with_namespace": "jrubin01/physionet2017",
+      "description": "PhysioNet 2017 Entry: AF Classification from a short single lead ECG recording",
+      "web_url": "https://github.com/jrubin01/physionet2017",
+      "star_count": 6,
+      "last_activity_at": "2018-04-23T23:30:02Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "entry recording",
+      "relevance": 0.564,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:codestates-seb/seb44_main_016",
+      "full_name": "codestates-seb/seb44_main_016",
+      "name": "seb44_main_016",
+      "name_with_namespace": "codestates-seb/seb44_main_016",
+      "description": "The ZeroHip Project is a savings-oriented financial diary and social networking service (SNS) with the slogan 'Until your overspending approaches zero.'",
+      "web_url": "https://github.com/codestates-seb/seb44_main_016",
+      "star_count": 6,
+      "last_activity_at": "2023-10-30T11:16:05Z",
+      "default_branch": "dev",
+      "topics": [],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary service",
+      "relevance": 0.559,
+      "selected": false
+    },
+    {
+      "id": 2953390,
+      "name": "gitlab-elasticsearch-indexer",
+      "name_with_namespace": "GitLab.org / gitlab-elasticsearch-indexer",
+      "description": "Elasticsearch indexer for GitLab",
+      "web_url": "https://gitlab.com/gitlab-org/gitlab-elasticsearch-indexer",
+      "star_count": 25,
+      "last_activity_at": "2026-11-09T00:15:28.394Z",
+      "default_branch": "main",
+      "topics": [
+        "Canonical",
+        "hacktoberfest",
+        "infra-mgmt Managed"
+      ],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.511,
+      "selected": false
+    },
+    {
+      "id": 26258348,
+      "name": "OER Search Index Import Scripts",
+      "name_with_namespace": "OER Search Index / OER Search Index Import Scripts",
+      "description": "Import metadata from external sources into the OER search index",
+      "web_url": "https://gitlab.com/oersi/oersi-import-scripts",
+      "star_count": 4,
+      "last_activity_at": "2026-11-09T10:10:18.122Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.558,
+      "selected": false
+    },
+    {
+      "id": 88668690,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88668690",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88668690",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88668690",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T15:28:16.134Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.606,
+      "selected": false
+    },
+    {
+      "id": 88658586,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88658586",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88658586",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88658586",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T09:28:28.698Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.606,
+      "selected": false
+    },
+    {
+      "id": 88647533,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88647533",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88647533",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88647533",
+      "star_count": 0,
+      "last_activity_at": "2026-11-07T21:24:30.331Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.605,
+      "selected": false
+    },
+    {
+      "id": 88692583,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88692583",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88692583",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88692583",
+      "star_count": 0,
+      "last_activity_at": "2026-11-09T08:56:16.152Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "id": 88683455,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88683455",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88683455",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88683455",
+      "star_count": 0,
+      "last_activity_at": "2026-11-09T03:11:37.091Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "id": 88676944,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88676944",
+      "name_with_namespace": "Chandler Bing / temp scan ecoscan-29734038-deletion_scheduled-88676944",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/chandler.bing/ecoscan-29734038-deletion_scheduled-88676944",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T21:21:19.452Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "id": 88653083,
+      "name": "temp scan ecoscan-29734038-deletion_scheduled-88653083",
+      "name_with_namespace": "Rachel Green / temp scan ecoscan-29734038-deletion_scheduled-88653083",
+      "description": "An Antora extension that adds a self-hosted search powered by Lunr to an Antora site. The extension indexes the content during the build and includes the index in the published site, which is then used to provide an in-browser search.",
+      "web_url": "https://gitlab.com/rachel.green.r/ecoscan-29734038-deletion_scheduled-88653083",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T03:25:24.058Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "id": 44205972,
+      "name": "OER Search Index Schema",
+      "name_with_namespace": "OER Search Index / OER Search Index Schema",
+      "description": null,
+      "web_url": "https://gitlab.com/oersi/oersi-schema",
+      "star_count": 3,
+      "last_activity_at": "2025-10-10T10:53:13.808Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.56,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:HealthStackTeam/slimmom-backend",
+      "full_name": "HealthStackTeam/slimmom-backend",
+      "name": "slimmom-backend",
+      "name_with_namespace": "HealthStackTeam/slimmom-backend",
+      "description": "Slimmom Backend API is a secure and scalable RESTful service for nutrition and wellness apps. It provides user authentication, personalized calorie calculations, daily food diaries, and product management. Built with Node.js, Express, and MongoDB, it features JWT authentication and detailed API docs with Swagger and Redoc.",
+      "web_url": "https://github.com/HealthStackTeam/slimmom-backend",
+      "star_count": 7,
+      "last_activity_at": "2026-01-07T13:37:41Z",
+      "default_branch": "main",
+      "topics": [
+        "api",
+        "authentication",
+        "backend",
+        "calories-tracker",
+        "diet",
+        "express",
+        "fitness",
+        "food-diary",
+        "health",
+        "joi",
+        "jwt",
+        "mern",
+        "mongodb",
+        "nodejs",
+        "nutrition",
+        "openapi",
+        "redoc",
+        "restful-api",
+        "swagger",
+        "wellness"
+      ],
+      "archived": false,
+      "license_key": null,
+      "matched_query": "diary service",
+      "relevance": 0.53,
+      "selected": false
+    },
+    {
+      "id": 747741,
+      "name": "gitlab-elasticsearch-git",
+      "name_with_namespace": "GitLab.org / gitlab-elasticsearch-git",
+      "description": "Elasticsearch integrations for indexing git repositories",
+      "web_url": "https://gitlab.com/gitlab-org/gitlab-elasticsearch-git",
+      "star_count": 5,
+      "last_activity_at": "2026-01-07T10:08:42.822Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.524,
+      "selected": false
+    },
+    {
+      "id": 73362669,
+      "name": "opendgm",
+      "name_with_namespace": "opendgm / opendgm",
+      "description": "OpenDGM is a modular Python framework designed to parse, analyse, and visualise both simulated and\r\nclinical electrophysiological data. The software aims to lower the barrier to entry for researchers\r\nand clinicians working in cardiac electrophysiology by providing reusable tools for data processing,\r\nanalysis, and visualisation.\r\n\r\nBeyond data analysis, OpenDGM provides automated algorithms for detecting and characterising the\r\nunderlying mechanisms of arrhythmias. These tools facilitate the interpretation of clinical\r\nrecordings and the validation of computational models, helping users gain mechanistic insights into\r\ncomplex electrophysiological phenomena, such as rotational activity, focal sources and phase\r\nsingularities.",
+      "web_url": "https://gitlab.com/opendgm/opendgm",
+      "star_count": 3,
+      "last_activity_at": "2026-11-05T14:57:06.410Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "entry recording",
+      "relevance": 0.534,
+      "selected": false
+    },
+    {
+      "id": 88678690,
+      "name": "Joe-Nasr-Online-Presence",
+      "name_with_namespace": "Joe Nasr / Joe-Nasr-Online-Presence",
+      "description": "Public identity and evidence index for Joe Nasr (Joseph Ribal Nasr). Connects professional, creative, music, AI, XR, research and project URLs for entity resolution, search discoverability, source verification and AI retrieval. Canonical identity: https://joe-nasr-signals.vercel.app/",
+      "web_url": "https://gitlab.com/joenasr/joe-nasr-online",
+      "star_count": 0,
+      "last_activity_at": "2026-11-08T22:59:01.456Z",
+      "default_branch": "main",
+      "topics": [
+        "Joe Nasr",
+        "Joe-nasr",
+        "Joenasriani",
+        "Joseph Ribal Nasr",
+        "Online-identity",
+        "digital-footprint",
+        "entity-resolution",
+        "identity-verification",
+        "joseph-ribal-nasr",
+        "knowledge-graph"
+      ],
+      "provider": "gitlab",
+      "matched_query": "search index",
+      "relevance": 0.539,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:smith86n/wiki-is-mostly-fake-radom-words-word-genrationr-",
+      "full_name": "smith86n/wiki-is-mostly-fake-radom-words-word-genrationr-",
+      "name": "wiki-is-mostly-fake-radom-words-word-genrationr-",
+      "name_with_namespace": "smith86n/wiki-is-mostly-fake-radom-words-word-genrationr-",
+      "description": "MediaWiki:FileUploadWizard.js From Wikipedia, the free encyclopedia Jump to navigationJump to search Note: After saving, you have to bypass your browser's cache to see the changes. Internet Explorer: hold down the Ctrl key and click the Refresh or Reload button. Firefox: hold down the Shift key while clicking Reload (or press Ctrl-Shift-R). Google Chrome and Safari users can just click the Reload button. For details and instructions about other browsers, see Wikipedia:Bypass your cache.  /* * =============================================================== *                    FileUploadWizard.js * Script for uploading files through a dynamic questionnaire. * This is the code to accompany [[Wikipedia:File Upload Wizard]]. * =============================================================== */  var fuwTesting = false; var fuwDefaultTextboxLength = 60; var fuwDefaultTextareaWidth = '90%'; var fuwDefaultTextareaLines = 3;  // ================================================================ // Constructor function of global fuw (= File Upload Wizard) object // ================================================================ function fuwGlobal() {     // Loading the accompanying .css    mw.loader.load( mw.config.get('wgServer') + mw.config.get('wgScriptPath') +       '/index.php?title=MediaWiki:FileUploadWizard.css&action=raw&ctype=text/css',        'text/css'  );     // see if user is logged in, autoconfirmed, experienced etc.    this.getUserStatus();     fuwSetVisible('warningLoggedOut', (this.userStatus == 'anon'));    fuwSetVisible('warningNotConfirmed', (this.userStatus == 'notAutoconfirmed'));    if ((this.userStatus == 'anon') || (this.userStatus == 'notAutoconfirmed')) {       return;    }    fuwSetVisible('fuwStartScriptLink', false);     // create the form element to wrap the main ScriptForm area    // containing input elements of Step2 and Step3    var frm = fuwGet('fuwScriptForm');    if (! frm) {       frm = document.createElement('form');       frm.id = \"fuwScriptForm\";       var area = fuwGet('placeholderScriptForm');       var parent = area.parentNode;       parent.insertBefore(frm, area);       parent.removeChild(area);       frm.appendChild(area);    }    this.ScriptForm = frm;     // create the TargetForm element that contains the filename    // input box, together with hidden input controls.    // This is the form that is actually submitted to the api.php.    frm = fuwGet('TargetForm');    if (! frm) {       frm = document.createElement('form');       frm.id = \"TargetForm\";       frm.method = \"post\";       frm.enctype = \"multipart/form-data\";       // \"enctype\" doesn't work properly on IE; need \"encoding\" instead:       frm.encoding = \"multipart/form-data\";        // we'll submit via api.php, not index.php, mainly because that       // allows us to use a proper edit summary different from the page content       frm.action = mw.config.get('wgServer') + mw.config.get('wgScriptPath') + '/api.php';        // However, since api.php sends back a response page that humans won't want to read,       // we'll have to channel that response away and discard it. We'll use a hidden iframe       // for that purpose.       // Unfortunately, it doesn't seem possible to submit file upload content through an        // Xmlhtml object via Ajax.         frm.target = \"TargetIFrame\";       //testing:       //frm.target = \"_blank\";       var area = fuwGet('placeholderTargetForm');       var parent = area.parentNode;       parent.insertBefore(frm, area);       parent.removeChild(area);       frm.appendChild(area);    }    this.TargetForm = frm;     // For the testing version, create a third form that will display    // the contents to be submitted, at the bottom of the page    if (fuwTesting) {       frm = fuwGet('fuwTestForm');       if (! frm) {          frm = document.createElement('form');          frm.id = \"fuwTestForm\";          var area = fuwGet('placeholderTestForm');          var parent = area.parentNode;          parent.insertBefore(frm, area);          parent.removeChild(area);          frm.appendChild(area);       }       this.TestForm = frm;    }     // objects to hold cached results during validation and processing    this.opts = { };    this.warn = { };     // create the input filename box    var filebox  = document.createElement('input');    filebox.id   = 'file';    filebox.name = 'file';    filebox.type = 'file';    filebox.size = fuwDefaultTextboxLength;    filebox.onchange = fuwValidateFile;    filebox.accept = 'image/png,image/jpeg,image/gif,image/svg+xml,image/tiff,image/x-xcf,application/pdf,image/vnd.djvu,audio/ogg,video/ogg,audio/rtp-midi';    fuwAppendInput('file', filebox);     // create hidden controls for sending the remaining API parameters:    fuwMakeHiddenfield('action', 'upload', 'apiAction');    fuwMakeHiddenfield('format', 'xml', 'apiFormat');    fuwMakeHiddenfield('filename', '', 'apiFilename');    fuwMakeHiddenfield('text', '', 'apiText');    fuwMakeHiddenfield('comment', '', 'apiComment');    fuwMakeHiddenfield('token', mw.user.tokens.get('editToken'), 'apiToken');    fuwMakeHiddenfield('ignorewarnings', 1, 'apiIgnorewarnings');    fuwMakeHiddenfield('watch', 1, 'apiWatch');     if (fuwTesting) {       fuwMakeHiddenfield('title', mw.config.get('wgPageName') + \"/sandbox\", 'SandboxTitle');       fuwMakeHiddenfield('token', mw.user.tokens.get('editToken'), 'SandboxToken');       fuwMakeHiddenfield('recreate', 1, 'SandboxRecreate');    }     // create a hidden IFrame to send the api.php response to    var ifr = document.createElement('iframe');    ifr.id   = \"TargetIFrame\";    ifr.name = \"TargetIFrame\";    //ifr.setAttribute('style', 'float:right;width:150px;height:150px;');    ifr.style.display = \"none\";    ifr.src = \"\";     fuwAppendInput('TargetIFrame', ifr);     if (fuwTesting) {        // create the sandbox submit button       btn = document.createElement('input');       btn.id = 'SandboxButton';       btn.value = 'Sandbox';       btn.name  = 'Sandbox';       btn.disabled = true;       btn.type = 'button';       btn.style.width = '12em';       btn.onclick = fuwSubmitSandbox;       fuwAppendInput('SandboxButton', btn);     }     // create the real submit button    btn = document.createElement('input');    btn.id = \"SubmitButton\";    btn.value = \"Upload\";    btn.name = \"Upload\";    btn.disabled = true;    btn.type = \"button\";    btn.onclick = fuwSubmitUpload;    btn.style.width = '12em';    fuwAppendInput('SubmitButton', btn);     // create the Commons submit button    btn = document.createElement('input');    btn.id = \"CommonsButton\";    btn.value = \"Upload on Commons\";    btn.name  = \"Upload_on_Commons\";    btn.disabled = true;    btn.type = \"button\";    btn.onclick = fuwSubmitCommons;    btn.style.width = '12em';    fuwAppendInput('CommonsButton', btn);     // create reset buttons    for (i = 1; i<=2; i++) {       btn = document.createElement('input');       btn.id = 'ResetButton' + i;       btn.value = \"Reset form\";       btn.name  = \"Reset form\";       btn.type  = \"button\";       btn.onclick = fuwReset;       btn.style.width = '12em';       fuwAppendInput('ResetButton' + i, btn);    }     // names of radio button fields    var optionRadioButtons = {       // top-level copyright status choice       'FreeOrNonFree' : ['OptionFree','OptionNonFree','OptionNoGood'],       // main subsections under OptionFree       'FreeOptions'   : ['OptionOwnWork', 'OptionThirdParty', 'OptionFreeWebsite',                          'OptionPDOld', 'OptionPDOther'],       // main subsections under OptionNonFree       'NonFreeOptions': ['OptionNFSubject','OptionNF3D','OptionNFExcerpt',                          'OptionNFCover','OptionNFLogo','OptionNFPortrait',                          'OptionNFMisc'],       // response options inside warningFileExists       'FileExistsOptions':                          ['NoOverwrite','OverwriteSame','OverwriteDifferent'],       // choice of evidence in OptionThirdParty subsection       'ThirdPartyEvidenceOptions' :                          ['ThirdPartyEvidenceOptionLink',                          'ThirdPartyEvidenceOptionOTRS',                          'ThirdPartyEvidenceOptionOTRSForthcoming',                          'ThirdPartyEvidenceOptionNone'],       // choice of PD status in OptionPDOld subsection       'PDOldOptions'  : ['PDUS1923','PDURAA','PDFormality','PDOldOther'],       // choice of PD status in OptionPDOther subsection       'PDOtherOptions': ['PDOtherUSGov','PDOtherOfficial','PDOtherSimple',                          'PDOtherOther'],       // whether target article is wholly or only partly dedicated to discussing non-free work:       'NFSubjectCheck': ['NFSubjectCheckDedicated','NFSubjectCheckDiscussed'],       'NF3DCheck'     : ['NF3DCheckDedicated','NF3DCheckDiscussed'],       // choice about copyright status of photograph in OptionNF3D       'NF3DOptions'   : ['NF3DOptionFree','NF3DOptionSame']    };    for (var group in optionRadioButtons) {       var op = optionRadioButtons[group];       for (i=0; i<op.length; i++) {          fuwMakeRadiobutton(group, op[i]);       }    }    this.ScriptForm.NoOverwrite.checked = true;        // input fields that trigger special    // onchange() event handlers for validation:    fuwMakeTextfield('InputName', fuwValidateFilename);    fuwMakeTextfield('NFArticle', fuwValidateNFArticle);     // names of input fields that trigger normal    // validation event handler    var activeTextfields = [       'Artist3D','Country3D',       'Date','OwnWorkCreation','OwnWorkPublication',       'Author','Source',       'Permission','ThirdPartyOtherLicense',       'ThirdPartyEvidenceLink','ThirdPartyOTRSTicket',       'FreeWebsiteOtherLicense',       'PDOldAuthorLifetime','Publication',       'PDOldCountry','PDOldPermission',       'PDOfficialPermission','PDOtherPermission',       'NFSubjectPurpose', 'NF3DOrigDate', 'NF3DPurpose',       'NF3DCreator',       'NFPortraitDeceased',       'EditSummary'    ];    for (i=0; i<activeTextfields.length; i++) {       fuwMakeTextfield(activeTextfields[i]);    }     // names of multiline textareas    var activeTextareas = [       'InputDesc','NF3DPermission',       'NFCommercial','NFPurpose','NFReplaceableText',       'NFReplaceable','NFCommercial','NFMinimality','AnyOther'    ];    for (i=0; i<activeTextareas.length; i++) {       fuwMakeTextarea(activeTextareas[i]);    };     var checkboxes = [       'NFCoverCheckDedicated','NFLogoCheckDedicated','NFPortraitCheckDedicated'    ];    for (i=0; i<checkboxes.length; i++) {       fuwMakeCheckbox(checkboxes[i]);    };     var licenseLists = {       'OwnWorkLicense' :          // array structure as expected for input to fuwMakeSelection() function.         // any entry that is a two-element array will be turned into an option         // (first element is the value, second element is the display string).         // Entries that are one-element arrays will be the label of an option group.         // Zero-element arrays mark the end of an option group.         [         ['Allow all use as long as others credit you and share it under similar conditions'],         ['self|GFDL|cc-by-sa-4.0|migration=redundant',           'Creative Commons Attribution-Share Alike 4.0 + GFDL (recommended)',          true],         ['self|cc-by-sa-4.0',          'Creative Commons Attribution-Share Alike 4.0'],         [],         ['Allow all use as long as others credit you'],         ['self|cc-by-4.0',          'Creative Commons Attribution 4.0'],         [],         ['Reserve no rights'],         ['cc-zero',          'CC-zero Universal Public Domain Dedication'],         []         ],          'ThirdPartyLicense' :         [         ['', 'please select the correct license...'],         ['Freely licensed:'],         ['cc-by-sa-4.0', 'Creative Commons Attribution-Share Alike (cc-by-sa-4.0)'],         ['cc-by-4.0', 'Creative Commons Attribution (cc-by-4.0)'],         ['GFDL', 'GNU Free Documentation License (GFDL)'],         [],         ['No rights reserved:'],         ['PD-author', 'Public domain'],         [],         ['Other (see below)'],         []         ],          'FreeWebsiteLicense' :         [         ['', 'please select the correct license...'],         ['Freely licensed:'],         ['cc-by-sa-4.0', 'Creative Commons Attribution-Share Alike (cc-by-sa-4.0)'],         ['cc-by-4.0', 'Creative Commons Attribution (cc-by-4.0)'],         ['GFDL', 'GNU Free Documentation License (GFDL)'],         [],         ['No rights reserved:'],         ['PD-author', 'Public domain'],         [],         ['Other (see below)'],         []         ],          'USGovLicense' :        [        ['PD-USGov', 'US Federal Government'],        ['PD-USGov-NASA','NASA'],        ['PD-USGov-Military-Navy','US Navy'],        ['PD-USGov-NOAA','US National Oceanic and Atmospheric Administration'],        ['PD-USGov-Military-Air_Force','US Air Force'],        ['PD-USGov-Military-Army','US Army'],        ['PD-USGov-CIA-WF','CIA World Factbook'],        ['PD-USGov-USGS','United States Geological Survey']        ],       'IneligibleLicense' :        [        ['', 'please select one...'],        ['PD-shape','Item consists solely of simple geometric shapes'],        ['PD-text','Item consists solely of a few individual words or letters'],        ['PD-textlogo','Logo or similar item consisting solely of letters and simple geometric shapes'],        ['PD-chem','Chemical structural formula'],        ['PD-ineligible','Other kind of item that contains no original authorship']        ],       'NFSubjectLicense' :        [        ['', 'please select one...'],        ['Non-free 2D art', '2-dimensional artwork (painting, drawing etc.)'],         ['Non-free historic image', 'Unique historic photograph'],         ['Non-free fair use in', 'something else (please describe in description field on top)']        ],       'NF3DLicense' :        [        ['', 'please select one...'],        ['Non-free architectural work', 'Architectural work'],         ['Non-free 3D art', 'Other 3-dimensional creative work (sculpture etc.)']        ],       'NFCoverLicense' :          [          ['', 'please select one...'],          ['Non-free book cover', 'Cover page of a book'],           ['Non-free album cover', 'Cover of a sound recording (album, single, song, CD)'],           ['Non-free game cover', 'Cover of a video/computer game'],           ['Non-free magazine cover', 'Cover page of a magazine'],           ['Non-free video cover', 'Cover of a video'],           ['Non-free software cover', 'Cover of a software product'],           ['Non-free product cover', 'Cover of some commercial product'],           ['Non-free title-card', 'Title screen of a TV programme'],           ['Non-free movie poster', 'Movie poster'],           ['Non-free poster', 'Official poster of an event'],           ['Non-free fair use in', 'something else (please describe in description field on top)']          ],       'NFExcerptLicense' :          [          ['', 'please select one...'],          ['Non-free television screenshot', 'Television screenshot'],           ['Non-free film screenshot', 'Movie screenshot'],           ['Non-free game screenshot', 'Game screenshot'],           ['Non-free video screenshot', 'Video screenshot'],           ['Non-free music video screenshot', 'Music video screenshot'],           ['Non-free software screenshot', 'Software screenshot'],           ['Non-free web screenshot', 'Website screenshot'],           ['Non-free speech', 'Audio excerpt from a speech'],           ['Non-free audio sample', 'Sound sample of an audio recording'],           ['Non-free video sample', 'Sample extract from a video'],           ['Non-free sheet music', 'Sheet music representing a musical piece'],           ['Non-free comic', 'Panel from a comic, graphic novel, manga etc.'],           ['Non-free computer icon', 'Computer icon'],           ['Non-free newspaper image', 'Page from a newspaper'],           ['Non-free fair use in', 'something else (please describe in description field on top)']          ],             'NFLogoLicense' :          [          ['Non-free logo', 'Logo of a company, organization etc.'],           ['Non-free seal', 'Official seal, coat of arms etc'],           ['Non-free symbol', 'Other official symbol']          ],       'NFMiscLicense' :          [          ['Non-free fair use in', 'something else (please describe in description field on top)'],           ['Non-free historic image', 'Historic photograph'],           ['Non-free 2D art', '2-dimensional artwork (painting, drawing etc.)'],           ['Non-free currency', 'Depiction of currency (banknotes, coins etc.)'],           ['Non-free architectural work', 'Architectural work'],           ['Non-free 3D art', 'Other 3-dimensional creative work (sculpture etc.)'],           ['Non-free book cover', 'Cover page of a book'],           ['Non-free album cover', 'Cover of a sound recording(album, single, song, CD)'],           ['Non-free game cover', 'Cover of a video/computer game'],           ['Non-free magazine cover', 'Cover page of a magazine'],           ['Non-free video cover', 'Cover of a video'],           ['Non-free software cover', 'Cover of a software product'],           ['Non-free product cover', 'Cover of some commercial product'],           ['Non-free title-card', 'Title screen of a TV programme'],           ['Non-free movie poster', 'Movie poster'],           ['Non-free poster', 'Official poster of an event'],           ['Non-free television screenshot', 'Television screenshot'],           ['Non-free film screenshot', 'Movie screenshot'],           ['Non-free game screenshot', 'Game screenshot'],           ['Non-free video screenshot', 'Video screenshot'],           ['Non-free music video screenshot', 'Music video screenshot'],           ['Non-free software screenshot', 'Software screenshot'],           ['Non-free web screenshot', 'Website screenshot'],           ['Non-free speech', 'Audio excerpt from a speech'],           ['Non-free audio sample', 'Sound sample of an audio recording'],           ['Non-free video sample', 'Sample extract from a video'],           ['Non-free sheet music', 'Sheet music representing a musical piece'],           ['Non-free comic', 'Panel from a comic, graphic novel, manga etc.'],           ['Non-free computer icon', 'Computer icon'],           ['Non-free newspaper image', 'Page from a newspaper'],           ['Non-free logo', 'Logo of a company, organization etc.'],           ['Non-free seal', 'Official seal, coat of arms etc'],           ['Non-free symbol', 'Other official symbol'],           ['Non-free sports uniform', 'Sports uniform'],           ['Non-free stamp', 'Stamp']           ],       'NFExtraLicense' :          [          ['', 'none'],          ['Crown copyright and other governmental sources'],          ['Non-free Crown copyright', 'UK Crown Copyright'],          ['Non-free New Zealand Crown Copyright', 'NZ Crown Copyright'],          ['Non-free Canadian Crown Copyright', 'Canadian Crown Copyright'],          ['Non-free AUSPIC', 'AUSPIC (Australian Parliament image database)'],          ['Non-free Philippines government', 'Philippines government'],          ['Non-free Finnish Defence Forces', 'Finnish Defence Forces'],          [],          ['Other individual sources'],          ['Non-free Denver Public Library image', 'Denver Public Library'],          ['Non-free ESA media', 'ESA (European Space Agency)'],          [],          ['Possibly public domain in other countries'],          ['Non-free Old-50', 'Author died more than 50 years ago.'],          ['Non-free Old-70', 'Author died more than 70 years ago.'],          [],          ['Some permissions granted, but not completely free'],          ['Non-free promotional', 'From promotional press kit'],          ['Non-free with NC', 'Permission granted, but only for educational and/or non-commercial purposes'],          ['Non-free with ND', 'Permission granted, but no derivative works allowed'],          ['Non-free with permission', 'Permission granted, but only for Wikipedia'],          []          ]    };    for (var group in licenseLists) {       fuwMakeSelection(group, licenseLists[group]);    }      this.knownCommonsLicenses = {       'self|GFDL|cc-by-sa-all|migration=redundant' : 1,       'self|Cc-zero' : 1,       'PD-self' : 1,       'self|GFDL|cc-by-sa-4.0|migration=redundant' : 1,       'self|GFDL|cc-by-4.0|migration=redundant' : 1,       'self|GFDL|cc-by-sa-3.0|migration=redundant' : 1,       'self|GFDL|cc-by-3.0|migration=redundant' : 1,       'self|cc-by-sa-4.0' : 1,       'self|cc-by-sa-3.0' : 1,       'cc-by-sa-4.0' : 1,       'cc-by-sa-3.0' : 1,       'cc-by-sa-2.5' : 1,       'cc-by-4.0' : 1,       'cc-by-3.0' : 1,       'cc-by-2.5' : 1,       'FAL' : 1,       'PD-old-100' : 1,       'PD-old' : 1,       'PD-Art' : 1,       'PD-US' : 1,       'PD-USGov' : 1,       'PD-USGov-NASA' : 1,       'PD-USGov-Military-Navy' : 1,       'PD-ineligible' : 1,       'Attribution' : 1,       'Copyrighted free use' : 1    };      // textfields that don't react directly    // to user input and are used only for assembling stuff:    if (fuwTesting) {       fuwMakeTextfield('SandboxSummary', function(){void(0);});       fuwMakeTextarea('SandboxText', function(){void(0);});       fuwGet('SandboxSummary').disabled=\"disabled\";       fuwGet('SandboxText').disabled=\"disabled\";       fuwGet('SandboxText').rows = 12;    }     // set links to \"_blank\" target, so we don't accidentally leave the page,    // because on some browsers that would destroy all the input the user has already entered    $('.fuwOutLink a').each(function() {       this.target = '_blank';    });     // make main area visible    fuwSetVisible('UploadScriptArea', true);  } // ======================================  // end of fuwGlobal constructor function // ======================================    function fuwRadioClick(e) {    var ev = e || event;    var src = ev.target || ev.srcElement;    //alert('onclick event from ' + src + ' (' + src.value + ')');    fuwUpdateOptions();    return true; }  /*  * ============================================================= * function fuwUpdateOptions * ============================================================= * This is the onchange event handler for most of the input * elements in the main form. It changes visibility and disabled * status for the various sections of the input form in response * to which options are chosen. */ function fuwUpdateOptions() {     var fuw = window.fuw;    var warn = fuw.warn;    var opts = fuw.opts = { };    opts.InputFilename = $('#TargetForm input#file').val();     var widgets = fuw.ScriptForm.elements;    for (i = 0; i < widgets.length; i++) {       var w = widgets[i];       if (w.type == \"radio\") {          var nm = w.name;          var id = w.id;          var vl = w.checked && !w.disabled && fuwIsVisible(w);          opts[id] = vl;          if (vl) opts[nm] = id;       }       else {          var id = w.id;          var active = !w.disabled && fuwIsVisible(w);          if (active) {             var value = ((type == 'checkbox') ? w.checked : w.value);             opts[id] = value;                   }       }    };    opts.MainOption = opts.FreeOptions || opts.NonFreeOptions;        // some parts of the input form are re-used across sections    // and must be moved into the currently active input section:     // minimality section is shared between all NF sections    fuwMove('NFMinimalitySection', 'detailsNFSubject', (opts.OptionNFSubject)) ||    fuwMove('NFMinimalitySection', 'detailsNF3D', (opts.OptionNF3D)) ||    fuwMove('NFMinimalitySection', 'detailsNFExcerpt', (opts.OptionNFExcerpt)) ||    fuwMove('NFMinimalitySection', 'detailsNFCover', (opts.OptionNFCover)) ||    fuwMove('NFMinimalitySection', 'detailsNFLogo', (opts.OptionNFLogo)) ||    fuwMove('NFMinimalitySection', 'detailsNFPortrait', (opts.OptionNFPortrait)) ||    fuwMove('NFMinimalitySection', 'detailsNFMisc', true);     // AnyOtherInfo section is shared between all    fuwMove('AnyOtherInfo', 'detailsOwnWork', opts.OptionOwnWork) ||    fuwMove('AnyOtherInfo', 'detailsThirdParty', opts.OptionThirdParty) ||    fuwMove('AnyOtherInfo', 'detailsFreeWebsite', opts.OptionFreeWebsite) ||    fuwMove('AnyOtherInfo', 'detailsPDOld', opts.OptionPDOld) ||    fuwMove('AnyOtherInfo', 'detailsPDOther', opts.OptionPDOther) ||    fuwMove('AnyOtherInfo', 'detailsNFSubject', opts.OptionNFSubject) ||    fuwMove('AnyOtherInfo', 'detailsNF3D', opts.OptionNF3D) ||    fuwMove('AnyOtherInfo', 'detailsNFExcerpt', opts.OptionNFExcerpt) ||    fuwMove('AnyOtherInfo', 'detailsNFCover', opts.OptionNFCover) ||    fuwMove('AnyOtherInfo', 'detailsNFLogo', opts.OptionNFLogo) ||    fuwMove('AnyOtherInfo', 'detailsNFPortrait', opts.OptionNFPortrait) ||    fuwMove('AnyOtherInfo', 'detailsNFMisc', opts.OptionNFMisc);     // author input field is shared between all sections except \"Own Work\".    // (will serve for the immediate/photographic author, in those cases where there    // are two author fields)    fuwMove('Author', 'placeholderFreeWebsiteAuthor', (opts.OptionFreeWebsite)) ||    fuwMove('Author', 'placeholderPDOldAuthor', (opts.OptionPDOld)) ||    fuwMove('Author', 'placeholderPDOtherAuthor', (opts.OptionPDOther)) ||    fuwMove('Author', 'placeholderNFSubjectAuthor', (opts.OptionNFSubject)) ||    fuwMove('Author', 'placeholderNF3DAuthor', (opts.OptionNF3D)) ||    fuwMove('Author', 'placeholderNFExcerptAuthor', (opts.OptionNFExcerpt)) ||    fuwMove('Author', 'placeholderNFCoverAuthor', (opts.OptionNFCover)) ||    fuwMove('Author', 'placeholderNFPortraitAuthor', (opts.OptionNFPortrait)) ||    fuwMove('Author', 'placeholderNFMiscAuthor', (opts.OptionNFMisc)) ||    fuwMove('Author', 'placeholderAuthor', true);     // source input field is shared between all sections except \"Own Work\".    // (will serve for immediate/web source, in those cases where there are two    // source fields involved)    fuwMove('Source', 'placeholderFreeWebsiteSource', (opts.OptionFreeWebsite)) ||    fuwMove('Source', 'placeholderPDOldSource', (opts.OptionPDOld)) ||    fuwMove('Source', 'placeholderPDOtherSource', (opts.OptionPDOther)) ||    fuwMove('Source', 'placeholderNFSubjectSource', (opts.OptionNFSubject)) ||    fuwMove('Source', 'placeholderNF3DSource', (opts.OptionNF3D)) ||    fuwMove('Source', 'placeholderNFExcerptSource', (opts.OptionNFExcerpt)) ||    fuwMove('Source', 'placeholderNFCoverSource', (opts.OptionNFCover)) ||    fuwMove('Source', 'placeholderNFLogoSource', (opts.OptionNFLogo)) ||    fuwMove('Source', 'placeholderNFPortraitSource', (opts.OptionNFPortrait)) ||    fuwMove('Source', 'placeholderNFMiscSource', (opts.OptionNFMisc)) ||    fuwMove('Source', 'placeholderSource', true);     // date input field is shared between all sections except \"Logo\", which doesn't need it.    // will serve for derived/photographic date in the case of 3D items    fuwMove('Date', 'placeholderFreeWebsiteDate', (opts.OptionFreeWebsite)) ||    fuwMove('Date', 'placeholderThirdPartyDate', (opts.OptionThirdParty)) ||    fuwMove('Date', 'placeholderPDOldDate', (opts.OptionPDOld)) ||    fuwMove('Date', 'placeholderPDOtherDate', (opts.OptionPDOther)) ||    fuwMove('Date', 'placeholderNFSubjectDate', (opts.OptionNFSubject)) ||    fuwMove('Date', 'placeholderNF3DDate', (opts.OptionNF3D)) ||    fuwMove('Date', 'placeholderNFExcerptDate', (opts.OptionNFExcerpt)) ||    fuwMove('Date', 'placeholderNFCoverDate', (opts.OptionNFCover)) ||    fuwMove('Date', 'placeholderNFPortraitDate', (opts.OptionNFPortrait)) ||    fuwMove('Date', 'placeholderNFMiscDate', (opts.OptionNFMisc)) ||    fuwMove('Date', 'placeholderDate', true);        // permission field is shared between ThirdParty and FreeWebsite sections    fuwMove('Permission', 'placeholderFreeWebsitePermission', (opts.OptionFreeWebsite)) ||    fuwMove('Permission', 'placeholderPermission', true);     // publication field is shared between PDOld, NFPortrait and NFMisc    fuwMove('Publication', 'placeholderNFPortraitPublication', (opts.OptionNFPortrait)) ||    fuwMove('Publication', 'placeholderNFMiscPublication', (opts.OptionNFMisc)) ||    fuwMove('Publication', 'placeholderPublication', true);     // Purpose, Commercial, Replaceable and ReplaceableText FUR fields are shared    // between some but not all of the non-free sections    fuwMove('NFPurpose', 'placeholderNFExcerptPurpose', (opts.OptionNFExcerpt)) ||    fuwMove('NFPurpose', 'placeholderNFPurpose');    fuwMove('NFCommercial', 'placeholderNFPortraitCommercial', (opts.OptionNFPortrait)) ||    fuwMove('NFCommercial', 'placeholderNFCommercial');    fuwMove('NFReplaceable', 'placeholderNFPortraitReplaceable', (opts.OptionNFPortrait)) ||    fuwMove('NFReplaceable', 'placeholderNFReplaceable');    fuwMove('NFReplaceableText', 'placeholderNFExcerptReplaceable', (opts.OptionNFExcerpt)) ||    fuwMove('NFReplaceableText', 'placeholderNFReplaceableText', true);     // submit button goes to Step1 if user has chosen a plain overwrite of an existing file,    // and to the active section of Step3 if otherwise    fuwMove('fuwSubmit', 'UploadScriptStep1', (warn.ImageExists && opts.OverwriteSame)) ||    fuwMove('fuwSubmit', 'detailsOwnWork', opts.OptionOwnWork) ||    fuwMove('fuwSubmit', 'detailsThirdParty', opts.OptionThirdParty) ||    fuwMove('fuwSubmit', 'detailsFreeWebsite', opts.OptionFreeWebsite) ||    fuwMove('fuwSubmit', 'detailsPDOld', opts.OptionPDOld) ||    fuwMove('fuwSubmit', 'detailsPDOther', opts.OptionPDOther) ||    fuwMove('fuwSubmit', 'detailsNFSubject', opts.OptionNFSubject) ||    fuwMove('fuwSubmit', 'detailsNF3D', opts.OptionNF3D) ||    fuwMove('fuwSubmit', 'detailsNFExcerpt', opts.OptionNFExcerpt) ||    fuwMove('fuwSubmit', 'detailsNFCover', opts.OptionNFCover) ||    fuwMove('fuwSubmit', 'detailsNFLogo', opts.OptionNFLogo) ||    fuwMove('fuwSubmit', 'detailsNFPortrait', opts.OptionNFPortrait) ||    fuwMove('fuwSubmit', 'fuwSubmitHost', true);      // Show and hide warnings:     // filename-related warnings:    fuwSetVisible('warningIllegalChars', warn.IllegalChars);    fuwSetVisible('warningBadFilename',  warn.BadFilename);    fuwSetVisible('warningImageOnCommons', warn.ImageOnCommons);    fuwSetVisible('warningImageExists', warn.ImageExists);    fuwMove('warningImageThumb', 'warningImageOnCommons', warn.ImageOnCommons, true) ||    fuwMove('warningImageThumb', 'warningImageExists', true, true);      // notices related to the top-level options:    fuwSetVisible('warningWhyNotCommons', opts.OptionFree);    fuwSetVisible('warningNF', opts.OptionNonFree);    fuwSetVisible('warningNoGood', opts.OptionNoGood);     // warnings related to non-free \"used in\" article    fuwSetVisible('warningNFArticleNotFound', warn.NFArticleNotFound);    fuwSetVisible('warningNFArticleNotMainspace', warn.NFArticleNotMainspace);    fuwSetVisible('warningUserspaceDraft', warn.UserspaceDraft);    fuwSetVisible('warningNFArticleDab', warn.NFArticleDab);    fuwSetVisible('NFArticleOK', warn.NFArticleOK);     // warnings depending on user status:    if (fuw.userStatus.match(/problem|newbie|notAutoconfirmed/)) {       fuwSetVisible('warningFreeWebsite', opts.OptionFreeWebsite);       fuwSetVisible('warningOwnWork', opts.OptionOwnWork);       fuwSetVisible('warningPDOther', opts.OptionPDOther);       fuwSetVisible('warningNFSubject', opts.OptionNFSubject);    }",
+      "web_url": "https://github.com/smith86n/wiki-is-mostly-fake-radom-words-word-genrationr-",
+      "star_count": 10,
+      "last_activity_at": "2018-10-29T15:59:59Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "entry recording",
+      "relevance": 0.463,
+      "selected": false
+    },
+    {
+      "id": 12079923,
+      "name": "pk_verify",
+      "name_with_namespace": "Daniel Huigens / pk_verify",
+      "description": "pk_verify is a verification tool for end users of end-to-end encryption services.  Its aim is to reduce the need to trust an intermediary to serve valid copies of your public key. ",
+      "web_url": "https://gitlab.com/twisstle/pk_verify",
+      "star_count": 0,
+      "last_activity_at": "2019-04-29T08:02:04.592Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.508,
+      "selected": false
+    },
+    {
+      "id": 11520347,
+      "name": "pk_verify",
+      "name_with_namespace": "John Hopkins / pk_verify",
+      "description": "pk_verify is a verification tool for end users of end-to-end encryption services.  Its aim is to reduce the need to trust an intermediary to serve valid copies of your public key. ",
+      "web_url": "https://gitlab.com/phoniks/pk_verify",
+      "star_count": 0,
+      "last_activity_at": "2019-04-29T08:03:40.284Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.508,
+      "selected": false
+    },
+    {
+      "id": 19904878,
+      "name": "DoppelzahnChatService.IntermediarySolution.Solution1",
+      "name_with_namespace": "Hiwa / DoppelzahnChatService.IntermediarySolution.Solution1",
+      "description": "In this project I handled 4 parts of instructions that you had dedicated for me. I have not changed data layer or the other part of default project and I have just made it work. ",
+      "web_url": "https://gitlab.com/hiwa_mn/DoppelzahnChatService.IntermediarySolution.Solution1",
+      "star_count": 0,
+      "last_activity_at": "2020-07-12T07:01:29.879Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.503,
+      "selected": false
+    },
+    {
+      "id": 39440131,
+      "name": "SchoolDiary ActiveRecord WithServiceLayer ManyToOne Only",
+      "name_with_namespace": "Svilen Velikov / SchoolDiary ActiveRecord WithServiceLayer ManyToOne Only",
+      "description": "",
+      "web_url": "https://gitlab.com/svilen.velikov/school-diary-activeRecord-withServiceLayer-ManyToOneOnly",
+      "star_count": 0,
+      "last_activity_at": "2022-10-04T09:54:16.046Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.489,
+      "selected": false
+    },
+    {
+      "id": 21484751,
+      "name": "Olive BDC Website",
+      "name_with_namespace": "Ubachukwu Ibeh / Olive BDC Website",
+      "description": "This is a Forex trading website I developed & deployed independently for a subsidiary of the firm I worked for. Its services include Fund Transfer, Financial Advisory Services, • Wholesales/Retail trades in Major global currencies & Cash delivery.",
+      "web_url": "https://gitlab.com/redbossrabbit/olive-bdc-website",
+      "star_count": 0,
+      "last_activity_at": "2020-09-30T19:17:33.623Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.487,
+      "selected": false
+    },
+    {
+      "id": 34511363,
+      "name": "Dataspace Proxy PoC",
+      "name_with_namespace": "NL AI Coalition / Dataspace Proxy PoC",
+      "description": "This PoC demonstrates interoperability between an iSHARE based dsand a IDS based ds, using a simple proxy architecture (proposed by the Data Sharing Coalition). This PoC uses KeyCloack as an intermediary IAA service in the  hormainsation space.",
+      "web_url": "https://gitlab.com/nlaic/dataspace-proxy-poc",
+      "star_count": 0,
+      "last_activity_at": "2022-04-01T12:34:12.185Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "diary service",
+      "relevance": 0.459,
+      "selected": false
+    }
+  ],
+  "passports": [
+    {
+      "passport_id": "PP-GH-xerj-org_xerj",
+      "software_name": "xerj-org/xerj",
+      "version": "1.0.0-rc.102",
+      "source": {
+        "repository_url": "https://github.com/xerj-org/xerj",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Diary Entry Recording",
+          "coverage": "none",
+          "notes": "No evidence of diary entry recording functionality. XERJ is a search engine, not a diary management system.",
+          "capability_id": "CAP.DIARY.RECORD",
+          "evidence_status": "unknown",
+          "confidence": 0.9,
+          "evidence_refs": []
+        },
+        {
+          "name": "Diary Search",
+          "coverage": "partial",
+          "notes": "XERJ provides general-purpose search (BM25, vector, hybrid) which could technically be used to search diary entries if indexed. However, it lacks specific diary domain features like unit/track/location linking or structured diary entry schemas.",
+          "capability_id": "CAP.DIARY.SEARCH",
+          "evidence_status": "inferred",
+          "confidence": 0.6,
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/Cargo.toml@50e4ffde"
+          ]
+        },
+        {
+          "name": "Full-Text Search",
+          "coverage": "full",
+          "notes": "BM25 full-text search is a core capability, evidenced by source code and documentation.",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/crates/xerj-autoindex/src/search.rs@50e4ffde"
+          ]
+        },
+        {
+          "name": "Vector Search",
+          "coverage": "full",
+          "notes": "Vector search is supported via optional neural embedders.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/Cargo.toml@50e4ffde"
+          ]
+        },
+        {
+          "name": "Elasticsearch-Compatible API",
+          "coverage": "full",
+          "notes": "API conforms to Elasticsearch-compatible protocol on port 9200.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "engine/Dockerfile@50e4ffde"
+          ]
+        },
+        {
+          "name": "MCP Server Integration",
+          "coverage": "full",
+          "notes": "Native Model Context Protocol (MCP) server support for agent integration.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@50e4ffde",
+            "dsh/package.json@50e4ffde"
+          ]
+        }
+      ],
+      "interfaces": [
+        "Elasticsearch-Compatible REST API (HTTP/HTTPS)",
+        "MCP Protocol (stdio)",
+        "CLI Interface (CLI)"
+      ],
+      "dependencies": [
+        "Rust 1.94 (trixie)",
+        "Debian trixie-slim (glibc 2.41)",
+        "Optional neural embedder (~90 MB)"
+      ],
+      "license": "apache-2.0",
+      "maturity": "developing",
+      "constraints": [
+        "Requires Linux (Debian trixie-slim for glibc compatibility)",
+        "Binds to loopback by default; container requires explicit 0.0.0.0 binding",
+        "Optional GPU not required but neural embedder available as opt-in"
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 40.0,
+        "confidence": "low",
+        "assumptions": [
+          "Assumes diary entries can be indexed as standard documents in XERJ's search index",
+          "Assumes unit/track/location metadata can be stored as custom fields in the index schema",
+          "Assumes HTTPS POST submission can be handled via XERJ's existing ingestion pipeline or a wrapper service",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "XERJ provides BM25 full-text, vector, and hybrid search capabilities",
+          "source_ref": "README.md@50e4ffde",
+          "verified": false
+        },
+        {
+          "claim": "Elasticsearch-compatible API is available on port 9200",
+          "source_ref": "engine/Dockerfile@50e4ffde",
+          "verified": false
+        },
+        {
+          "claim": "XERJ indexes code, docs, logs, JSONL/CSV and PDFs",
+          "source_ref": "README.md@50e4ffde",
+          "verified": false
+        },
+        {
+          "claim": "MCP server integration is supported",
+          "source_ref": "dsh/package.json@50e4ffde",
+          "verified": false
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [critical] The passport claims 'full' coverage for Vector Search based on 'optional neural embedders'. However, the README explicitly states the default embedder is 'lexical, offline' and neural embedders are 'opt-in, downloads ~90 MB'. Declaring full capability without the optional dependency present is misleading. The evidence_status 'declared' relies on README marketing text rather than code verification of the vector search implementation itself. | [high] The claim of ES-compatibility is marked 'declared' with evidence from README and Dockerfile. The Dockerfile only exposes port 9200; it does not contain code verifying the API protocol conformance. While the README mentions 'ES-YAML conformance', the passport's own evidence section lists this claim as 'verified: false'. A 'full' coverage claim requires stronger evidence than just a port exposure and marketing badges. | [high] The passport claims full MCP support based on README and dsh/package.json. The package.json describes a 'DeepSeek Harness (dsh) profile bundle' that 'inserts the xerj MCP server'. This suggests MCP is an integration feature or requires a specific harness, not necessarily a native, standalone capability of the core engine. The evidence_status 'declared' is weak for a 'full' coverage claim. | [medium] The claim is marked 'verified' with evidence from README and search.rs. However, the provided evidence_refs are documentation/marketing (README) and a CLI client wrapper (search.rs), not the core indexing/search engine implementation code (e.g., xerj-fts crate). Verification should ideally point to the core logic. | [medium] The passport lists license as 'apache-2.0'. The LICENSE file excerpt is truncated in the evidence ('...Legal Entity\" shall mean the union of the acting entity and all'). While likely correct, the evidence provided is incomplete for a definitive audit."
+      },
+      "revision": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+      "description": "XERJ is a Rust-based AI search engine and MCP server providing BM25 full-text, vector, and hybrid search capabilities with an Elasticsearch-compatible API. It indexes code, docs, logs, JSONL/CSV, and PDFs for agent memory and RAG.",
+      "interfaces_detail": [
+        {
+          "name": "Elasticsearch-Compatible REST API",
+          "protocol": "HTTP/HTTPS",
+          "direction": "bidirectional",
+          "schema_ref": "",
+          "evidence_status": "verified"
+        },
+        {
+          "name": "MCP Protocol",
+          "protocol": "stdio",
+          "direction": "bidirectional",
+          "schema_ref": "",
+          "evidence_status": "declared"
+        },
+        {
+          "name": "CLI Interface",
+          "protocol": "CLI",
+          "direction": "in",
+          "schema_ref": "",
+          "evidence_status": "verified"
+        }
+      ],
+      "deployment_constraints": [
+        "Requires Linux (Debian trixie-slim for glibc compatibility)",
+        "Binds to loopback by default; container requires explicit 0.0.0.0 binding",
+        "Optional GPU not required but neural embedder available as opt-in"
+      ],
+      "runtime": [
+        "Linux container available",
+        "Single binary deployment"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No native diary entry data model or schema",
+        "No support for linking entries to units, tracks, or map locations as first-class relationships",
+        "No diary-specific search filters or faceting beyond generic XERJ search capabilities",
+        "No built-in HTTPS POST endpoint specifically for diary submission (requires external wrapper)"
+      ],
+      "risks": [
+        "License: Apache-2.0 is permissive but requires attribution",
+        "Maturity: Release candidate (rc.102) indicates ongoing development; API stability not guaranteed",
+        "Maintenance: Active project with recent commits, but diary-specific adaptation is untested"
+      ],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee (open source)",
+        "adaptation_assumptions": [
+          "Assumes diary entries can be indexed as standard documents in XERJ's search index",
+          "Assumes unit/track/location metadata can be stored as custom fields in the index schema",
+          "Assumes HTTPS POST submission can be handled via XERJ's existing ingestion pipeline or a wrapper service"
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T12:56:28+00:00",
+      "stars": 18644,
+      "last_activity": "2026-11-09T12:27:10Z"
+    },
+    {
+      "passport_id": "PP-GH-manticoresoftware_manticoresearch",
+      "software_name": "manticoresoftware/manticoresearch",
+      "version": "unknown",
+      "source": {
+        "repository_url": "https://github.com/manticoresoftware/manticoresearch",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Diary Entry Recording",
+          "coverage": "partial",
+          "notes": "The repository provides the underlying storage and indexing engine (full-text, SQL) required to record diary entries. However, it does not contain the specific application logic for 'operator diary' domain entities or the HTTP POST submission handler itself; this would be implemented in the service layer consuming Manticore.",
+          "capability_id": "CAP.DIARY.RECORD",
+          "evidence_status": "inferred",
+          "confidence": 0.4,
+          "evidence_refs": [
+            "api:project@e6b74dda",
+            "README.md@e6b74dda"
+          ]
+        },
+        {
+          "name": "Diary Search",
+          "coverage": "partial",
+          "notes": "Manticore provides the core search capabilities (full-text, vector, hybrid) and SQL/HTTP interfaces to query data. The specific 'Diary Search' API endpoint is not in this repo, but the engine supports the required search functionality.",
+          "capability_id": "CAP.DIARY.SEARCH",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": [
+            "api:project@e6b74dda",
+            "README.md@e6b74dda"
+          ]
+        },
+        {
+          "name": "Full-Text Search",
+          "coverage": "full",
+          "notes": "Core capability of the database engine.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "api:project@e6b74dda",
+            "README.md@e6b74dda"
+          ]
+        },
+        {
+          "name": "Vector Search",
+          "coverage": "full",
+          "notes": "Listed in topics and description.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "api:project@e6b74dda"
+          ]
+        },
+        {
+          "name": "SQL Interface",
+          "coverage": "full",
+          "notes": "Supports MySQL-compatible SQL protocol.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "api:project@e6b74dda"
+          ]
+        },
+        {
+          "name": "Real-time Indexing",
+          "coverage": "full",
+          "notes": "Listed in description.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "api:project@e6b74dda"
+          ]
+        }
+      ],
+      "interfaces": [
+        "MySQL Protocol (TCP/MySQL)",
+        "HTTP Search API (HTTPS/JSON)"
+      ],
+      "dependencies": [
+        "C++17 Compiler",
+        "CMake 3.17+",
+        "ICU Library",
+        "RE2 Library"
+      ],
+      "license": "gpl-3.0",
+      "maturity": "stable",
+      "constraints": [
+        "Requires compilation from source or use of provided Docker images",
+        "GPLv3 License compliance required for distribution/modification"
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 40.0,
+        "confidence": "low",
+        "assumptions": [
+          "Assumes the service layer (C-DIARY-SVC) is a separate codebase that will link against or connect to Manticore.",
+          "Assumes standard SQL/HTTP client libraries are used for integration.",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "Manticore Search is an open-source search database for full-text, vector, and hybrid search with real-time indexing and SQL.",
+          "source_ref": "api:project@e6b74dda",
+          "verified": false
+        },
+        {
+          "claim": "Topics include full-text-search, sql, search-api, sphinxsearch.",
+          "source_ref": "api:project@e6b74dda",
+          "verified": false
+        },
+        {
+          "claim": "License is GPLv3 or later.",
+          "source_ref": "LICENSE@e6b74dda",
+          "verified": false
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [critical] The evidence section explicitly lists the license claim as 'verified: false'. While the LICENSE file excerpt confirms GPLv3, the passport's internal evidence registry contradicts itself by marking it unverified. Furthermore, the risk assessment flags a conflict with 'SL-DEP-02' (closed redistribution), but the passport does not define what SL-DEP-02 is or confirm if this specific project violates it. This creates an unresolved compliance blocker. | [high] The claim of 'full' coverage for Vector Search is unsupported by the provided evidence excerpts. The README and metadata mention 'vector search' in topics/description, but no code, test, or API documentation excerpt demonstrates actual vector indexing or query implementation. Per the rubric, 'verified' requires code/test evidence, not just marketing text. 'Declared' based solely on a description string is insufficient for a 'full' coverage claim. | [high] The claim of 'full' coverage for the SQL Interface is based on 'declared' status using only API metadata. While the README mentions MySQL-compatible protocol, there is no evidence excerpt showing actual SQL parsing code, test cases for SQL queries, or interface implementation details. The rubric requires code/test evidence for verification. | [medium] The passport correctly identifies these as 'partial' coverage with 'inferred' status. However, the notes state Manticore provides the 'underlying storage... required to record diary entries'. This is misleading; Manticore is a search index, not a general-purpose transactional database for recording arbitrary entities without application logic. The evidence does not support any specific 'diary' functionality, which is correct, but the phrasing implies a closer fit than exists. | [low] The README contains specific performance benchmarks. While these are marketing text, they are not verified by any evidence excerpt provided in the passport. The rubric flags 'invented numbers' or overstated maturity. These numbers are present in the README but not validated."
+      },
+      "revision": "e6b74dda0e41752eb461b17cfb8704fdbaafb482",
+      "description": "Manticore Search is an open-source, fast search database (fork of Sphinx) supporting full-text search, vector search, and SQL. It provides a MySQL-compatible protocol for data manipulation and a native HTTP/JSON API for search operations. It is designed as a high-performance alternative to Elasticsearch.",
+      "interfaces_detail": [
+        {
+          "name": "MySQL Protocol",
+          "protocol": "TCP/MySQL",
+          "direction": "bidirectional",
+          "schema_ref": "",
+          "evidence_status": "verified"
+        },
+        {
+          "name": "HTTP Search API",
+          "protocol": "HTTPS/JSON",
+          "direction": "bidirectional",
+          "schema_ref": "",
+          "evidence_status": "declared"
+        }
+      ],
+      "deployment_constraints": [
+        "Requires compilation from source or use of provided Docker images",
+        "GPLv3 License compliance required for distribution/modification"
+      ],
+      "runtime": [
+        "Linux/Unix",
+        "Windows (via CMake)"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No application-level diary entity definitions",
+        "No specific HTTP POST handler for diary submission in this repo",
+        "No business logic for unit/track/map location linking"
+      ],
+      "risks": [
+        "gpl-3.0: strong copyleft, conflicts with closed redistribution (SL-DEP-02)",
+        "GPLv3 License: Copyleft license may restrict proprietary use if modified and distributed.",
+        "Complexity: Large C++ codebase (2642 files) makes deep understanding difficult."
+      ],
+      "cost_inputs": {
+        "license_pricing_known": false,
+        "license_pricing_note": "unknown",
+        "adaptation_assumptions": [
+          "Assumes the service layer (C-DIARY-SVC) is a separate codebase that will link against or connect to Manticore.",
+          "Assumes standard SQL/HTTP client libraries are used for integration."
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T12:57:25+00:00",
+      "stars": 12079,
+      "last_activity": "2026-11-09T09:39:28Z"
+    },
+    {
+      "passport_id": "PP-CUSTOM-C-DIARY-SVC",
+      "software_name": "Custom development: Operator Diary Service",
+      "version": "n/a",
+      "source": {
+        "repository_url": "",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Diary Entry Recording",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.DIARY.RECORD",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        },
+        {
+          "name": "Diary Search",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.DIARY.SEARCH",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        }
+      ],
+      "interfaces": [
+        "As specified by Engine 2"
+      ],
+      "dependencies": [],
+      "license": "proprietary (in-house)",
+      "maturity": "unknown",
+      "constraints": [],
+      "adaptation_effort_hours": {
+        "estimate": 0.0,
+        "confidence": "low",
+        "assumptions": [
+          "Build effort estimated by Engine 3, not here"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [],
+      "validation": {
+        "status": "passed",
+        "judge_notes": "Synthetic BUILD baseline; no external claims"
+      },
+      "revision": null,
+      "description": "Represents in-house development when no reusable candidate covers the component.",
+      "interfaces_detail": [],
+      "deployment_constraints": [],
+      "runtime": [],
+      "tests_present": null,
+      "known_gaps": [],
+      "risks": [],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee",
+        "adaptation_assumptions": []
+      },
+      "is_custom_development": true,
+      "analysis_timestamp": "2026-11-09T12:57:48+00:00",
+      "stars": null,
+      "last_activity": null
+    }
+  ],
+  "rankings": [
+    {
+      "component_id": "C-DIARY-SVC",
+      "candidate_id": "PP-GH-xerj-org_xerj",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 0.25,
+        "interface_fit": 1.0,
+        "adaptation_effort": 0.2,
+        "maturity": 0.6,
+        "documentation": 1.0,
+        "operational_fit": 0.9
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": 54.8,
+      "rank": 1,
+      "covered_capabilities": [
+        "CAP.DIARY.SEARCH"
+      ],
+      "missing_capabilities": [
+        "CAP.DIARY.RECORD"
+      ],
+      "required_modifications": [
+        "Implement/extend: Diary Entry Recording"
+      ],
+      "explanation": "1/2 required capabilities covered; missing Diary Entry Recording; license apache-2.0 (permissive); maturity developing",
+      "confidence": "medium"
+    },
+    {
+      "component_id": "C-DIARY-SVC",
+      "candidate_id": "PP-CUSTOM-C-DIARY-SVC",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 1.0,
+        "interface_fit": 1.0,
+        "adaptation_effort": null,
+        "maturity": null,
+        "documentation": null,
+        "operational_fit": 1.0
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": null,
+      "rank": null,
+      "covered_capabilities": [
+        "CAP.DIARY.RECORD",
+        "CAP.DIARY.SEARCH"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "BUILD baseline (custom development to specification). Not scored; Engine 3 estimates its effort.",
+      "confidence": "low"
+    },
+    {
+      "component_id": "C-DIARY-SVC",
+      "candidate_id": "PP-GH-manticoresoftware_manticoresearch",
+      "eligible": false,
+      "exclusion_reasons": [
+        "License gpl-3.0 incompatible with closed redistribution (SL-DEP-02)"
+      ],
+      "dimension_scores": {
+        "functional_coverage": 0.5,
+        "interface_fit": 1.0,
+        "adaptation_effort": 0.2,
+        "maturity": 1.0,
+        "documentation": 1.0,
+        "operational_fit": 0.9
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": null,
+      "rank": null,
+      "covered_capabilities": [
+        "CAP.DIARY.RECORD",
+        "CAP.DIARY.SEARCH"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "2/2 required capabilities covered; license gpl-3.0 (strong-copyleft); maturity stable",
+      "confidence": "medium"
+    }
+  ],
+  "errors": []
+}

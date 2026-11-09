@@ -1340,7 +1340,8 @@
         "Maintain registry of all field devices",
         "Distribute time synchronization signals",
         "Aggregate device health metrics (battery, radio)",
-        "Authenticate devices during connection"
+        "Authenticate devices during connection",
+        "Publish device status updates to the messaging backbone"
       ],
       "inputs": [
         "Device Telemetry from C-EDGE-GW",
@@ -1928,6 +1929,57 @@
       "requirement_ids": [
         "SL-OD-02"
       ]
+    },
+    {
+      "id": "IF-16",
+      "source": "C-DEVICE-MGMT",
+      "target": "C-MESSAGING",
+      "name": "Device Status Publication",
+      "payload": "JSON: { device_id, battery_pct, radio_status, water_level, timestamp }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry with exponential backoff; persist in DS-DEVICE-REGISTRY if messaging is down",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-AL-03",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-17",
+      "source": "C-MESSAGING",
+      "target": "C-AUDIT-SVC",
+      "name": "Audit Event Stream",
+      "payload": "JSON: { event_type, user_id, action, timestamp, metadata_hash }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Persist to DS-AUDIT-LOGS immediately; drop if storage full (alert admin)",
+      "security": "Internal Network Encryption (TLS), Integrity Checksums",
+      "requirement_ids": [
+        "SL-SEC-04",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-18",
+      "source": "C-MESSAGING",
+      "target": "C-CONFIG-SVC",
+      "name": "Configuration Distribution Request",
+      "payload": "JSON: { config_version, component_id }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry until acknowledged; fallback to static config if service unavailable",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-SEC-03",
+        "SL-COM-01"
+      ]
     }
   ],
   "data_stores": [
@@ -2403,36 +2455,8 @@
       "note": ""
     }
   ],
-  "validation_findings": [
-    {
-      "id": "VF-001",
-      "severity": "medium",
-      "rule": "isolated-component",
-      "message": "C-DEVICE-MGMT has no interfaces",
-      "refs": [
-        "C-DEVICE-MGMT"
-      ]
-    },
-    {
-      "id": "VF-002",
-      "severity": "medium",
-      "rule": "isolated-component",
-      "message": "C-AUDIT-SVC has no interfaces",
-      "refs": [
-        "C-AUDIT-SVC"
-      ]
-    },
-    {
-      "id": "VF-003",
-      "severity": "medium",
-      "rule": "isolated-component",
-      "message": "C-CONFIG-SVC has no interfaces",
-      "refs": [
-        "C-CONFIG-SVC"
-      ]
-    }
-  ],
-  "mermaid_source": "flowchart LR\n  subgraph SG0[\"Field Edge\"]\n    C_EDGE_GW[\"Field Edge Gateway<br/><small>C-EDGE-GW</small>\"]\n  end\n  subgraph SG1[\"Command Post Core\"]\n    C_MESSAGING[\"Pub/Sub Messaging Backbone<br/><small>C-MESSAGING</small>\"]\n    C_FUSION[\"Sensor Fusion & Normalization Engine<br/><small>C-FUSION</small>\"]\n    C_MAP_SVC[\"Map Visualization Service<br/><small>C-MAP-SVC</small>\"]\n    C_VIDEO_PIPE[\"Video Analytics Pipeline<br/><small>C-VIDEO-PIPE</small>\"]\n    C_ALERT_SVC[\"Alert Management Service<br/><small>C-ALERT-SVC</small>\"]\n    C_DEVICE_MGMT[\"Device Management Service<br/><small>C-DEVICE-MGMT</small>\"]\n    C_DIARY_SVC[\"Operator Diary Service<br/><small>C-DIARY-SVC</small>\"]\n    C_AUDIT_SVC[\"Audit & Compliance Service<br/><small>C-AUDIT-SVC</small>\"]\n    C_COMMAND_UI([\"Command Post Operator UI<br/><small>C-COMMAND-UI</small>\"])\n    C_CONFIG_SVC[\"Configuration & Policy Service<br/><small>C-CONFIG-SVC</small>\"]\n  end\n  subgraph SG2[\"Mobile\"]\n    C_MOBILE_APP([\"Cellular Team Leader App<br/><small>C-MOBILE-APP</small>\"])\n  end\n  DS_MAP_TILES[(\"Map Tile Store<br/><small>DS-MAP-TILES</small>\")]\n  C_MAP_SVC --- DS_MAP_TILES\n  DS_GEOFENCES[(\"Geofence Definitions<br/><small>DS-GEOFENCES</small>\")]\n  C_MAP_SVC --- DS_GEOFENCES\n  DS_VIDEO_RECORDINGS[(\"Video Recordings<br/><small>DS-VIDEO-RECORDINGS</small>\")]\n  C_VIDEO_PIPE --- DS_VIDEO_RECORDINGS\n  DS_ALERTS[(\"Alert History<br/><small>DS-ALERTS</small>\")]\n  C_ALERT_SVC --- DS_ALERTS\n  DS_DEVICE_REGISTRY[(\"Device Registry<br/><small>DS-DEVICE-REGISTRY</small>\")]\n  C_DEVICE_MGMT --- DS_DEVICE_REGISTRY\n  DS_DIARY[(\"Diary Entries<br/><small>DS-DIARY</small>\")]\n  C_DIARY_SVC --- DS_DIARY\n  DS_AUDIT_LOGS[(\"Audit Logs<br/><small>DS-AUDIT-LOGS</small>\")]\n  C_AUDIT_SVC --- DS_AUDIT_LOGS\n  DS_CONFIG[(\"System Configuration<br/><small>DS-CONFIG</small>\")]\n  C_CONFIG_SVC --- DS_CONFIG\n  DS_POSITION_HISTORY[(\"Position History Store<br/><small>DS-POSITION-HISTORY</small>\")]\n  C_MAP_SVC --- DS_POSITION_HISTORY\n  subgraph EXT[\"External systems\"]\n    X_SAM_DEVICE{{\"SAM Device (fictional)\"}}\n    X_SW_WATCH{{\"SW-Watch Device (fictional)\"}}\n    X_EO_SENSOR{{\"EO Sensor (fictional)\"}}\n    X_PUSH_NOTIFY_SVC{{\"Push Notification Service (fictional)\"}}\n  end\n  C_EDGE_GW -.->|\"Position & Telemetry Ingestion\"| C_MESSAGING\n  C_EDGE_GW -.->|\"Emergency Alert Ingestion\"| C_MESSAGING\n  C_FUSION -.->|\"Unified Track Publication\"| C_MESSAGING\n  C_FUSION -.->|\"Geo-referenced Detection Publication\"| C_MESSAGING\n  C_MESSAGING -.->|\"Map State Updates\"| C_MAP_SVC\n  C_MAP_SVC -.->|\"Geofence Violation Alert\"| C_MESSAGING\n  C_MESSAGING -.->|\"Alert Processing\"| C_ALERT_SVC\n  C_ALERT_SVC -.->|\"Alert Notification Dispatch\"| C_MESSAGING\n  C_MOBILE_APP -->|\"Position Report Submission\"| C_EDGE_GW\n  C_MOBILE_APP -->|\"Diary Entry Submission\"| C_DIARY_SVC\n  C_MOBILE_APP -->|\"Alert Acknowledgement\"| C_ALERT_SVC\n  C_MESSAGING -.->|\"Push Notification Relay\"| C_MOBILE_APP\n  C_VIDEO_PIPE -.->|\"Detection Metadata Publication\"| C_MESSAGING\n  C_COMMAND_UI -->|\"Map Data Request\"| C_MAP_SVC\n  C_COMMAND_UI -->|\"Diary Search Request\"| C_DIARY_SVC\n  classDef build fill:#fde2e1,stroke:#c0392b,color:#222\n  classDef buy fill:#e1ecfd,stroke:#2c5aa0,color:#222\n  classDef reuse fill:#e3f6e5,stroke:#2e7d32,color:#222\n  classDef hl stroke:#ff9800,stroke-width:4px",
+  "validation_findings": [],
+  "mermaid_source": "flowchart LR\n  subgraph SG0[\"Field Edge\"]\n    C_EDGE_GW[\"Field Edge Gateway<br/><small>C-EDGE-GW</small>\"]\n  end\n  subgraph SG1[\"Command Post Core\"]\n    C_MESSAGING[\"Pub/Sub Messaging Backbone<br/><small>C-MESSAGING</small>\"]\n    C_FUSION[\"Sensor Fusion & Normalization Engine<br/><small>C-FUSION</small>\"]\n    C_MAP_SVC[\"Map Visualization Service<br/><small>C-MAP-SVC</small>\"]\n    DS_MAP_TILES[(\"Map Tile Store<br/><small>DS-MAP-TILES</small>\")]\n    DS_GEOFENCES[(\"Geofence Definitions<br/><small>DS-GEOFENCES</small>\")]\n    DS_POSITION_HISTORY[(\"Position History Store<br/><small>DS-POSITION-HISTORY</small>\")]\n    C_VIDEO_PIPE[\"Video Analytics Pipeline<br/><small>C-VIDEO-PIPE</small>\"]\n    DS_VIDEO_RECORDINGS[(\"Video Recordings<br/><small>DS-VIDEO-RECORDINGS</small>\")]\n    C_ALERT_SVC[\"Alert Management Service<br/><small>C-ALERT-SVC</small>\"]\n    DS_ALERTS[(\"Alert History<br/><small>DS-ALERTS</small>\")]\n    C_DEVICE_MGMT[\"Device Management Service<br/><small>C-DEVICE-MGMT</small>\"]\n    DS_DEVICE_REGISTRY[(\"Device Registry<br/><small>DS-DEVICE-REGISTRY</small>\")]\n    C_DIARY_SVC[\"Operator Diary Service<br/><small>C-DIARY-SVC</small>\"]\n    DS_DIARY[(\"Diary Entries<br/><small>DS-DIARY</small>\")]\n    C_AUDIT_SVC[\"Audit & Compliance Service<br/><small>C-AUDIT-SVC</small>\"]\n    DS_AUDIT_LOGS[(\"Audit Logs<br/><small>DS-AUDIT-LOGS</small>\")]\n    C_COMMAND_UI([\"Command Post Operator UI<br/><small>C-COMMAND-UI</small>\"])\n    C_CONFIG_SVC[\"Configuration & Policy Service<br/><small>C-CONFIG-SVC</small>\"]\n    DS_CONFIG[(\"System Configuration<br/><small>DS-CONFIG</small>\")]\n  end\n  subgraph SG2[\"Mobile\"]\n    C_MOBILE_APP([\"Cellular Team Leader App<br/><small>C-MOBILE-APP</small>\"])\n  end\n  C_MAP_SVC --- DS_MAP_TILES\n  C_MAP_SVC --- DS_GEOFENCES\n  C_VIDEO_PIPE --- DS_VIDEO_RECORDINGS\n  C_ALERT_SVC --- DS_ALERTS\n  C_DEVICE_MGMT --- DS_DEVICE_REGISTRY\n  C_DIARY_SVC --- DS_DIARY\n  C_AUDIT_SVC --- DS_AUDIT_LOGS\n  C_CONFIG_SVC --- DS_CONFIG\n  C_MAP_SVC --- DS_POSITION_HISTORY\n  subgraph EXT[\"External systems\"]\n    X_SAM_DEVICE{{\"SAM Device (fictional)\"}}\n    X_SW_WATCH{{\"SW-Watch Device (fictional)\"}}\n    X_EO_SENSOR{{\"EO Sensor (fictional)\"}}\n    X_PUSH_NOTIFY_SVC{{\"Push Notification Service (fictional)\"}}\n  end\n  C_EDGE_GW -.->|\"Position & Telemetry Ingestion\"| C_MESSAGING\n  C_EDGE_GW -.->|\"Emergency Alert Ingestion\"| C_MESSAGING\n  C_FUSION -.->|\"Unified Track Publication\"| C_MESSAGING\n  C_FUSION -.->|\"Geo-referenced Detection Publication\"| C_MESSAGING\n  C_MESSAGING -.->|\"Map State Updates\"| C_MAP_SVC\n  C_MAP_SVC -.->|\"Geofence Violation Alert\"| C_MESSAGING\n  C_MESSAGING -.->|\"Alert Processing\"| C_ALERT_SVC\n  C_ALERT_SVC -.->|\"Alert Notification Dispatch\"| C_MESSAGING\n  C_MOBILE_APP -->|\"Position Report Submission\"| C_EDGE_GW\n  C_MOBILE_APP -->|\"Diary Entry Submission\"| C_DIARY_SVC\n  C_MOBILE_APP -->|\"Alert Acknowledgement\"| C_ALERT_SVC\n  C_MESSAGING -.->|\"Push Notification Relay\"| C_MOBILE_APP\n  C_VIDEO_PIPE -.->|\"Detection Metadata Publication\"| C_MESSAGING\n  C_COMMAND_UI -->|\"Map Data Request\"| C_MAP_SVC\n  C_COMMAND_UI -->|\"Diary Search Request\"| C_DIARY_SVC\n  C_DEVICE_MGMT -.->|\"Device Status Publication\"| C_MESSAGING\n  C_MESSAGING -.->|\"Audit Event Stream\"| C_AUDIT_SVC\n  C_MESSAGING -.->|\"Configuration Distribution Request\"| C_CONFIG_SVC\n  classDef build fill:#fde2e1,stroke:#c0392b,color:#222\n  classDef buy fill:#e1ecfd,stroke:#2c5aa0,color:#222\n  classDef reuse fill:#e3f6e5,stroke:#2e7d32,color:#222\n  classDef hl stroke:#ff9800,stroke-width:4px",
   "design_rationale": "The architecture adopts a modular service-oriented design centered around an internal Pub/Sub messaging backbone to satisfy the mandatory requirement for component communication and degraded mode operation. By decoupling ingestion from processing, the system ensures that high-volume video streams and GPS pings do not block critical alert handling or map updates. A dedicated fusion layer normalizes heterogeneous inputs into a single canonical model, enabling efficient sensor fusion and unified geospatial visualization. The separation of 'Command Post Core' services from 'Field Edge' gateways allows for independent scaling and resilience; if the link to the field degrades, the command post continues to operate using cached state and queued messages. Offline capabilities are pushed to the mobile client via pre-loaded tile caches, ensuring map functionality without internet. Security is enforced at every boundary with mutual TLS and role-based access control, while all persistent data remains on-premises to meet strict compliance requirements. Position history is now explicitly managed by the Map Visualization Service to support playback and stale position display, leveraging its existing spatial index.",
   "constraints": [],
   "change_log": [
@@ -2455,7 +2479,17 @@
       "modified": [],
       "feedback_id": null,
       "timestamp": "2026-11-09T11:52:16+00:00"
+    },
+    {
+      "version": 1,
+      "summary": "Self-check pass 1: allocated none; connected ['C-DEVICE-MGMT', 'C-AUDIT-SVC', 'C-CONFIG-SVC']",
+      "reason": "AR-06 validation before first publication",
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "feedback_id": null,
+      "timestamp": "2026-11-09T12:18:48+00:00"
     }
   ],
-  "created_at": "2026-11-09T11:52:16+00:00"
+  "created_at": "2026-11-09T12:18:48+00:00"
 }

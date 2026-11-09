@@ -1,0 +1,2629 @@
+{
+  "architecture_id": "ARCH-SWISSLINK",
+  "version": 2,
+  "parent_id": "ARCH-SWISSLINK@v1",
+  "title": "Tactical Situational Awareness System (TSAS) Logical Architecture - Offline Revision",
+  "requirements_revision": "2daa61693a23",
+  "requirements": [
+    {
+      "id": "SL-FT-01",
+      "text": "The system shall receive GPS positions from every SAM device and cellular app and display them on a map in near real time.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-FT-01 The system shall receive GPS positions...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-FT-02",
+      "text": "The system shall store the full position history of every tracked unit and allow playback of any time window.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-FT-02 The system shall store the full position history...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-FT-03",
+      "text": "The system shall show the last known position and the age of the position for units that stop reporting.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-FT-03 The system shall show the last known position...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-FT-04",
+      "text": "The system shall support geofences and raise an alert when a unit enters or leaves one.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-FT-04 The system shall support geofences...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-MAP-01",
+      "text": "The map shall display base map, elevation, friendly units, detections, routes and geofences as selectable layers.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-MAP-01 The map shall display base map...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-MAP-02",
+      "text": "The map shall work without internet connectivity using pre-loaded map tiles.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-MAP-02 The map shall work without internet connectivity...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-RT-01",
+      "text": "The system shall compute a route between two points taking terrain and user-defined no-go areas into account.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-RT-01 The system shall compute a route...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-RT-02",
+      "text": "The system shall estimate the time of arrival for a unit on a planned route and update it from live positions.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-RT-02 The system shall estimate the time of arrival...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-01",
+      "text": "The system shall ingest live video from EO sensors and record it.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-EO-01 The system shall ingest live video...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-02",
+      "text": "The system shall detect and classify people and vehicles in video.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-EO-02 The system shall detect and classify...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-03",
+      "text": "The system shall track detected objects across frames and assign track IDs.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-EO-03 The system shall track detected objects...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-04",
+      "text": "The system should provide semantic segmentation of terrain (road, vegetation, building, water).",
+      "kind": "functional",
+      "priority": "desirable",
+      "status": "explicit",
+      "source_passage": "SL-EO-04 The system should provide semantic segmentation...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-05",
+      "text": "The system should detect changes between two images of the same area taken at different times.",
+      "kind": "functional",
+      "priority": "desirable",
+      "status": "explicit",
+      "source_passage": "SL-EO-05 The system should detect changes...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-06",
+      "text": "The system should generate short natural-language captions describing a video clip.",
+      "kind": "functional",
+      "priority": "desirable",
+      "status": "explicit",
+      "source_passage": "SL-EO-06 The system should generate short natural-language captions...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-EO-07",
+      "text": "Detections shall be geo-referenced and shown on the map.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-EO-07 Detections shall be geo-referenced...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SF-01",
+      "text": "The system shall normalize messages from heterogeneous sensors into a single common data model.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SF-01 The system shall normalize messages...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SF-02",
+      "text": "The system shall fuse detections from multiple sensors and EO analytics into a single track picture, removing duplicates.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SF-02 The system shall fuse detections...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-OD-01",
+      "text": "Operators shall record timestamped diary entries, optionally linked to a unit, track, detection or map location.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-OD-01 Operators shall record timestamped diary entries...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-OD-02",
+      "text": "Diary entries shall be searchable by text, time and linked object.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-OD-02 Diary entries shall be searchable...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-AL-01",
+      "text": "An emergency button press on a SAM device shall raise a high-priority alert at the command post and on team-leader apps.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-AL-01 An emergency button press...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-AL-02",
+      "text": "The system shall send alerts to SW-Watch devices, and the wearer shall be able to acknowledge them; acknowledgements shall be visible at the command post.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-AL-02 The system shall send alerts to SW-Watch devices...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-AL-03",
+      "text": "The system shall display SAM device equipment status (battery, radio, water) and alert on low battery.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-AL-03 The system shall display SAM device equipment status...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-AL-04",
+      "text": "SW-Watch devices shall keep time synchronized with the system.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-AL-04 SW-Watch devices shall keep time synchronized...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-COM-01",
+      "text": "Components shall exchange data through a publish/subscribe messaging layer.",
+      "kind": "interface",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-COM-01 Components shall exchange data...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-COM-02",
+      "text": "The system shall continue to operate in degraded mode when links to the field are intermittent, and deliver queued messages when the link returns.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-COM-02 The system shall continue to operate in degraded mode...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-APP-01",
+      "text": "The cellular app shall show the map, own unit, friendly units and alerts, and allow team leaders to send position reports and diary entries.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-APP-01 The cellular app shall show the map...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-APP-02",
+      "text": "The cellular app shall receive push notifications for high-priority alerts.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-APP-02 The cellular app shall receive push notifications...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-NF-01",
+      "text": "Position updates shall be displayed with low latency.",
+      "kind": "nonfunctional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-NF-01 Position updates shall be displayed with low latency.",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-NF-02",
+      "text": "The system shall be highly available at the command post.",
+      "kind": "nonfunctional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-NF-02 The system shall be highly available...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-NF-03",
+      "text": "Position history and diary entries shall be retained for as long as needed for after-action review.",
+      "kind": "nonfunctional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-NF-03 Position history and diary entries shall be retained...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-NF-04",
+      "text": "The video analytics shall run on GPU hardware available at the command post.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-NF-04 The video analytics shall run on GPU hardware...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-NF-05",
+      "text": "The system shall scale to the number of units in a battalion.",
+      "kind": "nonfunctional",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-NF-05 The system shall scale to the number of units...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SEC-01",
+      "text": "All data shall remain on-premises at the command post; no data may be sent to public cloud services.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SEC-01 All data shall remain on-premises...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SEC-02",
+      "text": "All communication between components and with field devices shall be encrypted and authenticated.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SEC-02 All communication... shall be encrypted and authenticated.",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SEC-03",
+      "text": "Users shall be authenticated and authorized by role (commander, operator, team leader, analyst).",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SEC-03 Users shall be authenticated and authorized...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-SEC-04",
+      "text": "All operator actions and alerts shall be written to a tamper-evident audit log.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-SEC-04 All operator actions and alerts shall be written...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-DEP-01",
+      "text": "The command-post software shall run on Linux servers, deployable as containers.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-DEP-01 The command-post software shall run on Linux servers...",
+      "ambiguity": null
+    },
+    {
+      "id": "SL-DEP-02",
+      "text": "Open-source software is permitted only with licenses compatible with redistribution inside a closed defense product.",
+      "kind": "constraint",
+      "priority": "mandatory",
+      "status": "explicit",
+      "source_passage": "SL-DEP-02 Open-source software is permitted only...",
+      "ambiguity": null
+    },
+    {
+      "id": "INF-01",
+      "text": "The system shall provide a mechanism for team leaders to send position reports via the cellular app.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "inferred",
+      "source_passage": "SL-APP-01 ...allow team leaders to send position reports...",
+      "ambiguity": null
+    },
+    {
+      "id": "INF-02",
+      "text": "The system shall provide a mechanism for team leaders to send diary entries via the cellular app.",
+      "kind": "functional",
+      "priority": "mandatory",
+      "status": "inferred",
+      "source_passage": "SL-APP-01 ...allow team leaders to ... send diary entries.",
+      "ambiguity": null
+    }
+  ],
+  "open_questions": [
+    {
+      "id": "OQ-01",
+      "question": "What is the specific numeric threshold for 'low latency' in SL-NF-01?",
+      "requirement_ids": [
+        "SL-NF-01"
+      ],
+      "kind": "missing_value"
+    },
+    {
+      "id": "OQ-02",
+      "question": "What is the specific numeric availability target (e.g., 99.9%) for SL-NF-02?",
+      "requirement_ids": [
+        "SL-NF-02"
+      ],
+      "kind": "missing_value"
+    },
+    {
+      "id": "OQ-03",
+      "question": "What is the specific retention period for position history and diary entries in SL-NF-03?",
+      "requirement_ids": [
+        "SL-NF-03"
+      ],
+      "kind": "missing_value"
+    },
+    {
+      "id": "OQ-04",
+      "question": "What is the specific battalion size (number of units) that the system must scale to in SL-NF-05?",
+      "requirement_ids": [
+        "SL-NF-05"
+      ],
+      "kind": "missing_value"
+    },
+    {
+      "id": "OQ-05",
+      "question": "Which specific commercial mobile push-notification service is being considered for SL-APP-02, and does it comply with the on-premises constraint in SL-SEC-01?",
+      "requirement_ids": [
+        "SL-APP-02",
+        "SL-SEC-01"
+      ],
+      "kind": "contradiction"
+    }
+  ],
+  "capabilities": [
+    {
+      "id": "CAP.TRACK",
+      "name": "Friendly Force Tracking",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Core domain for receiving, displaying, and managing the location of friendly units.",
+      "requirement_ids": [
+        "SL-FT-01",
+        "SL-FT-03",
+        "SL-NF-01"
+      ]
+    },
+    {
+      "id": "CAP.TRACK.POSITION",
+      "name": "Position Ingestion & Display",
+      "level": "capability",
+      "parent_id": "CAP.TRACK",
+      "description": "Receive GPS positions from SAM devices and cellular apps and display them on the map in near real time.",
+      "requirement_ids": [
+        "SL-FT-01"
+      ]
+    },
+    {
+      "id": "CAP.TRACK.POSITION.STALE",
+      "name": "Stale Position Handling",
+      "level": "capability",
+      "parent_id": "CAP.TRACK",
+      "description": "Show last known position and age for units that stop reporting.",
+      "requirement_ids": [
+        "SL-FT-03"
+      ]
+    },
+    {
+      "id": "CAP.TRACK.HISTORY",
+      "name": "Position History & Playback",
+      "level": "capability",
+      "parent_id": "CAP.TRACK",
+      "description": "Store full position history and allow playback of any time window.",
+      "requirement_ids": [
+        "SL-FT-02",
+        "SL-NF-03"
+      ]
+    },
+    {
+      "id": "CAP.TRACK.HISTORY.PLAYBACK",
+      "name": "Historical Playback",
+      "level": "operation",
+      "parent_id": "CAP.TRACK.HISTORY",
+      "description": "Allow operators to select a time window and replay unit movements.",
+      "requirement_ids": [
+        "SL-FT-02"
+      ]
+    },
+    {
+      "id": "CAP.MAP",
+      "name": "Geospatial Visualization",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for map rendering, layer management, and offline capabilities.",
+      "requirement_ids": [
+        "SL-MAP-01",
+        "SL-MAP-02"
+      ]
+    },
+    {
+      "id": "CAP.MAP.LAYERS",
+      "name": "Map Layer Management",
+      "level": "capability",
+      "parent_id": "CAP.MAP",
+      "description": "Display base map, elevation, friendly units, detections, routes and geofences as selectable layers.",
+      "requirement_ids": [
+        "SL-MAP-01"
+      ]
+    },
+    {
+      "id": "CAP.MAP.OFFLINE",
+      "name": "Offline Map Support",
+      "level": "capability",
+      "parent_id": "CAP.MAP",
+      "description": "Work without internet connectivity using pre-loaded map tiles.",
+      "requirement_ids": [
+        "SL-MAP-02"
+      ]
+    },
+    {
+      "id": "CAP.ROUTE",
+      "name": "Route Planning & Estimation",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for computing routes and estimating arrival times.",
+      "requirement_ids": [
+        "SL-RT-01",
+        "SL-RT-02"
+      ]
+    },
+    {
+      "id": "CAP.ROUTE.COMPUTE",
+      "name": "Route Computation",
+      "level": "capability",
+      "parent_id": "CAP.ROUTE",
+      "description": "Compute a route between two points taking terrain and user-defined no-go areas into account.",
+      "requirement_ids": [
+        "SL-RT-01"
+      ]
+    },
+    {
+      "id": "CAP.ROUTE.ETA",
+      "name": "ETA Estimation & Update",
+      "level": "capability",
+      "parent_id": "CAP.ROUTE",
+      "description": "Estimate time of arrival and update it from live positions.",
+      "requirement_ids": [
+        "SL-RT-02"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO",
+      "name": "Video Intelligence",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for ingesting, analyzing, and tracking video feeds.",
+      "requirement_ids": [
+        "SL-EO-01",
+        "SL-EO-02",
+        "SL-EO-03",
+        "SL-EO-07"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.INGEST",
+      "name": "Video Ingestion & Recording",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Ingest live video from EO sensors and record it.",
+      "requirement_ids": [
+        "SL-EO-01"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.ANALYTICS",
+      "name": "Object Detection & Classification",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Detect and classify people and vehicles in video.",
+      "requirement_ids": [
+        "SL-EO-02"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.TRACKING",
+      "name": "Object Tracking",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Track detected objects across frames and assign track IDs.",
+      "requirement_ids": [
+        "SL-EO-03"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.GEOREF",
+      "name": "Geo-referencing Detections",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Geo-reference detections and show them on the map.",
+      "requirement_ids": [
+        "SL-EO-07"
+      ]
+    },
+    {
+      "id": "CAP.FUSION",
+      "name": "Sensor Fusion & Normalization",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for normalizing heterogeneous data and fusing tracks.",
+      "requirement_ids": [
+        "SL-SF-01",
+        "SL-SF-02"
+      ]
+    },
+    {
+      "id": "CAP.FUSION.NORMALIZE",
+      "name": "Data Normalization",
+      "level": "capability",
+      "parent_id": "CAP.FUSION",
+      "description": "Normalize messages from heterogeneous sensors into a single common data model.",
+      "requirement_ids": [
+        "SL-SF-01"
+      ]
+    },
+    {
+      "id": "CAP.FUSION.FUSE",
+      "name": "Track Fusion",
+      "level": "capability",
+      "parent_id": "CAP.FUSION",
+      "description": "Fuse detections from multiple sensors and EO analytics into a single track picture, removing duplicates.",
+      "requirement_ids": [
+        "SL-SF-02"
+      ]
+    },
+    {
+      "id": "CAP.DIARY",
+      "name": "Operator Diary",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for recording and searching operator diary entries.",
+      "requirement_ids": [
+        "SL-OD-01",
+        "SL-OD-02"
+      ]
+    },
+    {
+      "id": "CAP.DIARY.RECORD",
+      "name": "Diary Entry Recording",
+      "level": "capability",
+      "parent_id": "CAP.DIARY",
+      "description": "Record timestamped diary entries, optionally linked to a unit, track, detection or map location.",
+      "requirement_ids": [
+        "SL-OD-01"
+      ]
+    },
+    {
+      "id": "CAP.DIARY.SEARCH",
+      "name": "Diary Search",
+      "level": "capability",
+      "parent_id": "CAP.DIARY",
+      "description": "Search diary entries by text, time and linked object.",
+      "requirement_ids": [
+        "SL-OD-02"
+      ]
+    },
+    {
+      "id": "CAP.ALERT",
+      "name": "Alert Management",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for handling emergency alerts, acknowledgements, and device status.",
+      "requirement_ids": [
+        "SL-AL-01",
+        "SL-AL-02",
+        "SL-AL-03"
+      ]
+    },
+    {
+      "id": "CAP.ALERT.EMERGENCY",
+      "name": "Emergency Alert Handling",
+      "level": "capability",
+      "parent_id": "CAP.ALERT",
+      "description": "Raise high-priority alert at command post and on team-leader apps when emergency button is pressed.",
+      "requirement_ids": [
+        "SL-AL-01"
+      ]
+    },
+    {
+      "id": "CAP.ALERT.ACKNOWLEDGE",
+      "name": "Alert Acknowledgement",
+      "level": "capability",
+      "parent_id": "CAP.ALERT",
+      "description": "Send alerts to SW-Watch devices, allow wearer acknowledgement, and display status at command post.",
+      "requirement_ids": [
+        "SL-AL-02"
+      ]
+    },
+    {
+      "id": "CAP.ALERT.DEVICE_STATUS",
+      "name": "Device Status Monitoring",
+      "level": "capability",
+      "parent_id": "CAP.ALERT",
+      "description": "Display SAM device equipment status and alert on low battery.",
+      "requirement_ids": [
+        "SL-AL-03"
+      ]
+    },
+    {
+      "id": "CAP.DEVICE",
+      "name": "Device Management",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for managing device synchronization and state.",
+      "requirement_ids": [
+        "SL-AL-04"
+      ]
+    },
+    {
+      "id": "CAP.DEVICE.SYNC",
+      "name": "Time Synchronization",
+      "level": "capability",
+      "parent_id": "CAP.DEVICE",
+      "description": "Keep SW-Watch device time synchronized with the system.",
+      "requirement_ids": [
+        "SL-AL-04"
+      ]
+    },
+    {
+      "id": "CAP.COMMS",
+      "name": "Communications & Messaging",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for message passing and handling degraded connectivity.",
+      "requirement_ids": [
+        "SL-COM-01",
+        "SL-COM-02"
+      ]
+    },
+    {
+      "id": "CAP.COMMS.MESSAGING",
+      "name": "Publish/Subscribe Messaging",
+      "level": "capability",
+      "parent_id": "CAP.COMMS",
+      "description": "Exchange data through a publish/subscribe messaging layer.",
+      "requirement_ids": [
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "CAP.COMMS.DEGRADED",
+      "name": "Degraded Mode Operation",
+      "level": "capability",
+      "parent_id": "CAP.COMMS",
+      "description": "Operate in degraded mode with intermittent links and deliver queued messages when link returns.",
+      "requirement_ids": [
+        "SL-COM-02"
+      ]
+    },
+    {
+      "id": "CAP.MOBILE",
+      "name": "Mobile Application",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for the cellular app functionality.",
+      "requirement_ids": [
+        "SL-APP-01",
+        "SL-APP-02"
+      ]
+    },
+    {
+      "id": "CAP.MOBILE.APP",
+      "name": "App Interface & Reporting",
+      "level": "capability",
+      "parent_id": "CAP.MOBILE",
+      "description": "Show map, own unit, friendly units, alerts; allow sending position reports and diary entries.",
+      "requirement_ids": [
+        "SL-APP-01"
+      ]
+    },
+    {
+      "id": "CAP.MOBILE.NOTIFY",
+      "name": "Push Notifications",
+      "level": "capability",
+      "parent_id": "CAP.MOBILE",
+      "description": "Receive push notifications for high-priority alerts.",
+      "requirement_ids": [
+        "SL-APP-02"
+      ]
+    },
+    {
+      "id": "CAP.SEC",
+      "name": "Security & Compliance",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for data security, encryption, authentication, and audit.",
+      "requirement_ids": [
+        "SL-SEC-01",
+        "SL-SEC-02",
+        "SL-SEC-03",
+        "SL-SEC-04"
+      ]
+    },
+    {
+      "id": "CAP.SEC.AUTH",
+      "name": "Authentication & Authorization",
+      "level": "capability",
+      "parent_id": "CAP.SEC",
+      "description": "Authenticate and authorize users by role.",
+      "requirement_ids": [
+        "SL-SEC-03"
+      ]
+    },
+    {
+      "id": "CAP.SEC.ENCRYPT",
+      "name": "Encryption & Authentication",
+      "level": "capability",
+      "parent_id": "CAP.SEC",
+      "description": "Encrypt and authenticate all communication between components and with field devices.",
+      "requirement_ids": [
+        "SL-SEC-02"
+      ]
+    },
+    {
+      "id": "CAP.SEC.AUDIT",
+      "name": "Audit Logging",
+      "level": "capability",
+      "parent_id": "CAP.SEC",
+      "description": "Write all operator actions and alerts to a tamper-evident audit log.",
+      "requirement_ids": [
+        "SL-SEC-04"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM",
+      "name": "Platform & Infrastructure",
+      "level": "domain",
+      "parent_id": null,
+      "description": "Domain for deployment, licensing, and non-functional constraints.",
+      "requirement_ids": [
+        "SL-NF-02",
+        "SL-NF-04",
+        "SL-NF-05",
+        "SL-SEC-01",
+        "SL-DEP-01",
+        "SL-DEP-02"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM.DEPLOY",
+      "name": "Container Deployment",
+      "level": "capability",
+      "parent_id": "CAP.PLATFORM",
+      "description": "Run command-post software on Linux servers, deployable as containers.",
+      "requirement_ids": [
+        "SL-DEP-01"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM.LICENSE",
+      "name": "License Compliance",
+      "level": "capability",
+      "parent_id": "CAP.PLATFORM",
+      "description": "Ensure open-source software licenses are compatible with redistribution.",
+      "requirement_ids": [
+        "SL-DEP-02"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM.HA",
+      "name": "High Availability",
+      "level": "capability",
+      "parent_id": "CAP.PLATFORM",
+      "description": "Ensure high availability at the command post.",
+      "requirement_ids": [
+        "SL-NF-02"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM.SCALE",
+      "name": "Scalability",
+      "level": "capability",
+      "parent_id": "CAP.PLATFORM",
+      "description": "Scale to the number of units in a battalion.",
+      "requirement_ids": [
+        "SL-NF-05"
+      ]
+    },
+    {
+      "id": "CAP.PLATFORM.GPU",
+      "name": "GPU Hardware Utilization",
+      "level": "capability",
+      "parent_id": "CAP.PLATFORM",
+      "description": "Run video analytics on GPU hardware available at the command post.",
+      "requirement_ids": [
+        "SL-NF-04"
+      ]
+    },
+    {
+      "id": "CAP.TRACK.GEOFENCE",
+      "name": "Geofencing",
+      "level": "capability",
+      "parent_id": "CAP.TRACK",
+      "description": "Support geofences and raise an alert when a unit enters or leaves one.",
+      "requirement_ids": [
+        "SL-FT-04"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.SEMANTIC",
+      "name": "Semantic Segmentation",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Provide semantic segmentation of terrain (road, vegetation, building, water).",
+      "requirement_ids": [
+        "SL-EO-04"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.CHANGE",
+      "name": "Change Detection",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Detect changes between two images of the same area taken at different times.",
+      "requirement_ids": [
+        "SL-EO-05"
+      ]
+    },
+    {
+      "id": "CAP.VIDEO.CAPTION",
+      "name": "Video Captioning",
+      "level": "capability",
+      "parent_id": "CAP.VIDEO",
+      "description": "Generate short natural-language captions describing a video clip.",
+      "requirement_ids": [
+        "SL-EO-06"
+      ]
+    },
+    {
+      "id": "CAP.MOBILE.POS_REPORT",
+      "name": "Position Report Submission",
+      "level": "operation",
+      "parent_id": "CAP.MOBILE.APP",
+      "description": "Mechanism for team leaders to send position reports via the cellular app.",
+      "requirement_ids": [
+        "INF-01"
+      ]
+    },
+    {
+      "id": "CAP.DIARY.SUBMIT",
+      "name": "Diary Entry Submission",
+      "level": "operation",
+      "parent_id": "CAP.MOBILE.APP",
+      "description": "Mechanism for team leaders to send diary entries via the cellular app.",
+      "requirement_ids": [
+        "INF-02"
+      ]
+    }
+  ],
+  "components": [
+    {
+      "id": "C-EDGE-GW",
+      "name": "Field Edge Gateway",
+      "kind": "gateway",
+      "subsystem": "Field Edge",
+      "trust_zone": "field",
+      "purpose": "Aggregates GPS, telemetry, and emergency signals from SAM devices and cellular apps; handles local buffering for intermittent connectivity.",
+      "required_capabilities": [
+        "CAP.COMMS.DEGRADED",
+        "CAP.SEC.ENCRYPT"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Authenticate field devices via mutual TLS",
+        "Buffer position updates during link outages",
+        "Forward telemetry to Command Post Core",
+        "Relay alerts and push notifications to field devices"
+      ],
+      "inputs": [
+        "GPS/Telemetry from SAM Devices",
+        "Position Reports from Cellular Apps",
+        "Emergency Signals from SAM Devices"
+      ],
+      "outputs": [
+        "Normalized Position Stream",
+        "Device Status Updates",
+        "Alert Ingestion Events"
+      ],
+      "data_owned": [],
+      "dependencies": [
+        "C-MESSAGING",
+        "C-DEVICE-MGMT"
+      ],
+      "runtime_assumptions": [
+        "Field devices support standard cellular or satellite links",
+        "Link latency can vary significantly (TBD)"
+      ],
+      "deployment_assumptions": [
+        "Deployed on ruggedized edge hardware or cloud-edge hybrid nodes",
+        "Must handle concurrent connections for battalion-sized units"
+      ],
+      "quality_constraints": [
+        "High availability in field conditions",
+        "Low latency forwarding when link is available"
+      ],
+      "integration_requirements": [
+        "Supports proprietary SAM device protocols",
+        "Supports standard HTTP/MQTT for cellular apps"
+      ],
+      "requirement_ids": [
+        "SL-FT-01",
+        "SL-COM-02",
+        "SL-AL-01",
+        "SL-AL-03",
+        "SL-NF-05",
+        "SL-SEC-02"
+      ],
+      "design_assumptions": [
+        "Edge gateway does not perform heavy analytics to conserve power/bandwidth",
+        "Local buffer size is sufficient for expected outage durations (TBD)"
+      ]
+    },
+    {
+      "id": "C-MESSAGING",
+      "name": "Pub/Sub Messaging Backbone",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Central asynchronous messaging layer for all inter-component communication, ensuring decoupling and reliability. Deployed locally on-premises.",
+      "required_capabilities": [
+        "CAP.COMMS.MESSAGING"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Route messages between components",
+        "Persist messages for replay if needed (TBD)",
+        "Ensure at-least-once delivery semantics",
+        "Support topic-based filtering"
+      ],
+      "inputs": [
+        "Messages from C-EDGE-GW",
+        "Messages from C-FUSION",
+        "Messages from C-VIDEO-PIPE"
+      ],
+      "outputs": [
+        "Position Updates to C-MAP-SVC",
+        "Alerts to C-ALERT-SVC",
+        "Fused Tracks to C-MAP-SVC"
+      ],
+      "data_owned": [],
+      "dependencies": [],
+      "runtime_assumptions": [
+        "High throughput required for video metadata and GPS streams",
+        "Must survive individual component restarts without data loss (TBD)"
+      ],
+      "deployment_assumptions": [
+        "Clustered deployment for high availability on local Linux servers",
+        "No external cloud dependencies"
+      ],
+      "quality_constraints": [
+        "High throughput",
+        "Low latency",
+        "Durability"
+      ],
+      "integration_requirements": [
+        "Standard MQTT or Kafka-like interface",
+        "TLS encryption for all connections"
+      ],
+      "requirement_ids": [
+        "SL-COM-01",
+        "SL-NF-02"
+      ],
+      "design_assumptions": [
+        "Message payload size is small for GPS/Alerts, large for Video Metadata",
+        "Backpressure handling is implemented at the producer level"
+      ]
+    },
+    {
+      "id": "C-FUSION",
+      "name": "Sensor Fusion & Normalization Engine",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Normalizes heterogeneous inputs into a common data model and fuses multiple sources (GPS, EO detections) into unified tracks.",
+      "required_capabilities": [
+        "CAP.FUSION.NORMALIZE",
+        "CAP.FUSION.FUSE"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Normalize GPS positions from SAM devices and apps",
+        "Normalize EO detections into geo-referenced objects",
+        "Correlate GPS tracks with EO detections",
+        "Deduplicate tracks",
+        "Assign unique persistent IDs to units/objects"
+      ],
+      "inputs": [
+        "Normalized Positions from C-EDGE-GW",
+        "Detections from C-VIDEO-PIPE"
+      ],
+      "outputs": [
+        "Unified Track Picture",
+        "Geo-referenced Detections"
+      ],
+      "data_owned": [],
+      "dependencies": [
+        "C-MESSAGING"
+      ],
+      "runtime_assumptions": [
+        "Temporal alignment of GPS and Video metadata is possible (TBD)",
+        "Spatial reference systems are consistent"
+      ],
+      "deployment_assumptions": [
+        "Stateful service requiring shared memory or database for track history",
+        "GPU acceleration not strictly required but beneficial for correlation logic"
+      ],
+      "quality_constraints": [
+        "Accuracy of fusion",
+        "Low processing latency"
+      ],
+      "integration_requirements": [
+        "Must understand canonical data model schema",
+        "Must handle out-of-order messages"
+      ],
+      "requirement_ids": [
+        "SL-SF-01",
+        "SL-SF-02",
+        "SL-EO-07",
+        "SL-FT-01"
+      ],
+      "design_assumptions": [
+        "GPS positions are the ground truth for unit location; EO detections are supplementary",
+        "Track ID persistence survives system restarts (TBD)"
+      ]
+    },
+    {
+      "id": "C-MAP-SVC",
+      "name": "Map Visualization Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Manages map state, layers, geofences, and route planning data; serves map tiles and dynamic objects to clients. Stores position history for playback and stale position handling.",
+      "required_capabilities": [
+        "CAP.MAP.LAYERS",
+        "CAP.TRACK.GEOFENCE",
+        "CAP.ROUTE.COMPUTE",
+        "CAP.TRACK.HISTORY",
+        "CAP.TRACK.POSITION.STALE"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Store and serve base map tiles (including offline cache metadata)",
+        "Manage geofence definitions and evaluate unit positions against them",
+        "Compute routes considering terrain and no-go areas",
+        "Estimate ETA based on current position and route",
+        "Serve dynamic layer data (units, detections) to clients",
+        "Persist full position history for playback (SL-FT-02)",
+        "Calculate and display stale position age (SL-FT-03)"
+      ],
+      "inputs": [
+        "Unified Track Picture from C-FUSION",
+        "Geofence Definitions from C-CONFIG",
+        "Route Requests from Clients"
+      ],
+      "outputs": [
+        "Map State Updates to Clients",
+        "Geofence Violation Alerts",
+        "Computed Routes and ETAs",
+        "Position History Playback Data"
+      ],
+      "data_owned": [
+        "DS-MAP-TILES",
+        "DS-GEOFENCES",
+        "DS-POSITION-HISTORY"
+      ],
+      "dependencies": [
+        "C-MESSAGING",
+        "C-FUSION"
+      ],
+      "runtime_assumptions": [
+        "Terrain data is available and pre-loaded",
+        "Geofence evaluation can be done efficiently in memory or via spatial index",
+        "Position history storage scales linearly with unit count and time (TBD)"
+      ],
+      "deployment_assumptions": [
+        "Runs on Linux servers",
+        "May require significant RAM for large map datasets",
+        "Requires persistent storage for position history"
+      ],
+      "quality_constraints": [
+        "Low latency for position updates",
+        "High availability",
+        "Efficient historical query performance"
+      ],
+      "integration_requirements": [
+        "Must support standard map tile formats (e.g., MBTiles, XYZ)",
+        "Must expose REST/gRPC API for route computation and history playback",
+        "Must persist position updates asynchronously"
+      ],
+      "requirement_ids": [
+        "SL-MAP-01",
+        "SL-FT-04",
+        "SL-RT-01",
+        "SL-RT-02",
+        "SL-NF-01",
+        "SL-FT-02",
+        "SL-FT-03",
+        "SL-NF-03"
+      ],
+      "design_assumptions": [
+        "Offline map tiles are pre-cached on the client side; server only serves metadata and dynamic objects",
+        "Geofence checks are triggered by position updates, not continuous polling",
+        "Position history is stored in a time-series optimized format within DS-POSITION-HISTORY"
+      ]
+    },
+    {
+      "id": "C-VIDEO-PIPE",
+      "name": "Video Analytics Pipeline",
+      "kind": "pipeline",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Ingests live video, performs object detection/classification/tracking, and outputs geo-referenced detections.",
+      "required_capabilities": [
+        "CAP.VIDEO.INGEST",
+        "CAP.VIDEO.ANALYTICS",
+        "CAP.VIDEO.TRACKING",
+        "CAP.PLATFORM.GPU"
+      ],
+      "optional_capabilities": [
+        "CAP.VIDEO.SEMANTIC",
+        "CAP.VIDEO.CHANGE",
+        "CAP.VIDEO.CAPTION"
+      ],
+      "responsibilities": [
+        "Ingest RTSP-like video streams from EO sensors",
+        "Record video to local storage",
+        "Run AI models for person/vehicle detection and classification",
+        "Track objects across frames and assign track IDs",
+        "Geo-reference detections using sensor metadata",
+        "Publish detections to the messaging backbone"
+      ],
+      "inputs": [
+        "Live Video Streams from EO Sensors",
+        "Sensor Metadata (Camera Pose, Calibration)"
+      ],
+      "outputs": [
+        "Recorded Video Files",
+        "Geo-referenced Detections"
+      ],
+      "data_owned": [
+        "DS-VIDEO-RECORDINGS"
+      ],
+      "dependencies": [
+        "C-MESSAGING"
+      ],
+      "runtime_assumptions": [
+        "GPU hardware is available and accessible",
+        "Video streams are stable and authenticated",
+        "Sensor calibration data is accurate and up-to-date"
+      ],
+      "deployment_assumptions": [
+        "Deployed on GPU-enabled Linux servers",
+        "Containerized for easy scaling of analytics workers"
+      ],
+      "quality_constraints": [
+        "High throughput (FPS)",
+        "Low inference latency",
+        "Accuracy of detection/tracking"
+      ],
+      "integration_requirements": [
+        "Must support standard video codecs",
+        "Must output detections in canonical format"
+      ],
+      "requirement_ids": [
+        "SL-EO-01",
+        "SL-EO-02",
+        "SL-EO-03",
+        "SL-EO-04",
+        "SL-EO-05",
+        "SL-EO-06",
+        "SL-NF-04"
+      ],
+      "design_assumptions": [
+        "Video ingestion and analytics are decoupled to allow independent scaling",
+        "Geo-referencing is done at the pipeline level using known camera positions"
+      ]
+    },
+    {
+      "id": "C-ALERT-SVC",
+      "name": "Alert Management Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Manages alert lifecycle, including emergency alerts, device status warnings, and geofence violations; handles acknowledgements.",
+      "required_capabilities": [
+        "CAP.ALERT.EMERGENCY",
+        "CAP.ALERT.ACKNOWLEDGE",
+        "CAP.ALERT.DEVICE_STATUS"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Receive and prioritize emergency alerts",
+        "Monitor device status (battery, radio, water)",
+        "Process geofence violation events from C-MAP-SVC",
+        "Route alerts to appropriate operators/apps",
+        "Track alert acknowledgement status"
+      ],
+      "inputs": [
+        "Emergency Signals from C-EDGE-GW",
+        "Device Status from C-DEVICE-MGMT",
+        "Geofence Violations from C-MAP-SVC"
+      ],
+      "outputs": [
+        "Alert Notifications to Clients",
+        "Acknowledgement Updates"
+      ],
+      "data_owned": [
+        "DS-ALERTS"
+      ],
+      "dependencies": [
+        "C-MESSAGING",
+        "C-DEVICE-MGMT",
+        "C-MAP-SVC"
+      ],
+      "runtime_assumptions": [
+        "Alert priority levels are well-defined",
+        "Acknowledgement latency is critical for emergency alerts"
+      ],
+      "deployment_assumptions": [
+        "High availability required",
+        "Must integrate with local push notification relay or WebSocket service"
+      ],
+      "quality_constraints": [
+        "Low latency for emergency alerts",
+        "Reliability of delivery"
+      ],
+      "integration_requirements": [
+        "Must support local push notification protocols or WebSockets",
+        "Must interface with mobile apps for acknowledgement"
+      ],
+      "requirement_ids": [
+        "SL-AL-01",
+        "SL-AL-02",
+        "SL-AL-03",
+        "SL-FT-04"
+      ],
+      "design_assumptions": [
+        "Alerts are stored persistently for audit and review",
+        "Push notification service is abstracted behind this component and runs locally"
+      ]
+    },
+    {
+      "id": "C-DEVICE-MGMT",
+      "name": "Device Management Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Manages device registry, time synchronization, and health monitoring for SAM devices and SW-Watches.",
+      "required_capabilities": [
+        "CAP.DEVICE.SYNC"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Maintain registry of all field devices",
+        "Distribute time synchronization signals",
+        "Aggregate device health metrics (battery, radio)",
+        "Authenticate devices during connection",
+        "Publish device status updates to the messaging backbone"
+      ],
+      "inputs": [
+        "Device Telemetry from C-EDGE-GW",
+        "Time Sync Requests from Devices"
+      ],
+      "outputs": [
+        "Device Status Updates",
+        "Time Sync Commands"
+      ],
+      "data_owned": [
+        "DS-DEVICE-REGISTRY"
+      ],
+      "dependencies": [
+        "C-MESSAGING"
+      ],
+      "runtime_assumptions": [
+        "Devices have basic clock capabilities",
+        "Time sync frequency is low (e.g., hourly)"
+      ],
+      "deployment_assumptions": [
+        "Runs as a lightweight service",
+        "Integrates with local NTP or proprietary time source"
+      ],
+      "quality_constraints": [
+        "Accuracy of time synchronization",
+        "Reliability of registry"
+      ],
+      "integration_requirements": [
+        "Must support secure time distribution",
+        "Must interface with C-EDGE-GW for telemetry"
+      ],
+      "requirement_ids": [
+        "SL-AL-04",
+        "SL-AL-03"
+      ],
+      "design_assumptions": [
+        "Device registry is updated in real-time via messaging",
+        "Time sync is not critical for GPS accuracy (GPS provides time)"
+      ]
+    },
+    {
+      "id": "C-DIARY-SVC",
+      "name": "Operator Diary Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Manages creation, storage, and search of operator diary entries linked to units, tracks, or map locations.",
+      "required_capabilities": [
+        "CAP.DIARY.RECORD",
+        "CAP.DIARY.SEARCH"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Accept diary entries from clients",
+        "Link entries to entities (units, tracks, locations)",
+        "Index entries for full-text and temporal search",
+        "Serve search results to clients"
+      ],
+      "inputs": [
+        "Diary Entries from Clients",
+        "Entity Metadata from C-FUSION"
+      ],
+      "outputs": [
+        "Search Results",
+        "Entry Details"
+      ],
+      "data_owned": [
+        "DS-DIARY"
+      ],
+      "dependencies": [
+        "C-MESSAGING"
+      ],
+      "runtime_assumptions": [
+        "Search queries are not extremely complex",
+        "Diary entries are relatively small text blobs"
+      ],
+      "deployment_assumptions": [
+        "Uses a search-optimized database (e.g., Elasticsearch-like)",
+        "Runs on Linux containers"
+      ],
+      "quality_constraints": [
+        "Search latency",
+        "Data retention compliance"
+      ],
+      "integration_requirements": [
+        "Must support structured and unstructured search",
+        "Must integrate with mobile app for entry submission"
+      ],
+      "requirement_ids": [
+        "SL-OD-01",
+        "SL-OD-02",
+        "INF-02"
+      ],
+      "design_assumptions": [
+        "Diary entries are immutable once submitted (audit trail)",
+        "Search index is updated asynchronously"
+      ]
+    },
+    {
+      "id": "C-AUDIT-SVC",
+      "name": "Audit & Compliance Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Captures all operator actions and system alerts for tamper-evident logging.",
+      "required_capabilities": [
+        "CAP.SEC.AUDIT"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Log all user authentication events",
+        "Log all critical operator actions (e.g., sending alerts, modifying geofences)",
+        "Log system alerts and their lifecycle",
+        "Ensure log integrity (hash chaining or similar)"
+      ],
+      "inputs": [
+        "Audit Events from C-ALERT-SVC",
+        "Audit Events from C-DIARY-SVC",
+        "Audit Events from C-MAP-SVC"
+      ],
+      "outputs": [
+        "Tamper-Evident Audit Logs"
+      ],
+      "data_owned": [
+        "DS-AUDIT-LOGS"
+      ],
+      "dependencies": [],
+      "runtime_assumptions": [
+        "Audit logs are write-once",
+        "Log storage is separate from operational data"
+      ],
+      "deployment_assumptions": [
+        "Runs on Linux servers",
+        "May use append-only file system or blockchain-like structure"
+      ],
+      "quality_constraints": [
+        "Integrity of logs",
+        "Immutability"
+      ],
+      "integration_requirements": [
+        "Must receive events from all critical services",
+        "Must support secure log export for review"
+      ],
+      "requirement_ids": [
+        "SL-SEC-04"
+      ],
+      "design_assumptions": [
+        "Audit logging does not block operational workflows (async)",
+        "Log retention period is defined by policy (TBD)"
+      ]
+    },
+    {
+      "id": "C-MOBILE-APP",
+      "name": "Cellular Team Leader App",
+      "kind": "client_app",
+      "subsystem": "Mobile",
+      "trust_zone": "mobile",
+      "purpose": "Provides map visualization, position reporting, diary entry submission, and alert acknowledgement for team leaders. Operates on local network/mesh.",
+      "required_capabilities": [
+        "CAP.MOBILE.APP",
+        "CAP.MAP.OFFLINE",
+        "CAP.MOBILE.NOTIFY"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Display map with offline tiles",
+        "Show own unit and friendly units",
+        "Send position reports and diary entries",
+        "Receive and display alerts via local WebSocket/relay",
+        "Acknowledge alerts",
+        "Handle local push notifications"
+      ],
+      "inputs": [
+        "Map State Updates from C-MAP-SVC",
+        "Alerts from C-ALERT-SVC",
+        "Local Push Notifications"
+      ],
+      "outputs": [
+        "Position Reports",
+        "Diary Entries",
+        "Alert Acknowledgements"
+      ],
+      "data_owned": [],
+      "dependencies": [
+        "C-MESSAGING",
+        "C-ALERT-SVC"
+      ],
+      "runtime_assumptions": [
+        "Device has GPS capability",
+        "Device is within local network/mesh range of C-EDGE-GW or relay",
+        "Pre-loaded map tiles are available"
+      ],
+      "deployment_assumptions": [
+        "Runs on iOS/Android devices",
+        "App binary is signed and updated via secure channel",
+        "No external cloud dependencies for runtime communication"
+      ],
+      "quality_constraints": [
+        "Battery efficiency",
+        "Offline functionality",
+        "UI responsiveness"
+      ],
+      "integration_requirements": [
+        "Must support offline map rendering",
+        "Must integrate with local WebSocket or local push relay service"
+      ],
+      "requirement_ids": [
+        "SL-APP-01",
+        "SL-MAP-02",
+        "INF-01",
+        "INF-02",
+        "SL-APP-02"
+      ],
+      "design_assumptions": [
+        "Map tiles are cached locally; app does not fetch them on demand",
+        "Position reports are sent via C-EDGE-GW",
+        "Push notifications are handled via a local WebSocket relay or local push service, not public cloud"
+      ]
+    },
+    {
+      "id": "C-COMMAND-UI",
+      "name": "Command Post Operator UI",
+      "kind": "ui",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Web-based interface for command post operators to view the full situational picture, manage geofences, and review logs. Hosted locally.",
+      "required_capabilities": [
+        "CAP.MAP.LAYERS"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Display comprehensive map with all layers",
+        "Allow geofence creation/editing",
+        "View diary entries and search results",
+        "Monitor device status dashboards",
+        "Review audit logs (read-only)"
+      ],
+      "inputs": [
+        "Map State Updates from C-MAP-SVC",
+        "Alerts from C-ALERT-SVC",
+        "Diary Search Results from C-DIARY-SVC"
+      ],
+      "outputs": [
+        "Geofence Updates",
+        "User Actions"
+      ],
+      "data_owned": [],
+      "dependencies": [
+        "C-MAP-SVC",
+        "C-ALERT-SVC",
+        "C-DIARY-SVC"
+      ],
+      "runtime_assumptions": [
+        "Browser supports WebGL for map rendering",
+        "Stable high-bandwidth connection within command post LAN"
+      ],
+      "deployment_assumptions": [
+        "Hosted as static assets served by C-MAP-SVC or local web server on Linux",
+        "Runs in modern browsers on Linux workstations",
+        "No external CDN or cloud hosting"
+      ],
+      "quality_constraints": [
+        "High resolution display support",
+        "Low latency interaction"
+      ],
+      "integration_requirements": [
+        "Must consume REST/WebSocket APIs from backend services",
+        "Must support role-based UI elements"
+      ],
+      "requirement_ids": [
+        "SL-MAP-01",
+        "SL-OD-02",
+        "SL-AL-03"
+      ],
+      "design_assumptions": [
+        "UI is thin client; all logic resides in backend services",
+        "Authentication is handled via local auth service (C-AUTH-SVC)"
+      ]
+    },
+    {
+      "id": "C-CONFIG-SVC",
+      "name": "Configuration & Policy Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Manages system configuration, user roles, permissions, and geofence definitions. Local storage only.",
+      "required_capabilities": [
+        "CAP.SEC.AUTH"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Define and store user roles and permissions",
+        "Manage geofence geometries",
+        "Configure system parameters (e.g., stale position thresholds)",
+        "Distribute configuration updates to clients"
+      ],
+      "inputs": [
+        "Configuration Changes from Operators",
+        "User Authentication Requests"
+      ],
+      "outputs": [
+        "Role/Permission Data",
+        "Geofence Definitions",
+        "System Config"
+      ],
+      "data_owned": [
+        "DS-CONFIG"
+      ],
+      "dependencies": [],
+      "runtime_assumptions": [
+        "Configuration changes are infrequent",
+        "Role definitions are hierarchical"
+      ],
+      "deployment_assumptions": [
+        "Runs on Linux servers",
+        "Database-backed storage on-premises"
+      ],
+      "quality_constraints": [
+        "Consistency of configuration",
+        "Security of role data"
+      ],
+      "integration_requirements": [
+        "Must integrate with C-MAP-SVC for geofences",
+        "Must integrate with C-ALERT-SVC for alert routing rules"
+      ],
+      "requirement_ids": [
+        "SL-SEC-03",
+        "SL-FT-04"
+      ],
+      "design_assumptions": [
+        "Configuration is versioned",
+        "Geofence data is synchronized to C-MAP-SVC periodically or on change"
+      ]
+    },
+    {
+      "id": "C-AUTH-SVC",
+      "name": "Local Authentication Service",
+      "kind": "service",
+      "subsystem": "Command Post Core",
+      "trust_zone": "command-post",
+      "purpose": "Handles user authentication and authorization using local credentials and certificates. No external identity providers.",
+      "required_capabilities": [
+        "CAP.SEC.AUTH"
+      ],
+      "optional_capabilities": [],
+      "responsibilities": [
+        "Authenticate users via username/password or client certificates",
+        "Issue local JWT tokens for session management",
+        "Validate roles and permissions against DS-CONFIG",
+        "Manage local user accounts"
+      ],
+      "inputs": [
+        "Authentication Requests from Clients",
+        "Role Data from C-CONFIG-SVC"
+      ],
+      "outputs": [
+        "JWT Tokens",
+        "Authorization Decisions"
+      ],
+      "data_owned": [
+        "DS-AUTH-CREDENTIALS"
+      ],
+      "dependencies": [
+        "C-CONFIG-SVC"
+      ],
+      "runtime_assumptions": [
+        "Local database is available and consistent",
+        "Token expiration policies are defined (TBD)"
+      ],
+      "deployment_assumptions": [
+        "Runs on Linux servers",
+        "No external LDAP/AD integration required for core operation"
+      ],
+      "quality_constraints": [
+        "Security of credentials",
+        "Low latency authentication"
+      ],
+      "integration_requirements": [
+        "Must integrate with all components requiring authentication",
+        "Must support mutual TLS for device auth"
+      ],
+      "requirement_ids": [
+        "SL-SEC-03",
+        "SL-SEC-02"
+      ],
+      "design_assumptions": [
+        "Local credentials are stored in DS-AUTH-CREDENTIALS",
+        "JWT tokens are signed with a local key"
+      ]
+    }
+  ],
+  "interfaces": [
+    {
+      "id": "IF-01",
+      "source": "C-EDGE-GW",
+      "target": "C-MESSAGING",
+      "name": "Position & Telemetry Ingestion",
+      "payload": "JSON: { device_id, lat, lon, timestamp, battery_level }",
+      "protocol_candidates": [
+        "MQTT",
+        "HTTPS POST"
+      ],
+      "mode": "async",
+      "error_handling": "Retry with exponential backoff; buffer locally if messaging layer is down",
+      "security": "Mutual TLS, Device Certificate Authentication",
+      "requirement_ids": [
+        "SL-FT-01",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-02",
+      "source": "C-EDGE-GW",
+      "target": "C-MESSAGING",
+      "name": "Emergency Alert Ingestion",
+      "payload": "JSON: { device_id, alert_type: 'EMERGENCY', timestamp }",
+      "protocol_candidates": [
+        "MQTT (High Priority Topic)",
+        "HTTPS POST"
+      ],
+      "mode": "async",
+      "error_handling": "Immediate retry; fallback to SMS if available (TBD)",
+      "security": "Mutual TLS, Device Certificate Authentication",
+      "requirement_ids": [
+        "SL-AL-01",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-03",
+      "source": "C-FUSION",
+      "target": "C-MESSAGING",
+      "name": "Unified Track Publication",
+      "payload": "JSON: { track_id, type: 'UNIT'|'DETECTION', lat, lon, heading, speed, timestamp, confidence }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Dropped messages are acceptable for real-time tracking; history is recovered via replay if needed",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-SF-02",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-04",
+      "source": "C-FUSION",
+      "target": "C-MESSAGING",
+      "name": "Geo-referenced Detection Publication",
+      "payload": "JSON: { track_id, type: 'DETECTION', class: 'PERSON'|'VEHICLE', lat, lon, timestamp, source_sensor_id }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Dropped messages are acceptable for real-time tracking",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-EO-07",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-05",
+      "source": "C-MESSAGING",
+      "target": "C-MAP-SVC",
+      "name": "Map State Updates",
+      "payload": "JSON: { track_id, lat, lon, timestamp }",
+      "protocol_candidates": [
+        "MQTT",
+        "WebSocket"
+      ],
+      "mode": "stream",
+      "error_handling": "Client re-subscribes on disconnect; server maintains last known position",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-FT-01",
+        "SL-NF-01"
+      ]
+    },
+    {
+      "id": "IF-06",
+      "source": "C-MAP-SVC",
+      "target": "C-MESSAGING",
+      "name": "Geofence Violation Alert",
+      "payload": "JSON: { track_id, geofence_id, event: 'ENTER'|'EXIT', timestamp }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry if messaging layer is down",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-FT-04"
+      ]
+    },
+    {
+      "id": "IF-07",
+      "source": "C-MESSAGING",
+      "target": "C-ALERT-SVC",
+      "name": "Alert Processing",
+      "payload": "JSON: { alert_id, type: 'EMERGENCY'|'GEOFENCE'|'DEVICE_STATUS', severity, payload }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Persist in DS-ALERTS if processing fails",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-AL-01",
+        "SL-AL-03"
+      ]
+    },
+    {
+      "id": "IF-08",
+      "source": "C-ALERT-SVC",
+      "target": "C-MESSAGING",
+      "name": "Alert Notification Dispatch",
+      "payload": "JSON: { alert_id, message, priority, target_users }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry until acknowledged or expired",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-AL-02"
+      ]
+    },
+    {
+      "id": "IF-09",
+      "source": "C-MOBILE-APP",
+      "target": "C-EDGE-GW",
+      "name": "Position Report Submission",
+      "payload": "JSON: { team_leader_id, lat, lon, timestamp }",
+      "protocol_candidates": [
+        "HTTPS POST"
+      ],
+      "mode": "sync",
+      "error_handling": "Client retries on failure; stores locally for later sync",
+      "security": "Mutual TLS, User JWT Authentication",
+      "requirement_ids": [
+        "INF-01",
+        "SL-APP-01"
+      ]
+    },
+    {
+      "id": "IF-10",
+      "source": "C-MOBILE-APP",
+      "target": "C-DIARY-SVC",
+      "name": "Diary Entry Submission",
+      "payload": "JSON: { user_id, text, timestamp, linked_track_id, lat, lon }",
+      "protocol_candidates": [
+        "HTTPS POST"
+      ],
+      "mode": "sync",
+      "error_handling": "Client retries on failure; stores locally for later sync",
+      "security": "Mutual TLS, User JWT Authentication",
+      "requirement_ids": [
+        "INF-02",
+        "SL-OD-01"
+      ]
+    },
+    {
+      "id": "IF-11",
+      "source": "C-MOBILE-APP",
+      "target": "C-ALERT-SVC",
+      "name": "Alert Acknowledgement",
+      "payload": "JSON: { alert_id, user_id, timestamp }",
+      "protocol_candidates": [
+        "HTTPS POST"
+      ],
+      "mode": "sync",
+      "error_handling": "Client retries on failure",
+      "security": "Mutual TLS, User JWT Authentication",
+      "requirement_ids": [
+        "SL-AL-02"
+      ]
+    },
+    {
+      "id": "IF-12",
+      "source": "C-MESSAGING",
+      "target": "C-MOBILE-APP",
+      "name": "Local Push Notification Relay",
+      "payload": "Binary/JSON: Alert Payload",
+      "protocol_candidates": [
+        "WebSocket"
+      ],
+      "mode": "async",
+      "error_handling": "Best-effort delivery; client polls for missed alerts on reconnect",
+      "security": "TLS, App-level Authentication",
+      "requirement_ids": [
+        "SL-APP-02"
+      ]
+    },
+    {
+      "id": "IF-13",
+      "source": "C-VIDEO-PIPE",
+      "target": "C-MESSAGING",
+      "name": "Detection Metadata Publication",
+      "payload": "JSON: { track_id, class, lat, lon, timestamp, confidence }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Dropped messages acceptable for real-time analytics",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-EO-02",
+        "SL-EO-03"
+      ]
+    },
+    {
+      "id": "IF-14",
+      "source": "C-COMMAND-UI",
+      "target": "C-MAP-SVC",
+      "name": "Map Data Request",
+      "payload": "HTTP GET: /map/state?layers=...",
+      "protocol_candidates": [
+        "REST",
+        "WebSocket"
+      ],
+      "mode": "sync",
+      "error_handling": "Return cached state if live data is unavailable",
+      "security": "User JWT Authentication, Role-based Access Control",
+      "requirement_ids": [
+        "SL-MAP-01"
+      ]
+    },
+    {
+      "id": "IF-15",
+      "source": "C-COMMAND-UI",
+      "target": "C-DIARY-SVC",
+      "name": "Diary Search Request",
+      "payload": "HTTP GET: /diary/search?q=...&start=...&end=...",
+      "protocol_candidates": [
+        "REST"
+      ],
+      "mode": "sync",
+      "error_handling": "Return partial results if search index is rebuilding",
+      "security": "User JWT Authentication, Role-based Access Control",
+      "requirement_ids": [
+        "SL-OD-02"
+      ]
+    },
+    {
+      "id": "IF-16",
+      "source": "C-DEVICE-MGMT",
+      "target": "C-MESSAGING",
+      "name": "Device Status Publication",
+      "payload": "JSON: { device_id, battery_pct, radio_status, water_level, timestamp }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry with exponential backoff; persist in DS-DEVICE-REGISTRY if messaging is down",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-AL-03",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-17",
+      "source": "C-MESSAGING",
+      "target": "C-AUDIT-SVC",
+      "name": "Audit Event Stream",
+      "payload": "JSON: { event_type, user_id, action, timestamp, metadata_hash }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Persist to DS-AUDIT-LOGS immediately; drop if storage full (alert admin)",
+      "security": "Internal Network Encryption (TLS), Integrity Checksums",
+      "requirement_ids": [
+        "SL-SEC-04",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-18",
+      "source": "C-MESSAGING",
+      "target": "C-CONFIG-SVC",
+      "name": "Configuration Distribution Request",
+      "payload": "JSON: { config_version, component_id }",
+      "protocol_candidates": [
+        "MQTT"
+      ],
+      "mode": "async",
+      "error_handling": "Retry until acknowledged; fallback to static config if service unavailable",
+      "security": "Internal Network Encryption (TLS)",
+      "requirement_ids": [
+        "SL-SEC-03",
+        "SL-COM-01"
+      ]
+    },
+    {
+      "id": "IF-19",
+      "source": "C-MOBILE-APP",
+      "target": "C-AUTH-SVC",
+      "name": "User Authentication",
+      "payload": "JSON: { username, password_hash } or Client Certificate",
+      "protocol_candidates": [
+        "HTTPS POST"
+      ],
+      "mode": "sync",
+      "error_handling": "Return error if credentials invalid",
+      "security": "Mutual TLS, Transport Layer Security",
+      "requirement_ids": [
+        "SL-SEC-03"
+      ]
+    },
+    {
+      "id": "IF-20",
+      "source": "C-COMMAND-UI",
+      "target": "C-AUTH-SVC",
+      "name": "User Authentication",
+      "payload": "JSON: { username, password_hash } or Client Certificate",
+      "protocol_candidates": [
+        "HTTPS POST"
+      ],
+      "mode": "sync",
+      "error_handling": "Return error if credentials invalid",
+      "security": "Mutual TLS, Transport Layer Security",
+      "requirement_ids": [
+        "SL-SEC-03"
+      ]
+    }
+  ],
+  "data_stores": [
+    {
+      "id": "DS-MAP-TILES",
+      "name": "Map Tile Store",
+      "owner_component": "C-MAP-SVC",
+      "contents": "Pre-loaded base map tiles, elevation data, and terrain layers for offline use",
+      "kind": "file_store"
+    },
+    {
+      "id": "DS-GEOFENCES",
+      "name": "Geofence Definitions",
+      "owner_component": "C-MAP-SVC",
+      "contents": "Polygons defining geofences, associated rules, and alert thresholds",
+      "kind": "database"
+    },
+    {
+      "id": "DS-VIDEO-RECORDINGS",
+      "name": "Video Recordings",
+      "owner_component": "C-VIDEO-PIPE",
+      "contents": "Recorded video streams from EO sensors, indexed by time and sensor ID",
+      "kind": "file_store"
+    },
+    {
+      "id": "DS-ALERTS",
+      "name": "Alert History",
+      "owner_component": "C-ALERT-SVC",
+      "contents": "All alerts, their status, acknowledgements, and associated metadata",
+      "kind": "database"
+    },
+    {
+      "id": "DS-DEVICE-REGISTRY",
+      "name": "Device Registry",
+      "owner_component": "C-DEVICE-MGMT",
+      "contents": "Device IDs, types, certificates, and last known status",
+      "kind": "database"
+    },
+    {
+      "id": "DS-DIARY",
+      "name": "Diary Entries",
+      "owner_component": "C-DIARY-SVC",
+      "contents": "Timestamped diary entries, linked entities, and full-text index",
+      "kind": "search_engine"
+    },
+    {
+      "id": "DS-AUDIT-LOGS",
+      "name": "Audit Logs",
+      "owner_component": "C-AUDIT-SVC",
+      "contents": "Tamper-evident log of all user actions and system alerts",
+      "kind": "append_only_store"
+    },
+    {
+      "id": "DS-CONFIG",
+      "name": "System Configuration",
+      "owner_component": "C-CONFIG-SVC",
+      "contents": "User roles, permissions, geofence definitions, and system parameters",
+      "kind": "database"
+    },
+    {
+      "id": "DS-POSITION-HISTORY",
+      "name": "Position History Store",
+      "owner_component": "C-MAP-SVC",
+      "contents": "Full time-series history of all tracked unit positions for playback and stale position calculation",
+      "kind": "time_series_db"
+    },
+    {
+      "id": "DS-AUTH-CREDENTIALS",
+      "name": "Authentication Credentials",
+      "owner_component": "C-AUTH-SVC",
+      "contents": "Local user accounts, hashed passwords, and client certificate authorities",
+      "kind": "database"
+    }
+  ],
+  "external_systems": [
+    {
+      "id": "X-SAM-DEVICE",
+      "name": "SAM Device",
+      "description": "Soldier-worn device providing GPS, emergency button, and equipment status (battery, radio, water)",
+      "fictional": true
+    },
+    {
+      "id": "X-SW-WATCH",
+      "name": "SW-Watch Device",
+      "description": "Smartwatch-like device for alert acknowledgement and time synchronization",
+      "fictional": true
+    },
+    {
+      "id": "X-EO-SENSOR",
+      "name": "EO Sensor",
+      "description": "Electro-Optical sensor (camera) providing live video feeds",
+      "fictional": true
+    }
+  ],
+  "assumptions": [
+    "OQ-01: Low latency threshold is TBD (open question).",
+    "OQ-02: High availability target is TBD (open question).",
+    "OQ-03: Retention period for position history and diary entries is TBD (open question).",
+    "OQ-04: Battalion size (number of units) is TBD (open question).",
+    "All communication between components and with field devices is encrypted and authenticated (SL-SEC-02).",
+    "Open-source software used is compatible with redistribution inside a closed defense product (SL-DEP-02).",
+    "Command post software runs on Linux servers as containers (SL-DEP-01).",
+    "The system operates in an offline-only mode; no external internet or cloud services are available at runtime.",
+    "Mobile devices connect to the command post network via local mesh or Wi-Fi Direct when in range."
+  ],
+  "risks": [
+    "Intermittent connectivity in the field may lead to significant delays in position updates and alert delivery.",
+    "Video analytics performance may be constrained by available GPU hardware, affecting real-time detection capabilities.",
+    "Offline map functionality depends on pre-loaded tiles; updating maps in the field is not supported.",
+    "Sensor fusion accuracy depends on precise time synchronization between GPS and video streams.",
+    "Scalability to battalion size requires careful load testing of the messaging backbone and database layers.",
+    "Local push notification reliability depends on the stability of the local WebSocket relay or mesh network."
+  ],
+  "coverage": [
+    {
+      "requirement_id": "SL-FT-01",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-FUSION"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-FT-02",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-FT-03",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-FT-04",
+      "component_ids": [
+        "C-MAP-SVC",
+        "C-ALERT-SVC",
+        "C-CONFIG-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-MAP-01",
+      "component_ids": [
+        "C-MAP-SVC",
+        "C-COMMAND-UI"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-MAP-02",
+      "component_ids": [
+        "C-MOBILE-APP"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-RT-01",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-RT-02",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-01",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-02",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-03",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-04",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-05",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-06",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-EO-07",
+      "component_ids": [
+        "C-FUSION"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-SF-01",
+      "component_ids": [
+        "C-FUSION"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-SF-02",
+      "component_ids": [
+        "C-FUSION"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-OD-01",
+      "component_ids": [
+        "C-DIARY-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-OD-02",
+      "component_ids": [
+        "C-DIARY-SVC",
+        "C-COMMAND-UI"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-AL-01",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-ALERT-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-AL-02",
+      "component_ids": [
+        "C-ALERT-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-AL-03",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-ALERT-SVC",
+        "C-DEVICE-MGMT",
+        "C-COMMAND-UI"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-AL-04",
+      "component_ids": [
+        "C-DEVICE-MGMT"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-COM-01",
+      "component_ids": [
+        "C-MESSAGING"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-COM-02",
+      "component_ids": [
+        "C-EDGE-GW"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-APP-01",
+      "component_ids": [
+        "C-MOBILE-APP"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-APP-02",
+      "component_ids": [
+        "C-MOBILE-APP"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-NF-01",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-NF-02",
+      "component_ids": [
+        "C-MESSAGING"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-NF-03",
+      "component_ids": [
+        "C-MAP-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-NF-04",
+      "component_ids": [
+        "C-VIDEO-PIPE"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-NF-05",
+      "component_ids": [
+        "C-EDGE-GW"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-SEC-01",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-MESSAGING",
+        "C-FUSION",
+        "C-MAP-SVC",
+        "C-VIDEO-PIPE",
+        "C-ALERT-SVC",
+        "C-DEVICE-MGMT",
+        "C-DIARY-SVC",
+        "C-AUDIT-SVC",
+        "C-MOBILE-APP",
+        "C-COMMAND-UI",
+        "C-CONFIG-SVC",
+        "C-AUTH-SVC"
+      ],
+      "status": "covered",
+      "note": "System-wide constraint: applies to every component"
+    },
+    {
+      "requirement_id": "SL-SEC-02",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-AUTH-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-SEC-03",
+      "component_ids": [
+        "C-CONFIG-SVC",
+        "C-AUTH-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-SEC-04",
+      "component_ids": [
+        "C-AUDIT-SVC"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "SL-DEP-01",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-MESSAGING",
+        "C-FUSION",
+        "C-MAP-SVC",
+        "C-VIDEO-PIPE",
+        "C-ALERT-SVC",
+        "C-DEVICE-MGMT",
+        "C-DIARY-SVC",
+        "C-AUDIT-SVC",
+        "C-MOBILE-APP",
+        "C-COMMAND-UI",
+        "C-CONFIG-SVC",
+        "C-AUTH-SVC"
+      ],
+      "status": "covered",
+      "note": "System-wide constraint: applies to every component"
+    },
+    {
+      "requirement_id": "SL-DEP-02",
+      "component_ids": [
+        "C-EDGE-GW",
+        "C-MESSAGING",
+        "C-FUSION",
+        "C-MAP-SVC",
+        "C-VIDEO-PIPE",
+        "C-ALERT-SVC",
+        "C-DEVICE-MGMT",
+        "C-DIARY-SVC",
+        "C-AUDIT-SVC",
+        "C-MOBILE-APP",
+        "C-COMMAND-UI",
+        "C-CONFIG-SVC",
+        "C-AUTH-SVC"
+      ],
+      "status": "covered",
+      "note": "System-wide constraint: applies to every component"
+    },
+    {
+      "requirement_id": "INF-01",
+      "component_ids": [
+        "C-MOBILE-APP"
+      ],
+      "status": "covered",
+      "note": ""
+    },
+    {
+      "requirement_id": "INF-02",
+      "component_ids": [
+        "C-DIARY-SVC",
+        "C-MOBILE-APP"
+      ],
+      "status": "covered",
+      "note": ""
+    }
+  ],
+  "validation_findings": [],
+  "mermaid_source": "flowchart LR\n  subgraph SG0[\"Field Edge\"]\n    C_EDGE_GW[\"Field Edge Gateway<br/><small>C-EDGE-GW</small>\"]\n  end\n  subgraph SG1[\"Command Post Core\"]\n    C_MESSAGING[\"Pub/Sub Messaging Backbone<br/><small>C-MESSAGING</small>\"]\n    C_FUSION[\"Sensor Fusion & Normalization Engine<br/><small>C-FUSION</small>\"]\n    C_MAP_SVC[\"Map Visualization Service<br/><small>C-MAP-SVC</small>\"]\n    DS_MAP_TILES[(\"Map Tile Store<br/><small>DS-MAP-TILES</small>\")]\n    DS_GEOFENCES[(\"Geofence Definitions<br/><small>DS-GEOFENCES</small>\")]\n    DS_POSITION_HISTORY[(\"Position History Store<br/><small>DS-POSITION-HISTORY</small>\")]\n    C_VIDEO_PIPE[\"Video Analytics Pipeline<br/><small>C-VIDEO-PIPE</small>\"]\n    DS_VIDEO_RECORDINGS[(\"Video Recordings<br/><small>DS-VIDEO-RECORDINGS</small>\")]\n    C_ALERT_SVC[\"Alert Management Service<br/><small>C-ALERT-SVC</small>\"]\n    DS_ALERTS[(\"Alert History<br/><small>DS-ALERTS</small>\")]\n    C_DEVICE_MGMT[\"Device Management Service<br/><small>C-DEVICE-MGMT</small>\"]\n    DS_DEVICE_REGISTRY[(\"Device Registry<br/><small>DS-DEVICE-REGISTRY</small>\")]\n    C_DIARY_SVC[\"Operator Diary Service<br/><small>C-DIARY-SVC</small>\"]\n    DS_DIARY[(\"Diary Entries<br/><small>DS-DIARY</small>\")]\n    C_AUDIT_SVC[\"Audit & Compliance Service<br/><small>C-AUDIT-SVC</small>\"]\n    DS_AUDIT_LOGS[(\"Audit Logs<br/><small>DS-AUDIT-LOGS</small>\")]\n    C_COMMAND_UI([\"Command Post Operator UI<br/><small>C-COMMAND-UI</small>\"])\n    C_CONFIG_SVC[\"Configuration & Policy Service<br/><small>C-CONFIG-SVC</small>\"]\n    DS_CONFIG[(\"System Configuration<br/><small>DS-CONFIG</small>\")]\n    C_AUTH_SVC[\"Local Authentication Service<br/><small>C-AUTH-SVC</small>\"]\n    DS_AUTH_CREDENTIALS[(\"Authentication Credentials<br/><small>DS-AUTH-CREDENTIALS</small>\")]\n  end\n  subgraph SG2[\"Mobile\"]\n    C_MOBILE_APP([\"Cellular Team Leader App<br/><small>C-MOBILE-APP</small>\"])\n  end\n  C_MAP_SVC --- DS_MAP_TILES\n  C_MAP_SVC --- DS_GEOFENCES\n  C_VIDEO_PIPE --- DS_VIDEO_RECORDINGS\n  C_ALERT_SVC --- DS_ALERTS\n  C_DEVICE_MGMT --- DS_DEVICE_REGISTRY\n  C_DIARY_SVC --- DS_DIARY\n  C_AUDIT_SVC --- DS_AUDIT_LOGS\n  C_CONFIG_SVC --- DS_CONFIG\n  C_MAP_SVC --- DS_POSITION_HISTORY\n  C_AUTH_SVC --- DS_AUTH_CREDENTIALS\n  subgraph EXT[\"External systems\"]\n    X_SAM_DEVICE{{\"SAM Device (fictional)\"}}\n    X_SW_WATCH{{\"SW-Watch Device (fictional)\"}}\n    X_EO_SENSOR{{\"EO Sensor (fictional)\"}}\n  end\n  C_EDGE_GW -.->|\"Position & Telemetry Ingestion\"| C_MESSAGING\n  C_EDGE_GW -.->|\"Emergency Alert Ingestion\"| C_MESSAGING\n  C_FUSION -.->|\"Unified Track Publication\"| C_MESSAGING\n  C_FUSION -.->|\"Geo-referenced Detection Publication\"| C_MESSAGING\n  C_MESSAGING -.->|\"Map State Updates\"| C_MAP_SVC\n  C_MAP_SVC -.->|\"Geofence Violation Alert\"| C_MESSAGING\n  C_MESSAGING -.->|\"Alert Processing\"| C_ALERT_SVC\n  C_ALERT_SVC -.->|\"Alert Notification Dispatch\"| C_MESSAGING\n  C_MOBILE_APP -->|\"Position Report Submission\"| C_EDGE_GW\n  C_MOBILE_APP -->|\"Diary Entry Submission\"| C_DIARY_SVC\n  C_MOBILE_APP -->|\"Alert Acknowledgement\"| C_ALERT_SVC\n  C_MESSAGING -.->|\"Local Push Notification Relay\"| C_MOBILE_APP\n  C_VIDEO_PIPE -.->|\"Detection Metadata Publication\"| C_MESSAGING\n  C_COMMAND_UI -->|\"Map Data Request\"| C_MAP_SVC\n  C_COMMAND_UI -->|\"Diary Search Request\"| C_DIARY_SVC\n  C_DEVICE_MGMT -.->|\"Device Status Publication\"| C_MESSAGING\n  C_MESSAGING -.->|\"Audit Event Stream\"| C_AUDIT_SVC\n  C_MESSAGING -.->|\"Configuration Distribution Request\"| C_CONFIG_SVC\n  C_MOBILE_APP -->|\"User Authentication\"| C_AUTH_SVC\n  C_COMMAND_UI -->|\"User Authentication\"| C_AUTH_SVC\n  classDef build fill:#fde2e1,stroke:#c0392b,color:#222\n  classDef buy fill:#e1ecfd,stroke:#2c5aa0,color:#222\n  classDef reuse fill:#e3f6e5,stroke:#2e7d32,color:#222\n  classDef hl stroke:#ff9800,stroke-width:4px",
+  "design_rationale": "This revision strictly enforces the 'offline-only' constraint by removing any implicit or explicit dependencies on public cloud services, including commercial push notification providers and external authentication backends. The C-MOBILE-APP is redefined to operate as a local client within the tactical network (e.g., via local Wi-Fi Direct or mesh), utilizing a local WebSocket relay for real-time updates instead of cellular-based push services. The C-COMMAND-UI is similarly constrained to the command post LAN, ensuring no data egress. C-MESSAGING is explicitly designated as a local, on-premises deployment, serving as the sole communication backbone without external gateways. Authentication and configuration are handled by local services (C-AUTH-SVC, C-CONFIG-SVC) using local certificates and databases, eliminating reliance on external identity providers. All data stores remain strictly on-premises, satisfying SL-SEC-01.",
+  "constraints": [
+    "offline-only: no internet or cloud dependency at runtime"
+  ],
+  "change_log": [
+    {
+      "version": 1,
+      "summary": "Initial architecture generated from SRS",
+      "reason": "",
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "feedback_id": null,
+      "timestamp": "2026-11-09T11:48:53+00:00"
+    },
+    {
+      "version": 2,
+      "summary": "Self-check repair pass allocated: SL-FT-02, SL-FT-03, SL-NF-03",
+      "reason": "AR-06 validation before first publication",
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "feedback_id": null,
+      "timestamp": "2026-11-09T11:52:16+00:00"
+    },
+    {
+      "version": 2,
+      "summary": "Self-check pass 1: allocated none; connected ['C-DEVICE-MGMT', 'C-AUDIT-SVC', 'C-CONFIG-SVC']",
+      "reason": "AR-06 validation before first publication",
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "feedback_id": null,
+      "timestamp": "2026-11-09T12:18:48+00:00"
+    },
+    {
+      "version": 2,
+      "summary": "Self-check pass 1: allocated ['SL-APP-02']; connected none",
+      "reason": "AR-06 validation before first publication",
+      "added": [],
+      "removed": [],
+      "modified": [],
+      "feedback_id": null,
+      "timestamp": "2026-11-09T13:21:51+00:00"
+    },
+    {
+      "version": 2,
+      "summary": "Remove all components requiring external connectivity (C-MOBILE-APP if it relies on cellular data for non-local comms, C-COMMAND-UI if it assumes cloud sync). Ensure C-MESSAGING is deployed locally. Replace any cloud-based auth or config services with local equivalents.",
+      "reason": "User instruction: Offline only; Constraint: offline-only: no internet or cloud dependency at runtime",
+      "added": [
+        "C-AUTH-SVC",
+        "DS-AUTH-CREDENTIALS",
+        "IF-19",
+        "IF-20"
+      ],
+      "removed": [
+        "X-PUSH-NOTIFY-SVC"
+      ],
+      "modified": [
+        "C-ALERT-SVC",
+        "C-COMMAND-UI",
+        "C-CONFIG-SVC",
+        "C-DEVICE-MGMT",
+        "C-MESSAGING",
+        "C-MOBILE-APP",
+        "IF-12"
+      ],
+      "feedback_id": "FB-598D47",
+      "timestamp": "2026-11-09T13:21:51+00:00"
+    }
+  ],
+  "created_at": "2026-11-09T13:21:51+00:00"
+}

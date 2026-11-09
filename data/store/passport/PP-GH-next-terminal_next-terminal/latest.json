@@ -1,0 +1,176 @@
+{
+  "passport_id": "PP-GH-next-terminal_next-terminal",
+  "software_name": "next-terminal/next-terminal",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/next-terminal/next-terminal",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Audit Logging",
+      "coverage": "partial",
+      "notes": "The project is explicitly described as a 'session auditing system' with 'records and replays sessions'. However, the core backend logic handling the actual audit log generation and storage is closed-source (v2.0.0+). The frontend exposes access logs via API but does not contain the audit engine itself.",
+      "capability_id": "CAP.SEC.AUDIT",
+      "evidence_status": "declared",
+      "confidence": 0.4,
+      "evidence_refs": [
+        "README.md@a43c7d83",
+        "api:project@a43c7d83"
+      ]
+    },
+    {
+      "name": "Session Recording & Replay",
+      "coverage": "partial",
+      "notes": "Supported for RDP, SSH, VNC, Telnet, HTTP. Implementation details are in the closed-source backend.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.5,
+      "evidence_refs": [
+        "README.md@a43c7d83"
+      ]
+    },
+    {
+      "name": "Access Control / Policy Management",
+      "coverage": "partial",
+      "notes": "Frontend API definitions for access policies (whitelist/blacklist, IP groups, time periods) are visible.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "src/api/access-policy-api.ts@a43c7d83"
+      ]
+    },
+    {
+      "name": "Multi-Protocol Gateway",
+      "coverage": "partial",
+      "notes": "Supports RDP, SSH, VNC, Telnet, HTTP as per README.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.5,
+      "evidence_refs": [
+        "README.md@a43c7d83"
+      ]
+    },
+    {
+      "name": "Web-Based Administration",
+      "coverage": "full",
+      "notes": "This repository is the frontend UI (React/Vite) for managing assets, logs, and policies.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "package.json@a43c7d83",
+        "src/api/access-log-api.ts@a43c7d83"
+      ]
+    }
+  ],
+  "interfaces": [
+    "REST API (HTTP/HTTPS)",
+    "Audit Event Stream (MQTT) (MQTT)"
+  ],
+  "dependencies": [
+    "React",
+    "Vite",
+    "Ant Design",
+    "Xterm.js",
+    "Guacamole (for VNC/RDP)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires backend service (closed-source v2.0.0+ binary or container) for core functionality",
+    "Frontend runs in modern web browsers"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "The closed-source backend can be configured to output audit events to an MQTT broker or external sink.",
+      "Integration requires connecting this frontend to the proprietary backend API endpoints.",
+      "MQTT client implementation would need to be added to the frontend or a sidecar proxy.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Project is a bastion and session auditing system supporting RDP, SSH, VNC, Telnet, HTTP.",
+      "source_ref": "README.md@a43c7d83",
+      "verified": false
+    },
+    {
+      "claim": "Backend code is no longer open source starting with v2.0.0.",
+      "source_ref": "README.md@a43c7d83",
+      "verified": false
+    },
+    {
+      "claim": "Frontend exposes access log APIs and access policy management APIs.",
+      "source_ref": "src/api/access-log-api.ts@a43c7d83",
+      "verified": true
+    },
+    {
+      "claim": "License is Apache 2.0 for the frontend code.",
+      "source_ref": "LICENSE@a43c7d83",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The evidence_status is marked 'verified' in the evidence array, but the reviewer explicitly notes 'verified: false'. While the LICENSE file exists and contains Apache 2.0 text, the passport claims this applies to the 'frontend code' specifically. The README states the backend is closed-source from v2.0.0+. Without explicit license headers in the source files or a clear statement that the frontend portion is separately licensed under Apache 2.0 (distinct from any potential proprietary backend components), marking it as 'verified' without code-level evidence of the license text in the source files is risky. More importantly, the evidence array item has 'verified: false', contradicting the capability's reliance on this fact if used for compliance. | [high] The passport acknowledges the backend audit engine is closed-source and this repo is only the frontend. The 'Audit Logging' capability typically implies the generation and storage of logs. The evidence_refs point to README.md (marketing) and api:project (metadata). There is no code evidence in this repository that generates or stores audit logs; it only displays them via API. Claiming 'partial' coverage based solely on a UI view of logs generated by proprietary software is misleading for an architecture audit where the core logic is missing. | [high] Similar to Audit Logging, the passport notes 'Implementation details are in the closed-source backend.' The frontend only likely plays back recordings. Claiming support for 'Recording' based on a frontend that consumes recording data from a black-box backend is an overstatement of the repository's capability. The evidence is only README.md. | [medium] The passport claims support for RDP, SSH, VNC, Telnet, HTTP. The evidence is README.md. The package.json shows dependencies like 'guacamole-common-js' and 'xterm', which are client-side libraries for rendering/displaying these protocols via a gateway (likely Guacamole). However, the actual protocol handling/gateway logic is in the closed-source backend. This repository does not implement the gateway; it implements the client UI. Claiming 'Gateway' capability is technically incorrect for a frontend-only repo. | [medium] The interfaces_detail section lists MQTT with evidence_status 'unknown'. However, the adaptation_effort_hours assumptions state 'The closed-source backend can be configured to output audit events to an MQTT broker...'. This is an assumption about the external backend, not a capability of this frontend repository. The passport conflates the capabilities of the entire system (backend+frontend) with the specific repository being audited."
+  },
+  "revision": "a43c7d83519bd9af3a80e3769f96e178aff9d29c",
+  "description": "Next Terminal is a bastion host and session auditing system supporting RDP, SSH, VNC, Telnet, and HTTP. It provides session recording, replay, and access control for compliance. Note that as of v2.0.0, the backend code is proprietary/closed-source, while this repository contains the frontend client.",
+  "interfaces_detail": [
+    {
+      "name": "REST API",
+      "protocol": "HTTP/HTTPS",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "Audit Event Stream (MQTT)",
+      "protocol": "MQTT",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "unknown"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires backend service (closed-source v2.0.0+ binary or container) for core functionality",
+    "Frontend runs in modern web browsers"
+  ],
+  "runtime": [
+    "Node.js (frontend build)",
+    "Browser"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No source code for the actual audit log generation engine (backend is closed-source).",
+    "No MQTT client implementation visible in this repository; required interface must be built or proxied.",
+    "Tamper-evidence mechanisms (e.g., cryptographic signing of logs) are not evidenced in the frontend code."
+  ],
+  "risks": [
+    "Backend is closed-source, limiting full security audit and customization of the core audit engine.",
+    "Dependency on proprietary vendor for updates and bug fixes.",
+    "Frontend-only visibility means critical security logic is opaque."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The closed-source backend can be configured to output audit events to an MQTT broker or external sink.",
+      "Integration requires connecting this frontend to the proprietary backend API endpoints.",
+      "MQTT client implementation would need to be added to the frontend or a sidecar proxy."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:59:17+00:00",
+  "stars": 5675,
+  "last_activity": "2026-10-18T10:47:50Z"
+}

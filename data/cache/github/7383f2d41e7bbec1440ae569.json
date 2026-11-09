@@ -1,0 +1,1 @@
+{"path": "repos/oauth2-proxy/oauth2-proxy/contents/pkg/authentication/basic/validator.go?ref=39ec0e19bae0c94c843a68bb1e99ae3166d0d4ed", "data": "package basic\n\n// Validator is a minimal interface for something that can validate a\n// username and password combination.\ntype Validator interface {\n\tValidate(user, password string) bool\n}\n"}

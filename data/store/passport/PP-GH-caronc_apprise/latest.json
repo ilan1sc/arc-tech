@@ -1,0 +1,188 @@
+{
+  "passport_id": "PP-GH-caronc_apprise",
+  "software_name": "caronc/apprise",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/caronc/apprise",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "App Interface & Reporting",
+      "coverage": "none",
+      "notes": "This is a backend notification library/CLI, not a mobile app interface or reporting tool.",
+      "capability_id": "CAP.MOBILE.APP",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Push Notifications",
+      "coverage": "partial",
+      "notes": "Provides the capability to send push notifications to many services (FCM/APNS via plugins like Pushbullet, etc.), but does not implement the FCM/APNS client itself directly in this repo; it relies on external APIs/plugins. It acts as a relay.",
+      "capability_id": "CAP.MOBILE.NOTIFY",
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "api:project@dcbd3858",
+        "README.md@dcbd3858"
+      ]
+    },
+    {
+      "name": "Offline Map Support",
+      "coverage": "none",
+      "notes": "No map or location functionality present.",
+      "capability_id": "CAP.MAP.OFFLINE",
+      "evidence_status": "unknown",
+      "confidence": 0.95,
+      "evidence_refs": []
+    },
+    {
+      "name": "Notification Relay API",
+      "coverage": "partial",
+      "notes": "README mentions 'Apprise API' as a way to relay notifications, but no source code for the API server was included in the excerpts.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@dcbd3858"
+      ]
+    },
+    {
+      "name": "CLI Notification Tool",
+      "coverage": "full",
+      "notes": "CLI tool 'apprise' is explicitly documented and supported.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@dcbd3858"
+      ]
+    },
+    {
+      "name": "Multi-Service Notification Support",
+      "coverage": "full",
+      "notes": "Supports many services via plugins (Octopush, Pushbullet, etc.).",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@dcbd3858",
+        "apprise/plugins/octopush.py@dcbd3858",
+        "apprise/plugins/pushbullet.py@dcbd3858"
+      ]
+    },
+    {
+      "name": "Attachment Handling",
+      "coverage": "partial",
+      "notes": "README mentions handling images and attachments.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@dcbd3858"
+      ]
+    }
+  ],
+  "interfaces": [
+    "Python Library API (python)",
+    "CLI Interface (cli)"
+  ],
+  "dependencies": [
+    "requests",
+    "urllib3",
+    "requests-oauthlib",
+    "click>=5.0",
+    "markdown",
+    "PyYAML",
+    "certifi"
+  ],
+  "license": "bsd-2-clause",
+  "maturity": "stable",
+  "constraints": [
+    "Requires Python runtime (3.9+)"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "Integration requires building a custom mobile app frontend that uses Apprise as a backend notification service.",
+      "Position and diary data must be handled by the mobile app or a separate service; Apprise only handles the final notification dispatch.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Apprise is a push notification library supporting many platforms.",
+      "source_ref": "README.md@dcbd3858",
+      "verified": false
+    },
+    {
+      "claim": "Supports Octopush SMS notifications.",
+      "source_ref": "apprise/plugins/octopush.py@dcbd3858",
+      "verified": true
+    },
+    {
+      "claim": "Supports Pushbullet notifications.",
+      "source_ref": "apprise/plugins/pushbullet.py@dcbd3858",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The artifact claims 'full' coverage for multi-service support, but the notes explicitly state it relies on external APIs/plugins and does not implement FCM/APNS clients directly. Furthermore, the evidence only verifies two specific plugins (Octopush, Pushbullet). Claiming 'full' coverage implies comprehensive implementation of all services, which is contradicted by the 'partial' nature of the relay mechanism and the limited evidence provided for a library supporting 'almost every platform'. | [medium] The claim of 'full' coverage for the CLI tool is based solely on README documentation ('declared'). The rubric requires 'verified' status to be supported by code/test evidence. While the CLI likely exists, the passport does not cite source files (e.g., `apprise/cli.py`) or tests as evidence for this specific capability, relying only on marketing text. | [medium] The claim that attachments are handled is marked as 'declared' based on README text. However, the rubric states that capabilities marked with evidence_status 'verified' or 'declared' must be supported by an excerpt. While the README mentions it, there is no source code or test evidence provided to verify this functionality actually exists in the codebase, making the 'partial' claim weak without technical proof. | [low] The artifact notes that it acts as a relay and does not implement FCM/APNS directly. However, the capability ID `CAP.MOBILE.NOTIFY` might imply direct mobile OS integration. The distinction between 'relay' and 'direct notification' is critical for defense architectures. The current 'partial' label is vague; it should clarify that it supports *sending* to mobile services but does not handle *mobile-side* reception or OS-level push registration."
+  },
+  "revision": "dcbd38584f8a9855f2343d369fd1f664ab06b3a7",
+  "description": "Apprise is a Python library and CLI tool for sending push notifications to a wide variety of services (Telegram, Discord, Slack, SNS, etc.). It does not provide mobile app interfaces, offline map support, or position reporting. It serves as a notification relay/destination.",
+  "interfaces_detail": [
+    {
+      "name": "Python Library API",
+      "protocol": "python",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "CLI Interface",
+      "protocol": "cli",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires Python runtime (3.9+)"
+  ],
+  "runtime": [
+    "Python >=3.9"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No map visualization",
+    "No position reporting logic",
+    "No diary entry management",
+    "No offline capabilities",
+    "No direct FCM/APNS client implementation (relies on plugins/services)"
+  ],
+  "risks": [
+    "License: BSD-2-Clause is permissive but requires attribution.",
+    "Maintenance: High activity, but dependency on many external notification services which may change APIs."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Integration requires building a custom mobile app frontend that uses Apprise as a backend notification service.",
+      "Position and diary data must be handled by the mobile app or a separate service; Apprise only handles the final notification dispatch."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T13:04:52+00:00",
+  "stars": 17735,
+  "last_activity": "2026-11-09T01:45:06Z"
+}

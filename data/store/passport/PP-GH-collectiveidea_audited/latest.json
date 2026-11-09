@@ -1,0 +1,155 @@
+{
+  "passport_id": "PP-GH-collectiveidea_audited",
+  "software_name": "collectiveidea/audited",
+  "version": "5.6",
+  "source": {
+    "repository_url": "https://github.com/collectiveidea/audited",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Audit Logging",
+      "coverage": "partial",
+      "notes": "Provides tamper-evident logging of model changes (CRUD) within a Rails application context. It stores who, what, when, and the diff. It does not natively capture system alerts or non-model events.",
+      "capability_id": "CAP.SEC.AUDIT",
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@dbf84326",
+        "lib/audited.rb@dbf84326",
+        "lib/audited/audit.rb@dbf84326"
+      ]
+    },
+    {
+      "name": "Model Versioning",
+      "coverage": "full",
+      "notes": "Supports retrieving previous versions of records by index or date via `revisions`, `revision(1)`, etc.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@dbf84326"
+      ]
+    },
+    {
+      "name": "User Attribution",
+      "coverage": "full",
+      "notes": "Associates changes with a specific user via `current_user_method` configuration.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@dbf84326",
+        "lib/audited/audit.rb@dbf84326"
+      ]
+    },
+    {
+      "name": "Change Diffing",
+      "coverage": "full",
+      "notes": "Stores `audited_changes` as a hash of old/new values for each attribute.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "lib/audited/audit.rb@dbf84326"
+      ]
+    },
+    {
+      "name": "Audit Commenting",
+      "coverage": "full",
+      "notes": "Allows attaching free-text comments to specific audit entries.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@dbf84326"
+      ]
+    }
+  ],
+  "interfaces": [],
+  "dependencies": [
+    "ActiveRecord (Rails ORM)",
+    "Ruby >= 2.3"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires a relational database with support for text/blob columns (YAML serialization) or JSON/JSONB columns.",
+    "Must be integrated into a Rails application lifecycle."
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 8.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The target system is a Ruby on Rails application using ActiveRecord.",
+      "The 'Audit Event Stream' requirement (MQTT) must be implemented by adding a custom callback in Audited to publish events to an MQTT broker after an audit record is saved.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Audited logs all changes to Rails models including user, action, and changes.",
+      "source_ref": "README.md@dbf84326",
+      "verified": false
+    },
+    {
+      "claim": "Audit model stores auditable, user, action, audited_changes, comment, version, request_uuid, created_at.",
+      "source_ref": "lib/audited/audit.rb@dbf84326",
+      "verified": true
+    },
+    {
+      "claim": "Supports Rails 7.2, 7.1, 7.0, 6.1, 6.0, 5.2.",
+      "source_ref": "README.md@dbf84326",
+      "verified": false
+    },
+    {
+      "claim": "MIT License.",
+      "source_ref": "LICENSE@dbf84326",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The capability 'Model Versioning' is marked as 'declared' with evidence_refs pointing only to README.md. The rubric requires that capabilities marked 'verified' or 'declared' must be supported by an excerpt (README, manifest, source, tests). While the README describes the feature, 'declared' status without code/test verification for a core capability is weak. More critically, the evidence section lists this claim as 'verified: false', creating a contradiction with the passport's internal confidence and status. | [medium] The passport claims license='mit'. The evidence section explicitly lists a claim 'MIT License' with source_ref LICENSE@dbf84326 and verified: false. While the LICENSE file content provided in the excerpts *does* contain MIT text, the evidence audit trail marks it as unverified. This inconsistency must be resolved. | [medium] The capability 'Audit Logging' claims to provide 'tamper-evident logging'. The known_gaps section explicitly states: 'No built-in tamper-proofing (e.g., hashing/chaining) beyond database constraints.' Tamper-evident usually implies cryptographic chaining or similar mechanisms. Claiming 'tamper-evident' in the capability notes while admitting no such mechanism exists is misleading/overstated. | [low] The evidence_refs for User Attribution include README.md and lib/audited/audit.rb. The audit.rb file defines the `user` attribute but the mechanism for *setting* it (via `current_user_method`) is primarily in `lib/audited/auditor.rb` or initializers, which are not cited. The evidence is incomplete."
+  },
+  "revision": "dbf8432604ec97734bcfb3dc6df61f4faa0d1b84",
+  "description": "Audited is a Ruby gem (ORM extension for ActiveRecord) that logs all changes to Rails models. It captures create, update, and destroy actions, storing the user who made the change, the specific attribute changes, comments, and timestamps in a database-backed audit trail. It does not natively support system alerts or non-ORM events without custom integration.",
+  "interfaces_detail": [],
+  "deployment_constraints": [
+    "Requires a relational database with support for text/blob columns (YAML serialization) or JSON/JSONB columns.",
+    "Must be integrated into a Rails application lifecycle."
+  ],
+  "runtime": [
+    "Ruby",
+    "Rails Application"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No native MQTT or message queue integration for event streaming.",
+    "Does not capture system-level alerts, only model-level changes.",
+    "Limited to ActiveRecord ORM; does not support other ORMs natively in current version.",
+    "No built-in tamper-proofing (e.g., hashing/chaining) beyond database constraints."
+  ],
+  "risks": [
+    "YAML serialization of `audited_changes` can be a security risk if untrusted data is stored or deserialized without proper sanitization.",
+    "Database schema changes required (`audits` table).",
+    "Performance overhead on high-write models if not configured carefully."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The target system is a Ruby on Rails application using ActiveRecord.",
+      "The 'Audit Event Stream' requirement (MQTT) must be implemented by adding a custom callback in Audited to publish events to an MQTT broker after an audit record is saved."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:58:26+00:00",
+  "stars": 3497,
+  "last_activity": "2025-11-18T19:05:29Z"
+}

@@ -1,0 +1,173 @@
+{
+  "passport_id": "PP-GH-haierkeys_obsidian-fast-note-sync",
+  "software_name": "haierkeys/obsidian-fast-note-sync",
+  "version": "2.4.0",
+  "source": {
+    "repository_url": "https://github.com/haierkeys/obsidian-fast-note-sync",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Time Synchronization",
+      "coverage": "none",
+      "notes": "The repository is a client-side Obsidian plugin for note synchronization. It does not contain device management logic, NTP/PTP implementations, or time synchronization services required by CAP.DEVICE.SYNC.",
+      "capability_id": "CAP.DEVICE.SYNC",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Real-time File Synchronization",
+      "coverage": "full",
+      "notes": "Core functionality is real-time sync of vault files via WebSocket and REST, including conflict resolution and offline merge.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@1bfb4069",
+        "src/lib/sync/websocket_client.ts@1bfb4069"
+      ]
+    },
+    {
+      "name": "Configuration Synchronization",
+      "coverage": "partial",
+      "notes": "Supports syncing plugin configuration across devices (requires v1.4+).",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@1bfb4069"
+      ]
+    },
+    {
+      "name": "Version History & Restore",
+      "coverage": "full",
+      "notes": "Tracks modification history and allows restoring notes to historical versions.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@1bfb4069"
+      ]
+    },
+    {
+      "name": "Offline Conflict Resolution",
+      "coverage": "partial",
+      "notes": "Automatically merges offline modifications upon reconnection.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.85,
+      "evidence_refs": [
+        "README.md@1bfb4069"
+      ]
+    }
+  ],
+  "interfaces": [
+    "REST API (HTTPS)",
+    "WebSocket API (WSS)"
+  ],
+  "dependencies": [
+    "Obsidian (Plugin Host)",
+    "Fast Note Sync Service (Standalone Server)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires a running 'Fast Note Sync Service' instance",
+    "Client runs within Obsidian app environment"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "The 'Device Management Service' component requires significant custom development to replace the note-sync logic with device registry/health monitoring.",
+      "Time synchronization (CAP.DEVICE.SYNC) is not present and would need to be built from scratch or integrated with an external NTP library.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Project name and description indicate it is an Obsidian note sync plugin.",
+      "source_ref": "api:project@1bfb4069",
+      "verified": false
+    },
+    {
+      "claim": "Version 2.4.0 declared in package.json.",
+      "source_ref": "package.json@1bfb4069",
+      "verified": false
+    },
+    {
+      "claim": "Supports real-time sync, history, and offline merge.",
+      "source_ref": "README.md@1bfb4069",
+      "verified": false
+    },
+    {
+      "claim": "Uses WebSocket for communication with server.",
+      "source_ref": "src/lib/sync/websocket_client.ts@1bfb4069",
+      "verified": true
+    },
+    {
+      "claim": "Requires a standalone server for operation.",
+      "source_ref": "README.md@1bfb4069",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The artifact claims Apache-2.0, but the `package.json` explicitly states `\"license\": \"MIT\"`. The evidence excerpts show an Apache 2.0 LICENSE file, but the package manifest contradicts this. This is a material inconsistency for defense procurement/compliance. | [high] The capability is marked 'verified', but the only code evidence cited (`websocket_client.ts`) proves transport connectivity, not the synchronization logic itself (e.g., conflict resolution, file diffing). The README claims these features, but READMEs are marketing text and do not constitute 'verified' code evidence per the rubric. | [high] The capability relies on the server ('Fast Note Sync Service') for history. The artifact lists dependencies but provides no evidence that the *client* plugin implements or verifies the restore functionality, nor does it provide evidence of the server's capabilities. 'Declared' status based solely on README is insufficient for a 'full' coverage claim in a defense context. | [medium] The claim of 'automatic merge' is based on README text. The rubric requires code/test evidence for verification. While `tests/file-mirror-restore.test.mjs` exists, it tests 'FileHashManager' restoration from mirror, not necessarily the complex conflict resolution logic described in the capability. | [medium] The artifact lists REST API as an interface but provides no schema reference or code evidence for the REST endpoints, unlike the WebSocket API which has a proto reference. This leaves the REST integration undefined."
+  },
+  "revision": "1bfb406966d612a61831462bf381bbcd1c73f334",
+  "description": "A TypeScript-based Obsidian plugin for real-time note synchronization across multiple platforms (Mac, Windows, Android, iOS). It relies on a separate standalone server ('Fast Note Sync Service') and communicates via REST APIs and WebSocket connections. It supports file sync, configuration sync, history tracking, and offline merge capabilities.",
+  "interfaces_detail": [
+    {
+      "name": "REST API",
+      "protocol": "HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "WebSocket API",
+      "protocol": "WSS",
+      "direction": "bidirectional",
+      "schema_ref": "src/pb/v1/sync.proto (referenced in package.json)",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires a running 'Fast Note Sync Service' instance",
+    "Client runs within Obsidian app environment"
+  ],
+  "runtime": [
+    "Node.js (for build/test)",
+    "Browser/WebView (Obsidian Environment)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No device registry management",
+    "No time synchronization (NTP/PTP)",
+    "No health monitoring of hardware devices",
+    "No MQTT support (uses WebSocket/REST)"
+  ],
+  "risks": [
+    "License mismatch: README claims Apache-2.0, but package.json lists MIT.",
+    "High adaptation effort as the domain logic (notes vs devices) is completely different."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The 'Device Management Service' component requires significant custom development to replace the note-sync logic with device registry/health monitoring.",
+      "Time synchronization (CAP.DEVICE.SYNC) is not present and would need to be built from scratch or integrated with an external NTP library."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:55:23+00:00",
+  "stars": 3162,
+  "last_activity": "2026-08-14T17:26:47Z"
+}

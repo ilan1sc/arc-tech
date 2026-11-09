@@ -1,0 +1,1743 @@
+{
+  "component_id": "C-AUDIT-SVC",
+  "queries": [
+    "audit logging",
+    "compliance audit",
+    "audit trail"
+  ],
+  "discovered": [
+    {
+      "provider": "github",
+      "id": "gh:collectiveidea/audited",
+      "full_name": "collectiveidea/audited",
+      "name": "audited",
+      "name_with_namespace": "collectiveidea/audited",
+      "description": "Audited (formerly acts_as_audited) is an ORM extension that logs all changes to your Rails models.",
+      "web_url": "https://github.com/collectiveidea/audited",
+      "star_count": 3497,
+      "last_activity_at": "2025-11-18T19:05:29Z",
+      "default_branch": "main",
+      "topics": [
+        "activerecord",
+        "audit",
+        "audit-log",
+        "audit-trail",
+        "auditing",
+        "rails",
+        "ruby"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit logging",
+      "relevance": 0.7,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:next-terminal/next-terminal",
+      "full_name": "next-terminal/next-terminal",
+      "name": "next-terminal",
+      "name_with_namespace": "next-terminal/next-terminal",
+      "description": "A simple, secure, easy-to-use bastion and session auditing system. Supports RDP, SSH, VNC, Telnet, HTTP, records and replays sessions for auditing and compliance.",
+      "web_url": "https://github.com/next-terminal/next-terminal",
+      "star_count": 5675,
+      "last_activity_at": "2026-10-18T10:47:50Z",
+      "default_branch": "master",
+      "topics": [
+        "audit",
+        "bastion-host",
+        "docker",
+        "golang",
+        "jump-server",
+        "pam",
+        "privileged-access",
+        "rdp",
+        "session-recording",
+        "ssh",
+        "vnc",
+        "zero-trust"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "compliance audit",
+      "relevance": 0.656,
+      "selected": true
+    },
+    {
+      "provider": "github",
+      "id": "gh:django-commons/django-auditlog",
+      "full_name": "django-commons/django-auditlog",
+      "name": "django-auditlog",
+      "name_with_namespace": "django-commons/django-auditlog",
+      "description": "A Django app that keeps a log of changes made to an object.",
+      "web_url": "https://github.com/django-commons/django-auditlog",
+      "star_count": 1390,
+      "last_activity_at": "2026-11-08T14:44:50Z",
+      "default_branch": "master",
+      "topics": [
+        "auditing",
+        "django",
+        "python"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit logging",
+      "relevance": 0.698,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:owen-it/laravel-auditing",
+      "full_name": "owen-it/laravel-auditing",
+      "name": "laravel-auditing",
+      "name_with_namespace": "owen-it/laravel-auditing",
+      "description": "Record the change log from models in Laravel",
+      "web_url": "https://github.com/owen-it/laravel-auditing",
+      "star_count": 3472,
+      "last_activity_at": "2026-11-02T11:32:45Z",
+      "default_branch": "master",
+      "topics": [
+        "audit",
+        "auditing",
+        "eloquent",
+        "history",
+        "laravel",
+        "logging",
+        "lumen",
+        "observer",
+        "record",
+        "revision",
+        "tracking"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit logging",
+      "relevance": 0.666,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:CISOfy/lynis",
+      "full_name": "CISOfy/lynis",
+      "name": "lynis",
+      "name_with_namespace": "CISOfy/lynis",
+      "description": "Lynis - Security auditing tool for Linux, macOS, and UNIX-based systems. Assists with compliance testing (HIPAA/ISO27001/PCI DSS) and system hardening. Agentless, and installation optional.",
+      "web_url": "https://github.com/CISOfy/lynis",
+      "star_count": 16661,
+      "last_activity_at": "2026-09-16T21:41:02Z",
+      "default_branch": "master",
+      "topics": [
+        "auditing",
+        "compliance",
+        "devops",
+        "devops-tools",
+        "gdpr",
+        "hardening",
+        "hipaa",
+        "linux",
+        "pci-dss",
+        "security-audit",
+        "security-hardening",
+        "security-scanner",
+        "security-tools",
+        "security-vulnerability",
+        "shell",
+        "system-hardening",
+        "unix",
+        "vulnerability-assessment",
+        "vulnerability-detection",
+        "vulnerability-scanners"
+      ],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "compliance audit",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:pglombardo/PasswordPusher",
+      "full_name": "pglombardo/PasswordPusher",
+      "name": "PasswordPusher",
+      "name_with_namespace": "pglombardo/PasswordPusher",
+      "description": "🔐   Securely share sensitive information with automatic expiration & deletion after a set number of views or duration.  Track who, what and when with full audit logs.",
+      "web_url": "https://github.com/pglombardo/PasswordPusher",
+      "star_count": 3246,
+      "last_activity_at": "2026-11-09T09:40:27Z",
+      "default_branch": "master",
+      "topics": [
+        "communicate-passwords",
+        "docker-container",
+        "encryption",
+        "file-sharing",
+        "hacktoberfest",
+        "information-technology",
+        "msp",
+        "netsec",
+        "netsec-tools",
+        "password",
+        "password-expiration",
+        "password-pusher",
+        "password-safety",
+        "ruby",
+        "secret",
+        "security",
+        "security-tools",
+        "self-hosted",
+        "upload-file"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "audit logging",
+      "relevance": 0.651,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:trailofbits/skills",
+      "full_name": "trailofbits/skills",
+      "name": "skills",
+      "name_with_namespace": "trailofbits/skills",
+      "description": "Trail of Bits skills for security research, vulnerability detection, and audit workflows",
+      "web_url": "https://github.com/trailofbits/skills",
+      "star_count": 8085,
+      "last_activity_at": "2026-11-06T15:20:09Z",
+      "default_branch": "main",
+      "topics": [
+        "agent-skills"
+      ],
+      "archived": false,
+      "license_key": "cc-by-sa-4.0",
+      "matched_query": "audit trail",
+      "relevance": 0.613,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:cft0808/edict",
+      "full_name": "cft0808/edict",
+      "name": "edict",
+      "name_with_namespace": "cft0808/edict",
+      "description": "🏛️ 三省六部制 · OpenClaw Multi-Agent Orchestration System — 9 specialized AI agents with real-time dashboard, model config, and full audit trails",
+      "web_url": "https://github.com/cft0808/edict",
+      "star_count": 17047,
+      "last_activity_at": "2026-09-28T02:33:22Z",
+      "default_branch": "main",
+      "topics": [
+        "ai-agents",
+        "ai-orchestration",
+        "autonomous-agents",
+        "claude",
+        "dashboard",
+        "kanban",
+        "llm",
+        "multi-agent",
+        "openai",
+        "openclaw",
+        "orchestration",
+        "python",
+        "workflow-automation"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit trail",
+      "relevance": 0.578,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:spatie/laravel-activitylog",
+      "full_name": "spatie/laravel-activitylog",
+      "name": "laravel-activitylog",
+      "name_with_namespace": "spatie/laravel-activitylog",
+      "description": "Log activity inside your Laravel app",
+      "web_url": "https://github.com/spatie/laravel-activitylog",
+      "star_count": 5912,
+      "last_activity_at": "2026-11-06T10:51:18Z",
+      "default_branch": "main",
+      "topics": [
+        "audit",
+        "laravel",
+        "log",
+        "monitoring",
+        "php"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit logging",
+      "relevance": 0.604,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:BetterDB-inc/monitor",
+      "full_name": "BetterDB-inc/monitor",
+      "name": "monitor",
+      "name_with_namespace": "BetterDB-inc/monitor",
+      "description": "Real-time monitoring, slowlog analysis, and audit trails for Valkey and Redis",
+      "web_url": "https://github.com/BetterDB-inc/monitor",
+      "star_count": 1313,
+      "last_activity_at": "2026-11-09T10:55:18Z",
+      "default_branch": "master",
+      "topics": [
+        "dragonfly",
+        "mcp",
+        "mcp-server",
+        "metrics",
+        "monitoring",
+        "observability",
+        "opentelemetry",
+        "prometheus",
+        "redis",
+        "valkey"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "audit trail",
+      "relevance": 0.644,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:MetapriseAI/OrgKernel",
+      "full_name": "MetapriseAI/OrgKernel",
+      "name": "OrgKernel",
+      "name_with_namespace": "MetapriseAI/OrgKernel",
+      "description": "Open-source trust layer for AI agents — cryptographic agent identity (Ed25519), instance-scoped execution tokens, SHA-256 hash-chained audit logging, and enterprise SSO/SCIM federation. The security foundation powering every agent in the Metaprise AURA platform.",
+      "web_url": "https://github.com/MetapriseAI/OrgKernel",
+      "star_count": 2671,
+      "last_activity_at": "2026-07-06T19:46:41Z",
+      "default_branch": "main",
+      "topics": [],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "audit logging",
+      "relevance": 0.615,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:intuitem/ciso-assistant-community",
+      "full_name": "intuitem/ciso-assistant-community",
+      "name": "ciso-assistant-community",
+      "name_with_namespace": "intuitem/ciso-assistant-community",
+      "description": "CISO Assistant is a one-stop-shop GRC platform for Risk Management, AppSec, Compliance & Audit, TPRM, BIA, Privacy, and Reporting. It supports 200+ global frameworks with automatic control mapping, including ISO 27001, NIST CSF, SOC 2, CIS, PCI DSS, NIS2, DORA, GDPR, HIPAA, CMMC, and more.",
+      "web_url": "https://github.com/intuitem/ciso-assistant-community",
+      "star_count": 4606,
+      "last_activity_at": "2026-11-09T12:18:20Z",
+      "default_branch": "main",
+      "topics": [
+        "audit",
+        "automation",
+        "bsi",
+        "cis",
+        "compliance",
+        "cybersecurity",
+        "dora",
+        "ebios-rm",
+        "gdpr",
+        "grc",
+        "isms",
+        "iso27001",
+        "llm",
+        "mcp",
+        "nis2",
+        "nist",
+        "quantification",
+        "risk-management",
+        "security",
+        "soc2"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "compliance audit",
+      "relevance": 0.597,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:mnemox-ai/tradememory-protocol",
+      "full_name": "mnemox-ai/tradememory-protocol",
+      "name": "tradememory-protocol",
+      "name_with_namespace": "mnemox-ai/tradememory-protocol",
+      "description": "Decision audit trail + persistent memory for AI trading agents. Outcome-weighted recall, tamper-evident SHA-256 chain with RFC 3161 anchoring, 20 MCP tools.",
+      "web_url": "https://github.com/mnemox-ai/tradememory-protocol",
+      "star_count": 1442,
+      "last_activity_at": "2026-10-23T17:29:16Z",
+      "default_branch": "master",
+      "topics": [
+        "agentic-trading",
+        "ai-agents",
+        "audit-trail",
+        "claude",
+        "compliance",
+        "crypto",
+        "evolution-engine",
+        "forex",
+        "mcp",
+        "mcp-server",
+        "memory",
+        "mt5",
+        "outcome-weighted-memory",
+        "trading"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit trail",
+      "relevance": 0.621,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:inspec/inspec",
+      "full_name": "inspec/inspec",
+      "name": "inspec",
+      "name_with_namespace": "inspec/inspec",
+      "description": "InSpec: Auditing and Testing Framework",
+      "web_url": "https://github.com/inspec/inspec",
+      "star_count": 3105,
+      "last_activity_at": "2026-11-09T04:09:45Z",
+      "default_branch": "main",
+      "topics": [
+        "audit",
+        "compliance",
+        "devops",
+        "devsec",
+        "inspec",
+        "security",
+        "spec",
+        "tdd",
+        "tdd-utilities",
+        "testing"
+      ],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "compliance audit",
+      "relevance": 0.566,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:iflytek/skillhub",
+      "full_name": "iflytek/skillhub",
+      "name": "skillhub",
+      "name_with_namespace": "iflytek/skillhub",
+      "description": "Self-hosted, open-source agent skill registry for enterprises. Publish & version skill packages, govern with RBAC and audit logs, deploy   on-premise with Docker or Kubernetes.",
+      "web_url": "https://github.com/iflytek/skillhub",
+      "star_count": 5376,
+      "last_activity_at": "2026-11-09T08:25:59Z",
+      "default_branch": "main",
+      "topics": [
+        "agent-framework",
+        "ai-agent",
+        "ai-governance",
+        "ai-infrastructure",
+        "ai-orchestration",
+        "audit-log",
+        "dsh-plugin",
+        "enterprise-ai",
+        "iflytek-astron",
+        "openclaw",
+        "openclaw-skills",
+        "rbac",
+        "skill",
+        "skill-hub",
+        "skill-management",
+        "skill-manager",
+        "skill-registry",
+        "skills",
+        "version-control"
+      ],
+      "archived": false,
+      "license_key": "apache-2.0",
+      "matched_query": "audit logging",
+      "relevance": 0.521,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:paper-trail-gem/paper_trail",
+      "full_name": "paper-trail-gem/paper_trail",
+      "name": "paper_trail",
+      "name_with_namespace": "paper-trail-gem/paper_trail",
+      "description": "Track changes to your rails models",
+      "web_url": "https://github.com/paper-trail-gem/paper_trail",
+      "star_count": 7029,
+      "last_activity_at": "2026-09-25T00:36:55Z",
+      "default_branch": "master",
+      "topics": [
+        "activerecord",
+        "audit",
+        "log",
+        "rails",
+        "ruby"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit trail",
+      "relevance": 0.506,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:nilsteampassnet/TeamPass",
+      "full_name": "nilsteampassnet/TeamPass",
+      "name": "TeamPass",
+      "name_with_namespace": "nilsteampassnet/TeamPass",
+      "description": "Self-hosted collaborative password manager for teams: folder-level access control, AES-256-GCM encryption, LDAP/AD, OAuth2 SSO, audit trail, REST API, browser extension. PHP/MySQL, Docker.",
+      "web_url": "https://github.com/nilsteampassnet/TeamPass",
+      "star_count": 1890,
+      "last_activity_at": "2026-11-09T09:16:01Z",
+      "default_branch": "master",
+      "topics": [
+        "access-control",
+        "audit",
+        "browser-extension",
+        "compliance",
+        "credentials",
+        "docker",
+        "encryption",
+        "ldap",
+        "mysql",
+        "open-source",
+        "passkeys",
+        "password-manager",
+        "password-rotation",
+        "password-sharing",
+        "php",
+        "secrets-management",
+        "self-hosted",
+        "selfhosted",
+        "sso",
+        "team-password-manager"
+      ],
+      "archived": false,
+      "license_key": "gpl-3.0",
+      "matched_query": "compliance audit",
+      "relevance": 0.545,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:HotCakeX/Harden-Windows-Security",
+      "full_name": "HotCakeX/Harden-Windows-Security",
+      "name": "Harden-Windows-Security",
+      "name_with_namespace": "HotCakeX/Harden-Windows-Security",
+      "description": "Harden Windows Safely, Securely using Official Supported Microsoft methods and proper explanation | Always up-to-date and works with the latest build of Windows | Provides tools and Guides for Personal, Enterprise, Government and Military security levels | SLSA Level 3 Compliant for Secure Development and Build Process | Apps Available on MS Store✨",
+      "web_url": "https://github.com/HotCakeX/Harden-Windows-Security",
+      "star_count": 4839,
+      "last_activity_at": "2026-11-08T12:55:54Z",
+      "default_branch": "main",
+      "topics": [
+        "1st-party-security",
+        "applicationcontrol",
+        "audit",
+        "bitlocker",
+        "compliance",
+        "defender",
+        "encryption",
+        "enterprise-security",
+        "firewall-configuration",
+        "harden",
+        "intune",
+        "operation-system-security",
+        "proactive",
+        "security",
+        "security-hardening",
+        "tpm2",
+        "wdac",
+        "windows",
+        "windows11",
+        "windowsdefender"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "compliance audit",
+      "relevance": 0.509,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:trycompai/comp",
+      "full_name": "trycompai/comp",
+      "name": "comp",
+      "name_with_namespace": "trycompai/comp",
+      "description": "AI Native platform to get companies compliant - Vanta & Drata Alternative",
+      "web_url": "https://github.com/trycompai/comp",
+      "star_count": 2089,
+      "last_activity_at": "2026-11-04T15:04:40Z",
+      "default_branch": "main",
+      "topics": [
+        "ai",
+        "audit",
+        "authjs",
+        "compliance",
+        "drata",
+        "gdpr",
+        "iso27001",
+        "nextjs",
+        "open",
+        "open-source",
+        "prisma",
+        "security",
+        "soc2",
+        "t3-stack",
+        "tailwindcss",
+        "turborepo",
+        "vanta",
+        "zod"
+      ],
+      "archived": false,
+      "license_key": "agpl-3.0",
+      "matched_query": "compliance audit",
+      "relevance": 0.509,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:0x6d69636b/windows_hardening",
+      "full_name": "0x6d69636b/windows_hardening",
+      "name": "windows_hardening",
+      "name_with_namespace": "0x6d69636b/windows_hardening",
+      "description": "HardeningKitty and Windows Hardening Settings",
+      "web_url": "https://github.com/0x6d69636b/windows_hardening",
+      "star_count": 2674,
+      "last_activity_at": "2026-10-31T06:28:00Z",
+      "default_branch": "master",
+      "topics": [
+        "audit",
+        "blueteam",
+        "bsi",
+        "checklist",
+        "cis",
+        "compliance",
+        "defense",
+        "hardening",
+        "powershell",
+        "registry",
+        "security",
+        "security-baseline",
+        "sisyphus",
+        "stig",
+        "windows",
+        "windows-10",
+        "windows-11",
+        "windows-hardening",
+        "windows-server"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "compliance audit",
+      "relevance": 0.492,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:libredb/libredb-studio",
+      "full_name": "libredb/libredb-studio",
+      "name": "libredb-studio",
+      "name_with_namespace": "libredb/libredb-studio",
+      "description": "One browser tab for PostgreSQL, MySQL, Oracle, SQL Server, MongoDB, Redis, SQLite, Couchbase, ClickHouse, Druid, DuckDB, Turso and more. An open-source SQL IDE with SSO, audit trail and AI-assisted queries MIT licensed, with nothing held back behind an enterprise wall.",
+      "web_url": "https://github.com/libredb/libredb-studio",
+      "star_count": 1323,
+      "last_activity_at": "2026-11-09T03:16:10Z",
+      "default_branch": "main",
+      "topics": [
+        "cassandra",
+        "clickhouse",
+        "couchbase",
+        "database",
+        "druid",
+        "elasticsearch",
+        "good-first-issue",
+        "hacktoberfest",
+        "mariadb",
+        "mongodb",
+        "mssql",
+        "mysql",
+        "oracle",
+        "postgresql",
+        "redis",
+        "self-hosted",
+        "sql",
+        "sql-editor",
+        "sqlite",
+        "trino"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit trail",
+      "relevance": 0.513,
+      "selected": false
+    },
+    {
+      "id": 84322877,
+      "name": "Compliance Auditor",
+      "name_with_namespace": "JayRiggins / Compliance Auditor",
+      "description": "An enterprise-grade, scheduled policy enforcement engine built for GitLab instances. This platform programmatically audits entire organizational hierarchies to identify security drift and automatically apply self-healing remediation to non-compliant repositories.",
+      "web_url": "https://gitlab.com/jayriggins/compliance-auditor",
+      "star_count": 0,
+      "last_activity_at": "2026-07-16T15:53:46.685Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.725,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:sharpdeveye/maestro",
+      "full_name": "sharpdeveye/maestro",
+      "name": "maestro",
+      "name_with_namespace": "sharpdeveye/maestro",
+      "description": "Workflow fluency for AI coding agents. 1 core skill · 25 commands · 7 domain references · memory layer · audit trail — works across Cursor, Claude Code, Gemini CLI, Copilot, and 6 more.",
+      "web_url": "https://github.com/sharpdeveye/maestro",
+      "star_count": 598,
+      "last_activity_at": "2026-04-29T12:33:00Z",
+      "default_branch": "main",
+      "topics": [
+        "agent-orchestration",
+        "ai",
+        "ai-agents",
+        "ai-workflows",
+        "claude-code",
+        "codex",
+        "copilot",
+        "cursor",
+        "developer-tools",
+        "gemini",
+        "open-source",
+        "prompt-engineering",
+        "skills"
+      ],
+      "archived": false,
+      "license_key": "mit",
+      "matched_query": "audit trail",
+      "relevance": 0.514,
+      "selected": false
+    },
+    {
+      "provider": "github",
+      "id": "gh:MengMengCode/VoCat",
+      "full_name": "MengMengCode/VoCat",
+      "name": "VoCat",
+      "name_with_namespace": "MengMengCode/VoCat",
+      "description": "Vocat is an open-source web control panel and engineering toolkit for Quectel EC20/EC25-class cellular modems. It combines modem discovery, live radio status, AT and USSD terminals, SMS, WiFi Calling, eSIM management, network selection, proxy routing, notifications, audit logs, and release automation in one self-contained service.",
+      "web_url": "https://github.com/MengMengCode/VoCat",
+      "star_count": 1335,
+      "last_activity_at": "2026-11-07T14:47:14Z",
+      "default_branch": "master",
+      "topics": [],
+      "archived": false,
+      "license_key": "noassertion",
+      "matched_query": "audit logging",
+      "relevance": 0.484,
+      "selected": false
+    },
+    {
+      "id": 86672471,
+      "name": "areas",
+      "name_with_namespace": "Eazy World / areas",
+      "description": "Areas (EazyWorld fork): audit logging for removals/owner changes",
+      "web_url": "https://gitlab.com/eazy-world/areas",
+      "star_count": 0,
+      "last_activity_at": "2026-10-03T16:05:57.714Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.696,
+      "selected": false
+    },
+    {
+      "id": 86189404,
+      "name": "ai-crawler-audit",
+      "name_with_namespace": "Edgar Ortega / ai-crawler-audit",
+      "description": "Audit AI-crawler traffic in web server access logs: classify, verify identity via FCrDNS, check robots.txt compliance, and generate blocking config.",
+      "web_url": "https://gitlab.com/EdgarOrtegaRamirez/ai-crawler-audit",
+      "star_count": 0,
+      "last_activity_at": "2026-09-11T03:20:19.722Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.696,
+      "selected": false
+    },
+    {
+      "id": 74674196,
+      "name": "acceptance-harness",
+      "name_with_namespace": "Nkosi Felix / acceptance-harness",
+      "description": "A portable acceptance test harness for message-processing domains, built with Java 17 and Spring Boot. It models a minimal DDD flow—normalize → enrich → persist—using deterministic, synthetic fixtures and zero external dependencies. Designed for air-gapped, IL4/IL5 environments, the harness runs in under 30 seconds and produces reproducible, CI/CD-safe outputs.\r\n\r\nIncludes embedded H2 database, Spring Cloud Stream test binder (no Kafka required), and a full validation rubric via RUNBOOK.md and ACCEPTANCE_CRITERIA.md. Ideal for teams in compliance-heavy environments who need fast, auditable proof of contract adherence without SaaS reliance.\r\n\r\nArtifacts include fixture validators, Mermaid diagrams, CI config, and acceptance screenshots. Extensible via domain events, repository interfaces, and validation specs.",
+      "web_url": "https://gitlab.com/ZorillaTrace/acceptance-harness",
+      "star_count": 1,
+      "last_activity_at": "2026-08-12T00:02:12.882Z",
+      "default_branch": "feat/acceptance-harness-seed",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.614,
+      "selected": false
+    },
+    {
+      "id": 87111058,
+      "name": "OBLIQ-Website",
+      "name_with_namespace": "OBLIQ-in / OBLIQ-Website",
+      "description": "OBLIQ.in is an audit and compliance workflow platform for small and mid-sized CA firms. It helps firms centralize client documents, assign and track audit tasks, manage reviews and corrections, monitor pending work, and maintain a clear audit trail of every important action.",
+      "web_url": "https://gitlab.com/Obliq-in/OBLIQ-Website",
+      "star_count": 0,
+      "last_activity_at": "2026-10-01T08:26:34.630Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.63,
+      "selected": false
+    },
+    {
+      "id": 85158155,
+      "name": "ansible-scap-compliance",
+      "name_with_namespace": "GitOps / ansible-scap-compliance",
+      "description": "Ansible role to run OpenSCAP XCCDF audits and optional remediation. SCAP content and profiles are based on the ComplianceAsCode project.",
+      "web_url": "https://gitlab.com/ilkatf/ansible-scap-compliance",
+      "star_count": 0,
+      "last_activity_at": "2026-08-08T19:23:48.069Z",
+      "default_branch": "main",
+      "topics": [
+        "ANSSI",
+        "ARM64",
+        "AlmaLinux",
+        "CIS",
+        "Cloud-Init",
+        "ansible",
+        "debian",
+        "hardening",
+        "molecule",
+        "openscap"
+      ],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.618,
+      "selected": false
+    },
+    {
+      "id": 86198617,
+      "name": "dark-pattern-crawler",
+      "name_with_namespace": "Edgar Ortega / dark-pattern-crawler",
+      "description": "Headless-browser crawler and compliance auditor for deceptive UX (dark pattern) detection",
+      "web_url": "https://gitlab.com/EdgarOrtegaRamirez/dark-pattern-crawler",
+      "star_count": 0,
+      "last_activity_at": "2026-09-11T13:52:12.810Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.612,
+      "selected": false
+    },
+    {
+      "id": 70402481,
+      "name": "Crystal Forge",
+      "name_with_namespace": "Crystal Forge / Crystal Forge",
+      "description": "Crystal Forge builds secure, verifiable software ecosystems by embedding compliance, integrity, and trust into the entire lifecycle—from development to deployment. We empower organizations to evolve DevSecOps into a system of continuous assurance, where every component is provable, auditable, aligned with policy, and mapped directly to required security frameworks.",
+      "web_url": "https://gitlab.com/crystal-forge/crystal-forge",
+      "star_count": 12,
+      "last_activity_at": "2026-11-07T16:45:20.379Z",
+      "default_branch": "dev",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.535,
+      "selected": false
+    },
+    {
+      "id": 70526045,
+      "name": "ciso-assistant-community",
+      "name_with_namespace": "Abderrahmane Smimite / ciso-assistant-community",
+      "description": "CISO Assistant is a one-stop-shop for GRC, covering Risk, AppSec, Compliance/Audit Management, Privacy and supporting +90 frameworks worldwide with auto-mapping: NIST CSF, ISO 27001, SOC2, CIS, PCI DSS, NIS2, CMMC, PSPF, GDPR, HIPAA, and more. This is a mirror and the main repo is on Github.",
+      "web_url": "https://gitlab.com/smimite/ciso-assistant-community",
+      "star_count": 1,
+      "last_activity_at": "2025-06-06T11:27:24.704Z",
+      "default_branch": "main",
+      "topics": [
+        "AppSec",
+        "Compliance",
+        "cybersecurity",
+        "gdpr",
+        "governance",
+        "grc",
+        "risk management"
+      ],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.576,
+      "selected": false
+    },
+    {
+      "id": 78293163,
+      "name": "aws-gitlab-lab",
+      "name_with_namespace": "Mike Fernandez / aws-gitlab-lab",
+      "description": "A fully automated 13-stage DevSecOps CI/CD pipeline that integrates security,\r\ncompliance, and cloud-native deployment using GitLab CI and Amazon EKS.\r\n\r\nThe pipeline demonstrates real-world DevSecOps practices including:\r\n\r\n• SAST, dependency, container, IaC, and Kubernetes manifest scanning  \r\n• SBOM generation (CycloneDX)  \r\n• Automated POA&M creation mapped to NIST controls  \r\n• Evidence packaging for compliance audits  \r\n• Secure image push to Amazon ECR  \r\n• Deployment and validation on Amazon EKS  \r\n• Full run-to-completion behavior (lab mode) with findings documented rather than blocking\r\n\r\nThis project showcases an end-to-end secure software supply chain workflow suitable for:\r\ncloud engineering, DevOps, cybersecurity, and compliance automation demonstrations.\r\n",
+      "web_url": "https://gitlab.com/mfernandez76/aws-gitlab-lab",
+      "star_count": 1,
+      "last_activity_at": "2026-02-08T20:56:35.096Z",
+      "default_branch": "main",
+      "topics": [
+        "Compliance",
+        "NIST",
+        "SBOM",
+        "automation",
+        "aws",
+        "cicd",
+        "cloud-native",
+        "devsecops",
+        "docker",
+        "eks.kubernetes",
+        "gitlab-ci",
+        "iac",
+        "security-scanning",
+        "terraform"
+      ],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.571,
+      "selected": false
+    },
+    {
+      "id": 85538532,
+      "name": "Black Kyte 17",
+      "name_with_namespace": "Black Kyte17 / Black Kyte 17",
+      "description": "Black Kyte 17 is a cybersecurity and compliance management platform that helps organizations manage ISO certifications, risk assessments, audits, and security frameworks. We support standards such as ISO 27001, CMMC, Cyber Essentials, and SOC compliance while simplifying documentation, tracking, and compliance processes through a centralized solution design to improve security readiness.\r\nWebsite - https://blackkyte17.com/\r\n",
+      "web_url": "https://gitlab.com/black-kyte17/black-kyte-17",
+      "star_count": 0,
+      "last_activity_at": "2026-08-19T06:53:38.980Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.583,
+      "selected": false
+    },
+    {
+      "id": 86093288,
+      "name": "am-runtime",
+      "name_with_namespace": "Selene / am-runtime",
+      "description": "Local-first continuity runtime with durable memory, approvals, audit trails, and bounded execution.",
+      "web_url": "https://gitlab.com/am.statementforge/am-runtime",
+      "star_count": 0,
+      "last_activity_at": "2026-09-27T02:33:22.772Z",
+      "default_branch": "main",
+      "topics": [
+        "agent-runtime",
+        "ai-agents",
+        "approval-workflow",
+        "audit-trail",
+        "fastapi",
+        "local-first",
+        "sqlite"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.575,
+      "selected": false
+    },
+    {
+      "id": 86555111,
+      "name": "django_snippe",
+      "name_with_namespace": "CLEVEN GODSON / django_snippe",
+      "description": "Plug-and-play Django integration for Snippe payments — mobile money, cards & QR with webhooks, signals, and built-in audit logging ⚡",
+      "web_url": "https://gitlab.com/clevengodsontech/django_snippe",
+      "star_count": 0,
+      "last_activity_at": "2026-09-16T20:36:40.669Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.569,
+      "selected": false
+    },
+    {
+      "id": 85252041,
+      "name": "quantlib",
+      "name_with_namespace": "Nsamba Ali / quantlib",
+      "description": "QuantLib is a comprehensive, offline-first School Library Inventory & Analytics System. It modernizes spreadsheet-based book tracking into a robust desktop application tailored for school librarians. QuantLib provides end-to-end inventory tracking, issue/checkout management, incident logging, audit trails, and data visualization with built-in database encryption.",
+      "web_url": "https://gitlab.com/alinsamba/quantlib",
+      "star_count": 0,
+      "last_activity_at": "2026-08-31T21:27:12.961Z",
+      "default_branch": "main",
+      "topics": [
+        "Prisma ORM",
+        "electron",
+        "js",
+        "react",
+        "sqlite",
+        "typescript",
+        "vite"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.569,
+      "selected": false
+    },
+    {
+      "id": 84311039,
+      "name": "ai-provider-gateway",
+      "name_with_namespace": "belkacem kerbani / ai-provider-gateway",
+      "description": "AI Provider Gateway — transparent reverse proxy with multi-provider adapters, key rotation, and audit logging",
+      "web_url": "https://gitlab.com/kerbanibelkacemp4m/ai-provider-gateway",
+      "star_count": 0,
+      "last_activity_at": "2026-07-10T18:27:49.532Z",
+      "default_branch": "master",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.562,
+      "selected": false
+    },
+    {
+      "id": 84810218,
+      "name": "Zone Forge",
+      "name_with_namespace": "Magnolia Soft / Zone Forge",
+      "description": "Source-available DNS management console for BIND 9. Manage zones and records (A, AAAA, MX, TXT, CNAME, SRV, CAA, SSHFP, SOA) through a modern web UI, with TSIG key management, live dig lookup, nsupdate-pushed changes, full audit logging, multi-user roles, and OAuth. Ships with Stripe billing built in so you can run it as managed DNS hosting — or self-host it free under BSL 1.1. Built with PHP (Slim 4), Vue 3, and Doctrine.",
+      "web_url": "https://gitlab.com/magnolia-soft/zone-forge",
+      "star_count": 0,
+      "last_activity_at": "2026-08-15T01:17:47.091Z",
+      "default_branch": "main",
+      "topics": [
+        "bind9; dns; dns server",
+        "dns-management",
+        "nsupdate",
+        "self-hosted",
+        "slim-framework",
+        "vue.js"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.553,
+      "selected": false
+    },
+    {
+      "id": 85947446,
+      "name": "ai-workflow-backend",
+      "name_with_namespace": "Nicolas Pedernera / ai-workflow-backend",
+      "description": "AI-assisted liquidation risk engine for leveraged trading positions — deterministic financial math, local AI (Ollama), and on-chain audit trail",
+      "web_url": "https://gitlab.com/Nicolas-Pedernera/ai-workflow-backend",
+      "star_count": 0,
+      "last_activity_at": "2026-09-02T05:12:33.993Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.548,
+      "selected": false
+    },
+    {
+      "id": 85100310,
+      "name": "GovernanceFabric",
+      "name_with_namespace": "Roxanne Ardary / GovernanceFabric",
+      "description": "GovernanceFabric is an open source AI governance specification that provides a structured framework for policy enforcement, continuous monitoring, audit compliance, and accountable AI operations. It enables organizations to build trust into intelligent systems through transparent governance, risk management, evidence tracking, and human oversight.  https://roxanneardary.com/governancefabric/",
+      "web_url": "https://gitlab.com/Roxanne_Ardary/governancefabric",
+      "star_count": 0,
+      "last_activity_at": "2026-09-23T09:42:17.309Z",
+      "default_branch": "main",
+      "topics": [
+        "AGPL V3+",
+        "AI",
+        "SBL",
+        "SDD",
+        "agent-governance",
+        "ai-governance",
+        "governance",
+        "open-source",
+        "open-source-licenses",
+        "roxanneardary",
+        "spec-driven-development",
+        "specification",
+        "specification-branding-license"
+      ],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.547,
+      "selected": false
+    },
+    {
+      "id": 87086990,
+      "name": "llm-diff",
+      "name_with_namespace": "Matt Busel / llm-diff",
+      "description": "Diff and version LLM outputs: semantic diff, a version store and lineage tracking across prompt iterations, for audit trails. Rust.",
+      "web_url": "https://gitlab.com/mattbusel/llm-diff",
+      "star_count": 0,
+      "last_activity_at": "2026-10-21T23:10:53.445Z",
+      "default_branch": "main",
+      "topics": [
+        "llm",
+        "llm-evaluation",
+        "rust",
+        "versioning"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.543,
+      "selected": false
+    },
+    {
+      "id": 84779536,
+      "name": "team-pay",
+      "name_with_namespace": "Кобзарёв Михаил / team-pay",
+      "description": "A microservice-based fintech platform for team budget management with idempotent transactions, audit logging, and asynchronous report generation",
+      "web_url": "https://gitlab.com/Mike163mike/team-pay",
+      "star_count": 0,
+      "last_activity_at": "2026-10-06T15:13:29.934Z",
+      "default_branch": "main",
+      "topics": [
+        "docker",
+        "docker-compose",
+        "gitlab-ci",
+        "java",
+        "postgresql",
+        "spring"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.538,
+      "selected": false
+    },
+    {
+      "id": 79990909,
+      "name": "visiban",
+      "name_with_namespace": "visiban / visiban",
+      "description": "Self-hosted Kanban board with swimlane rows and automatic card movement tracking. Built with Django, Django REST Framework, React, and PostgreSQL. Lightweight alternative to Trello and Smartsheet — focused on pipeline visibility per customer or project, with a full audit trail of every card movement between stages. Features: swimlane-based board layout, drag-and-drop cards, real-time updates via WebSockets, groups and subgroups with inherited RBAC, per-trigger notification preferences, OAuth login (Google, GitHub, GitLab), analytics (velocity, dwell time, bottlenecks), and production-ready Docker Compose with Nginx and Let's Encrypt TLS.",
+      "web_url": "https://gitlab.com/visiban/visiban",
+      "star_count": 1,
+      "last_activity_at": "2026-11-09T00:42:19.137Z",
+      "default_branch": "main",
+      "topics": [
+        "django",
+        "kanban",
+        "open-source",
+        "pipeline-tracking",
+        "project-management",
+        "react",
+        "self-hosted",
+        "swimlane"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.514,
+      "selected": false
+    },
+    {
+      "id": 86027530,
+      "name": "adversarial-validator-intake",
+      "name_with_namespace": "Hesham Mashhour / adversarial-validator-intake",
+      "description": "Public, outcome-blind owner nomination intake and audit trail for BetterBrainLab adversarial-validator M6 field evidence.",
+      "web_url": "https://gitlab.com/TheFamousHesham/adversarial-validator-intake",
+      "star_count": 0,
+      "last_activity_at": "2026-09-04T03:56:47.826Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.532,
+      "selected": false
+    },
+    {
+      "id": 85935683,
+      "name": "KEYS-CRM",
+      "name_with_namespace": "KEYS IT-group / KEYS-CRM",
+      "description": "Secure desktop CRM for centralized client records, program enrollment, case management, audit logging, reporting, and data export. Built with C#, WPF, .NET, and Entity Framework Core for a multi-program non-profit environment.",
+      "web_url": "https://gitlab.com/keys-it-group/KEYS-CRM",
+      "star_count": 0,
+      "last_activity_at": "2026-09-01T17:45:40.349Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.531,
+      "selected": false
+    },
+    {
+      "id": 86728698,
+      "name": "libredb-studio",
+      "name_with_namespace": "libredb / libredb-studio",
+      "description": "GitHub Mirror! One browser tab for PostgreSQL, MySQL, Oracle, SQL Server, MongoDB, Redis, SQLite, Couchbase, ClickHouse, Druid, DuckDB, Turso and more. An open-source SQL IDE with SSO, audit trail and AI-assisted queries MIT licensed, with nothing held back behind an enterprise wall.",
+      "web_url": "https://gitlab.com/libredb/libredb-studio",
+      "star_count": 0,
+      "last_activity_at": "2026-09-22T10:33:46.577Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.525,
+      "selected": false
+    },
+    {
+      "id": 88119366,
+      "name": "visiban",
+      "name_with_namespace": "Mike Bartosek / visiban",
+      "description": "Self-hosted Kanban board with swimlane rows and automatic card movement tracking. Built with Django, Django REST Framework, React, and PostgreSQL. Lightweight alternative to Trello and Smartsheet — focused on pipeline visibility per customer or project, with a full audit trail of every card movement between stages. Features: swimlane-based board layout, drag-and-drop cards, real-time updates via WebSockets, groups and subgroups with inherited RBAC, per-trigger notification preferences, OAuth login (Google, GitHub, GitLab), analytics (velocity, dwell time, bottlenecks), and production-ready Docker Compose with Nginx and Let's Encrypt TLS.",
+      "web_url": "https://gitlab.com/mikebartosek/visiban",
+      "star_count": 0,
+      "last_activity_at": "2026-10-26T18:50:43.405Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.514,
+      "selected": false
+    },
+    {
+      "id": 88596296,
+      "name": "yaguarete-project",
+      "name_with_namespace": "yaguarete-group / yaguarete-project",
+      "description": "Sistema real de gestión de licencias, equipos, clientes y usuarios, con asignaciones. Monorepo con backend en NestJS + TypeScript, frontend en React + TypeScript (Vite + MUI) y base de datos PostgreSQL. Incluye autenticación JWT con bcrypt, baja lógica en todas las entidades, auditoría de cada cambio por usuario, notificaciones por mail en asignaciones y modificaciones, y API documentada con Swagger.\r\n\r\nReal-world license, equipment, client and user management system with assignment tracking. Monorepo: NestJS + TypeScript backend, React + TypeScript SPA (Vite + MUI) and PostgreSQL. Features JWT authentication with bcrypt, soft delete on every entity, per-user audit logging of all changes, email notifications on assignments and updates, and a Swagger-documented REST API.",
+      "web_url": "https://gitlab.com/yaguarete-group/yaguarete-project",
+      "star_count": 0,
+      "last_activity_at": "2026-11-09T02:53:07.386Z",
+      "default_branch": "main",
+      "topics": [
+        "JWT Authentication",
+        "audit-log",
+        "bcrypt",
+        "material-ui",
+        "monorepo",
+        "nestjs",
+        "nodemailer",
+        "password",
+        "postgresql",
+        "react",
+        "rest-api",
+        "soft-delete",
+        "swagger",
+        "typeorm",
+        "typescript",
+        "vite"
+      ],
+      "provider": "gitlab",
+      "matched_query": "audit logging",
+      "relevance": 0.507,
+      "selected": false
+    },
+    {
+      "id": 88621045,
+      "name": "nextgen-risk-register",
+      "name_with_namespace": "Purvansh Bhatt / nextgen-risk-register",
+      "description": "Next-generation GRC risk register: dual-persona UI, 5x5 + FAIR Monte Carlo scoring, evidence-weighted controls, hash-chained audit trail",
+      "web_url": "https://gitlab.com/purvansh95b/nextgen-risk-register",
+      "star_count": 0,
+      "last_activity_at": "2026-11-07T01:02:06.775Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "audit trail",
+      "relevance": 0.506,
+      "selected": false
+    },
+    {
+      "id": 84181762,
+      "name": "Brain Connect AI",
+      "name_with_namespace": "Arpita Das / Brain Connect AI",
+      "description": "Brain Connect AI: Diagnostic & Treatment Planning Agent\r\n\r\nPROBLEM\r\nDiagnostic errors affect 12M Americans annually. Medical imaging analysis is time-consuming and treatment planning lacks personalization.\r\n\r\nSOLUTION\r\nA multi-agent system assisting physicians by analyzing medical images, patient history, and latest research to suggest diagnoses and personalized treatment plans.\r\n\r\nKEY FEATURES\r\nAgent Specialization (Imaging, Clinical, Literature, Guidelines); Consensus Mechanism for diagnosis confidence; Audit Trail for regulatory compliance.",
+      "web_url": "https://gitlab.com/PoppenspelAdvies/brain-connect-ai",
+      "star_count": 0,
+      "last_activity_at": "2026-07-07T06:52:17.345Z",
+      "default_branch": "main",
+      "topics": [],
+      "provider": "gitlab",
+      "matched_query": "compliance audit",
+      "relevance": 0.475,
+      "selected": false
+    }
+  ],
+  "passports": [
+    {
+      "passport_id": "PP-GH-collectiveidea_audited",
+      "software_name": "collectiveidea/audited",
+      "version": "5.6",
+      "source": {
+        "repository_url": "https://github.com/collectiveidea/audited",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Audit Logging",
+          "coverage": "partial",
+          "notes": "Provides tamper-evident logging of model changes (CRUD) within a Rails application context. It stores who, what, when, and the diff. It does not natively capture system alerts or non-model events.",
+          "capability_id": "CAP.SEC.AUDIT",
+          "evidence_status": "verified",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "README.md@dbf84326",
+            "lib/audited.rb@dbf84326",
+            "lib/audited/audit.rb@dbf84326"
+          ]
+        },
+        {
+          "name": "Model Versioning",
+          "coverage": "full",
+          "notes": "Supports retrieving previous versions of records by index or date via `revisions`, `revision(1)`, etc.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@dbf84326"
+          ]
+        },
+        {
+          "name": "User Attribution",
+          "coverage": "full",
+          "notes": "Associates changes with a specific user via `current_user_method` configuration.",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@dbf84326",
+            "lib/audited/audit.rb@dbf84326"
+          ]
+        },
+        {
+          "name": "Change Diffing",
+          "coverage": "full",
+          "notes": "Stores `audited_changes` as a hash of old/new values for each attribute.",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "lib/audited/audit.rb@dbf84326"
+          ]
+        },
+        {
+          "name": "Audit Commenting",
+          "coverage": "full",
+          "notes": "Allows attaching free-text comments to specific audit entries.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.95,
+          "evidence_refs": [
+            "README.md@dbf84326"
+          ]
+        }
+      ],
+      "interfaces": [],
+      "dependencies": [
+        "ActiveRecord (Rails ORM)",
+        "Ruby >= 2.3"
+      ],
+      "license": "mit",
+      "maturity": "stable",
+      "constraints": [
+        "Requires a relational database with support for text/blob columns (YAML serialization) or JSON/JSONB columns.",
+        "Must be integrated into a Rails application lifecycle."
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 8.0,
+        "confidence": "medium",
+        "assumptions": [
+          "The target system is a Ruby on Rails application using ActiveRecord.",
+          "The 'Audit Event Stream' requirement (MQTT) must be implemented by adding a custom callback in Audited to publish events to an MQTT broker after an audit record is saved.",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "Audited logs all changes to Rails models including user, action, and changes.",
+          "source_ref": "README.md@dbf84326",
+          "verified": false
+        },
+        {
+          "claim": "Audit model stores auditable, user, action, audited_changes, comment, version, request_uuid, created_at.",
+          "source_ref": "lib/audited/audit.rb@dbf84326",
+          "verified": true
+        },
+        {
+          "claim": "Supports Rails 7.2, 7.1, 7.0, 6.1, 6.0, 5.2.",
+          "source_ref": "README.md@dbf84326",
+          "verified": false
+        },
+        {
+          "claim": "MIT License.",
+          "source_ref": "LICENSE@dbf84326",
+          "verified": false
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [high] The capability 'Model Versioning' is marked as 'declared' with evidence_refs pointing only to README.md. The rubric requires that capabilities marked 'verified' or 'declared' must be supported by an excerpt (README, manifest, source, tests). While the README describes the feature, 'declared' status without code/test verification for a core capability is weak. More critically, the evidence section lists this claim as 'verified: false', creating a contradiction with the passport's internal confidence and status. | [medium] The passport claims license='mit'. The evidence section explicitly lists a claim 'MIT License' with source_ref LICENSE@dbf84326 and verified: false. While the LICENSE file content provided in the excerpts *does* contain MIT text, the evidence audit trail marks it as unverified. This inconsistency must be resolved. | [medium] The capability 'Audit Logging' claims to provide 'tamper-evident logging'. The known_gaps section explicitly states: 'No built-in tamper-proofing (e.g., hashing/chaining) beyond database constraints.' Tamper-evident usually implies cryptographic chaining or similar mechanisms. Claiming 'tamper-evident' in the capability notes while admitting no such mechanism exists is misleading/overstated. | [low] The evidence_refs for User Attribution include README.md and lib/audited/audit.rb. The audit.rb file defines the `user` attribute but the mechanism for *setting* it (via `current_user_method`) is primarily in `lib/audited/auditor.rb` or initializers, which are not cited. The evidence is incomplete."
+      },
+      "revision": "dbf8432604ec97734bcfb3dc6df61f4faa0d1b84",
+      "description": "Audited is a Ruby gem (ORM extension for ActiveRecord) that logs all changes to Rails models. It captures create, update, and destroy actions, storing the user who made the change, the specific attribute changes, comments, and timestamps in a database-backed audit trail. It does not natively support system alerts or non-ORM events without custom integration.",
+      "interfaces_detail": [],
+      "deployment_constraints": [
+        "Requires a relational database with support for text/blob columns (YAML serialization) or JSON/JSONB columns.",
+        "Must be integrated into a Rails application lifecycle."
+      ],
+      "runtime": [
+        "Ruby",
+        "Rails Application"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No native MQTT or message queue integration for event streaming.",
+        "Does not capture system-level alerts, only model-level changes.",
+        "Limited to ActiveRecord ORM; does not support other ORMs natively in current version.",
+        "No built-in tamper-proofing (e.g., hashing/chaining) beyond database constraints."
+      ],
+      "risks": [
+        "YAML serialization of `audited_changes` can be a security risk if untrusted data is stored or deserialized without proper sanitization.",
+        "Database schema changes required (`audits` table).",
+        "Performance overhead on high-write models if not configured carefully."
+      ],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee (open source)",
+        "adaptation_assumptions": [
+          "The target system is a Ruby on Rails application using ActiveRecord.",
+          "The 'Audit Event Stream' requirement (MQTT) must be implemented by adding a custom callback in Audited to publish events to an MQTT broker after an audit record is saved."
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T12:58:26+00:00",
+      "stars": 3497,
+      "last_activity": "2025-11-18T19:05:29Z"
+    },
+    {
+      "passport_id": "PP-GH-next-terminal_next-terminal",
+      "software_name": "next-terminal/next-terminal",
+      "version": "unknown",
+      "source": {
+        "repository_url": "https://github.com/next-terminal/next-terminal",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Audit Logging",
+          "coverage": "partial",
+          "notes": "The project is explicitly described as a 'session auditing system' with 'records and replays sessions'. However, the core backend logic handling the actual audit log generation and storage is closed-source (v2.0.0+). The frontend exposes access logs via API but does not contain the audit engine itself.",
+          "capability_id": "CAP.SEC.AUDIT",
+          "evidence_status": "declared",
+          "confidence": 0.4,
+          "evidence_refs": [
+            "README.md@a43c7d83",
+            "api:project@a43c7d83"
+          ]
+        },
+        {
+          "name": "Session Recording & Replay",
+          "coverage": "partial",
+          "notes": "Supported for RDP, SSH, VNC, Telnet, HTTP. Implementation details are in the closed-source backend.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.5,
+          "evidence_refs": [
+            "README.md@a43c7d83"
+          ]
+        },
+        {
+          "name": "Access Control / Policy Management",
+          "coverage": "partial",
+          "notes": "Frontend API definitions for access policies (whitelist/blacklist, IP groups, time periods) are visible.",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.7,
+          "evidence_refs": [
+            "src/api/access-policy-api.ts@a43c7d83"
+          ]
+        },
+        {
+          "name": "Multi-Protocol Gateway",
+          "coverage": "partial",
+          "notes": "Supports RDP, SSH, VNC, Telnet, HTTP as per README.",
+          "capability_id": null,
+          "evidence_status": "declared",
+          "confidence": 0.5,
+          "evidence_refs": [
+            "README.md@a43c7d83"
+          ]
+        },
+        {
+          "name": "Web-Based Administration",
+          "coverage": "full",
+          "notes": "This repository is the frontend UI (React/Vite) for managing assets, logs, and policies.",
+          "capability_id": null,
+          "evidence_status": "verified",
+          "confidence": 0.9,
+          "evidence_refs": [
+            "package.json@a43c7d83",
+            "src/api/access-log-api.ts@a43c7d83"
+          ]
+        }
+      ],
+      "interfaces": [
+        "REST API (HTTP/HTTPS)",
+        "Audit Event Stream (MQTT) (MQTT)"
+      ],
+      "dependencies": [
+        "React",
+        "Vite",
+        "Ant Design",
+        "Xterm.js",
+        "Guacamole (for VNC/RDP)"
+      ],
+      "license": "apache-2.0",
+      "maturity": "stable",
+      "constraints": [
+        "Requires backend service (closed-source v2.0.0+ binary or container) for core functionality",
+        "Frontend runs in modern web browsers"
+      ],
+      "adaptation_effort_hours": {
+        "estimate": 40.0,
+        "confidence": "low",
+        "assumptions": [
+          "The closed-source backend can be configured to output audit events to an MQTT broker or external sink.",
+          "Integration requires connecting this frontend to the proprietary backend API endpoints.",
+          "MQTT client implementation would need to be added to the frontend or a sidecar proxy.",
+          "Indicative only; excludes project-level integration"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [
+        {
+          "claim": "Project is a bastion and session auditing system supporting RDP, SSH, VNC, Telnet, HTTP.",
+          "source_ref": "README.md@a43c7d83",
+          "verified": false
+        },
+        {
+          "claim": "Backend code is no longer open source starting with v2.0.0.",
+          "source_ref": "README.md@a43c7d83",
+          "verified": false
+        },
+        {
+          "claim": "Frontend exposes access log APIs and access policy management APIs.",
+          "source_ref": "src/api/access-log-api.ts@a43c7d83",
+          "verified": true
+        },
+        {
+          "claim": "License is Apache 2.0 for the frontend code.",
+          "source_ref": "LICENSE@a43c7d83",
+          "verified": false
+        }
+      ],
+      "validation": {
+        "status": "pending",
+        "judge_notes": "REVISE: [critical] The evidence_status is marked 'verified' in the evidence array, but the reviewer explicitly notes 'verified: false'. While the LICENSE file exists and contains Apache 2.0 text, the passport claims this applies to the 'frontend code' specifically. The README states the backend is closed-source from v2.0.0+. Without explicit license headers in the source files or a clear statement that the frontend portion is separately licensed under Apache 2.0 (distinct from any potential proprietary backend components), marking it as 'verified' without code-level evidence of the license text in the source files is risky. More importantly, the evidence array item has 'verified: false', contradicting the capability's reliance on this fact if used for compliance. | [high] The passport acknowledges the backend audit engine is closed-source and this repo is only the frontend. The 'Audit Logging' capability typically implies the generation and storage of logs. The evidence_refs point to README.md (marketing) and api:project (metadata). There is no code evidence in this repository that generates or stores audit logs; it only displays them via API. Claiming 'partial' coverage based solely on a UI view of logs generated by proprietary software is misleading for an architecture audit where the core logic is missing. | [high] Similar to Audit Logging, the passport notes 'Implementation details are in the closed-source backend.' The frontend only likely plays back recordings. Claiming support for 'Recording' based on a frontend that consumes recording data from a black-box backend is an overstatement of the repository's capability. The evidence is only README.md. | [medium] The passport claims support for RDP, SSH, VNC, Telnet, HTTP. The evidence is README.md. The package.json shows dependencies like 'guacamole-common-js' and 'xterm', which are client-side libraries for rendering/displaying these protocols via a gateway (likely Guacamole). However, the actual protocol handling/gateway logic is in the closed-source backend. This repository does not implement the gateway; it implements the client UI. Claiming 'Gateway' capability is technically incorrect for a frontend-only repo. | [medium] The interfaces_detail section lists MQTT with evidence_status 'unknown'. However, the adaptation_effort_hours assumptions state 'The closed-source backend can be configured to output audit events to an MQTT broker...'. This is an assumption about the external backend, not a capability of this frontend repository. The passport conflates the capabilities of the entire system (backend+frontend) with the specific repository being audited."
+      },
+      "revision": "a43c7d83519bd9af3a80e3769f96e178aff9d29c",
+      "description": "Next Terminal is a bastion host and session auditing system supporting RDP, SSH, VNC, Telnet, and HTTP. It provides session recording, replay, and access control for compliance. Note that as of v2.0.0, the backend code is proprietary/closed-source, while this repository contains the frontend client.",
+      "interfaces_detail": [
+        {
+          "name": "REST API",
+          "protocol": "HTTP/HTTPS",
+          "direction": "out",
+          "schema_ref": "",
+          "evidence_status": "verified"
+        },
+        {
+          "name": "Audit Event Stream (MQTT)",
+          "protocol": "MQTT",
+          "direction": "in",
+          "schema_ref": "",
+          "evidence_status": "unknown"
+        }
+      ],
+      "deployment_constraints": [
+        "Requires backend service (closed-source v2.0.0+ binary or container) for core functionality",
+        "Frontend runs in modern web browsers"
+      ],
+      "runtime": [
+        "Node.js (frontend build)",
+        "Browser"
+      ],
+      "tests_present": true,
+      "known_gaps": [
+        "No source code for the actual audit log generation engine (backend is closed-source).",
+        "No MQTT client implementation visible in this repository; required interface must be built or proxied.",
+        "Tamper-evidence mechanisms (e.g., cryptographic signing of logs) are not evidenced in the frontend code."
+      ],
+      "risks": [
+        "Backend is closed-source, limiting full security audit and customization of the core audit engine.",
+        "Dependency on proprietary vendor for updates and bug fixes.",
+        "Frontend-only visibility means critical security logic is opaque."
+      ],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee (open source)",
+        "adaptation_assumptions": [
+          "The closed-source backend can be configured to output audit events to an MQTT broker or external sink.",
+          "Integration requires connecting this frontend to the proprietary backend API endpoints.",
+          "MQTT client implementation would need to be added to the frontend or a sidecar proxy."
+        ]
+      },
+      "is_custom_development": false,
+      "analysis_timestamp": "2026-11-09T12:59:17+00:00",
+      "stars": 5675,
+      "last_activity": "2026-10-18T10:47:50Z"
+    },
+    {
+      "passport_id": "PP-CUSTOM-C-AUDIT-SVC",
+      "software_name": "Custom development: Audit & Compliance Service",
+      "version": "n/a",
+      "source": {
+        "repository_url": "",
+        "homepage_url": ""
+      },
+      "capabilities": [
+        {
+          "name": "Audit Logging",
+          "coverage": "full",
+          "notes": "Built to specification; coverage assumed by design",
+          "capability_id": "CAP.SEC.AUDIT",
+          "evidence_status": "inferred",
+          "confidence": 0.5,
+          "evidence_refs": []
+        }
+      ],
+      "interfaces": [
+        "As specified by Engine 2"
+      ],
+      "dependencies": [],
+      "license": "proprietary (in-house)",
+      "maturity": "unknown",
+      "constraints": [],
+      "adaptation_effort_hours": {
+        "estimate": 0.0,
+        "confidence": "low",
+        "assumptions": [
+          "Build effort estimated by Engine 3, not here"
+        ]
+      },
+      "fit": {
+        "score": null,
+        "hard_requirements_met": null,
+        "gaps": []
+      },
+      "evidence": [],
+      "validation": {
+        "status": "passed",
+        "judge_notes": "Synthetic BUILD baseline; no external claims"
+      },
+      "revision": null,
+      "description": "Represents in-house development when no reusable candidate covers the component.",
+      "interfaces_detail": [],
+      "deployment_constraints": [],
+      "runtime": [],
+      "tests_present": null,
+      "known_gaps": [],
+      "risks": [],
+      "cost_inputs": {
+        "license_pricing_known": true,
+        "license_pricing_note": "no license fee",
+        "adaptation_assumptions": []
+      },
+      "is_custom_development": true,
+      "analysis_timestamp": "2026-11-09T12:59:46+00:00",
+      "stars": null,
+      "last_activity": null
+    }
+  ],
+  "rankings": [
+    {
+      "component_id": "C-AUDIT-SVC",
+      "candidate_id": "PP-GH-collectiveidea_audited",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 0.5,
+        "interface_fit": null,
+        "adaptation_effort": 0.84,
+        "maturity": 1.0,
+        "documentation": 0.8,
+        "operational_fit": 0.9
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": 73.1,
+      "rank": 1,
+      "covered_capabilities": [
+        "CAP.SEC.AUDIT"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "1/1 required capabilities covered; license mit (permissive); maturity stable; unknown: interface_fit",
+      "confidence": "medium"
+    },
+    {
+      "component_id": "C-AUDIT-SVC",
+      "candidate_id": "PP-GH-next-terminal_next-terminal",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 0.5,
+        "interface_fit": 1.0,
+        "adaptation_effort": 0.2,
+        "maturity": 1.0,
+        "documentation": 1.0,
+        "operational_fit": 0.9
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": 69.5,
+      "rank": 2,
+      "covered_capabilities": [
+        "CAP.SEC.AUDIT"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "1/1 required capabilities covered; license apache-2.0 (permissive); maturity stable",
+      "confidence": "medium"
+    },
+    {
+      "component_id": "C-AUDIT-SVC",
+      "candidate_id": "PP-CUSTOM-C-AUDIT-SVC",
+      "eligible": true,
+      "exclusion_reasons": [],
+      "dimension_scores": {
+        "functional_coverage": 1.0,
+        "interface_fit": 1.0,
+        "adaptation_effort": null,
+        "maturity": null,
+        "documentation": null,
+        "operational_fit": 1.0
+      },
+      "weights": {
+        "functional_coverage": 0.35,
+        "interface_fit": 0.15,
+        "adaptation_effort": 0.15,
+        "maturity": 0.15,
+        "documentation": 0.1,
+        "operational_fit": 0.1
+      },
+      "total_score": null,
+      "rank": null,
+      "covered_capabilities": [
+        "CAP.SEC.AUDIT"
+      ],
+      "missing_capabilities": [],
+      "required_modifications": [],
+      "explanation": "BUILD baseline (custom development to specification). Not scored; Engine 3 estimates its effort.",
+      "confidence": "low"
+    }
+  ],
+  "errors": []
+}

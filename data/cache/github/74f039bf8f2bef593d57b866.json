@@ -1,0 +1,1 @@
+{"path": "repos/bagisto/opensource-ecommerce-mobile-app/contents/lib/driver_main.dart?ref=18a2c27c6d25a2e98a1bc84b69328e72d6a5bded", "data": "import 'package:flutter_driver/driver_extension.dart';\nimport 'main.dart' as app;\n\nvoid main() {\n  enableFlutterDriverExtension();\n  app.main();\n}\n"}

@@ -1,0 +1,1 @@
+{"model": "qwen3.6:35b-a3b-q8_0", "tag": "e1:terms:C-DEVICE-MGMT", "schema": "_Terms", "seconds": 216.9, "content": "{\n  \"queries\": [\n    \"ntp server\",\n    \"time sync agent\",\n    \"chrony client\"\n  ]\n}"}

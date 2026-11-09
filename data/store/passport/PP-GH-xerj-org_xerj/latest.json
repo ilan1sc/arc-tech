@@ -1,0 +1,197 @@
+{
+  "passport_id": "PP-GH-xerj-org_xerj",
+  "software_name": "xerj-org/xerj",
+  "version": "1.0.0-rc.102",
+  "source": {
+    "repository_url": "https://github.com/xerj-org/xerj",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Diary Entry Recording",
+      "coverage": "none",
+      "notes": "No evidence of diary entry recording functionality. XERJ is a search engine, not a diary management system.",
+      "capability_id": "CAP.DIARY.RECORD",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Diary Search",
+      "coverage": "partial",
+      "notes": "XERJ provides general-purpose search (BM25, vector, hybrid) which could technically be used to search diary entries if indexed. However, it lacks specific diary domain features like unit/track/location linking or structured diary entry schemas.",
+      "capability_id": "CAP.DIARY.SEARCH",
+      "evidence_status": "inferred",
+      "confidence": 0.6,
+      "evidence_refs": [
+        "README.md@50e4ffde",
+        "engine/Cargo.toml@50e4ffde"
+      ]
+    },
+    {
+      "name": "Full-Text Search",
+      "coverage": "full",
+      "notes": "BM25 full-text search is a core capability, evidenced by source code and documentation.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@50e4ffde",
+        "engine/crates/xerj-autoindex/src/search.rs@50e4ffde"
+      ]
+    },
+    {
+      "name": "Vector Search",
+      "coverage": "full",
+      "notes": "Vector search is supported via optional neural embedders.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@50e4ffde",
+        "engine/Cargo.toml@50e4ffde"
+      ]
+    },
+    {
+      "name": "Elasticsearch-Compatible API",
+      "coverage": "full",
+      "notes": "API conforms to Elasticsearch-compatible protocol on port 9200.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@50e4ffde",
+        "engine/Dockerfile@50e4ffde"
+      ]
+    },
+    {
+      "name": "MCP Server Integration",
+      "coverage": "full",
+      "notes": "Native Model Context Protocol (MCP) server support for agent integration.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@50e4ffde",
+        "dsh/package.json@50e4ffde"
+      ]
+    }
+  ],
+  "interfaces": [
+    "Elasticsearch-Compatible REST API (HTTP/HTTPS)",
+    "MCP Protocol (stdio)",
+    "CLI Interface (CLI)"
+  ],
+  "dependencies": [
+    "Rust 1.94 (trixie)",
+    "Debian trixie-slim (glibc 2.41)",
+    "Optional neural embedder (~90 MB)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "developing",
+  "constraints": [
+    "Requires Linux (Debian trixie-slim for glibc compatibility)",
+    "Binds to loopback by default; container requires explicit 0.0.0.0 binding",
+    "Optional GPU not required but neural embedder available as opt-in"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "Assumes diary entries can be indexed as standard documents in XERJ's search index",
+      "Assumes unit/track/location metadata can be stored as custom fields in the index schema",
+      "Assumes HTTPS POST submission can be handled via XERJ's existing ingestion pipeline or a wrapper service",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "XERJ provides BM25 full-text, vector, and hybrid search capabilities",
+      "source_ref": "README.md@50e4ffde",
+      "verified": false
+    },
+    {
+      "claim": "Elasticsearch-compatible API is available on port 9200",
+      "source_ref": "engine/Dockerfile@50e4ffde",
+      "verified": false
+    },
+    {
+      "claim": "XERJ indexes code, docs, logs, JSONL/CSV and PDFs",
+      "source_ref": "README.md@50e4ffde",
+      "verified": false
+    },
+    {
+      "claim": "MCP server integration is supported",
+      "source_ref": "dsh/package.json@50e4ffde",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The passport claims 'full' coverage for Vector Search based on 'optional neural embedders'. However, the README explicitly states the default embedder is 'lexical, offline' and neural embedders are 'opt-in, downloads ~90 MB'. Declaring full capability without the optional dependency present is misleading. The evidence_status 'declared' relies on README marketing text rather than code verification of the vector search implementation itself. | [high] The claim of ES-compatibility is marked 'declared' with evidence from README and Dockerfile. The Dockerfile only exposes port 9200; it does not contain code verifying the API protocol conformance. While the README mentions 'ES-YAML conformance', the passport's own evidence section lists this claim as 'verified: false'. A 'full' coverage claim requires stronger evidence than just a port exposure and marketing badges. | [high] The passport claims full MCP support based on README and dsh/package.json. The package.json describes a 'DeepSeek Harness (dsh) profile bundle' that 'inserts the xerj MCP server'. This suggests MCP is an integration feature or requires a specific harness, not necessarily a native, standalone capability of the core engine. The evidence_status 'declared' is weak for a 'full' coverage claim. | [medium] The claim is marked 'verified' with evidence from README and search.rs. However, the provided evidence_refs are documentation/marketing (README) and a CLI client wrapper (search.rs), not the core indexing/search engine implementation code (e.g., xerj-fts crate). Verification should ideally point to the core logic. | [medium] The passport lists license as 'apache-2.0'. The LICENSE file excerpt is truncated in the evidence ('...Legal Entity\" shall mean the union of the acting entity and all'). While likely correct, the evidence provided is incomplete for a definitive audit."
+  },
+  "revision": "50e4ffded5518b1822cfac5450fa34d3829ab8ab",
+  "description": "XERJ is a Rust-based AI search engine and MCP server providing BM25 full-text, vector, and hybrid search capabilities with an Elasticsearch-compatible API. It indexes code, docs, logs, JSONL/CSV, and PDFs for agent memory and RAG.",
+  "interfaces_detail": [
+    {
+      "name": "Elasticsearch-Compatible REST API",
+      "protocol": "HTTP/HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "MCP Protocol",
+      "protocol": "stdio",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "CLI Interface",
+      "protocol": "CLI",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires Linux (Debian trixie-slim for glibc compatibility)",
+    "Binds to loopback by default; container requires explicit 0.0.0.0 binding",
+    "Optional GPU not required but neural embedder available as opt-in"
+  ],
+  "runtime": [
+    "Linux container available",
+    "Single binary deployment"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No native diary entry data model or schema",
+    "No support for linking entries to units, tracks, or map locations as first-class relationships",
+    "No diary-specific search filters or faceting beyond generic XERJ search capabilities",
+    "No built-in HTTPS POST endpoint specifically for diary submission (requires external wrapper)"
+  ],
+  "risks": [
+    "License: Apache-2.0 is permissive but requires attribution",
+    "Maturity: Release candidate (rc.102) indicates ongoing development; API stability not guaranteed",
+    "Maintenance: Active project with recent commits, but diary-specific adaptation is untested"
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assumes diary entries can be indexed as standard documents in XERJ's search index",
+      "Assumes unit/track/location metadata can be stored as custom fields in the index schema",
+      "Assumes HTTPS POST submission can be handled via XERJ's existing ingestion pipeline or a wrapper service"
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:56:28+00:00",
+  "stars": 18644,
+  "last_activity": "2026-11-09T12:27:10Z"
+}
