@@ -5,7 +5,7 @@ from engine2_architect import api as e2
 from engine3_optimize import orchestrator as e3
 from shared import store
 
-ui.page("Operation SwissLink — arc-tech", "🛰️")
+ui.page("How it works — three engines", "🧭")
 st.markdown("""
 Three independent engines with shared JSON contracts, running locally on the DGX Spark:
 

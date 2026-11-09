@@ -13,7 +13,7 @@ Three independent engines with shared JSON contracts, running on the DGX Spark w
 ## Run
 ```bash
 cd ~/Documents/elbit/arc-tech
-./run_app.sh                    # live: Ollama + GitHub/GitLab   → http://spark-516b:8501
+./run_app.sh                    # opens on the Problem slide; live: Ollama + GitHub/GitLab   → http://spark-516b:8501
 ARC_OFFLINE=1 ./run_app.sh      # demo fallback: replay cache only, no LLM, no network
 .venv/bin/python -m pytest -q   # acceptance tests (deterministic)
 .venv/bin/python explore_all.py 2   # batch Engine 1 over all components (fills cache)
