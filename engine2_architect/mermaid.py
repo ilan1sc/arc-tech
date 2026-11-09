@@ -42,7 +42,7 @@ def render(design: ArchitectureDesign, overlay: Optional[Overlay] = None,
             else:
                 tag = f"{v.decision} · " if v.decision else ""
                 extra = f"<br/>{tag}" + (fmt_range(v.hours, 'h') if mode == "hours" else fmt_range(v.money, '', True) + f" {currency}")
-        return f'"{_esc(name)}<br/><small>{node_id}</small>{extra}"'
+        return f'"{_esc(name)}<br/>{node_id}{extra}"'
 
     stores_by_owner: dict[str, list] = {}
     for ds in design.data_stores:
@@ -53,7 +53,7 @@ def render(design: ArchitectureDesign, overlay: Optional[Overlay] = None,
             shape = ("([", "])") if c.kind in ("ui", "client_app") else ("[", "]")
             lines.append(f"    {_nid(c.id)}{shape[0]}{label(c.id, c.name)}{shape[1]}")
             for ds in stores_by_owner.get(c.id, []):
-                lines.append(f'    {_nid(ds.id)}[("{_esc(ds.name)}<br/><small>{ds.id}</small>")]')
+                lines.append(f'    {_nid(ds.id)}[("{_esc(ds.name)}<br/>{ds.id}")]')
         lines.append("  end")
     for ds in design.data_stores:
         lines.append(f"  {_nid(ds.owner_component)} --- {_nid(ds.id)}")

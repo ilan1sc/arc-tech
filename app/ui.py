@@ -35,12 +35,20 @@ def mermaid(src: str, height: int = 720, key: str = "m", zoom: float | None = No
     esc = html.escape(src)
     st.iframe(f"""<!doctype html><html><body style="margin:0;background:white">
 <div style="width:100%;height:{height - 12}px;overflow:auto;border:1px solid #ddd;border-radius:8px">
-  <pre class="mermaid" style="margin:0;zoom:{zoom}">{esc}</pre>
+  <pre class="mermaid" style="margin:0">{esc}</pre>
 </div>
 <script src="/app/static/mermaid.min.js"></script>
 <script>
-  mermaid.initialize({{startOnLoad:true, securityLevel:'strict', theme:'default',
-    flowchart:{{htmlLabels:true, curve:'basis', nodeSpacing:28, rankSpacing:70, useMaxWidth:false}}, themeVariables:{{fontSize:'15px'}}, maxTextSize: 200000}});
+  mermaid.initialize({{startOnLoad:false, securityLevel:'strict', theme:'default',
+    flowchart:{{htmlLabels:false, curve:'basis', nodeSpacing:28, rankSpacing:70, useMaxWidth:false}}, themeVariables:{{fontSize:'15px'}}, maxTextSize: 200000}});
+  // render at natural size (correct text measurement), then scale the finished SVG
+  mermaid.run().then(() => {{
+    const svg = document.querySelector('pre.mermaid svg');
+    if (!svg) return;
+    const w = svg.getBoundingClientRect().width, h = svg.getBoundingClientRect().height;
+    svg.style.maxWidth = 'none';
+    svg.setAttribute('width', w * {zoom}); svg.setAttribute('height', h * {zoom});
+  }});
 </script></body></html>""", height=height)
 
 
