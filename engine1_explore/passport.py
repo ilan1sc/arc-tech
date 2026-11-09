@@ -102,8 +102,14 @@ def finalize(b: RepoBundle, d: _PassportDraft) -> SoftwareCapabilityPassport:
     evidence = []
     for e in d.evidence:
         ok = e.source_ref in valid
-        evidence.append(PassportEvidence(claim=e.claim, source_ref=e.source_ref if ok else f"UNRESOLVED:{e.source_ref}",
-                                         verified=ok and kind_of.get(e.source_ref) in ("source", "test")))
+        path = e.source_ref.split("@")[0]
+        if ok:
+            ref = e.source_ref
+        elif path in b.all_paths:      # file exists at this commit but was outside the bounded sample
+            ref = f"NOT-INSPECTED:{path}@{b.short_sha}"
+        else:                          # not in the repository at all -> fabricated citation
+            ref = f"UNRESOLVED:{e.source_ref}"
+        evidence.append(PassportEvidence(claim=e.claim, source_ref=ref, verified=ok and kind_of.get(e.source_ref) in ("source", "test")))
     lic = b.license_api or b.license_detected or "unknown"
     risks = list(d.risks)
     lc = license_class(lic)
@@ -146,7 +152,10 @@ def deterministic_checks(p: SoftwareCapabilityPassport, b: RepoBundle | None) ->
         oks.append("at least one traceable capability")
     unresolved = [e.source_ref for e in p.evidence if e.source_ref.startswith("UNRESOLVED:")]
     if unresolved:
-        fails.append(f"citations not found in inspected evidence: {unresolved[:3]}")
+        fails.append(f"citations to files that do not exist in the repository at this commit: {unresolved[:3]}")
+    not_inspected = [e.source_ref for e in p.evidence if e.source_ref.startswith("NOT-INSPECTED:")]
+    if not_inspected:
+        oks.append(f"cited files exist but were outside the bounded sample (unverified): {not_inspected[:3]}")
     if p.license == "unknown":
         oks.append("license explicitly marked unknown")
     return fails, oks

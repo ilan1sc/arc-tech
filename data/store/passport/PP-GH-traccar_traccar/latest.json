@@ -1,0 +1,165 @@
+{
+  "passport_id": "PP-GH-traccar_traccar",
+  "software_name": "traccar/traccar",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/traccar/traccar",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "none",
+      "notes": "Traccar backend does not render maps or manage map layers (tiles, styles). This functionality resides in the separate Traccar Web App repository. The backend serves data *for* the map but does not implement layer management itself.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "inferred",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@e2e2836a"
+      ]
+    },
+    {
+      "name": "Geofencing",
+      "coverage": "partial",
+      "notes": "README explicitly lists 'Geofencing functionality' and 'Alarms'. Code for geofence logic exists in the full repo but was not in the sampled excerpts. It likely supports polygon/circle definitions and triggers alarms on entry/exit.",
+      "capability_id": "CAP.TRACK.GEOFENCE",
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@e2e2836a"
+      ]
+    },
+    {
+      "name": "Route Computation",
+      "coverage": "none",
+      "notes": "No evidence of route planning, pathfinding, or navigation algorithms in the backend code or README. Traccar tracks existing routes but does not compute new ones.",
+      "capability_id": "CAP.ROUTE.COMPUTE",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Position History & Playback",
+      "coverage": "full",
+      "notes": "Core feature of the platform. Stores position data in SQL and provides REST API access for retrieval/playback via the web app.",
+      "capability_id": "CAP.TRACK.HISTORY",
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@e2e2836a"
+      ]
+    },
+    {
+      "name": "Stale Position Handling",
+      "coverage": "partial",
+      "notes": "Implied by 'Real-time GPS tracking' and alarm systems. Typically handled via configuration of position validity intervals or device status updates, but specific stale logic is not visible in the sampled protocol decoders.",
+      "capability_id": "CAP.TRACK.POSITION.STALE",
+      "evidence_status": "inferred",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@e2e2836a"
+      ]
+    }
+  ],
+  "interfaces": [
+    "REST API (HTTP/HTTPS)",
+    "Device Protocol Ingestion (TCP/UDP (Binary/Text))"
+  ],
+  "dependencies": [
+    "Java 21",
+    "Jetty 12.1.14",
+    "Jersey 4.0.3",
+    "Netty 4.2.19",
+    "SQL Database (MySQL, PostgreSQL, etc.)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires a relational database (MySQL/PostgreSQL/etc.)",
+    "Runs as a Java application (JAR)",
+    "Docker image available"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "medium",
+    "assumptions": [
+      "Assuming the 'Map Visualization Service' component is intended to be a wrapper or integration layer around Traccar's REST API rather than replacing its core.",
+      "Geofencing and History capabilities are accessed via Traccar's existing REST API endpoints.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Traccar is a GPS tracking platform with REST API and geofencing.",
+      "source_ref": "README.md@e2e2836a",
+      "verified": false
+    },
+    {
+      "claim": "Project uses Java 21, Jetty, Jersey, Netty.",
+      "source_ref": "build.gradle@e2e2836a",
+      "verified": false
+    },
+    {
+      "claim": "OpenAPI specification exists for REST API.",
+      "source_ref": "NOT-INSPECTED:openapi.yaml@e2e2836a",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The capability claims 'full' coverage and cites README.md as sufficient evidence. However, the README only lists 'Real-time GPS tracking' and 'Detailed and summary reports'. It does not explicitly claim 'Playback' functionality or full historical retrieval capabilities. The passport notes mention REST API access for playback, but this is an inference from the existence of a REST API, not a declared feature in the cited evidence. Without code or explicit documentation confirming 'Playback', 'full' coverage is overstated. | [medium] The README explicitly lists 'Geofencing functionality', which supports the existence of the capability. However, the passport claims 'partial' coverage. While 'declared' status is appropriate for the *existence* of geofencing, the 'partial' qualifier implies a limitation that isn't explained by the evidence. The evidence shows it's a core feature. If 'partial' refers to specific types of geofences (e.g., polygon vs circle), this should be clarified. As written, 'declared' supports 'full' existence, but 'partial' is an unexplained reduction in scope without further evidence. | [medium] The passport claims the REST API interface is 'verified', but the only evidence reference for the OpenAPI specification is marked as 'NOT-INSPECTED'. The rubric states: 'Citations marked NOT-INSPECTED exist in the repo but were not read: treat their claims as unverified (medium), not fabricated.' Therefore, the verification status should be 'unknown' or 'inferred', not 'verified'. | [low] The claim is well-supported by the README which distinguishes the backend from the web app. However, the evidence_status is 'inferred'. Since the README explicitly states 'This repository contains the Java-based back-end server' and links to a separate 'Traccar web app', this is actually 'declared' by the project structure description in the README."
+  },
+  "revision": "e2e2836a49e4f40e4f5321cc4ce9ea114785b91f",
+  "description": "Traccar is a Java-based open-source GPS tracking platform backend. It ingests telemetry from 200+ device protocols, stores position history in SQL databases, and exposes a REST API for management. While it includes geofencing logic and alarms, it does not contain a map rendering engine or route computation algorithms; those are handled by the separate Traccar Web App frontend.",
+  "interfaces_detail": [
+    {
+      "name": "REST API",
+      "protocol": "HTTP/HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "openapi.yaml@e2e2836a",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "Device Protocol Ingestion",
+      "protocol": "TCP/UDP (Binary/Text)",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires a relational database (MySQL/PostgreSQL/etc.)",
+    "Runs as a Java application (JAR)",
+    "Docker image available"
+  ],
+  "runtime": [
+    "Java 21"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No map rendering or tile serving (CAP.MAP.LAYERS)",
+    "No route computation/planning algorithms (CAP.ROUTE.COMPUTE)",
+    "No native MQTT broker for internal state updates (uses REST/WebSocket for client-facing, TCP/UDP for device-facing)"
+  ],
+  "risks": [
+    "License: Apache 2.0 is permissive but requires attribution.",
+    "Maintenance: Traccar backend is mature and stable, but integration with custom map services may require significant frontend work in the separate web app repo."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assuming the 'Map Visualization Service' component is intended to be a wrapper or integration layer around Traccar's REST API rather than replacing its core.",
+      "Geofencing and History capabilities are accessed via Traccar's existing REST API endpoints."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T15:04:36+00:00",
+  "stars": 8095,
+  "last_activity": "2026-11-08T23:49:32Z"
+}

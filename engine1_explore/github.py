@@ -31,14 +31,18 @@ def _get(path: str, raw: bool = False):
         raise GitHubUnavailable(f"offline, no cache for {path}")
     accept = "application/vnd.github.raw" if raw else "application/vnd.github+json"
     if GH:
-        r = subprocess.run([GH, "api", "-H", f"Accept: {accept}", path], capture_output=True, text=True, timeout=60)
+        r = subprocess.run([GH, "api", "-H", f"Accept: {accept}", path], capture_output=True, timeout=60)
+        out = r.stdout.decode("utf-8", errors="replace")
+        err = r.stderr.decode("utf-8", errors="replace")
         if r.returncode != 0:
-            if "404" in r.stderr or "Not Found" in r.stdout:
+            if "404" in err or "Not Found" in out:
                 data = None
             else:
-                raise GitHubUnavailable(f"gh api {path}: {r.stderr.strip()[:200]}")
+                raise GitHubUnavailable(f"gh api {path}: {err.strip()[:200]}")
+        elif raw and b"\x00" in r.stdout[:4096]:
+            data = None            # binary file (images, fixtures): not useful as evidence
         else:
-            data = r.stdout[:200_000] if raw else json.loads(r.stdout)
+            data = out[:200_000] if raw else json.loads(out)
     else:
         resp = httpx.get(f"https://api.github.com/{path}", headers={"Accept": accept}, timeout=30)
         if resp.status_code == 404:

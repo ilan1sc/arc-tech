@@ -19,12 +19,16 @@ with st.sidebar.expander("⚖️ Ranking weights (editable)", expanded=False):
 mode = st.radio("Mode", ["Architecture component", "Ad-hoc capability search"], horizontal=True)
 if mode == "Ad-hoc capability search":
     q = st.text_input("Capability search", "GPS tracking")
-    target = st.selectbox("Match against SwissLink component", list(specs),
-                          index=next((i for i, k in enumerate(specs) if "TRACK" in k), 0),
+    # default: the component that owns the most friendly-force-tracking capabilities
+    track_idx = max(range(len(specs)), key=lambda i: sum(c.startswith("CAP.TRACK") for c in list(specs.values())[i].required_capabilities))
+    target = st.selectbox("Match against SwissLink component", list(specs), index=track_idx,
                           format_func=lambda k: f"{k} · {specs[k].name}")
     base = specs[target]
-    spec = base.model_copy(update={"search_terms": [q]})
+    slug = "".join(ch if ch.isalnum() else "-" for ch in q.lower()).strip("-")
+    # separate storage slot: ad-hoc searches never overwrite the component's own exploration
+    spec = base.model_copy(update={"search_terms": [q], "component_id": f"ADHOC-{target}-{slug}"})
     queries = [q]
+    st.caption(f"Results are matched against {target}'s required capabilities and stored separately as `{spec.component_id}`.")
 else:
     target = st.selectbox("Component (from Engine 2 ComponentSearchSpec)", list(specs),
                           format_func=lambda k: f"{k} · {specs[k].name}")

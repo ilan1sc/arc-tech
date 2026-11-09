@@ -1,0 +1,183 @@
+{
+  "passport_id": "PP-GH-FASTSHIFT_X-TRACK",
+  "software_name": "FASTSHIFT/X-TRACK",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/FASTSHIFT/X-TRACK",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "partial",
+      "notes": "Supports offline map display and zooming on a single layer (the map). Does not support multiple overlay layers, vector tiles, or dynamic layer management as implied by the service requirement.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@c42b8e56"
+      ]
+    },
+    {
+      "name": "Geofencing",
+      "coverage": "none",
+      "notes": "No evidence of geofence definition, monitoring, or violation alerting capabilities in the repository.",
+      "capability_id": "CAP.TRACK.GEOFENCE",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Route Computation",
+      "coverage": "none",
+      "notes": "The project records tracks but does not appear to compute routes (pathfinding) between points.",
+      "capability_id": "CAP.ROUTE.COMPUTE",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Position History & Playback",
+      "coverage": "partial",
+      "notes": "Supports recording tracks and exporting to GPX format for playback in external tools (GPXSee). Does not appear to have an internal real-time playback engine or server-side history storage.",
+      "capability_id": "CAP.TRACK.HISTORY",
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@c42b8e56"
+      ]
+    },
+    {
+      "name": "Stale Position Handling",
+      "coverage": "none",
+      "notes": "No evidence of logic to detect or handle stale GPS positions.",
+      "capability_id": "CAP.TRACK.POSITION.STALE",
+      "evidence_status": "unknown",
+      "confidence": 0.8,
+      "evidence_refs": []
+    },
+    {
+      "name": "Offline Map Rendering",
+      "coverage": "full",
+      "notes": "Core feature: displays offline maps on the device screen.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@c42b8e56"
+      ]
+    },
+    {
+      "name": "GPX Export",
+      "coverage": "full",
+      "notes": "Supports exporting recorded tracks to standard GPX format.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@c42b8e56"
+      ]
+    },
+    {
+      "name": "Sensor Fusion",
+      "coverage": "partial",
+      "notes": "Integrates GPS, accelerometer (step counting), and magnetometer (heading).",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@c42b8e56"
+      ]
+    }
+  ],
+  "interfaces": [],
+  "dependencies": [
+    "LVGL V8",
+    "TinyGPS++",
+    "AT32 Standard Peripheral Library"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires specific hardware: AT32F435CGU7 MCU",
+    "Requires ST7789 IPS display",
+    "Requires Micro SD card for map storage",
+    "Requires GPS module (ATGM336H)"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 120.0,
+    "confidence": "low",
+    "assumptions": [
+      "The target component is a server-side service, while this repo is embedded firmware. Adaptation would require rewriting the core logic into a backend service.",
+      "Offline map rendering logic would need to be ported to a server-side tile generation or vector rendering engine.",
+      "GPX export functionality would need to be adapted to an API endpoint.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Supports offline maps and track recording",
+      "source_ref": "README.md@c42b8e56",
+      "verified": false
+    },
+    {
+      "claim": "Exports tracks to GPX format",
+      "source_ref": "README.md@c42b8e56",
+      "verified": false
+    },
+    {
+      "claim": "Uses TinyGPS++ for NMEA parsing",
+      "source_ref": "Software/X-Track/Libraries/TinyGPSPlus/src/TinyGPS++.cpp@c42b8e56",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The evidence supports accelerometer integration for step counting but provides no evidence of magnetometer usage or heading calculation. The README lists the LIS3MDL hardware but does not claim software functionality for it. Claiming 'magnetometer (heading)' is an overstatement/invention without code or doc support. | [medium] The evidence states the map supports 'zooming' but does not explicitly confirm full rendering capabilities (e.g., panning, multiple zoom levels beyond basic). While likely true for an embedded map, the claim of 'full' coverage is based on a brief description. More importantly, the artifact notes it is 'single-layer', which might conflict with a 'full' definition if the requirement implies multi-layer support. | [medium] The capability is marked as 'partial' which is correct, but the note implies a lack of internal playback. The evidence shows an image link to 'GPXSee' and mentions it in the text. This is consistent, but the 'unknown' status for other capabilities like Geofencing/Route Computation should be explicitly linked to the absence of such features in the README's feature list. | [low] The evidence confirms single-layer map display. The claim that it does not support multiple overlays is an inference from the absence of such features in the README's feature list. This is a reasonable 'unknown' to 'partial' (for lack of full) transition, but should be noted as inferred."
+  },
+  "revision": "c42b8e5605e50838f4c0c9828385948fa33ab485",
+  "description": "X-TRACK is an embedded GPS bicycle speedometer firmware project using LVGL for GUI and TinyGPS++ for NMEA parsing. It runs on an AT32 MCU with offline map support, track recording (GPX export), and sensor integration (accelerometer, magnetometer). It does not implement a networked service architecture.",
+  "interfaces_detail": [],
+  "deployment_constraints": [
+    "Requires specific hardware: AT32F435CGU7 MCU",
+    "Requires ST7789 IPS display",
+    "Requires Micro SD card for map storage",
+    "Requires GPS module (ATGM336H)"
+  ],
+  "runtime": [
+    "Embedded C (ARM Cortex-M4)",
+    "FreeRTOS (implied by typical LVGL/Arduino embedded setups, though not explicitly confirmed in excerpts)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No network interfaces (REST/MQTT/WebSocket) implemented",
+    "No geofencing capabilities",
+    "No route computation algorithms",
+    "No server-side position history storage or playback",
+    "No stale position handling logic",
+    "Single-layer map display only"
+  ],
+  "risks": [
+    "Embedded firmware architecture is fundamentally different from a cloud service.",
+    "Heavy dependency on specific hardware peripherals not present in a server environment.",
+    "LVGL is a GUI library, not a backend mapping engine."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The target component is a server-side service, while this repo is embedded firmware. Adaptation would require rewriting the core logic into a backend service.",
+      "Offline map rendering logic would need to be ported to a server-side tile generation or vector rendering engine.",
+      "GPX export functionality would need to be adapted to an API endpoint."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T15:04:56+00:00",
+  "stars": 6321,
+  "last_activity": "2025-11-08T03:54:31Z"
+}

@@ -15,8 +15,11 @@ from .schemas import JudgeFinding, ValidationReport
 
 RUBRICS = {
     "passport": """You audit a Software Capability Passport against the cited evidence excerpts.
-- Every capability marked coverage=full/partial with evidence_status verified/declared must be supported by an excerpt (README, manifest, source, tests). Otherwise flag it.
-- 'verified' requires code/test evidence, not just README marketing text.
+- evidence_status meanings: verified = seen in source/test code; declared = stated by README/docs/metadata (README evidence is
+  SUFFICIENT for 'declared' - do not demand code for declared); inferred = indirect; unknown = no evidence.
+- Flag a capability whose cited excerpt does not actually support its coverage level, and any 'verified' without code/test evidence.
+- Citations marked NOT-INSPECTED exist in the repo but were not read: treat their claims as unverified (medium), not fabricated.
+- Citations marked UNRESOLVED do not exist in the repo: that is fabrication (critical).
 - License, interfaces, performance claims not present in the evidence must be 'unknown'.
 - Flag invented numbers, invented APIs, or overstated maturity.""",
     "ranking": """You audit a ranking of candidate software for one architecture component.

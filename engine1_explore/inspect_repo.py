@@ -46,6 +46,7 @@ class RepoBundle:
     has_docs: bool
     topics: list[str] = field(default_factory=list)
     excerpts: list[Excerpt] = field(default_factory=list)
+    all_paths: set[str] = field(default_factory=set)
 
     @property
     def short_sha(self) -> str:
@@ -106,15 +107,18 @@ def inspect(project_json: dict, keywords: list[str] | None = None, budget_chars:
                    license_detected=None, stars=full.get("star_count", 0), last_activity=full.get("last_activity_at"),
                    file_count=len(paths), tests_present=bool(tests),
                    has_docs=any(p.lower().startswith("docs/") or p.lower().startswith("doc/") for p in paths),
-                   topics=full.get("topics") or full.get("tag_list") or [])
+                   topics=full.get("topics") or full.get("tag_list") or [], all_paths=set(paths))
     used = 0
 
     def add(path: str, kind: str, limit: int):
         nonlocal used
         if used >= budget_chars:
             return None
-        txt = api(path, sha)
-        if not txt:
+        try:
+            txt = api(path, sha)
+        except (UnicodeDecodeError, ValueError):
+            return None
+        if not txt or txt.count("\ufffd") > 20:   # undecodable / binary content is not evidence
             return None
         txt = txt[: min(limit, budget_chars - used)]
         used += len(txt)

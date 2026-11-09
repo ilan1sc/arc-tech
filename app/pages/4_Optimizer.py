@@ -34,6 +34,30 @@ for ev in it.evaluations:
     ev.labor_cost_range = a.labor(ev.total_hours)
     ev.lifecycle_cost_range = ev.labor_cost_range + ev.acquisition_cost_range if ev.acquisition_cost_range.known else ev.lifecycle_cost_range.__class__()
 
+with st.form("refine", clear_on_submit=True, border=True):
+    fc1, fc2 = st.columns([5, 1])
+    msg = fc1.text_input("💬 Refine this iteration", placeholder='e.g. "Too expensive; maximize reuse" · "Offline only" · "Reduce cost"')
+    go = fc2.form_submit_button("Refine", type="primary", width="stretch")
+if go and msg.strip():
+    with st.status(f"Refining: {msg}", expanded=True) as s:
+        new = e3.refine(it, msg.strip(), a, progress=lambda m: s.write(m), explore=explore)
+        s.update(label=f"New iteration {new.iteration_id}", state="complete")
+    st.session_state.it = new.iteration_id
+    st.rerun()
+
+parent = e3.load_iteration(it.parent_iteration_id) if it.parent_iteration_id else None
+if parent and parent.evaluations and it.evaluations:
+    pl, nl = parent.evaluations[0], it.evaluations[0]
+    def money(ev):
+        lab = a.labor(ev.total_hours)
+        return (lab + ev.acquisition_cost_range) if ev.acquisition_cost_range.known else None, lab
+    (pm, plab), (nm, nlab) = money(pl), money(nl)
+    c1, c2, c3, c4 = st.columns(4)
+    c1.metric("Lead option", nl.label.split(" (")[0], f"was {pl.label.split(' (')[0]}", delta_color="off")
+    c2.metric("Total hours (base)", f"{nl.total_hours.base:,.0f}", f"{nl.total_hours.base - pl.total_hours.base:+,.0f} h", delta_color="inverse")
+    c3.metric(f"Labor @ {a.hourly_rate:,.0f} {a.currency}/h", f"{nlab.base:,.0f}", f"{nlab.base - plab.base:+,.0f}", delta_color="inverse")
+    c4.metric(f"Total money ({a.currency})", f"{nm.base:,.0f}" if nm else "unknown",
+              (f"{nm.base - pm.base:+,.0f}" if nm and pm else "price(s) unknown"), delta_color="inverse")
 if it.user_instruction:
     st.markdown(f"**Instruction:** _{it.user_instruction}_")
 if it.constraints or it.objectives:
@@ -42,7 +66,9 @@ if it.constraints or it.objectives:
 if it.changes:
     st.markdown("**Changes:**\n" + "\n".join(f"- {c}" for c in it.changes))
 if it.critique:
-    st.markdown("**What improved / worsened vs parent:**\n" + "\n".join(f"- {c}" for c in it.critique))
+    import re
+    crit = [re.sub(r"; labor [^;]*USD", "", c) for c in it.critique]   # money shown live above, at the current rate
+    st.markdown("**What improved / worsened vs parent:**\n" + "\n".join(f"- {c}" for c in crit))
 
 st.subheader("Architecture comparison")
 rows = []
@@ -87,12 +113,3 @@ d = e2.get_architecture(arch_id, ver)
 mode = st.radio("Diagram overlay", ["hours", "money", "none"], horizontal=True)
 ui.mermaid(mermaid.render(d, make_overlay(ev, a), mode, a.currency), height=700, key="opt")
 
-st.subheader("💬 Refine")
-st.caption('Try: "Too expensive; maximize reuse" · "Offline only" · "Reduce cost"')
-msg = st.chat_input("Instruction for the optimizer…")
-if msg:
-    with st.status(f"Refining: {msg}", expanded=True) as s:
-        new = e3.refine(it, msg, a, progress=lambda m: s.write(m), explore=explore)
-        s.update(label=f"New iteration {new.iteration_id}", state="complete")
-    st.session_state.it = new.iteration_id
-    st.rerun()
