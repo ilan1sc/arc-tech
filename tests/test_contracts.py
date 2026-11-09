@@ -131,3 +131,22 @@ def test_offline_constraint_flags_noncompliant():
     inp = Inputs(d, {}, {p.passport_id: p})
     out = ev_(inp, reuse.component_options, a, "x", "max_reuse", ["offline-only"])
     assert out.hard_gate_violations and not out.feasible
+
+
+def test_manual_override_changes_only_that_component():
+    from engine3_optimize.evaluate import choices_for, rebuild
+    d = design()
+    p, cust = passport(), custom_development_candidate(spec())
+    inp = Inputs(d, {"C-TRACK": rank_component(spec(), [p, cust])}, {p.passport_id: p, cust.passport_id: cust})
+    a = EffortAssumptions()
+    base = evaluate(inp, choose(inp, "build_heavy", a, []), a, "C", "build_heavy", [])
+    track = next(c for c in d.components if c.id == "C-TRACK")
+    ch = choices_for(inp, track, [])
+    assert ch[0][0] == "BUILD" and any(x[0] == "REUSE" for x in ch)
+    same = rebuild(inp, base, {}, a, [], "C")
+    assert same.total_hours == base.total_hours                       # no override -> identical
+    reuse = next(x for x in ch if x[0] == "REUSE")
+    edited = rebuild(inp, base, {"C-TRACK": (reuse[0], reuse[1])}, a, [], "C*")
+    by = {o.component_id: o for o in edited.component_options}
+    assert by["C-TRACK"].decision == "REUSE" and by["C-UI"].decision == base.component_options[1].decision
+    assert edited.total_hours.base != base.total_hours.base

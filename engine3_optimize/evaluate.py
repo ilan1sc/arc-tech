@@ -220,3 +220,42 @@ def overlay(ev: ArchitectureEvaluation, a: EffortAssumptions) -> Overlay:
     money_total = ev.labor_cost_range + ev.acquisition_cost_range if ev.acquisition_cost_range.known else R()
     return Overlay(architecture_id=ev.architecture_id, architecture_version=ev.architecture_version, nodes=nodes, edges=edges,
                    total_hours=ev.total_hours, total_money=money_total, hourly_rate=a.hourly_rate)
+
+
+# ---------------------------------------------------------------- manual what-if edits (architect overrides)
+def choices_for(inp: Inputs, comp, constraints: list[str]) -> list[tuple[str, Optional[str], str]]:
+    """Realistic (decision, candidate_id, label) choices for one component: BUILD, every eligible REUSE candidate
+    from Engine 1, and a BUY placeholder when one matches. Excluded candidates are not offered (their hard-gate
+    reason is visible on the Exploration page)."""
+    offline = _offline_required(inp.design) or any("offline" in c.lower() for c in constraints)
+    out: list[tuple[str, Optional[str], str]] = [("BUILD", None, "BUILD · custom development")]
+    for r in inp.rankings.get(comp.id, []):
+        if r.eligible and r.rank and r.candidate_id in inp.passports:
+            p = inp.passports[r.candidate_id]
+            out.append(("REUSE", r.candidate_id, f"REUSE · {p.software_name} (#{r.rank}, score {r.total_score}, {p.license})"))
+    cots = _cots_for(comp, offline)
+    if cots:
+        out.append(("BUY", cots["candidate_id"], f"BUY · {cots['name']} (price unknown)"))
+    return out
+
+
+def rebuild(inp: Inputs, base: ArchitectureEvaluation, overrides: dict[str, tuple[str, Optional[str]]],
+            a: EffortAssumptions, constraints: list[str], label: str) -> ArchitectureEvaluation:
+    """Re-evaluate `base` with the current assumptions, replacing the decision of overridden components.
+    Every number is recomputed (components, interfaces, shared work, totals, gates), so the delta shown to the
+    user is caused only by the override."""
+    comps = {c.id: c for c in inp.design.components}
+    cots_by_id = {o["candidate_id"]: o for o in COTS}
+    opts = []
+    for o in base.component_options:
+        comp = comps.get(o.component_id)
+        if comp is None:
+            continue
+        decision, cand = overrides.get(o.component_id, (o.decision, o.candidate_id))
+        ranking = next((r for r in inp.rankings.get(comp.id, []) if r.candidate_id == cand), None)
+        if decision == "REUSE" and ranking is None:
+            decision = "BUILD"          # candidate no longer available -> fall back, never invent
+        opts.append(option_for(inp, comp, decision, ranking if decision == "REUSE" else None, a,
+                               cots_by_id.get(cand) if decision == "BUY" else None))
+    ev = evaluate(inp, opts, a, label, base.strategy + ("+edited" if overrides else ""), constraints)
+    return ev
