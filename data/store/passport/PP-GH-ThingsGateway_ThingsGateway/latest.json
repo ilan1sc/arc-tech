@@ -1,0 +1,204 @@
+{
+  "passport_id": "PP-GH-ThingsGateway_ThingsGateway",
+  "software_name": "ThingsGateway/ThingsGateway",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/ThingsGateway/ThingsGateway",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Degraded Mode Operation",
+      "coverage": "partial",
+      "notes": "The README explicitly states 'network exception support for caching and compensation' and 'internal disconnection reconnection, cache and compensation mechanism'. This indicates local buffering capability for intermittent connectivity. However, specific logic for 'degraded mode' (e.g., prioritizing critical data like emergency alerts over telemetry during outages) is not evidenced in the provided excerpts.",
+      "capability_id": "CAP.COMMS.DEGRADED",
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@b9c92a5c"
+      ]
+    },
+    {
+      "name": "Encryption & Authentication",
+      "coverage": "partial",
+      "notes": "The README mentions 'Security and permission control' under management features. However, no specific evidence of TLS/SSL implementation for data in transit (MQTT/HTTPS) or encryption at rest is visible in the provided excerpts. The capability is likely present but not verified from this sample.",
+      "capability_id": "CAP.SEC.ENCRYPT",
+      "evidence_status": "declared",
+      "confidence": 0.5,
+      "evidence_refs": [
+        "README.md@b9c92a5c"
+      ]
+    },
+    {
+      "name": "Industrial Protocol Acquisition",
+      "coverage": "full",
+      "notes": "Supports Modbus (RTU/TCP), OPC, MQTT, S7, and others via plugins. This is a core feature described in the README.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@b9c92a5c"
+      ]
+    },
+    {
+      "name": "Edge Data Processing",
+      "coverage": "full",
+      "notes": "Supports edge-side preprocessing, filtering, conversion, and C# script extension for logic processing.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@b9c92a5c"
+      ]
+    },
+    {
+      "name": "Multi-Target Data Forwarding",
+      "coverage": "full",
+      "notes": "Supports forwarding to MQTT, Database, Web API, Kafka, and establishing server-side services (OPCUAServer, ModbusServer, MQTTServer).",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@b9c92a5c"
+      ]
+    },
+    {
+      "name": "Alarm Management",
+      "coverage": "partial",
+      "notes": "Source code confirms the existence of AlarmVariable and AlarmRuntimePropertys models, indicating alarm handling capabilities.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "src/ThingsGateway.Gateway.Application/Model/AlarmRuntimePropertys.cs@b9c92a5c",
+        "src/ThingsGateway.Gateway.Application/Model/AlarmVariable.cs@b9c92a5c"
+      ]
+    }
+  ],
+  "interfaces": [
+    "MQTT Client (MQTT)",
+    "Web API (Northbound) (HTTPS)",
+    "Management UI (HTTP/HTTPS)",
+    "Industrial Protocols (Southbound) (Modbus/TCP, Modbus/RTU, OPC UA, S7, MQTT)"
+  ],
+  "dependencies": [
+    ".NET 8.0 or 10.0 Runtime",
+    "BootstrapBlazor (UI)",
+    "Newtonsoft.Json",
+    "TouchSocket.Core"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires .NET 8.0 or 10.0 runtime",
+    "Docker images available for x64 and arm64",
+    "Web management interface listens on port 5000 by default"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 24.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The existing MQTT and Web API forwarding plugins can be configured or slightly modified to meet the specific 'Position & Telemetry' and 'Emergency Alert' topic/payload requirements.",
+      "Degraded mode buffering is handled by the existing cache mechanism, but priority logic for emergency alerts may need custom scripting or rule engine configuration.",
+      "Encryption (TLS) needs to be verified and configured in the MQTT/Web API client settings.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Supports MQTT and Web API data forwarding",
+      "source_ref": "README.md@b9c92a5c",
+      "verified": false
+    },
+    {
+      "claim": "Supports local buffering and compensation for network exceptions",
+      "source_ref": "README.md@b9c92a5c",
+      "verified": false
+    },
+    {
+      "claim": "Includes alarm management models",
+      "source_ref": "src/ThingsGateway.Gateway.Application/Model/AlarmVariable.cs@b9c92a5c",
+      "verified": true
+    },
+    {
+      "claim": "Uses .NET 8/10 and BootstrapBlazor",
+      "source_ref": "README.md@b9c92a5c",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The README explicitly states that the open-source core supports 'Modbus (RTU / TCP), OPC, MQTT, S7'. However, it also lists a separate 'PRO' section with commercial plugins for other protocols. The passport claims 'full' coverage based on the README but fails to distinguish between the open-source core capabilities and the PRO commercial add-ons. While the listed protocols are in the core, the claim of 'plugins' supporting these specific protocols is ambiguous without verifying if they are built-in or plugin-based in the OSS version. More critically, the passport lists 'OPC UA' in interfaces but the README says 'OPC'. The evidence does not verify if OPC UA (not just OPC DA/Classic) is supported in the open-source core. | [high] The capability is marked 'declared' with evidence from README only. The README mentions 'Security and permission control' but does not explicitly detail TLS/SSL implementation for MQTT or Web API. The rubric requires code/test evidence for 'verified' status, and 'declared' should still be supported by specific claims in the evidence. The README's mention of 'Security' is too vague to support a claim about TLS/SSL implementation. No source code excerpt shows TLS configuration or usage. | [medium] The claim is supported by README text ('network exception support for caching and compensation'). However, the rubric states that 'verified' requires code/test evidence. The passport correctly marks this as 'declared'. But the note says 'specific logic for degraded mode... is not evidenced'. This is a valid observation. The issue is that the confidence is 0.7, which might be too high given only README evidence. More importantly, the claim of 'caching and compensation' is marketing text; without code, we don't know if it's persistent storage or just in-memory buffering. | [medium] The README mentions 'Supports C# script extension'. The source code excerpt `DynamicModelExtension.cs` shows a `CSharpScriptEngineExtension.Do` call, which verifies the presence of a C# scripting engine. However, the passport claims 'full' coverage based on this. The rubric requires that 'verified' capabilities have code/test evidence. This capability is marked 'declared'. While there is source evidence, it only shows one extension method, not the full edge processing pipeline (filtering, conversion, rule engine). The claim of 'full' coverage might be overstated if only scripting is present and not a full rule engine in the OSS version. | [low] The passport claims Apache 2.0 license. The LICENSE file excerpt confirms Apache License Version 2.0. However, the README mentions 'PRO plugins' are commercial. The passport notes this risk but does not adjust the license field to reflect that *some* features might be under a different license. This is a minor issue as the core is Apache 2.0."
+  },
+  "revision": "b9c92a5ca22913a074e5d3f01adec88c7fd7389a",
+  "description": "ThingsGateway is an open-source industrial IoT edge gateway built on .NET 8/10. It provides high-performance data acquisition from various industrial protocols (Modbus, OPC, S7, MQTT), edge processing via C# scripts and rule engines, and reliable data forwarding to backends (MQTT, Web API, Kafka, DB). It features a plugin architecture, local buffering for intermittent connectivity, and a web-based management interface.",
+  "interfaces_detail": [
+    {
+      "name": "MQTT Client",
+      "protocol": "MQTT",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "Web API (Northbound)",
+      "protocol": "HTTPS",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "Management UI",
+      "protocol": "HTTP/HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "Industrial Protocols (Southbound)",
+      "protocol": "Modbus/TCP, Modbus/RTU, OPC UA, S7, MQTT",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires .NET 8.0 or 10.0 runtime",
+    "Docker images available for x64 and arm64",
+    "Web management interface listens on port 5000 by default"
+  ],
+  "runtime": [
+    ".NET 8/10",
+    "Linux",
+    "Windows"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No evidence of specific 'GPS' protocol support; GPS data would likely arrive as standard telemetry via Modbus/Serial or MQTT from a separate receiver.",
+    "Emergency alert priority handling is not explicitly evidenced; may require custom rule engine scripts to prioritize emergency topics over standard telemetry during degraded mode.",
+    "Specific schema for 'Position Report Submission' inbound API is not visible in excerpts."
+  ],
+  "risks": [
+    "License: Apache 2.0, but PRO plugins are commercial; ensure required features are in the open-source core.",
+    "Maintenance: Project activity shows recent commits (2026), but reliance on specific .NET versions (8/10) may require updates.",
+    "Security: Encryption details are not verified from code excerpts; TLS configuration must be validated."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The existing MQTT and Web API forwarding plugins can be configured or slightly modified to meet the specific 'Position & Telemetry' and 'Emergency Alert' topic/payload requirements.",
+      "Degraded mode buffering is handled by the existing cache mechanism, but priority logic for emergency alerts may need custom scripting or rule engine configuration.",
+      "Encryption (TLS) needs to be verified and configured in the MQTT/Web API client settings."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T11:54:01+00:00",
+  "stars": 1495,
+  "last_activity": "2026-09-14T08:30:48Z"
+}

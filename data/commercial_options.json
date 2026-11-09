@@ -1,0 +1,13 @@
+{
+  "_note": "FICTIONAL placeholders representing commercial (BUY) options. Prices are unknown unless an analyst enters them. Not real products.",
+  "options": [
+    {"candidate_id": "COTS-VIDEO-SDK", "name": "Commercial video analytics SDK (placeholder)", "capability_prefixes": ["CAP.VIDEO"],
+     "offline_capable": true, "license": "commercial", "acquisition_cost": null, "notes": "Vendor quote required"},
+    {"candidate_id": "COTS-GIS", "name": "Commercial tactical GIS/map engine (placeholder)", "capability_prefixes": ["CAP.MAP", "CAP.ROUTE"],
+     "offline_capable": true, "license": "commercial", "acquisition_cost": null, "notes": "Vendor quote required"},
+    {"candidate_id": "COTS-PUSH", "name": "Commercial mobile push-notification service (placeholder)", "capability_prefixes": ["CAP.MOBILE", "CAP.ALERT"],
+     "offline_capable": false, "license": "commercial SaaS", "acquisition_cost": null, "notes": "Cloud service - conflicts with SL-SEC-01"},
+    {"candidate_id": "COTS-MSG", "name": "Commercial messaging middleware (placeholder)", "capability_prefixes": ["CAP.COMMS"],
+     "offline_capable": true, "license": "commercial", "acquisition_cost": null, "notes": "Vendor quote required"}
+  ]
+}

@@ -1,0 +1,189 @@
+{
+  "passport_id": "PP-GH-markmarkoh_datamaps",
+  "software_name": "markmarkoh/datamaps",
+  "version": "0.5.9",
+  "source": {
+    "repository_url": "https://github.com/markmarkoh/datamaps",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "partial",
+      "notes": "Supports rendering static layers (choropleths, bubbles, arcs) via configuration options. Does not support dynamic layer toggling, Z-ordering management, or persistent state storage of layers.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "verified",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "src/js/datamaps.js@14c16412"
+      ]
+    },
+    {
+      "name": "Geofencing",
+      "coverage": "none",
+      "notes": "No geofence definition, boundary checking, or violation alerting logic found.",
+      "capability_id": "CAP.TRACK.GEOFENCE",
+      "evidence_status": "unknown",
+      "confidence": 0.9,
+      "evidence_refs": []
+    },
+    {
+      "name": "Route Computation",
+      "coverage": "none",
+      "notes": "Supports drawing arcs between points but does not compute routes based on road networks or graph algorithms.",
+      "capability_id": "CAP.ROUTE.COMPUTE",
+      "evidence_status": "unknown",
+      "confidence": 0.95,
+      "evidence_refs": []
+    },
+    {
+      "name": "Position History & Playback",
+      "coverage": "none",
+      "notes": "No storage or playback functionality for historical position data.",
+      "capability_id": "CAP.TRACK.HISTORY",
+      "evidence_status": "unknown",
+      "confidence": 0.95,
+      "evidence_refs": []
+    },
+    {
+      "name": "Stale Position Handling",
+      "coverage": "none",
+      "notes": "No logic for detecting or handling stale position updates.",
+      "capability_id": "CAP.TRACK.POSITION.STALE",
+      "evidence_status": "unknown",
+      "confidence": 0.95,
+      "evidence_refs": []
+    },
+    {
+      "name": "SVG Map Visualization",
+      "coverage": "full",
+      "notes": "Core capability: Renders SVG maps with D3.js. Supports world, USA, and custom scopes.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@14c16412",
+        "src/js/datamaps.js@14c16412"
+      ]
+    },
+    {
+      "name": "Interactive Map Events",
+      "coverage": "full",
+      "notes": "Supports click, mouseover, mouseout, and touchstart events on map elements.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "src/tests/spec/MapSpec.js@14c16412"
+      ]
+    }
+  ],
+  "interfaces": [
+    "JavaScript Constructor API (JavaScript)",
+    "DOM Event Listener (DOM Events)"
+  ],
+  "dependencies": [
+    "d3 ^3.5.6",
+    "topojson ^1.6.19"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires browser environment with D3.js and TopoJSON loaded",
+    "Not suitable for server-side processing or backend services"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "The component requires building a custom backend service to handle state, geofencing, and history.",
+      "Datamaps would only be used as the frontend visualization layer for this service.",
+      "Significant integration effort is needed to bridge the gap between server-side logic and client-side rendering.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Datamaps is a customizable SVG map visualization library using D3.js",
+      "source_ref": "README.md@14c16412",
+      "verified": false
+    },
+    {
+      "claim": "Version 0.5.9 is defined in package.json",
+      "source_ref": "package.json@14c16412",
+      "verified": false
+    },
+    {
+      "claim": "Library supports choropleths, bubbles, and arcs via configuration",
+      "source_ref": "src/js/datamaps.js@14c16412",
+      "verified": true
+    },
+    {
+      "claim": "Supports map events like click, mouseover, mouseout",
+      "source_ref": "src/tests/spec/MapSpec.js@14c16412",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The claim of 'partial' coverage for layer management is unsupported. The artifact notes that the library does not support dynamic layer toggling or Z-ordering. The provided evidence (`src/js/datamaps.js`) shows a configuration-based approach where layers (geography, bubbles, arcs) are rendered in a fixed order defined by the constructor options. There is no API evidence for managing layers after initialization (e.g., `addLayer`, `removeLayer`, `setZIndex`). The 'partial' status implies some dynamic capability exists, which contradicts the 'static layers' note and the code structure. | [medium] The interface 'DOM Event Listener' is listed as an output interface with `evidence_status=verified`. However, the evidence (`src/tests/spec/MapSpec.js`) only verifies that the library *fires* custom jQuery-style events (e.g., `map-click`). It does not verify that the library exposes standard DOM event listeners (like `addEventListener` on the SVG elements) or that it supports consuming external DOM events. The interface description is ambiguous and potentially overstated if it implies bidirectional or standard DOM integration. | [medium] The claim of 'stable' maturity is contradicted by the evidence showing outdated dependencies (D3 v3, TopoJSON v1) and the explicit risk note that 'D3.js v3 is outdated'. While the software itself may be stable in function, the dependency chain poses a significant maintenance risk. The passport should reflect this as 'legacy' or 'maintenance mode' rather than generic 'stable', or at least flag the dependency age as a critical constraint. | [low] The evidence list for 'SVG Map Visualization' includes `README.md@14c16412` with `verified: false` in the global evidence section. While the source code (`src/js/datamaps.js`) is verified, relying on README marketing text for a 'full coverage' verification of a core technical capability violates the rubric's preference for code/test evidence over documentation. The finding should rely solely on the source file."
+  },
+  "revision": "14c1641273bb52e6f115f99db847ec076c62eb4b",
+  "description": "Datamaps is a client-side JavaScript library for rendering interactive SVG maps using D3.js and TopoJSON. It supports choropleths, bubble maps, and arcs. It does not provide server-side capabilities such as map state management, geofencing logic, route computation engines, position history storage, or stale position handling. It is purely a visualization component.",
+  "interfaces_detail": [
+    {
+      "name": "JavaScript Constructor API",
+      "protocol": "JavaScript",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "DOM Event Listener",
+      "protocol": "DOM Events",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires browser environment with D3.js and TopoJSON loaded",
+    "Not suitable for server-side processing or backend services"
+  ],
+  "runtime": [
+    "Browser (Client-side JavaScript)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No server-side capabilities",
+    "No geofencing logic",
+    "No route computation algorithms",
+    "No position history storage or playback",
+    "No stale position detection",
+    "No MQTT/WebSocket integration (client-side only)",
+    "No REST API endpoints"
+  ],
+  "risks": [
+    "D3.js v3 is outdated; modern D3 versions may have breaking changes if upgrade is needed.",
+    "TopoJSON v1 is legacy; newer versions exist.",
+    "Client-side only: cannot handle sensitive data processing or secure geofencing logic on the server."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The component requires building a custom backend service to handle state, geofencing, and history.",
+      "Datamaps would only be used as the frontend visualization layer for this service.",
+      "Significant integration effort is needed to bridge the gap between server-side logic and client-side rendering."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:00:37+00:00",
+  "stars": 3800,
+  "last_activity": "2026-02-10T21:28:39Z"
+}

@@ -1,0 +1,11 @@
+[
+  {
+    "iteration_id": "IT-03310C",
+    "parent": null,
+    "instruction": "Initial evaluation of SwissLink SRS",
+    "proposals": [
+      "ARCH-SWISSLINK@v1"
+    ],
+    "timestamp": "2026-11-09T12:00:20+00:00"
+  }
+]

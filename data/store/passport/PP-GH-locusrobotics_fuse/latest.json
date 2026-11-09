@@ -1,0 +1,186 @@
+{
+  "passport_id": "PP-GH-locusrobotics_fuse",
+  "software_name": "locusrobotics/fuse",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/locusrobotics/fuse",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Data Normalization",
+      "coverage": "partial",
+      "notes": "The system normalizes heterogeneous sensor inputs into a common optimization graph via 'sensor models' that generate constraints. It does not perform generic data format normalization (e.g., JSON/XML) but rather geometric/statistical normalization of measurements into a unified state estimation problem.",
+      "capability_id": "CAP.FUSION.NORMALIZE",
+      "evidence_status": "declared",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@8e3f0a1f",
+        "fuse_core/CMakeLists.txt@8e3f0a1f"
+      ]
+    },
+    {
+      "name": "Track Fusion",
+      "coverage": "partial",
+      "notes": "Performs multi-sensor fusion using nonlinear least squares optimization (Ceres Solver) to estimate a unified state (e.g., robot pose). It fuses constraints from multiple sources (encoders, lasers) into a single optimal trajectory/state, which serves as the 'track' or state estimate.",
+      "capability_id": "CAP.FUSION.FUSE",
+      "evidence_status": "declared",
+      "confidence": 0.6,
+      "evidence_refs": [
+        "README.md@8e3f0a1f",
+        "fuse_constraints/CMakeLists.txt@8e3f0a1f"
+      ]
+    },
+    {
+      "name": "State Estimation",
+      "coverage": "full",
+      "notes": "Core capability of the fuse stack. Uses optimization to estimate state variables like position and orientation.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "api:project@8e3f0a1f",
+        "README.md@8e3f0a1f"
+      ]
+    },
+    {
+      "name": "Plugin-based Architecture",
+      "coverage": "full",
+      "notes": "Extensible plugin system for sensor models, motion models, and publishers.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@8e3f0a1f"
+      ]
+    },
+    {
+      "name": "ROS Integration",
+      "coverage": "full",
+      "notes": "Built on ROS (roscpp), uses ROS topics for publishing optimized state values.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@8e3f0a1f",
+        "fuse_core/CMakeLists.txt@8e3f0a1f"
+      ]
+    }
+  ],
+  "interfaces": [
+    "ROS Topics (ROS)",
+    "Plugin API (C++)"
+  ],
+  "dependencies": [
+    "ROS (roscpp)",
+    "Ceres Solver",
+    "Eigen3",
+    "SuiteSparse",
+    "Boost",
+    "glog"
+  ],
+  "license": "BSD",
+  "maturity": "stable",
+  "constraints": [
+    "Requires ROS environment",
+    "Requires Ceres Solver, Eigen3, SuiteSparse libraries",
+    "Linux container available"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "Assumes ability to write C++ plugins for sensor models and publishers.",
+      "Assumes ROS infrastructure is available and configured.",
+      "MQTT integration requires custom publisher plugin development as native MQTT support is not evidenced.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "The fuse stack provides a general architecture for performing sensor fusion live on a robot.",
+      "source_ref": "api:project@8e3f0a1f",
+      "verified": false
+    },
+    {
+      "claim": "fuse is a ROS framework for performing sensor fusion using nonlinear least squares optimization techniques.",
+      "source_ref": "README.md@8e3f0a1f",
+      "verified": false
+    },
+    {
+      "claim": "Plugin-based system for modeling sensor measurements, motion models, and publishing optimized state values.",
+      "source_ref": "README.md@8e3f0a1f",
+      "verified": false
+    },
+    {
+      "claim": "Publishers receive the optimized state values and publish any derived quantities on ROS topics.",
+      "source_ref": "README.md@8e3f0a1f",
+      "verified": false
+    },
+    {
+      "claim": "Dependencies include Ceres, Eigen3, SuiteSparse, Boost, glog.",
+      "source_ref": "fuse_core/CMakeLists.txt@8e3f0a1f",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The passport claims the 'Plugin API' interface is 'verified', but the provided evidence consists entirely of README marketing text and CMakeLists.txt dependency declarations. There is no source code excerpt showing the plugin base classes, registration macros, or API headers required to verify the existence and nature of a C++ Plugin API. | [high] The claim of 'full' coverage for State Estimation is unsupported by code evidence. The only cited evidence is README.md and api:project metadata. Per the rubric, 'verified' requires code/test evidence. While the capability is likely true, the passport fails to provide the necessary source code proof (e.g., optimizer implementation) to support a 'full' or 'verified' status. | [high] Similar to State Estimation, 'full' coverage for Plugin Architecture is claimed based solely on README text. The rubric requires code/test evidence for verification. The presence of `pluginlib` in CMakeLists.txt suggests the capability exists, but without source code showing the plugin loading/registration mechanism, it cannot be verified as 'full'. | [medium] The passport asserts the license is 'BSD'. While the LICENSE file excerpt confirms a BSD License, it does not specify the variant (e.g., BSD 2-Clause vs 3-Clause). The rubric requires precise identification if claimed. The excerpt shows standard BSD text but lacks the specific clause count or version identifier often required for strict compliance auditing. | [medium] The passport claims maturity is 'stable'. The evidence shows a last activity date of '2026-08-19', which is in the future relative to the analysis timestamp (2026-11-09) or indicates a data error. Furthermore, 'stars=885' and 'last_activity' are weak proxies for 'stable' maturity without release tags or changelog evidence."
+  },
+  "revision": "8e3f0a1fef6f3b8af16a50f60bf4c11843bf4d81",
+  "description": "The fuse stack provides a general architecture for performing sensor fusion live on a robot using nonlinear least squares optimization. It is a ROS framework that uses a plugin-based system for sensor models, motion models, and publishers to optimize state variables (e.g., pose) based on constraints from heterogeneous sensors.",
+  "interfaces_detail": [
+    {
+      "name": "ROS Topics",
+      "protocol": "ROS",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "Plugin API",
+      "protocol": "C++",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires ROS environment",
+    "Requires Ceres Solver, Eigen3, SuiteSparse libraries",
+    "Linux container available"
+  ],
+  "runtime": [
+    "Linux",
+    "ROS Environment"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No native MQTT interface; requires custom ROS-to-MQTT bridge or publisher plugin.",
+    "Specific 'Geo-referenced Detection Publication' format not defined; output is generic ROS topics.",
+    "Track fusion is state estimation based, not traditional multi-target tracking with ID management."
+  ],
+  "risks": [
+    "License: BSD License (compatible).",
+    "Maintenance: Last activity 2026-08-19 (future date in metadata, likely a typo or very recent; stars=885 indicates community interest but active maintenance status needs verification).",
+    "Complexity: Requires significant C++ development for custom sensor models and publishers."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assumes ability to write C++ plugins for sensor models and publishers.",
+      "Assumes ROS infrastructure is available and configured.",
+      "MQTT integration requires custom publisher plugin development as native MQTT support is not evidenced."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T11:58:20+00:00",
+  "stars": 885,
+  "last_activity": "2026-08-19T20:20:32Z"
+}

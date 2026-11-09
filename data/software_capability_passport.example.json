@@ -1,0 +1,19 @@
+{
+  "passport_id": "swisslink-example-001",
+  "software_name": "Illustrative Geospatial Mapping Library",
+  "version": "TBD",
+  "source": {"repository_url": "", "homepage_url": ""},
+  "capabilities": [
+    {"name": "Map visualization", "coverage": "partial", "notes": "Illustrative; not verified"},
+    {"name": "Offline map support", "coverage": "partial", "notes": "Requires validation"}
+  ],
+  "interfaces": ["JavaScript API"],
+  "dependencies": [],
+  "license": "Unknown — verify",
+  "maturity": "unknown",
+  "constraints": ["Offline operation requires testing"],
+  "adaptation_effort_hours": {"estimate": 120, "confidence": "low", "assumptions": ["Illustrative estimate only; no repository assessed"]},
+  "fit": {"score": 65, "hard_requirements_met": false, "gaps": ["Verify offline map support"]},
+  "evidence": [],
+  "validation": {"status": "pending", "judge_notes": "Example only; no evidence checked"}
+}

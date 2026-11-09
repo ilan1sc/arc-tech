@@ -1,0 +1,189 @@
+{
+  "passport_id": "PP-GH-ultralytics_ultralytics",
+  "software_name": "ultralytics/ultralytics",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/ultralytics/ultralytics",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Object Detection & Classification",
+      "coverage": "full",
+      "notes": "Core capability of the library. Supports detection, classification, segmentation, and pose estimation with high accuracy models.",
+      "capability_id": "CAP.VIDEO.ANALYTICS",
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "api:project@e8011acc",
+        "README.md@e8011acc",
+        "examples/YOLOv8-Segmentation-ONNXRuntime-Python/main.py@e8011acc"
+      ]
+    },
+    {
+      "name": "Object Tracking",
+      "coverage": "full",
+      "notes": "Explicitly listed in topics and README as a supported mode ('track detected objects across video frames').",
+      "capability_id": "CAP.VIDEO.TRACKING",
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "api:project@e8011acc",
+        "README.md@e8011acc"
+      ]
+    },
+    {
+      "name": "Video Ingestion & Recording",
+      "coverage": "partial",
+      "notes": "The library accepts video streams/files as input for inference (via OpenCV/PyTorch). It does not appear to have built-in recording or persistent storage capabilities; it processes frames and outputs results. Ingestion is limited to what OpenCV supports.",
+      "capability_id": "CAP.VIDEO.INGEST",
+      "evidence_status": "inferred",
+      "confidence": 0.7,
+      "evidence_refs": [
+        "README.md@e8011acc"
+      ]
+    },
+    {
+      "name": "GPU Hardware Utilization",
+      "coverage": "full",
+      "notes": "Dockerfile is explicitly CUDA-optimized (cuda13.2-cudnn9-runtime). PyTorch backend natively supports GPU acceleration.",
+      "capability_id": "CAP.PLATFORM.GPU",
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "docker/Dockerfile@e8011acc"
+      ]
+    },
+    {
+      "name": "Geo-referenced Detection Output",
+      "coverage": "none",
+      "notes": "No evidence of GPS/geo-location tagging or spatial mapping capabilities in the provided excerpts.",
+      "capability_id": null,
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "MQTT Message Publishing",
+      "coverage": "none",
+      "notes": "No MQTT client or broker integration found in the library code or dependencies.",
+      "capability_id": null,
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Real-time Video Analytics Dashboard",
+      "coverage": "none",
+      "notes": "While it has an 'Analytics' class for charting detection stats, it is a visualization tool, not a full dashboard system.",
+      "capability_id": null,
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    }
+  ],
+  "interfaces": [
+    "Python API (unknown)",
+    "CLI (Command Line Interface) (unknown)"
+  ],
+  "dependencies": [
+    "pytorch",
+    "opencv-python",
+    "numpy",
+    "onnxruntime",
+    "matplotlib"
+  ],
+  "license": "agpl-3.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires NVIDIA GPU with CUDA support for optimal performance (inferred from Dockerfile)",
+    "Linux environment recommended (Dockerfile uses apt-get)"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 16.0,
+    "confidence": "medium",
+    "assumptions": [
+      "Assumes a separate ingestion service handles video streams and passes frames to the Ultralytics API.",
+      "Assumes a separate messaging service (e.g., MQTT broker) is available for publishing results.",
+      "Assumes GPU hardware is provisioned in the deployment environment.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Supports object detection, segmentation, tracking, and classification.",
+      "source_ref": "api:project@e8011acc",
+      "verified": false
+    },
+    {
+      "claim": "Docker image is CUDA-optimized for GPU training and inference.",
+      "source_ref": "docker/Dockerfile@e8011acc",
+      "verified": false
+    },
+    {
+      "claim": "Library provides Python API for YOLO models.",
+      "source_ref": "README.md@e8011acc",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The rubric requires code/test evidence for 'verified' status. The provided evidence section explicitly lists all three claims (including the one supporting this capability) as 'verified: false'. Furthermore, the only source file excerpted is an example script (`examples/...`), not the core library implementation. Marketing text in README does not constitute verification. | [high] The claim states the library 'natively supports GPU acceleration'. The evidence (Dockerfile) only proves that a *container image* can be built with CUDA libraries. It does not verify that the Python library code actually initializes or utilizes the GPU at runtime. This is an infrastructure configuration, not software capability verification. | [medium] The notes claim tracking is 'Explicitly listed in topics and README'. While the README mentions 'track detected objects', it does not provide a code example or API signature for the tracking mode. Without code evidence, this remains an inference from marketing text. | [medium] The `interfaces_detail` section lists protocols as 'unknown' and schema_ref as empty. However, the capabilities claim 'full' coverage based on these interfaces. Without defined schemas or protocols, the interface contract is undefined, making 'verified' status for integration purposes invalid. | [low] The artifact header states version='unknown', yet the evidence excerpts contain specific version indicators (e.g., `pytorch/pytorch:2.15.0`, `yolo26n.pt`). While the library's own version might be dynamic, the dependency versions are pinned in the Dockerfile."
+  },
+  "revision": "e8011acc3d7d948cf44c000882ef753100990a1c",
+  "description": "Ultralytics is a comprehensive computer vision library providing state-of-the-art YOLO models for object detection, instance segmentation, classification, pose estimation, and object tracking. It supports inference on images, videos, and streams via Python API, CLI, and various export formats (ONNX, TensorRT, etc.).",
+  "interfaces_detail": [
+    {
+      "name": "Python API",
+      "protocol": "unknown",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "CLI (Command Line Interface)",
+      "protocol": "unknown",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires NVIDIA GPU with CUDA support for optimal performance (inferred from Dockerfile)",
+    "Linux environment recommended (Dockerfile uses apt-get)"
+  ],
+  "runtime": [
+    "Python 3.8+"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No built-in video recording or storage.",
+    "No native MQTT or network protocol support for outputting detections.",
+    "No geo-referencing capabilities.",
+    "No built-in real-time streaming server (e.g., WebRTC, RTSP) for serving results."
+  ],
+  "risks": [
+    "agpl-3.0: strong copyleft, conflicts with closed redistribution (SL-DEP-02)",
+    "AGPL-3.0 license requires source code disclosure if distributed as a network service.",
+    "Heavy dependency on PyTorch and CUDA drivers, increasing deployment complexity.",
+    "Large model sizes may impact memory footprint."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": false,
+    "license_pricing_note": "unknown",
+    "adaptation_assumptions": [
+      "Assumes a separate ingestion service handles video streams and passes frames to the Ultralytics API.",
+      "Assumes a separate messaging service (e.g., MQTT broker) is available for publishing results.",
+      "Assumes GPU hardware is provisioned in the deployment environment."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:02:35+00:00",
+  "stars": 63235,
+  "last_activity": "2026-11-09T11:47:00Z"
+}

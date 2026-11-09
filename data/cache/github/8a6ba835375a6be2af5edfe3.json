@@ -1,0 +1,1 @@
+{"path": "repos/2013fangwentao/Multi_Sensor_Fusion/contents/exec/CMakeLists.txt?ref=73c0f817c3f3e478b8c4299251b7b2f6991f365a", "data": "cmake_minimum_required( VERSION 2.8 )\nPROJECT(mscnav_bin)\n\nadd_executable(mscnav_bin ./mscnav.cc)\ntarget_link_libraries( mscnav_bin process filter data imu tools)"}

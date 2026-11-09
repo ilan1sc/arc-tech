@@ -1,0 +1,1 @@
+{"path": "repos/nsqio/nsq/contents/bench/requirements.txt?ref=85cf10c09c6c3c86160d6f0eb156f62d0efc1648", "data": "tornado==4.3\nparamiko==1.16.0\nboto==2.39.0\n"}

@@ -1,0 +1,187 @@
+{
+  "passport_id": "PP-GH-baetyl_baetyl",
+  "software_name": "baetyl/baetyl",
+  "version": "2.x (v2)",
+  "source": {
+    "repository_url": "https://github.com/baetyl/baetyl",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Degraded Mode Operation",
+      "coverage": "partial",
+      "notes": "Baetyl supports 'temporary offline' computing and local node management (baetyl-core). It handles data synchronization with the cloud when connectivity is restored. However, specific logic for 'intermittent connectivity buffering' of GPS/telemetry streams as a primary gateway function is not explicitly detailed in the excerpts; it relies on the underlying application logic or K3s stateful sets.",
+      "capability_id": "CAP.COMMS.DEGRADED",
+      "evidence_status": "inferred",
+      "confidence": 0.6,
+      "evidence_refs": [
+        "README.md@854e3241"
+      ]
+    },
+    {
+      "name": "Encryption & Authentication",
+      "coverage": "partial",
+      "notes": "The MQTT link plugin explicitly requires 'certificate bidirectional authentication' (mTLS) for cloud connection. It parses node certificates and enforces TLS configuration. Secrets and Certificates are also managed by the Cloud Management Suite.",
+      "capability_id": "CAP.SEC.ENCRYPT",
+      "evidence_status": "verified",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "plugin/mqttlink/config.go@854e3241",
+        "plugin/mqttlink/mqtt.go@854e3241"
+      ]
+    },
+    {
+      "name": "Edge Application Runtime",
+      "coverage": "full",
+      "notes": "Supports container and function (FaaS) application deployment on edge nodes via K3S/K8s or native mode.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@854e3241",
+        "go.mod@854e3241"
+      ]
+    },
+    {
+      "name": "Device Shadow & Sync",
+      "coverage": "full",
+      "notes": "Implements declarative design with Report/Desire shadows for data synchronization between edge and cloud.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@854e3241",
+        "plugin/mqttlink/config.go@854e3241"
+      ]
+    },
+    {
+      "name": "Node Management",
+      "coverage": "full",
+      "notes": "Manages edge node lifecycle, activation, status collection, and application deployment.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@854e3241"
+      ]
+    }
+  ],
+  "interfaces": [
+    "MQTT Link (Cloud-Edge) (MQTT)",
+    "REST API (Cloud Management) (HTTPS)",
+    "Kubernetes API (Edge Node) (HTTPS)"
+  ],
+  "dependencies": [
+    "k3s or kubernetes (for Kube mode)",
+    "Docker/container runtime",
+    "Go 1.18+",
+    "MQTT Broker (Cloud side)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires K3S or Kubernetes for full feature set (Kube mode)",
+    "Minimum 1GB RAM, 1 CPU core",
+    "Requires mutual TLS certificates for cloud connection"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The existing MQTT link plugin will be adapted to handle specific GPS/Telemetry topics.",
+      "Local buffering logic for intermittent connectivity needs to be implemented or configured via stateful volumes/K8s PVs.",
+      "Emergency alert handling requires custom application logic deployed as a Baetyl function or container.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Supports temporary offline computing and local node management.",
+      "source_ref": "README.md@854e3241",
+      "verified": false
+    },
+    {
+      "claim": "Requires certificate bidirectional authentication for MQTT cloud connection.",
+      "source_ref": "plugin/mqttlink/mqtt.go@854e3241",
+      "verified": true
+    },
+    {
+      "claim": "MQTT configuration includes Report/Delta/Desire topics.",
+      "source_ref": "plugin/mqttlink/config.go@854e3241",
+      "verified": true
+    },
+    {
+      "claim": "Runs on Linux/amd64, arm64, armv7 with minimum 1GB RAM.",
+      "source_ref": "README.md@854e3241",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The capability is marked 'full' coverage with 'declared' status based only on README and go.mod. The rubric requires 'verified' status for full coverage claims to be supported by code/test evidence. The README mentions support for function computing and container applications, but no source code or tests proving the runtime implementation (e.g., engine package logic) are cited as evidence. | [high] The capability is marked 'full' coverage with 'declared' status based solely on README text. The rubric requires code/test evidence for verified claims. While the README describes node management features, there is no citation of source code (e.g., core/node/) or tests that verify this functionality is implemented in the artifact. | [medium] The claim is marked 'verified' based on README and config.go. However, config.go only defines the *structure* of topics (Report/Delta/Desire). It does not contain the logic for shadow synchronization or state management. Verification requires code that implements the behavior, not just configuration schemas. | [medium] The interface is listed with 'declared' status and an empty schema_ref. The rubric states that interfaces not present in the evidence must be 'unknown'. There is no code or documentation excerpt provided to verify the existence, path, or schema of this REST API. | [low] The constraint is listed in the passport. The README confirms 'RAM: 1GB Minimum' and 'CPU: 1 Minimum'. However, the evidence section marks the claim 'Runs on Linux/amd64... with minimum 1GB RAM' as verified=false. While the text supports it, the inconsistency in the evidence block's verification status should be resolved or clarified as 'inferred' from documentation."
+  },
+  "revision": "854e32419785b8edb884aca7cfa7b6a88245b776",
+  "description": "Baetyl v2 is an open-source edge computing framework that extends cloud capabilities to edge devices. It manages applications (containers, functions) on edge nodes via K3S/K8s or native modes, handling device connection, message routing, OTA synchronization, and remote management. It serves as the foundational runtime for edge gateways but requires integration with specific IoT protocols and local buffering logic.",
+  "interfaces_detail": [
+    {
+      "name": "MQTT Link (Cloud-Edge)",
+      "protocol": "MQTT",
+      "direction": "bidirectional",
+      "schema_ref": "plugin/mqttlink/config.go@854e3241",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "REST API (Cloud Management)",
+      "protocol": "HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "Kubernetes API (Edge Node)",
+      "protocol": "HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "inferred"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires K3S or Kubernetes for full feature set (Kube mode)",
+    "Minimum 1GB RAM, 1 CPU core",
+    "Requires mutual TLS certificates for cloud connection"
+  ],
+  "runtime": [
+    "Linux/amd64",
+    "Linux/arm64",
+    "Linux/armv7"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No explicit evidence of built-in GPS/Telemetry aggregation logic; likely requires custom application deployment.",
+    "No explicit evidence of 'intermittent connectivity buffering' strategy beyond general offline support; specific QoS/drop policies not detailed.",
+    "Emergency Alert Ingestion (High Priority Topic) is not explicitly defined in the provided excerpts."
+  ],
+  "risks": [
+    "Kube mode has high resource overhead (1GB RAM), which may be tight for constrained edge devices.",
+    "Native mode is under development and may lack stability or features compared to Kube mode.",
+    "Complexity of integrating custom IoT ingestion logic with the Baetyl runtime."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The existing MQTT link plugin will be adapted to handle specific GPS/Telemetry topics.",
+      "Local buffering logic for intermittent connectivity needs to be implemented or configured via stateful volumes/K8s PVs.",
+      "Emergency alert handling requires custom application logic deployed as a Baetyl function or container."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T11:55:07+00:00",
+  "stars": 1900,
+  "last_activity": "2024-05-11T06:12:43Z"
+}

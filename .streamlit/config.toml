@@ -1,0 +1,7 @@
+[server]
+enableStaticServing = true
+headless = true
+[browser]
+gatherUsageStats = false
+[theme]
+base = "light"

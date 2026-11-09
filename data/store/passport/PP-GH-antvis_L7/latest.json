@@ -1,0 +1,166 @@
+{
+  "passport_id": "PP-GH-antvis_L7",
+  "software_name": "antvis/L7",
+  "version": "2.21.4",
+  "source": {
+    "repository_url": "https://github.com/antvis/L7",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Map Layer Management",
+      "coverage": "full",
+      "notes": "L7 provides a comprehensive layer system including PointLayer, LineLayer, PolygonLayer, and HeatMapLayer with style mapping and rendering hooks.",
+      "capability_id": "CAP.MAP.LAYERS",
+      "evidence_status": "verified",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@53643937",
+        "packages/layers/src/heatmap/index.ts@53643937"
+      ]
+    },
+    {
+      "name": "Geofencing",
+      "coverage": "none",
+      "notes": "No evidence of geofence definition, polygon containment checks, or violation alerting logic in the repository.",
+      "capability_id": "CAP.TRACK.GEOFENCE",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Route Computation",
+      "coverage": "none",
+      "notes": "L7 renders line layers but does not contain pathfinding or route computation algorithms (e.g., Dijkstra, A*).",
+      "capability_id": "CAP.ROUTE.COMPUTE",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Position History & Playback",
+      "coverage": "none",
+      "notes": "No evidence of time-series data storage, position history buffers, or playback controls.",
+      "capability_id": "CAP.TRACK.HISTORY",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    },
+    {
+      "name": "Stale Position Handling",
+      "coverage": "none",
+      "notes": "No evidence of timestamp validation, stale data detection, or position freshness logic.",
+      "capability_id": "CAP.TRACK.POSITION.STALE",
+      "evidence_status": "unknown",
+      "confidence": 0.1,
+      "evidence_refs": []
+    }
+  ],
+  "interfaces": [
+    "JavaScript API (Scene/Layer) (library)",
+    "Mapbox/AMap Base Map Integration (REST/WebSocket)"
+  ],
+  "dependencies": [
+    "@antv/l7-core",
+    "@antv/l7-maps",
+    "@antv/l7-utils",
+    "mapbox-gl",
+    "amap-js-api"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires WebGL-capable browser environment",
+    "Client-side rendering only; no server runtime"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 40.0,
+    "confidence": "low",
+    "assumptions": [
+      "Adaptation involves building a separate backend service for state, geofencing, and history; L7 is used only as the rendering frontend library.",
+      "Integration requires mapping backend data formats to L7's source/layer API.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "L7 is a WebGL-powered geospatial data visualization engine supporting point, line, polygon, and heatmap layers.",
+      "source_ref": "README.md@53643937",
+      "verified": false
+    },
+    {
+      "claim": "HeatMapLayer implementation with rendering hooks and model updates.",
+      "source_ref": "packages/layers/src/heatmap/index.ts@53643937",
+      "verified": true
+    },
+    {
+      "claim": "Data mapping plugin for style attribute generation during render stages.",
+      "source_ref": "packages/layers/src/plugins/DataMappingPlugin.ts@53643937",
+      "verified": true
+    },
+    {
+      "claim": "Supports Mapbox and AMap base maps with offline deployment capability.",
+      "source_ref": "README.md@53643937",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The claim states 'comprehensive layer system including PointLayer, LineLayer, PolygonLayer, and HeatMapLayer'. The provided evidence only verifies HeatMapLayer (source code) and DataMappingPlugin. There is no source code or test evidence for PointLayer, LineLayer, or PolygonLayer in the excerpts. Under the rubric, 'verified' requires code/test evidence for the specific claims. | [medium] The passport claims the protocol is 'REST/WebSocket'. The README and package.json indicate integration via JavaScript libraries (`@antv/l7-maps`, `mapbox-gl`, `amap-js-api`). These are client-side SDKs that typically use XHR/Fetch or WebSocket internally, but the interface exposed by L7 to the application is a JS API, not a REST/WebSocket service itself. The protocol description is misleading and unsupported by the evidence which shows library dependencies. | [medium] The evidence section correctly marks this as unverified, but the README text provided in the excerpts explicitly states: '多地图底图支持，支持离线内网部署' (Multi-map base map support, supports offline intranet deployment). The passport's evidence handling is inconsistent with the provided text excerpt. If it's not verified, the claim should be removed or marked as 'unknown' rather than leaving a false claim in the evidence list. | [low] The estimate assumes building a separate backend service for state, geofencing, and history. While the passport correctly identifies these as gaps, assigning a specific hour estimate (40h) for 'building a separate backend service' is arbitrary and not derived from any evidence in the artifact. It is an assumption presented as a metric."
+  },
+  "revision": "53643937093f8d5d1cf3c7cee6e6e6bda83ea2ec",
+  "description": "L7 is a large-scale WebGL-powered geospatial data visualization engine for rendering map layers (points, lines, polygons, heatmaps) on top of base maps like Mapbox or AMap. It provides client-side rendering capabilities but does not include server-side logic for state management, route computation, geofencing, or position history storage.",
+  "interfaces_detail": [
+    {
+      "name": "JavaScript API (Scene/Layer)",
+      "protocol": "library",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "Mapbox/AMap Base Map Integration",
+      "protocol": "REST/WebSocket",
+      "direction": "out",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires WebGL-capable browser environment",
+    "Client-side rendering only; no server runtime"
+  ],
+  "runtime": [
+    "Node.js (for build)",
+    "Browser (WebGL)"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No server-side capabilities (state management, geofencing, route computation, history storage)",
+    "No MQTT or WebSocket server implementation",
+    "No REST API for map state updates or geofence alerts",
+    "No position timestamp validation or stale data handling"
+  ],
+  "risks": [
+    "L7 is a frontend visualization library, not a backend service; using it as a 'Map Visualization Service' backend is architecturally incorrect.",
+    "Geofencing and route computation require significant custom implementation.",
+    "MIT license is permissive but requires attribution."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Adaptation involves building a separate backend service for state, geofencing, and history; L7 is used only as the rendering frontend library.",
+      "Integration requires mapping backend data formats to L7's source/layer API."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T12:01:28+00:00",
+  "stars": 4077,
+  "last_activity": "2026-10-20T06:41:50Z"
+}

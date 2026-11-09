@@ -1,0 +1,22 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "SwissLink Software Capability Passport",
+  "type": "object",
+  "required": ["passport_id","software_name","source","capabilities","interfaces","license","maturity","adaptation_effort_hours","evidence","validation"],
+  "properties": {
+    "passport_id": {"type": "string"},
+    "software_name": {"type": "string"},
+    "version": {"type": "string"},
+    "source": {"type": "object","properties": {"repository_url": {"type": "string"},"homepage_url": {"type": "string"}}},
+    "capabilities": {"type": "array","items": {"type": "object","required": ["name","coverage"],"properties": {"name": {"type": "string"},"coverage": {"enum": ["full","partial","none"]},"notes": {"type": "string"}}}},
+    "interfaces": {"type": "array","items": {"type": "string"}},
+    "dependencies": {"type": "array","items": {"type": "string"}},
+    "license": {"type": "string"},
+    "maturity": {"enum": ["experimental","developing","stable","unknown"]},
+    "constraints": {"type": "array","items": {"type": "string"}},
+    "adaptation_effort_hours": {"type": "object","required": ["estimate","confidence"],"properties": {"estimate": {"type": "number","minimum": 0},"confidence": {"enum": ["low","medium","high"]},"assumptions": {"type": "array","items": {"type": "string"}}}},
+    "fit": {"type": "object","properties": {"score": {"type": "number","minimum": 0,"maximum": 100},"hard_requirements_met": {"type": "boolean"},"gaps": {"type": "array","items": {"type": "string"}}}},
+    "evidence": {"type": "array","items": {"type": "object","required": ["claim","source_ref"],"properties": {"claim": {"type": "string"},"source_ref": {"type": "string"},"verified": {"type": "boolean"}}}},
+    "validation": {"type": "object","required": ["status"],"properties": {"status": {"enum": ["pending","passed","failed"]},"judge_notes": {"type": "string"}}}
+  }
+}

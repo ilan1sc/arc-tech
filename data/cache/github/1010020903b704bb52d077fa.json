@@ -1,0 +1,1 @@
+{"path": "repos/locusrobotics/fuse/contents/fuse/CMakeLists.txt?ref=8e3f0a1fef6f3b8af16a50f60bf4c11843bf4d81", "data": "cmake_minimum_required(VERSION 3.0.2)\nproject(fuse)\nfind_package(catkin REQUIRED)\ncatkin_metapackage()\n"}

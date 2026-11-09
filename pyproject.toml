@@ -1,0 +1,13 @@
+[project]
+name = "arc-tech"
+version = "0.1.0"
+description = "Operation SwissLink: software exploration, architecture generation, build/buy/reuse optimization"
+requires-python = ">=3.11"
+dependencies = ["pydantic>=2.7", "httpx", "streamlit", "jsonschema", "pytest"]
+
+[build-system]
+requires = ["setuptools>=68"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools]
+packages = ["shared", "engine1_explore", "engine2_architect", "engine3_optimize"]

@@ -1,0 +1,179 @@
+{
+  "passport_id": "PP-GH-centrifugal_centrifugo",
+  "software_name": "centrifugal/centrifugo",
+  "version": "v6 (based on go.mod module path github.com/centrifugal/centrifugo/v6)",
+  "source": {
+    "repository_url": "https://github.com/centrifugal/centrifugo",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Publish/Subscribe Messaging",
+      "coverage": "full",
+      "notes": "Core function of the software. Supports channel subscriptions, multiplexing, and multiple transports.",
+      "capability_id": "CAP.COMMS.MESSAGING",
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@4b6d86e2",
+        "api:project@4b6d86e2"
+      ]
+    },
+    {
+      "name": "Real-time Transport Support",
+      "coverage": "full",
+      "notes": "Supports WebSocket, HTTP-streaming, SSE, gRPC, and WebTransport.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@4b6d86e2"
+      ]
+    },
+    {
+      "name": "Scalability & Persistence",
+      "coverage": "full",
+      "notes": "Backends supported: Redis (Cluster), PostgreSQL, NATS. Includes async consumers for Kafka/Postgres.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "README.md@4b6d86e2",
+        "internal/pubsub/config.go@4b6d86e2"
+      ]
+    },
+    {
+      "name": "Message History & Recovery",
+      "coverage": "partial",
+      "notes": "Declared support for hot message history, automatic recovery upon reconnect, and cache recovery mode.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@4b6d86e2"
+      ]
+    },
+    {
+      "name": "Authentication & Authorization",
+      "coverage": "partial",
+      "notes": "Supports JWT and proxy-like authentication. Channel permission strategies are mentioned.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "README.md@4b6d86e2"
+      ]
+    }
+  ],
+  "interfaces": [
+    "HTTP API (HTTPS/HTTP)",
+    "gRPC API (gRPC)",
+    "Client Protocol (WebSocket/SSE/HTTP-Stream) (WebSocket/SSE/HTTP-Streaming)"
+  ],
+  "dependencies": [
+    "Redis (or compatible: AWS Elasticache, Valkey, KeyDB, DragonflyDB)",
+    "PostgreSQL",
+    "NATS",
+    "Kafka (via async consumers)",
+    "Azure Service Bus (via consuming module)"
+  ],
+  "license": "apache-2.0",
+  "maturity": "stable",
+  "constraints": [
+    "Requires external backend for scalability/persistence (Redis, PostgreSQL, or NATS) if high availability or history is needed.",
+    "Linux container available (Alpine-based Dockerfile)."
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 20.0,
+    "confidence": "medium",
+    "assumptions": [
+      "The component will be deployed as a standalone service.",
+      "Integration with the defense architecture's specific MQTT brokers is not direct; Centrifugo uses its own protocol. Adaptation requires building an MQTT-to-Centrifugo bridge or using Centrifugo's HTTP/gRPC API for ingestion.",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "Centrifugo is a scalable real-time messaging server supporting Pub/Sub over WebSocket, HTTP-streaming, SSE, gRPC, WebTransport.",
+      "source_ref": "README.md@4b6d86e2",
+      "verified": false
+    },
+    {
+      "claim": "Supports backends: Redis, PostgreSQL, NATS for scalability and history.",
+      "source_ref": "internal/pubsub/config.go@4b6d86e2",
+      "verified": true
+    },
+    {
+      "claim": "Module version is v6.",
+      "source_ref": "go.mod@4b6d86e2",
+      "verified": false
+    },
+    {
+      "claim": "Supports Azure Service Bus consumption.",
+      "source_ref": "internal/consuming/azure_service_bus.go@4b6d86e2",
+      "verified": true
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [critical] The capability is marked 'verified' but the provided code evidence (`internal/pubsub/config.go`) only implements Redis and NATS backends. There is no source code evidence for a PostgreSQL PubSub backend in the excerpts. The README mentions PostgreSQL, but 'verified' status requires code/test evidence per the rubric. | [high] The evidence explicitly marks this claim as `verified: false`. The passport asserts 'v6' based solely on the module path string, which does not guarantee the semantic version of the release. Without a tag or changelog entry confirming v6, this is an unverified assumption. | [medium] The README explicitly states WebTransport is '(experimental)'. Marking this as 'full' coverage with high confidence (0.95) overstates the maturity of this specific transport compared to stable ones like WebSocket/gRPC. | [medium] The passport lists the license as 'apache-2.0' but does not provide an evidence item with `verified: true` for this claim. While the LICENSE file excerpt exists, it was not cited in the `evidence` array to support a specific claim verification. | [low] The interfaces are listed as 'declared' with empty `schema_ref`. While acceptable for a high-level passport, the lack of schema references makes it difficult to verify the interface definitions without external knowledge."
+  },
+  "revision": "4b6d86e23452a6fa1bd424ffe4526862efae85b8",
+  "description": "Centrifugo is a scalable, language-agnostic real-time messaging server providing Pub/Sub capabilities over WebSocket, HTTP-streaming, SSE, gRPC, and WebTransport. It acts as a user-facing PUB/SUB server where backends publish via HTTP/gRPC APIs and clients subscribe via SDKs or direct protocol connections. It supports scalability via Redis, PostgreSQL, or NATS backends.",
+  "interfaces_detail": [
+    {
+      "name": "HTTP API",
+      "protocol": "HTTPS/HTTP",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "gRPC API",
+      "protocol": "gRPC",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "Client Protocol (WebSocket/SSE/HTTP-Stream)",
+      "protocol": "WebSocket/SSE/HTTP-Streaming",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires external backend for scalability/persistence (Redis, PostgreSQL, or NATS) if high availability or history is needed.",
+    "Linux container available (Alpine-based Dockerfile)."
+  ],
+  "runtime": [
+    "Go 1.27.0"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "Native MQTT support: Centrifugo does not natively speak MQTT as a transport for clients (it uses WebSocket/SSE/gRPC). The requested 'Position & Telemetry Ingestion (in; MQTT)' and other MQTT interfaces require an external bridge or adapter.",
+    "Specific Alert Processing Logic: Centrifugo handles message routing, not business logic like 'Alert Processing' or 'Geofence Violation' detection. These must be implemented in the backend consuming the messages."
+  ],
+  "risks": [
+    "Protocol Mismatch: The requested interfaces rely heavily on MQTT. Centrifugo is not an MQTT broker. Using it as a direct replacement for MQTT requires significant architectural adaptation (bridges).",
+    "Maintenance: While mature, integrating custom async consumers (Kafka/Postgres) requires Go development effort."
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "The component will be deployed as a standalone service.",
+      "Integration with the defense architecture's specific MQTT brokers is not direct; Centrifugo uses its own protocol. Adaptation requires building an MQTT-to-Centrifugo bridge or using Centrifugo's HTTP/gRPC API for ingestion."
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T11:57:16+00:00",
+  "stars": 10957,
+  "last_activity": "2026-11-08T19:35:42Z"
+}

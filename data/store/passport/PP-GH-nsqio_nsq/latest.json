@@ -1,0 +1,200 @@
+{
+  "passport_id": "PP-GH-nsqio_nsq",
+  "software_name": "nsqio/nsq",
+  "version": "unknown",
+  "source": {
+    "repository_url": "https://github.com/nsqio/nsq",
+    "homepage_url": ""
+  },
+  "capabilities": [
+    {
+      "name": "Publish/Subscribe Messaging",
+      "coverage": "full",
+      "notes": "Core function of NSQ. Supports pub/sub with topics and channels, ensuring message delivery to subscribers. Decentralized architecture ensures no single point of failure.",
+      "capability_id": "CAP.COMMS.MESSAGING",
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "README.md@85cf10c0",
+        "api:project@85cf10c0"
+      ]
+    },
+    {
+      "name": "Message Persistence",
+      "coverage": "partial",
+      "notes": "NSQ persists messages to disk (via backend queue interface) to ensure reliability across restarts. Dockerfile exposes /data volume for persistence.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.85,
+      "evidence_refs": [
+        "nsqd/backend_queue.go@85cf10c0",
+        "Dockerfile@85cf10c0"
+      ]
+    },
+    {
+      "name": "Service Discovery & Routing",
+      "coverage": "full",
+      "notes": "nsqlookupd component provides service discovery and routing information to nsqd instances and clients.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.9,
+      "evidence_refs": [
+        "tree@85cf10c0"
+      ]
+    },
+    {
+      "name": "Priority Queuing",
+      "coverage": "partial",
+      "notes": "Internal implementation of priority queues for in-flight messages, allowing prioritization of message delivery.",
+      "capability_id": null,
+      "evidence_status": "verified",
+      "confidence": 0.8,
+      "evidence_refs": [
+        "nsqd/in_flight_pqueue.go@85cf10c0",
+        "nsqd/in_flight_pqueue_test.go@85cf10c0"
+      ]
+    },
+    {
+      "name": "Web Administration UI",
+      "coverage": "full",
+      "notes": "nsqadmin provides a web-based interface for monitoring and managing NSQ clusters.",
+      "capability_id": null,
+      "evidence_status": "declared",
+      "confidence": 0.95,
+      "evidence_refs": [
+        "tree@85cf10c0"
+      ]
+    }
+  ],
+  "interfaces": [
+    "NSQ Binary Protocol (TCP)",
+    "HTTP API (HTTPS)",
+    "nsqadmin Web Interface (HTTP/HTTPS)"
+  ],
+  "dependencies": [
+    "github.com/BurntSushi/toml",
+    "github.com/bitly/go-hostpool",
+    "github.com/blang/semver/v4",
+    "github.com/golang/snappy",
+    "github.com/julienschmidt/httprouter",
+    "github.com/nsqio/go-diskqueue"
+  ],
+  "license": "mit",
+  "maturity": "stable",
+  "constraints": [
+    "Requires TCP ports 4150, 4151, 4160, 4161, 4170, 4171 exposed",
+    "Persistent storage volume required for message durability (/data)",
+    "No external runtime dependencies (statically linked binary)"
+  ],
+  "adaptation_effort_hours": {
+    "estimate": 20.0,
+    "confidence": "medium",
+    "assumptions": [
+      "Assumes ability to deploy nsqd and nsqlookupd in a cluster",
+      "Assumes client libraries can be used for MQTT/HTTPS ingestion (may require wrapper)",
+      "Assumes WebSocket support is available via HTTP API or custom implementation",
+      "Indicative only; excludes project-level integration"
+    ]
+  },
+  "fit": {
+    "score": null,
+    "hard_requirements_met": null,
+    "gaps": []
+  },
+  "evidence": [
+    {
+      "claim": "NSQ is a realtime distributed messaging platform",
+      "source_ref": "README.md@85cf10c0",
+      "verified": false
+    },
+    {
+      "claim": "Supports distributed and decentralized topologies with fault tolerance",
+      "source_ref": "README.md@85cf10c0",
+      "verified": false
+    },
+    {
+      "claim": "Provides reliable message delivery guarantee",
+      "source_ref": "README.md@85cf10c0",
+      "verified": false
+    },
+    {
+      "claim": "Backend queue interface for persistent storage",
+      "source_ref": "nsqd/backend_queue.go@85cf10c0",
+      "verified": true
+    },
+    {
+      "claim": "Priority queue implementation for in-flight messages",
+      "source_ref": "nsqd/in_flight_pqueue.go@85cf10c0",
+      "verified": true
+    },
+    {
+      "claim": "Docker deployment with exposed ports 4150-4171",
+      "source_ref": "Dockerfile@85cf10c0",
+      "verified": false
+    }
+  ],
+  "validation": {
+    "status": "pending",
+    "judge_notes": "REVISE: [high] The evidence reference 'tree' only proves the existence of the nsqlookupd directory in the repository structure. It does not verify that the component implements service discovery or routing logic. A directory listing is insufficient to claim functional coverage for a complex capability. | [high] Similar to Service Discovery, referencing only the directory tree ('nsqadmin/') does not verify the existence or functionality of a web interface. It proves code exists, but not that it constitutes a functional UI capability. | [medium] The capability is marked 'verified' in the rubric sense (requires code/test), but the evidence provided is marketing text (README) and metadata (API). There is no source code or test file cited to verify the actual implementation of pub/sub logic. | [medium] The passport claims HTTPS support for these interfaces. The evidence [Dockerfile@85cf10c0] exposes ports but does not show configuration or code enabling TLS/SSL termination. The README mentions SSL Root CA certs but doesn't prove the server enforces HTTPS by default or supports it natively without external proxies. | [low] The go.mod file specifies 'go 1.25.0'. As of the current date (implied by analysis timestamp 2026-11-09), this version may be future-dated or a typo if stable releases lag. While not strictly an error, it raises a risk flag for compatibility."
+  },
+  "revision": "85cf10c09c6c3c86160d6f0eb156f62d0efc1648",
+  "description": "NSQ is a realtime distributed messaging platform designed for high throughput and low latency. It provides a decentralized topology for publish/subscribe messaging with reliable delivery guarantees. The system consists of nsqd (daemon), nsqlookupd (discovery/routing), and nsqadmin (web UI). It supports multiple client libraries and binary protocols over TCP.",
+  "interfaces_detail": [
+    {
+      "name": "NSQ Binary Protocol",
+      "protocol": "TCP",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "declared"
+    },
+    {
+      "name": "HTTP API",
+      "protocol": "HTTPS",
+      "direction": "bidirectional",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    },
+    {
+      "name": "nsqadmin Web Interface",
+      "protocol": "HTTP/HTTPS",
+      "direction": "in",
+      "schema_ref": "",
+      "evidence_status": "verified"
+    }
+  ],
+  "deployment_constraints": [
+    "Requires TCP ports 4150, 4151, 4160, 4161, 4170, 4171 exposed",
+    "Persistent storage volume required for message durability (/data)",
+    "No external runtime dependencies (statically linked binary)"
+  ],
+  "runtime": [
+    "Go 1.25.0",
+    "Linux/Darwin/FreeBSD/Windows",
+    "Docker Container"
+  ],
+  "tests_present": true,
+  "known_gaps": [
+    "No native MQTT protocol support (requires proxy or wrapper)",
+    "No native WebSocket support for real-time updates (requires custom implementation or proxy)",
+    "No built-in geofencing capabilities",
+    "No built-in emergency alert priority handling beyond message priority queues"
+  ],
+  "risks": [
+    "MIT License is permissive but lacks patent protection",
+    "Go 1.25.0 requirement may be future-dated or typo (current stable is ~1.21)",
+    "No native MQTT/WebSocket support requires additional infrastructure for requested interfaces"
+  ],
+  "cost_inputs": {
+    "license_pricing_known": true,
+    "license_pricing_note": "no license fee (open source)",
+    "adaptation_assumptions": [
+      "Assumes ability to deploy nsqd and nsqlookupd in a cluster",
+      "Assumes client libraries can be used for MQTT/HTTPS ingestion (may require wrapper)",
+      "Assumes WebSocket support is available via HTTP API or custom implementation"
+    ]
+  },
+  "is_custom_development": false,
+  "analysis_timestamp": "2026-11-09T11:56:20+00:00",
+  "stars": 25776,
+  "last_activity": "2026-08-11T18:19:49Z"
+}
